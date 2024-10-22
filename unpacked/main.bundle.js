@@ -20057,8 +20057,8 @@
 			if ("function" == typeof t ? e !== t || !i : !t.has(e)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
 			return "m" === n ? i : "a" === n ? i.call(e) : i ? i.value : t.get(e)
 		};
-		My = new WeakMap, Sy = new WeakSet, Ty = function() {
-			const e = Cy(this, My, "f").get(Bw.Start);
+		My = new WeakMap, Sy = new WeakSet, Ty = function() { // IMPORTANT - start block return (multistart)
+			const e = Cy(this, My, "f").has(Bw.StartLine) ? Cy(this, My, "f").get(Bw.StartLine) : Cy(this, My, "f").get(Bw.Start);
 			return null != e && e.length > 0 ? e[e.length - 1] : null
 		}, Ay = function(e) {
 			const t = e.getPartTypesWithDetector(yy.Checkpoint),
@@ -20122,8 +20122,8 @@
 					max: new ln
 				}
 			}
-			hasStartingPoint() {
-				return Cy(this, My, "f").has(Bw.Start)
+			hasStartingPoint() {   // IMPORTANT - Start block check (multistart)
+				return Cy(this, My, "f").has(Bw.Start) || Cy(this, My, "f").has(Bw.StartLine)
 			}
 			getStartTransform() {
 				const e = Cy(this, Sy, "m", Ty).call(this);
@@ -20250,8 +20250,8 @@
 					u = [];
 				return this.forEachPart(((t, r, a, o, s) => {
 					const l = e.getPart(o);
-					l.tiles.rotated(s).forEach(((e, r, s) => {
-						c.fillRect(t + e - n, a + s - i, 1, 1), o == Bw.Start ? d.push([t + e - n, a + s - i]) : null != l.detector && l.detector.type == yy.Checkpoint ? h.push([t + e - n, a + s - i]) : null != l.detector && l.detector.type == yy.Finish && u.push([t + e - n, a + s - i])
+					l.tiles.rotated(s).forEach(((e, r, s) => {		// IMPORTANT - Start block detector (multistart)
+						c.fillRect(t + e - n, a + s - i, 1, 1), ((o == Bw.Start) || (o == Bw.StartLine)) ? d.push([t + e - n, a + s - i]) : null != l.detector && l.detector.type == yy.Checkpoint ? h.push([t + e - n, a + s - i]) : null != l.detector && l.detector.type == yy.Finish && u.push([t + e - n, a + s - i])
 					}))
 				})), c.fillStyle = "#e2c026", h.forEach((([e, t]) => {
 					c.fillRect(e, t, 1, 1)
@@ -20464,8 +20464,8 @@
 				min: new ln,
 				max: new ln
 			}, "f")
-		}, Gy = function() {
-			const e = qy(this, By, "f").get(Bw.Start);
+		}, Gy = function() { // IMPORTANT - Start block return 2 (multistart)
+			const e = qy(this, By, "f").has(Bw.StartLine) ? qy(this, By, "f").get(Bw.StartLine) : qy(this, By, "f").get(Bw.Start);
 			return null != e && e.length > 0 ? e[e.length - 1] : null
 		}, Yy.partWidth = 20, Yy.partHeight = 5, Yy.partLength = 20;
 		const Ky = Yy;
@@ -24020,7 +24020,34 @@
 
 				for (let index = 0; index < moddedBlocks.blocks.length; index++) {
 					let block = moddedBlocks.blocks[index];
-					i(ZP[block.category], Bw[block.name], [[block.blenderSceneName, block.name]]);
+					
+					if (block.hasOwnProperty("isCheckpoint")) {
+						i(
+							ZP[block.category], 
+							Bw[block.name], 
+							[[block.blenderSceneName, block.name]],
+							[[0,0,0]], 
+							{
+								type: yy.Checkpoint,
+								center: [0, 2.2, 0],
+								size: [11, 3.8, 2]
+							}
+						);
+					} else if (block.hasOwnProperty("isFinish")) {
+						i(
+							ZP[block.category], 
+							Bw[block.name], 
+							[[block.blenderSceneName, block.name]],
+							[[0,0,0]], 
+							{
+								type: yy.Finish,
+								center: [0, 2.2, 0],
+								size: [11, 3.8, 2]
+							}
+						);
+					} else {
+						i(ZP[block.category], Bw[block.name], [[block.blenderSceneName, block.name]]);
+					}
 				}
 
 				i(ZP.Special, Bw.Start, [["Road", "Start"]]);
