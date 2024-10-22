@@ -19438,8 +19438,185 @@
 			}
 		};
 		var Uw;
-		! function(e) {
-			e[e.Straight = 0] = "Straight", e[e.TurnSharp = 1] = "TurnSharp", e[e.SlopeUp = 2] = "SlopeUp", e[e.SlopeDown = 3] = "SlopeDown", e[e.Slope = 4] = "Slope", e[e.Start = 5] = "Start", e[e.Finish = 6] = "Finish", e[e.ToWideMiddle = 7] = "ToWideMiddle", e[e.ToWideLeft = 8] = "ToWideLeft", e[e.ToWideRight = 9] = "ToWideRight", e[e.StraightWide = 10] = "StraightWide", e[e.InnerCornerWide = 11] = "InnerCornerWide", e[e.OuterCornerWide = 12] = "OuterCornerWide", e[e.SlopeUpLeftWide = 13] = "SlopeUpLeftWide", e[e.SlopeUpRightWide = 14] = "SlopeUpRightWide", e[e.SlopeDownLeftWide = 15] = "SlopeDownLeftWide", e[e.SlopeDownRightWide = 16] = "SlopeDownRightWide", e[e.SlopeLeftWide = 17] = "SlopeLeftWide", e[e.SlopeRightWide = 18] = "SlopeRightWide", e[e.PillarTop = 19] = "PillarTop", e[e.PillarMiddle = 20] = "PillarMiddle", e[e.PillarBottom = 21] = "PillarBottom", e[e.PillarShort = 22] = "PillarShort", e[e.PlanePillarBottom = 23] = "PlanePillarBottom", e[e.PlanePillarShort = 24] = "PlanePillarShort", e[e.Plane = 25] = "Plane", e[e.PlaneWall = 26] = "PlaneWall", e[e.PlaneWallCorner = 27] = "PlaneWallCorner", e[e.PlaneWallInnerCorner = 28] = "PlaneWallInnerCorner", e[e.Block = 29] = "Block", e[e.WallTrackTop = 30] = "WallTrackTop", e[e.WallTrackMiddle = 31] = "WallTrackMiddle", e[e.WallTrackBottom = 32] = "WallTrackBottom", e[e.PlaneSlopeUp = 33] = "PlaneSlopeUp", e[e.PlaneSlopeDown = 34] = "PlaneSlopeDown", e[e.PlaneSlope = 35] = "PlaneSlope", e[e.TurnShort = 36] = "TurnShort", e[e.TurnLong = 37] = "TurnLong", e[e.SlopeUpLong = 38] = "SlopeUpLong", e[e.SlopeDownLong = 39] = "SlopeDownLong", e[e.SlopePillar = 40] = "SlopePillar", e[e.TurnSLeft = 41] = "TurnSLeft", e[e.TurnSRight = 42] = "TurnSRight", e[e.IntersectionT = 43] = "IntersectionT", e[e.IntersectionCross = 44] = "IntersectionCross", e[e.PillarBranch1 = 45] = "PillarBranch1", e[e.PillarBranch2 = 46] = "PillarBranch2", e[e.PillarBranch3 = 47] = "PillarBranch3", e[e.PillarBranch4 = 48] = "PillarBranch4", e[e.WallTrackBottomCorner = 49] = "WallTrackBottomCorner", e[e.WallTrackMiddleCorner = 50] = "WallTrackMiddleCorner", e[e.WallTrackTopCorner = 51] = "WallTrackTopCorner", e[e.Checkpoint = 52] = "Checkpoint", e[e.HalfBlock = 53] = "HalfBlock", e[e.QuarterBlock = 54] = "QuarterBlock", e[e.HalfPlane = 55] = "HalfPlane", e[e.QuarterPlane = 56] = "QuarterPlane", e[e.PlaneBridge = 57] = "PlaneBridge", e[e.SignArrowLeft = 58] = "SignArrowLeft", e[e.SignArrowRight = 59] = "SignArrowRight", e[e.SignArrowUp = 61] = "SignArrowUp", e[e.SignArrowDown = 62] = "SignArrowDown", e[e.SignWarning = 63] = "SignWarning", e[e.SignWrongWay = 64] = "SignWrongWay", e[e.CheckpointWide = 65] = "CheckpointWide", e[e.WallTrackCeiling = 66] = "WallTrackCeiling", e[e.WallTrackFloor = 67] = "WallTrackFloor", e[e.BlockSlopedDown = 68] = "BlockSlopedDown", e[e.BlockSlopedDownInnerCorner = 69] = "BlockSlopedDownInnerCorner", e[e.BlockSlopedDownOuterCorner = 70] = "BlockSlopedDownOuterCorner", e[e.BlockSlopedUp = 71] = "BlockSlopedUp", e[e.BlockSlopedUpInnerCorner = 72] = "BlockSlopedUpInnerCorner", e[e.BlockSlopedUpOuterCorner = 73] = "BlockSlopedUpOuterCorner", e[e.FinishWide = 74] = "FinishWide", e[e.PlaneCheckpoint = 75] = "PlaneCheckpoint", e[e.PlaneFinish = 76] = "PlaneFinish", e[e.PlaneCheckpointWide = 77] = "PlaneCheckpointWide", e[e.PlaneFinishWide = 78] = "PlaneFinishWide", e[e.WallTrackBottomInnerCorner = 79] = "WallTrackBottomInnerCorner", e[e.WallTrackInnerCorner = 80] = "WallTrackInnerCorner", e[e.WallTrackTopInnerCorner = 81] = "WallTrackTopInnerCorner", e[e.TurnLong2 = 82] = "TurnLong2", e[e.TurnLong3 = 83] = "TurnLong3", e[e.SlopePillarShort = 84] = "SlopePillarShort", e[e.BlockSlopeUp = 85] = "BlockSlopeUp", e[e.BlockSlopeDown = 86] = "BlockSlopeDown", e[e.SlopeBlock = 87] = "SlopeBlock", e[e.SlopeUpBlock = 88] = "SlopeUpBlock", e[e.SlopeDownBlock = 89] = "SlopeDownBlock", e[e.SlopeUpLeftWideBlock = 90] = "SlopeUpLeftWideBlock", e[e.SlopeUpRightWideBlock = 91] = "SlopeUpRightWideBlock", e[e.SlopeDownLeftWideBlock = 92] = "SlopeDownLeftWideBlock", e[e.SlopeDownRightWideBlock = 93] = "SlopeDownRightWideBlock", e[e.SlopeLeftWideBlock = 94] = "SlopeLeftWideBlock", e[e.SlopeRightWideBlock = 95] = "SlopeRightWideBlock", e[e.PlaneSlopeUpBlock = 96] = "PlaneSlopeUpBlock", e[e.PlaneSlopeDownBlock = 97] = "PlaneSlopeDownBlock", e[e.PlaneSlopeBlock = 98] = "PlaneSlopeBlock", e[e.PlaneSlopePillar = 99] = "PlaneSlopePillar", e[e.PlaneSlopePillarShort = 100] = "PlaneSlopePillarShort", e[e.PillarBranch1Top = 101] = "PillarBranch1Top", e[e.PillarBranch1Bottom = 102] = "PillarBranch1Bottom", e[e.PillarBranch1Middle = 103] = "PillarBranch1Middle", e[e.PillarBranch2Top = 104] = "PillarBranch2Top", e[e.PillarBranch2Middle = 105] = "PillarBranch2Middle", e[e.PillarBranch2Bottom = 106] = "PillarBranch2Bottom", e[e.PillarBranch3Top = 107] = "PillarBranch3Top", e[e.PillarBranch3Middle = 108] = "PillarBranch3Middle", e[e.PillarBranch3Bottom = 109] = "PillarBranch3Bottom", e[e.PillarBranch4Top = 110] = "PillarBranch4Top", e[e.PillarBranch4Middle = 111] = "PillarBranch4Middle", e[e.PillarBranch4Bottom = 112] = "PillarBranch4Bottom", e[e.PillarBranch5 = 113] = "PillarBranch5", e[e.PillarBranch5Top = 114] = "PillarBranch5Top", e[e.PillarBranch5Middle = 115] = "PillarBranch5Middle", e[e.PillarBranch5Bottom = 116] = "PillarBranch5Bottom", e[e.ToWideDouble = 117] = "ToWideDouble", e[e.ToWideDiagonal = 118] = "ToWideDiagonal", e[e.StraightPillarBottom = 119] = "StraightPillarBottom", e[e.StraightPillarShort = 120] = "StraightPillarShort", e[e.TurnSharpPillarBottom = 121] = "TurnSharpPillarBottom", e[e.TurnSharpPillarShort = 122] = "TurnSharpPillarShort", e[e.IntersectionTPillarBottom = 123] = "IntersectionTPillarBottom", e[e.IntersectionTPillarShort = 124] = "IntersectionTPillarShort", e[e.IntersectionCrossPillarBottom = 125] = "IntersectionCrossPillarBottom", e[e.IntersectionCrossPillarShort = 126] = "IntersectionCrossPillarShort", e[e.PlaneBridgeCorner = 127] = "PlaneBridgeCorner", e[e.PlaneBridgeIntersectionT = 128] = "PlaneBridgeIntersectionT", e[e.PlaneBridgeIntersectionCross = 129] = "PlaneBridgeIntersectionCross", e[e.BlockBridge = 130] = "BlockBridge", e[e.BlockBridgeCorner = 131] = "BlockBridgeCorner", e[e.BlockBridgeIntersectionT = 132] = "BlockBridgeIntersectionT", e[e.BlockBridgeIntersectionCross = 133] = "BlockBridgeIntersectionCross", e[e.RedBlock = 134] = "RedBlock", e[e.RedHalfBlock = 135] = "RedHalfBlock", e[e.RedQuarterBlock = 136] = "RedQuarterBlock", e[e.RedBlockSlopedDown = 137] = "RedBlockSlopedDown", e[e.RedBlockSlopedDownInnerCorner = 138] = "RedBlockSlopedDownInnerCorner", e[e.RedBlockSlopedDownOuterCorner = 139] = "RedBlockSlopedDownOuterCorner", e[e.RedBlockSlopedUp = 140] = "RedBlockSlopedUp", e[e.RedBlockSlopedUpInnerCorner = 141] = "RedBlockSlopedUpInnerCorner", e[e.RedBlockSlopedUpOuterCorner = 142] = "RedBlockSlopedUpOuterCorner", e[e.RedBlockSlopeDown = 143] = "RedBlockSlopeDown", e[e.RedBlockSlopeUp = 144] = "RedBlockSlopeUp", e[e.RedBlockBridge = 145] = "RedBlockBridge", e[e.RedBlockBridgeCorner = 146] = "RedBlockBridgeCorner", e[e.RedBlockBridgeIntersectionT = 147] = "RedBlockBridgeIntersectionT", e[e.RedBlockBridgeIntersectionCross = 148] = "RedBlockBridgeIntersectionCross", e[e.BlueBlock = 149] = "BlueBlock", e[e.BlueHalfBlock = 150] = "BlueHalfBlock", e[e.BlueQuarterBlock = 151] = "BlueQuarterBlock", e[e.BlueBlockSlopedDown = 152] = "BlueBlockSlopedDown", e[e.BlueBlockSlopedDownInnerCorner = 153] = "BlueBlockSlopedDownInnerCorner", e[e.BlueBlockSlopedDownOuterCorner = 154] = "BlueBlockSlopedDownOuterCorner", e[e.BlueBlockSlopedUp = 155] = "BlueBlockSlopedUp", e[e.BlueBlockSlopedUpInnerCorner = 156] = "BlueBlockSlopedUpInnerCorner", e[e.BlueBlockSlopedUpOuterCorner = 157] = "BlueBlockSlopedUpOuterCorner", e[e.BlueBlockSlopeDown = 158] = "BlueBlockSlopeDown", e[e.BlueBlockSlopeUp = 159] = "BlueBlockSlopeUp", e[e.BlueBlockBridge = 160] = "BlueBlockBridge", e[e.BlueBlockBridgeCorner = 161] = "BlueBlockBridgeCorner", e[e.BlueBlockBridgeIntersectionT = 162] = "BlueBlockBridgeIntersectionT", e[e.BlueBlockBridgeIntersectionCross = 163] = "BlueBlockBridgeIntersectionCross", e[e.BlackBlock = 164] = "BlackBlock", e[e.BlackHalfBlock = 165] = "BlackHalfBlock", e[e.BlackQuarterBlock = 166] = "BlackQuarterBlock", e[e.BlackBlockSlopedDown = 167] = "BlackBlockSlopedDown", e[e.BlackBlockSlopedDownInnerCorner = 168] = "BlackBlockSlopedDownInnerCorner", e[e.BlackBlockSlopedDownOuterCorner = 169] = "BlackBlockSlopedDownOuterCorner", e[e.BlackBlockSlopedUp = 170] = "BlackBlockSlopedUp", e[e.BlackBlockSlopedUpInnerCorner = 171] = "BlackBlockSlopedUpInnerCorner", e[e.BlackBlockSlopedUpOuterCorner = 172] = "BlackBlockSlopedUpOuterCorner", e[e.BlackBlockSlopeDown = 173] = "BlackBlockSlopeDown", e[e.BlackBlockSlopeUp = 174] = "BlackBlockSlopeUp", e[e.BlackBlockBridge = 175] = "BlackBlockBridge", e[e.BlackBlockBridgeCorner = 176] = "BlackBlockBridgeCorner", e[e.BlackBlockBridgeIntersectionT = 177] = "BlackBlockBridgeIntersectionT", e[e.BlackBlockBridgeIntersectionCross = 178] = "BlackBlockBridgeIntersectionCross"
+		! function(e) { 			/*   IMPORTANT - main blocks list   */
+			e[e.Straight = 0] = "Straight";
+			e[e.TurnSharp = 1] = "TurnSharp";
+			e[e.SlopeUp = 2] = "SlopeUp";
+			e[e.SlopeDown = 3] = "SlopeDown";
+			e[e.Slope = 4] = "Slope";
+			e[e.Start = 5] = "Start";
+			e[e.Finish = 6] = "Finish";
+			e[e.ToWideMiddle = 7] = "ToWideMiddle";
+			e[e.ToWideLeft = 8] = "ToWideLeft";
+			e[e.ToWideRight = 9] = "ToWideRight";
+			e[e.StraightWide = 10] = "StraightWide";
+			e[e.InnerCornerWide = 11] = "InnerCornerWide";
+			e[e.OuterCornerWide = 12] = "OuterCornerWide";
+			e[e.SlopeUpLeftWide = 13] = "SlopeUpLeftWide";
+			e[e.SlopeUpRightWide = 14] = "SlopeUpRightWide";
+			e[e.SlopeDownLeftWide = 15] = "SlopeDownLeftWide";
+			e[e.SlopeDownRightWide = 16] = "SlopeDownRightWide";
+			e[e.SlopeLeftWide = 17] = "SlopeLeftWide";
+			e[e.SlopeRightWide = 18] = "SlopeRightWide";
+			e[e.PillarTop = 19] = "PillarTop";
+			e[e.PillarMiddle = 20] = "PillarMiddle";
+			e[e.PillarBottom = 21] = "PillarBottom";
+			e[e.PillarShort = 22] = "PillarShort";
+			e[e.PlanePillarBottom = 23] = "PlanePillarBottom";
+			e[e.PlanePillarShort = 24] = "PlanePillarShort";
+			e[e.Plane = 25] = "Plane";
+			e[e.PlaneWall = 26] = "PlaneWall";
+			e[e.PlaneWallCorner = 27] = "PlaneWallCorner";
+			e[e.PlaneWallInnerCorner = 28] = "PlaneWallInnerCorner";
+			e[e.Block = 29] = "Block";
+			e[e.WallTrackTop = 30] = "WallTrackTop";
+			e[e.WallTrackMiddle = 31] = "WallTrackMiddle";
+			e[e.WallTrackBottom = 32] = "WallTrackBottom";
+			e[e.PlaneSlopeUp = 33] = "PlaneSlopeUp";
+			e[e.PlaneSlopeDown = 34] = "PlaneSlopeDown";
+			e[e.PlaneSlope = 35] = "PlaneSlope";
+			e[e.TurnShort = 36] = "TurnShort";
+			e[e.TurnLong = 37] = "TurnLong";
+			e[e.SlopeUpLong = 38] = "SlopeUpLong";
+			e[e.SlopeDownLong = 39] = "SlopeDownLong";
+			e[e.SlopePillar = 40] = "SlopePillar";
+			e[e.TurnSLeft = 41] = "TurnSLeft";
+			e[e.TurnSRight = 42] = "TurnSRight";
+			e[e.IntersectionT = 43] = "IntersectionT";
+			e[e.IntersectionCross = 44] = "IntersectionCross";
+			e[e.PillarBranch1 = 45] = "PillarBranch1";
+			e[e.PillarBranch2 = 46] = "PillarBranch2";
+			e[e.PillarBranch3 = 47] = "PillarBranch3";
+			e[e.PillarBranch4 = 48] = "PillarBranch4";
+			e[e.WallTrackBottomCorner = 49] = "WallTrackBottomCorner";
+			e[e.WallTrackMiddleCorner = 50] = "WallTrackMiddleCorner";
+			e[e.WallTrackTopCorner = 51] = "WallTrackTopCorner";
+			e[e.Checkpoint = 52] = "Checkpoint";
+			e[e.HalfBlock = 53] = "HalfBlock";
+			e[e.QuarterBlock = 54] = "QuarterBlock";
+			e[e.HalfPlane = 55] = "HalfPlane";
+			e[e.QuarterPlane = 56] = "QuarterPlane";
+			e[e.PlaneBridge = 57] = "PlaneBridge";
+			e[e.SignArrowLeft = 58] = "SignArrowLeft";
+			e[e.SignArrowRight = 59] = "SignArrowRight";
+			e[e.SignArrowUp = 61] = "SignArrowUp";
+			e[e.SignArrowDown = 62] = "SignArrowDown";
+			e[e.SignWarning = 63] = "SignWarning";
+			e[e.SignWrongWay = 64] = "SignWrongWay";
+			e[e.CheckpointWide = 65] = "CheckpointWide";
+			e[e.WallTrackCeiling = 66] = "WallTrackCeiling";
+			e[e.WallTrackFloor = 67] = "WallTrackFloor";
+			e[e.BlockSlopedDown = 68] = "BlockSlopedDown";
+			e[e.BlockSlopedDownInnerCorner = 69] = "BlockSlopedDownInnerCorner";
+			e[e.BlockSlopedDownOuterCorner = 70] = "BlockSlopedDownOuterCorner";
+			e[e.BlockSlopedUp = 71] = "BlockSlopedUp";
+			e[e.BlockSlopedUpInnerCorner = 72] = "BlockSlopedUpInnerCorner";
+			e[e.BlockSlopedUpOuterCorner = 73] = "BlockSlopedUpOuterCorner";
+			e[e.FinishWide = 74] = "FinishWide";
+			e[e.PlaneCheckpoint = 75] = "PlaneCheckpoint";
+			e[e.PlaneFinish = 76] = "PlaneFinish";
+			e[e.PlaneCheckpointWide = 77] = "PlaneCheckpointWide";
+			e[e.PlaneFinishWide = 78] = "PlaneFinishWide";
+			e[e.WallTrackBottomInnerCorner = 79] = "WallTrackBottomInnerCorner";
+			e[e.WallTrackInnerCorner = 80] = "WallTrackInnerCorner";
+			e[e.WallTrackTopInnerCorner = 81] = "WallTrackTopInnerCorner";
+			e[e.TurnLong2 = 82] = "TurnLong2";
+			e[e.TurnLong3 = 83] = "TurnLong3";
+			e[e.SlopePillarShort = 84] = "SlopePillarShort";
+			e[e.BlockSlopeUp = 85] = "BlockSlopeUp";
+			e[e.BlockSlopeDown = 86] = "BlockSlopeDown";
+			e[e.SlopeBlock = 87] = "SlopeBlock";
+			e[e.SlopeUpBlock = 88] = "SlopeUpBlock";
+			e[e.SlopeDownBlock = 89] = "SlopeDownBlock";
+			e[e.SlopeUpLeftWideBlock = 90] = "SlopeUpLeftWideBlock";
+			e[e.SlopeUpRightWideBlock = 91] = "SlopeUpRightWideBlock";
+			e[e.SlopeDownLeftWideBlock = 92] = "SlopeDownLeftWideBlock";
+			e[e.SlopeDownRightWideBlock = 93] = "SlopeDownRightWideBlock";
+			e[e.SlopeLeftWideBlock = 94] = "SlopeLeftWideBlock";
+			e[e.SlopeRightWideBlock = 95] = "SlopeRightWideBlock";
+			e[e.PlaneSlopeUpBlock = 96] = "PlaneSlopeUpBlock";
+			e[e.PlaneSlopeDownBlock = 97] = "PlaneSlopeDownBlock";
+			e[e.PlaneSlopeBlock = 98] = "PlaneSlopeBlock";
+			e[e.PlaneSlopePillar = 99] = "PlaneSlopePillar";
+			e[e.PlaneSlopePillarShort = 100] = "PlaneSlopePillarShort";
+			e[e.PillarBranch1Top = 101] = "PillarBranch1Top";
+			e[e.PillarBranch1Bottom = 102] = "PillarBranch1Bottom";
+			e[e.PillarBranch1Middle = 103] = "PillarBranch1Middle";
+			e[e.PillarBranch2Top = 104] = "PillarBranch2Top";
+			e[e.PillarBranch2Middle = 105] = "PillarBranch2Middle";
+			e[e.PillarBranch2Bottom = 106] = "PillarBranch2Bottom";
+			e[e.PillarBranch3Top = 107] = "PillarBranch3Top";
+			e[e.PillarBranch3Middle = 108] = "PillarBranch3Middle";
+			e[e.PillarBranch3Bottom = 109] = "PillarBranch3Bottom";
+			e[e.PillarBranch4Top = 110] = "PillarBranch4Top";
+			e[e.PillarBranch4Middle = 111] = "PillarBranch4Middle";
+			e[e.PillarBranch4Bottom = 112] = "PillarBranch4Bottom";
+			e[e.PillarBranch5 = 113] = "PillarBranch5";
+			e[e.PillarBranch5Top = 114] = "PillarBranch5Top";
+			e[e.PillarBranch5Middle = 115] = "PillarBranch5Middle";
+			e[e.PillarBranch5Bottom = 116] = "PillarBranch5Bottom";
+			e[e.ToWideDouble = 117] = "ToWideDouble";
+			e[e.ToWideDiagonal = 118] = "ToWideDiagonal";
+			e[e.StraightPillarBottom = 119] = "StraightPillarBottom";
+			e[e.StraightPillarShort = 120] = "StraightPillarShort";
+			e[e.TurnSharpPillarBottom = 121] = "TurnSharpPillarBottom";
+			e[e.TurnSharpPillarShort = 122] = "TurnSharpPillarShort";
+			e[e.IntersectionTPillarBottom = 123] = "IntersectionTPillarBottom";
+			e[e.IntersectionTPillarShort = 124] = "IntersectionTPillarShort";
+			e[e.IntersectionCrossPillarBottom = 125] = "IntersectionCrossPillarBottom";
+			e[e.IntersectionCrossPillarShort = 126] = "IntersectionCrossPillarShort";
+			e[e.PlaneBridgeCorner = 127] = "PlaneBridgeCorner";
+			e[e.PlaneBridgeIntersectionT = 128] = "PlaneBridgeIntersectionT";
+			e[e.PlaneBridgeIntersectionCross = 129] = "PlaneBridgeIntersectionCross";
+			e[e.BlockBridge = 130] = "BlockBridge";
+			e[e.BlockBridgeCorner = 131] = "BlockBridgeCorner";
+			e[e.BlockBridgeIntersectionT = 132] = "BlockBridgeIntersectionT";
+			e[e.BlockBridgeIntersectionCross = 133] = "BlockBridgeIntersectionCross";
+			e[e.RedBlock = 134] = "RedBlock";
+			e[e.RedHalfBlock = 135] = "RedHalfBlock";
+			e[e.RedQuarterBlock = 136] = "RedQuarterBlock";
+			e[e.RedBlockSlopedDown = 137] = "RedBlockSlopedDown";
+			e[e.RedBlockSlopedDownInnerCorner = 138] = "RedBlockSlopedDownInnerCorner";
+			e[e.RedBlockSlopedDownOuterCorner = 139] = "RedBlockSlopedDownOuterCorner";
+			e[e.RedBlockSlopedUp = 140] = "RedBlockSlopedUp";
+			e[e.RedBlockSlopedUpInnerCorner = 141] = "RedBlockSlopedUpInnerCorner";
+			e[e.RedBlockSlopedUpOuterCorner = 142] = "RedBlockSlopedUpOuterCorner";
+			e[e.RedBlockSlopeDown = 143] = "RedBlockSlopeDown";
+			e[e.RedBlockSlopeUp = 144] = "RedBlockSlopeUp";
+			e[e.RedBlockBridge = 145] = "RedBlockBridge";
+			e[e.RedBlockBridgeCorner = 146] = "RedBlockBridgeCorner";
+			e[e.RedBlockBridgeIntersectionT = 147] = "RedBlockBridgeIntersectionT";
+			e[e.RedBlockBridgeIntersectionCross = 148] = "RedBlockBridgeIntersectionCross";
+			e[e.BlueBlock = 149] = "BlueBlock";
+			e[e.BlueHalfBlock = 150] = "BlueHalfBlock";
+			e[e.BlueQuarterBlock = 151] = "BlueQuarterBlock";
+			e[e.BlueBlockSlopedDown = 152] = "BlueBlockSlopedDown";
+			e[e.BlueBlockSlopedDownInnerCorner = 153] = "BlueBlockSlopedDownInnerCorner";
+			e[e.BlueBlockSlopedDownOuterCorner = 154] = "BlueBlockSlopedDownOuterCorner";
+			e[e.BlueBlockSlopedUp = 155] = "BlueBlockSlopedUp";
+			e[e.BlueBlockSlopedUpInnerCorner = 156] = "BlueBlockSlopedUpInnerCorner";
+			e[e.BlueBlockSlopedUpOuterCorner = 157] = "BlueBlockSlopedUpOuterCorner";
+			e[e.BlueBlockSlopeDown = 158] = "BlueBlockSlopeDown";
+			e[e.BlueBlockSlopeUp = 159] = "BlueBlockSlopeUp";
+			e[e.BlueBlockBridge = 160] = "BlueBlockBridge";
+			e[e.BlueBlockBridgeCorner = 161] = "BlueBlockBridgeCorner";
+			e[e.BlueBlockBridgeIntersectionT = 162] = "BlueBlockBridgeIntersectionT";
+			e[e.BlueBlockBridgeIntersectionCross = 163] = "BlueBlockBridgeIntersectionCross";
+			e[e.BlackBlock = 164] = "BlackBlock";
+			e[e.BlackHalfBlock = 165] = "BlackHalfBlock";
+			e[e.BlackQuarterBlock = 166] = "BlackQuarterBlock";
+			e[e.BlackBlockSlopedDown = 167] = "BlackBlockSlopedDown";
+			e[e.BlackBlockSlopedDownInnerCorner = 168] = "BlackBlockSlopedDownInnerCorner";
+			e[e.BlackBlockSlopedDownOuterCorner = 169] = "BlackBlockSlopedDownOuterCorner";
+			e[e.BlackBlockSlopedUp = 170] = "BlackBlockSlopedUp";
+			e[e.BlackBlockSlopedUpInnerCorner = 171] = "BlackBlockSlopedUpInnerCorner";
+			e[e.BlackBlockSlopedUpOuterCorner = 172] = "BlackBlockSlopedUpOuterCorner";
+			e[e.BlackBlockSlopeDown = 173] = "BlackBlockSlopeDown";
+			e[e.BlackBlockSlopeUp = 174] = "BlackBlockSlopeUp";
+			e[e.BlackBlockBridge = 175] = "BlackBlockBridge";
+			e[e.BlackBlockBridgeCorner = 176] = "BlackBlockBridgeCorner";
+			e[e.BlackBlockBridgeIntersectionT = 177] = "BlackBlockBridgeIntersectionT";
+			e[e.BlackBlockBridgeIntersectionCross = 178] = "BlackBlockBridgeIntersectionCross";
 		}(Uw || (Uw = {}));
 		const Bw = Uw;
 		var Ow, zw, Fw, Ww, Hw, Vw, Gw, jw = function(e, t, n, i, r) {
@@ -23745,26 +23922,34 @@
 				function s(e) {
 					return r(e, 0, 0, -.135)
 				}
-				i(ZP.Special, Bw.Start, [
-					["Road", "Start"]
-				]), i(ZP.Special, Bw.Checkpoint, [
-					["Road", "Checkpoint"]
-				], [
+
+				/**    IMPORTANT - second block declaration (categorical)     */
+
+				/** 
+				 	i(category, block, [
+						[modelCategory, modelName]
+					], [
+						optional list of editor restrictions relative to selected block
+						])
+				*/
+
+				i(ZP.Special, Bw.Start, [["Road", "Start"]]);
+				i(ZP.Special, Bw.Checkpoint, [["Road", "Checkpoint"]], [
 					[0, 0, 0]
 				], {
 					type: yy.Checkpoint,
 					center: [0, 2.2, 0],
 					size: [11, 3.8, 2]
-				}), i(ZP.Special, Bw.CheckpointWide, [
-					["RoadWide", "CheckpointWide"]
-				], [
+				});
+				i(ZP.Special, Bw.CheckpointWide, [["RoadWide", "CheckpointWide"]], [
 					[0, 0, 0],
 					[1, 0, 0]
 				], {
 					type: yy.Checkpoint,
 					center: [10, 2.2, 0],
 					size: [31.1, 3.8, 2]
-				}), i(ZP.Special, Bw.PlaneCheckpoint, [
+				});
+				i(ZP.Special, Bw.PlaneCheckpoint, [
 					["Planes", "PlaneCheckpoint"]
 				], [
 					[0, 0, 0]
@@ -23772,7 +23957,8 @@
 					type: yy.Checkpoint,
 					center: [0, 2.2, 0],
 					size: [18.75, 3.8, 2]
-				}), i(ZP.Special, Bw.PlaneCheckpointWide, [
+				});
+				i(ZP.Special, Bw.PlaneCheckpointWide, [
 					["Planes", "PlaneCheckpointWide"]
 				], [
 					[0, 0, 0],
@@ -23781,7 +23967,8 @@
 					type: yy.Checkpoint,
 					center: [10, 2.2, 0],
 					size: [38.75, 3.8, 2]
-				}), i(ZP.Special, Bw.Finish, [
+				});
+				i(ZP.Special, Bw.Finish, [
 					["Road", "Finish"]
 				], [
 					[0, 0, 0]
@@ -23789,7 +23976,8 @@
 					type: yy.Finish,
 					center: [0, 2.2, 0],
 					size: [11, 3.8, 2]
-				}), i(ZP.Special, Bw.FinishWide, [
+				});
+				i(ZP.Special, Bw.FinishWide, [
 					["RoadWide", "FinishWide"]
 				], [
 					[0, 0, 0],
@@ -23798,7 +23986,8 @@
 					type: yy.Finish,
 					center: [10, 2.2, 0],
 					size: [31.1, 3.8, 2]
-				}), i(ZP.Special, Bw.PlaneFinish, [
+				});
+				i(ZP.Special, Bw.PlaneFinish, [
 					["Planes", "PlaneFinish"]
 				], [
 					[0, 0, 0]
@@ -23806,7 +23995,8 @@
 					type: yy.Finish,
 					center: [0, 2.2, 0],
 					size: [18.75, 3.8, 2]
-				}), i(ZP.Special, Bw.PlaneFinishWide, [
+				});
+				i(ZP.Special, Bw.PlaneFinishWide, [
 					["Planes", "PlaneFinishWide"]
 				], [
 					[0, 0, 0],
@@ -23815,30 +24005,38 @@
 					type: yy.Finish,
 					center: [10, 2.2, 0],
 					size: [38.75, 3.8, 2]
-				}), i(ZP.Road, Bw.Straight, [
+				});
+				i(ZP.Road, Bw.Straight, [
 					["Road", "Straight"]
-				]), i(ZP.Road, Bw.StraightPillarBottom, [
+				]);
+				i(ZP.Road, Bw.StraightPillarBottom, [
 					["Road", "Straight"],
 					["Pillar", "SurfacePillarBottom"]
-				]), i(ZP.Road, Bw.StraightPillarShort, [
+				]);
+				i(ZP.Road, Bw.StraightPillarShort, [
 					["Road", "Straight"],
 					["Pillar", "SurfacePillarShort"]
-				]), i(ZP.Road, Bw.TurnSharp, [
+				]);
+				i(ZP.Road, Bw.TurnSharp, [
 					["Road", "TurnSharp"]
-				]), i(ZP.Road, Bw.TurnSharpPillarBottom, [
+				]);
+				i(ZP.Road, Bw.TurnSharpPillarBottom, [
 					["Road", "TurnSharp"],
 					["Pillar", "SurfacePillarBottom"]
-				]), i(ZP.Road, Bw.TurnSharpPillarShort, [
+				]);
+				i(ZP.Road, Bw.TurnSharpPillarShort, [
 					["Road", "TurnSharp"],
 					["Pillar", "SurfacePillarShort"]
-				]), i(ZP.RoadTurns, Bw.TurnShort, [
+				]);
+				i(ZP.RoadTurns, Bw.TurnShort, [
 					["Road", "TurnShort"]
 				], [
 					[0, 0, 0],
 					[1, 0, 0],
 					[0, 0, -1],
 					[1, 0, -1]
-				]), i(ZP.RoadTurns, Bw.TurnLong, [
+				]);
+				i(ZP.RoadTurns, Bw.TurnLong, [
 					["Road", "TurnLong"]
 				], [
 					[0, 0, 0],
@@ -23848,7 +24046,8 @@
 					[2, 0, -1],
 					[1, 0, -2],
 					[2, 0, -2]
-				]), i(ZP.RoadTurns, Bw.TurnLong2, [
+				]);
+				i(ZP.RoadTurns, Bw.TurnLong2, [
 					["Road", "TurnLong2"]
 				], [
 					[0, 0, 0],
@@ -23860,7 +24059,8 @@
 					[1, 0, -3],
 					[2, 0, -3],
 					[3, 0, -3]
-				]), i(ZP.RoadTurns, Bw.TurnLong3, [
+				]);
+				i(ZP.RoadTurns, Bw.TurnLong3, [
 					["Road", "TurnLong3"]
 				], [
 					[0, 0, 0],
@@ -23875,7 +24075,8 @@
 					[2, 0, -4],
 					[3, 0, -4],
 					[4, 0, -4]
-				]), i(ZP.RoadTurns, Bw.TurnSLeft, [
+				]);
+				i(ZP.RoadTurns, Bw.TurnSLeft, [
 					["Road", "TurnSLeft"]
 				], [
 					[0, 0, 0],
@@ -23884,7 +24085,8 @@
 					[-1, 0, 0],
 					[-1, 0, -1],
 					[-1, 0, -2]
-				]), i(ZP.RoadTurns, Bw.TurnSRight, [
+				]);
+				i(ZP.RoadTurns, Bw.TurnSRight, [
 					["Road", "TurnSRight"]
 				], [
 					[0, 0, 0],
@@ -23893,549 +24095,706 @@
 					[1, 0, 0],
 					[1, 0, -1],
 					[1, 0, -2]
-				]), i(ZP.Road, Bw.SlopeUp, [
+				]);
+				i(ZP.Road, Bw.SlopeUp, [
 					["Road", "SlopeUp"]
 				], [
 					[0, 0, 0],
 					[0, 1, 0]
-				]), i(ZP.Road, Bw.SlopeUpBlock, [
+				]);
+				i(ZP.Road, Bw.SlopeUpBlock, [
 					["Road", "SlopeUp"],
 					["Blocks", "BlockSlopeUp"]
 				], [
 					[0, 0, 0],
 					[0, 1, 0]
-				]), i(ZP.Road, Bw.SlopeUpLong, [
+				]);
+				i(ZP.Road, Bw.SlopeUpLong, [
 					["Road", "SlopeUpLong"]
 				], [
 					[0, 0, 0],
 					[0, 0, -1],
 					[0, 1, -1],
 					[0, 2, -1]
-				]), i(ZP.Road, Bw.SlopeDown, [
+				]);
+				i(ZP.Road, Bw.SlopeDown, [
 					["Road", "SlopeDown"]
 				], [
 					[0, 0, 0],
 					[0, 1, 0]
-				]), i(ZP.Road, Bw.SlopeDownBlock, [
+				]);
+				i(ZP.Road, Bw.SlopeDownBlock, [
 					["Road", "SlopeDown"],
 					["Blocks", "BlockSlopeDown"]
 				], [
 					[0, 0, 0],
 					[0, 1, 0]
-				]), i(ZP.Road, Bw.SlopeDownLong, [
+				]);
+				i(ZP.Road, Bw.SlopeDownLong, [
 					["Road", "SlopeDownLong"]
 				], [
 					[0, 0, 0],
 					[0, 1, 0],
 					[0, 1, 1],
 					[0, 2, 1]
-				]), i(ZP.Road, Bw.Slope, [
+				]);
+				i(ZP.Road, Bw.Slope, [
 					["Road", "Slope"]
 				], [
 					[0, 0, 0],
 					[0, 1, 0],
 					[0, 2, 0]
-				]), i(ZP.Road, Bw.SlopePillar, [
+				]);
+				i(ZP.Road, Bw.SlopePillar, [
 					["Road", "Slope"],
 					["Pillar", "PillarTopSlope"]
 				], [
 					[0, 0, 0],
 					[0, 1, 0],
 					[0, 2, 0]
-				]), i(ZP.Road, Bw.SlopePillarShort, [
+				]);
+				i(ZP.Road, Bw.SlopePillarShort, [
 					["Road", "Slope"],
 					["Pillar", "PillarShortSlope"]
 				], [
 					[0, 0, 0],
 					[0, 1, 0],
 					[0, 2, 0]
-				]), i(ZP.Road, Bw.SlopeBlock, [
+				]);
+				i(ZP.Road, Bw.SlopeBlock, [
 					["Road", "Slope"],
 					["Blocks", "BlockSlopedUp"]
 				], [
 					[0, 0, 0],
 					[0, 1, 0],
 					[0, 2, 0]
-				]), i(ZP.Road, Bw.IntersectionT, [
+				]);
+				i(ZP.Road, Bw.IntersectionT, [
 					["Road", "IntersectionT"]
-				]), i(ZP.Road, Bw.IntersectionTPillarBottom, [
+				]);
+				i(ZP.Road, Bw.IntersectionTPillarBottom, [
 					["Road", "IntersectionT"],
 					["Pillar", "SurfacePillarBottom"]
-				]), i(ZP.Road, Bw.IntersectionTPillarShort, [
+				]);
+				i(ZP.Road, Bw.IntersectionTPillarShort, [
 					["Road", "IntersectionT"],
 					["Pillar", "SurfacePillarShort"]
-				]), i(ZP.Road, Bw.IntersectionCross, [
+				]);
+				i(ZP.Road, Bw.IntersectionCross, [
 					["Road", "IntersectionCross"]
-				]), i(ZP.Road, Bw.IntersectionCrossPillarBottom, [
+				]);
+				i(ZP.Road, Bw.IntersectionCrossPillarBottom, [
 					["Road", "IntersectionCross"],
 					["Pillar", "SurfacePillarBottom"]
-				]), i(ZP.Road, Bw.IntersectionCrossPillarShort, [
+				]);
+				i(ZP.Road, Bw.IntersectionCrossPillarShort, [
 					["Road", "IntersectionCross"],
 					["Pillar", "SurfacePillarShort"]
-				]), i(ZP.RoadWide, Bw.ToWideMiddle, [
+				]);
+				i(ZP.RoadWide, Bw.ToWideMiddle, [
 					["RoadWide", "ToWideMiddle"]
-				]), i(ZP.RoadWide, Bw.ToWideLeft, [
+				]);
+				i(ZP.RoadWide, Bw.ToWideLeft, [
 					["RoadWide", "ToWideLeft"]
-				]), i(ZP.RoadWide, Bw.ToWideRight, [
+				]);
+				i(ZP.RoadWide, Bw.ToWideRight, [
 					["RoadWide", "ToWideRight"]
-				]), i(ZP.RoadWide, Bw.ToWideDouble, [
+				]);
+				i(ZP.RoadWide, Bw.ToWideDouble, [
 					["RoadWide", "ToWideDouble"]
-				]), i(ZP.RoadWide, Bw.ToWideDiagonal, [
+				]);
+				i(ZP.RoadWide, Bw.ToWideDiagonal, [
 					["RoadWide", "ToWideDiagonal"]
-				]), i(ZP.RoadWide, Bw.StraightWide, [
+				]);
+				i(ZP.RoadWide, Bw.StraightWide, [
 					["RoadWide", "StraightWide"]
-				]), i(ZP.RoadWide, Bw.InnerCornerWide, [
+				]);
+				i(ZP.RoadWide, Bw.InnerCornerWide, [
 					["RoadWide", "InnerCornerWide"]
-				]), i(ZP.RoadWide, Bw.OuterCornerWide, [
+				]);
+				i(ZP.RoadWide, Bw.OuterCornerWide, [
 					["RoadWide", "OuterCornerWide"]
-				]), i(ZP.RoadWide, Bw.SlopeUpLeftWide, [
+				]);
+				i(ZP.RoadWide, Bw.SlopeUpLeftWide, [
 					["RoadWide", "SlopeUpLeftWide"]
 				], [
 					[0, 0, 0],
 					[0, 1, 0]
-				]), i(ZP.RoadWide, Bw.SlopeUpLeftWideBlock, [
+				]);
+				i(ZP.RoadWide, Bw.SlopeUpLeftWideBlock, [
 					["RoadWide", "SlopeUpLeftWide"],
 					["Blocks", "BlockSlopeUp"]
 				], [
 					[0, 0, 0],
 					[0, 1, 0]
-				]), i(ZP.RoadWide, Bw.SlopeUpRightWide, [
+				]);
+				i(ZP.RoadWide, Bw.SlopeUpRightWide, [
 					["RoadWide", "SlopeUpRightWide"]
 				], [
 					[0, 0, 0],
 					[0, 1, 0]
-				]), i(ZP.RoadWide, Bw.SlopeUpRightWideBlock, [
+				]);
+				i(ZP.RoadWide, Bw.SlopeUpRightWideBlock, [
 					["RoadWide", "SlopeUpRightWide"],
 					["Blocks", "BlockSlopeUp"]
 				], [
 					[0, 0, 0],
 					[0, 1, 0]
-				]), i(ZP.RoadWide, Bw.SlopeDownLeftWide, [
+				]);
+				i(ZP.RoadWide, Bw.SlopeDownLeftWide, [
 					["RoadWide", "SlopeDownLeftWide"]
 				], [
 					[0, 0, 0],
 					[0, 1, 0]
-				]), i(ZP.RoadWide, Bw.SlopeDownLeftWideBlock, [
+				]);
+				i(ZP.RoadWide, Bw.SlopeDownLeftWideBlock, [
 					["RoadWide", "SlopeDownLeftWide"],
 					["Blocks", "BlockSlopeDown"]
 				], [
 					[0, 0, 0],
 					[0, 1, 0]
-				]), i(ZP.RoadWide, Bw.SlopeDownRightWide, [
+				]);
+				i(ZP.RoadWide, Bw.SlopeDownRightWide, [
 					["RoadWide", "SlopeDownRightWide"]
 				], [
 					[0, 0, 0],
 					[0, 1, 0]
-				]), i(ZP.RoadWide, Bw.SlopeDownRightWideBlock, [
+				]);
+				i(ZP.RoadWide, Bw.SlopeDownRightWideBlock, [
 					["RoadWide", "SlopeDownRightWide"],
 					["Blocks", "BlockSlopeDown"]
 				], [
 					[0, 0, 0],
 					[0, 1, 0]
-				]), i(ZP.RoadWide, Bw.SlopeLeftWide, [
+				]);
+				i(ZP.RoadWide, Bw.SlopeLeftWide, [
 					["RoadWide", "SlopeLeftWide"]
 				], [
 					[0, 0, 0],
 					[0, 1, 0],
 					[0, 2, 0]
-				]), i(ZP.RoadWide, Bw.SlopeLeftWideBlock, [
+				]);
+				i(ZP.RoadWide, Bw.SlopeLeftWideBlock, [
 					["RoadWide", "SlopeLeftWide"],
 					["Blocks", "BlockSlopedUp"]
 				], [
 					[0, 0, 0],
 					[0, 1, 0],
 					[0, 2, 0]
-				]), i(ZP.RoadWide, Bw.SlopeRightWide, [
+				]);
+				i(ZP.RoadWide, Bw.SlopeRightWide, [
 					["RoadWide", "SlopeRightWide"]
 				], [
 					[0, 0, 0],
 					[0, 1, 0],
 					[0, 2, 0]
-				]), i(ZP.RoadWide, Bw.SlopeRightWideBlock, [
+				]);
+				i(ZP.RoadWide, Bw.SlopeRightWideBlock, [
 					["RoadWide", "SlopeRightWide"],
 					["Blocks", "BlockSlopedUp"]
 				], [
 					[0, 0, 0],
 					[0, 1, 0],
 					[0, 2, 0]
-				]), i(ZP.Plane, Bw.Plane, [
+				]);
+				i(ZP.Plane, Bw.Plane, [
 					["Planes", "Plane"]
-				]), i(ZP.Plane, Bw.PlanePillarBottom, [
+				]);
+				i(ZP.Plane, Bw.PlanePillarBottom, [
 					["Planes", "Plane"],
 					["Pillar", "SurfacePillarBottom"]
-				]), i(ZP.Plane, Bw.PlanePillarShort, [
+				]);
+				i(ZP.Plane, Bw.PlanePillarShort, [
 					["Planes", "Plane"],
 					["Pillar", "SurfacePillarShort"]
-				]), i(ZP.Plane, Bw.HalfPlane, [
+				]);
+				i(ZP.Plane, Bw.HalfPlane, [
 					["Planes", "HalfPlane"]
-				]), i(ZP.Plane, Bw.QuarterPlane, [
+				]);
+				i(ZP.Plane, Bw.QuarterPlane, [
 					["Planes", "QuarterPlane"]
-				]), i(ZP.Plane, Bw.PlaneSlopeUp, [
+				]);
+				i(ZP.Plane, Bw.PlaneSlopeUp, [
 					["Planes", "PlaneSlopeUp"]
 				], [
 					[0, 0, 0],
 					[0, 1, 0]
-				]), i(ZP.Plane, Bw.PlaneSlopeDown, [
+				]);
+				i(ZP.Plane, Bw.PlaneSlopeDown, [
 					["Planes", "PlaneSlopeDown"]
 				], [
 					[0, 0, 0],
 					[0, 1, 0]
-				]), i(ZP.Plane, Bw.PlaneSlope, [
+				]);
+				i(ZP.Plane, Bw.PlaneSlope, [
 					["Planes", "PlaneSlope"]
 				], [
 					[0, 0, 0],
 					[0, 1, 0],
 					[0, 2, 0]
-				]), i(ZP.Plane, Bw.PlaneBridge, [
+				]);
+				i(ZP.Plane, Bw.PlaneBridge, [
 					["Planes", "PlaneBridge"]
-				]), i(ZP.Plane, Bw.PlaneBridgeCorner, [
+				]);
+				i(ZP.Plane, Bw.PlaneBridgeCorner, [
 					["Planes", "PlaneBridgeCorner"]
-				]), i(ZP.Plane, Bw.PlaneBridgeIntersectionT, [
+				]);
+				i(ZP.Plane, Bw.PlaneBridgeIntersectionT, [
 					["Planes", "PlaneBridgeIntersectionT"]
-				]), i(ZP.Plane, Bw.PlaneBridgeIntersectionCross, [
+				]);
+				i(ZP.Plane, Bw.PlaneBridgeIntersectionCross, [
 					["Planes", "PlaneBridgeIntersectionCross"]
-				]), i(ZP.Plane, Bw.PlaneWall, [
+				]);
+				i(ZP.Plane, Bw.PlaneWall, [
 					["Planes", "PlaneWall"]
-				]), i(ZP.Plane, Bw.PlaneWallCorner, [
+				]);
+				i(ZP.Plane, Bw.PlaneWallCorner, [
 					["Planes", "PlaneWallCorner"]
-				]), i(ZP.Plane, Bw.PlaneWallInnerCorner, [
+				]);
+				i(ZP.Plane, Bw.PlaneWallInnerCorner, [
 					["Planes", "PlaneWallInnerCorner"]
-				]), i(ZP.Plane, Bw.PlaneSlopeUpBlock, [
+				]);
+				i(ZP.Plane, Bw.PlaneSlopeUpBlock, [
 					["Planes", "PlaneSlopeUp"],
 					["Blocks", "BlockSlopeUp"]
 				], [
 					[0, 0, 0],
 					[0, 1, 0]
-				]), i(ZP.Plane, Bw.PlaneSlopeDownBlock, [
+				]);
+				i(ZP.Plane, Bw.PlaneSlopeDownBlock, [
 					["Planes", "PlaneSlopeDown"],
 					["Blocks", "BlockSlopeDown"]
 				], [
 					[0, 0, 0],
 					[0, 1, 0]
-				]), i(ZP.Plane, Bw.PlaneSlopeBlock, [
+				]);
+				i(ZP.Plane, Bw.PlaneSlopeBlock, [
 					["Planes", "PlaneSlope"],
 					["Blocks", "BlockSlopedUp"]
 				], [
 					[0, 0, 0],
 					[0, 1, 0],
 					[0, 2, 0]
-				]), i(ZP.Plane, Bw.PlaneSlopePillar, [
+				]);
+				i(ZP.Plane, Bw.PlaneSlopePillar, [
 					["Planes", "PlaneSlope"],
 					["Pillar", "PillarTopSlope"]
 				], [
 					[0, 0, 0],
 					[0, 1, 0],
 					[0, 2, 0]
-				]), i(ZP.Plane, Bw.PlaneSlopePillarShort, [
+				]);
+				i(ZP.Plane, Bw.PlaneSlopePillarShort, [
 					["Planes", "PlaneSlope"],
 					["Pillar", "PillarShortSlope"]
 				], [
 					[0, 0, 0],
 					[0, 1, 0],
 					[0, 2, 0]
-				]), i(ZP.Block, Bw.Block, [
+				]);
+				i(ZP.Block, Bw.Block, [
 					["Blocks", "Block"]
-				]), i(ZP.Block, Bw.HalfBlock, [
+				]);
+				i(ZP.Block, Bw.HalfBlock, [
 					["Blocks", "HalfBlock"]
-				]), i(ZP.Block, Bw.QuarterBlock, [
+				]);
+				i(ZP.Block, Bw.QuarterBlock, [
 					["Blocks", "QuarterBlock"]
-				]), i(ZP.Block, Bw.BlockSlopedDown, [
+				]);
+				i(ZP.Block, Bw.BlockSlopedDown, [
 					["Blocks", "BlockSlopedDown"]
 				], [
 					[0, 0, 0],
 					[0, 1, 0]
-				]), i(ZP.Block, Bw.BlockSlopedDownInnerCorner, [
+				]);
+				i(ZP.Block, Bw.BlockSlopedDownInnerCorner, [
 					["Blocks", "BlockSlopedDownInnerCorner"]
 				], [
 					[0, 0, 0],
 					[0, 1, 0]
-				]), i(ZP.Block, Bw.BlockSlopedDownOuterCorner, [
+				]);
+				i(ZP.Block, Bw.BlockSlopedDownOuterCorner, [
 					["Blocks", "BlockSlopedDownOuterCorner"]
 				], [
 					[0, 0, 0],
 					[0, 1, 0]
-				]), i(ZP.Block, Bw.BlockSlopedUp, [
+				]);
+				i(ZP.Block, Bw.BlockSlopedUp, [
 					["Blocks", "BlockSlopedUp"]
 				], [
 					[0, 0, 0],
 					[0, 1, 0]
-				]), i(ZP.Block, Bw.BlockSlopedUpInnerCorner, [
+				]);
+				i(ZP.Block, Bw.BlockSlopedUpInnerCorner, [
 					["Blocks", "BlockSlopedUpInnerCorner"]
 				], [
 					[0, 0, 0],
 					[0, 1, 0]
-				]), i(ZP.Block, Bw.BlockSlopedUpOuterCorner, [
+				]);
+				i(ZP.Block, Bw.BlockSlopedUpOuterCorner, [
 					["Blocks", "BlockSlopedUpOuterCorner"]
 				], [
 					[0, 0, 0],
 					[0, 1, 0]
-				]), i(ZP.Block, Bw.BlockSlopeDown, [
+				]);
+				i(ZP.Block, Bw.BlockSlopeDown, [
 					["Blocks", "BlockSlopeDown"]
-				]), i(ZP.Block, Bw.BlockSlopeUp, [
+				]);
+				i(ZP.Block, Bw.BlockSlopeUp, [
 					["Blocks", "BlockSlopeUp"]
-				]), i(ZP.Block, Bw.BlockBridge, [
+				]);
+				i(ZP.Block, Bw.BlockBridge, [
 					["Blocks", "BlockBridge"]
-				]), i(ZP.Block, Bw.BlockBridgeCorner, [
+				]);
+				i(ZP.Block, Bw.BlockBridgeCorner, [
 					["Blocks", "BlockBridgeCorner"]
-				]), i(ZP.Block, Bw.BlockBridgeIntersectionT, [
+				]);
+				i(ZP.Block, Bw.BlockBridgeIntersectionT, [
 					["Blocks", "BlockBridgeIntersectionT"]
-				]), i(ZP.Block, Bw.BlockBridgeIntersectionCross, [
+				]);
+				i(ZP.Block, Bw.BlockBridgeIntersectionCross, [
 					["Blocks", "BlockBridgeIntersectionCross"]
-				]), i(ZP.Block, Bw.RedBlock, [
+				]);
+				i(ZP.Block, Bw.RedBlock, [
 					["Blocks", "Block"]
-				], null, null, a), i(ZP.Block, Bw.RedHalfBlock, [
+				], null, null, a);
+				i(ZP.Block, Bw.RedHalfBlock, [
 					["Blocks", "HalfBlock"]
-				], null, null, a), i(ZP.Block, Bw.RedQuarterBlock, [
+				], null, null, a);
+				i(ZP.Block, Bw.RedQuarterBlock, [
 					["Blocks", "QuarterBlock"]
-				], null, null, a), i(ZP.Block, Bw.RedBlockSlopedDown, [
+				], null, null, a);
+				i(ZP.Block, Bw.RedBlockSlopedDown, [
 					["Blocks", "BlockSlopedDown"]
 				], [
 					[0, 0, 0],
 					[0, 1, 0]
-				], null, a), i(ZP.Block, Bw.RedBlockSlopedDownInnerCorner, [
+				], null, a);
+				i(ZP.Block, Bw.RedBlockSlopedDownInnerCorner, [
 					["Blocks", "BlockSlopedDownInnerCorner"]
 				], [
 					[0, 0, 0],
 					[0, 1, 0]
-				], null, a), i(ZP.Block, Bw.RedBlockSlopedDownOuterCorner, [
+				], null, a);
+				i(ZP.Block, Bw.RedBlockSlopedDownOuterCorner, [
 					["Blocks", "BlockSlopedDownOuterCorner"]
 				], [
 					[0, 0, 0],
 					[0, 1, 0]
-				], null, a), i(ZP.Block, Bw.RedBlockSlopedUp, [
+				], null, a);
+				i(ZP.Block, Bw.RedBlockSlopedUp, [
 					["Blocks", "BlockSlopedUp"]
 				], [
 					[0, 0, 0],
 					[0, 1, 0]
-				], null, a), i(ZP.Block, Bw.RedBlockSlopedUpInnerCorner, [
+				], null, a);
+				i(ZP.Block, Bw.RedBlockSlopedUpInnerCorner, [
 					["Blocks", "BlockSlopedUpInnerCorner"]
 				], [
 					[0, 0, 0],
 					[0, 1, 0]
-				], null, a), i(ZP.Block, Bw.RedBlockSlopedUpOuterCorner, [
+				], null, a);
+				i(ZP.Block, Bw.RedBlockSlopedUpOuterCorner, [
 					["Blocks", "BlockSlopedUpOuterCorner"]
 				], [
 					[0, 0, 0],
 					[0, 1, 0]
-				], null, a), i(ZP.Block, Bw.RedBlockSlopeDown, [
+				], null, a);
+				i(ZP.Block, Bw.RedBlockSlopeDown, [
 					["Blocks", "BlockSlopeDown"]
-				], null, null, a), i(ZP.Block, Bw.RedBlockSlopeUp, [
+				], null, null, a);
+				i(ZP.Block, Bw.RedBlockSlopeUp, [
 					["Blocks", "BlockSlopeUp"]
-				], null, null, a), i(ZP.Block, Bw.RedBlockBridge, [
+				], null, null, a);
+				i(ZP.Block, Bw.RedBlockBridge, [
 					["Blocks", "BlockBridge"]
-				], null, null, a), i(ZP.Block, Bw.RedBlockBridgeCorner, [
+				], null, null, a);
+				i(ZP.Block, Bw.RedBlockBridgeCorner, [
 					["Blocks", "BlockBridgeCorner"]
-				], null, null, a), i(ZP.Block, Bw.RedBlockBridgeIntersectionT, [
+				], null, null, a);
+				i(ZP.Block, Bw.RedBlockBridgeIntersectionT, [
 					["Blocks", "BlockBridgeIntersectionT"]
-				], null, null, a), i(ZP.Block, Bw.RedBlockBridgeIntersectionCross, [
+				], null, null, a);
+				i(ZP.Block, Bw.RedBlockBridgeIntersectionCross, [
 					["Blocks", "BlockBridgeIntersectionCross"]
-				], null, null, a), i(ZP.Block, Bw.BlueBlock, [
+				], null, null, a);
+				i(ZP.Block, Bw.BlueBlock, [
 					["Blocks", "Block"]
-				], null, null, o), i(ZP.Block, Bw.BlueHalfBlock, [
+				], null, null, o);
+				i(ZP.Block, Bw.BlueHalfBlock, [
 					["Blocks", "HalfBlock"]
-				], null, null, o), i(ZP.Block, Bw.BlueQuarterBlock, [
+				], null, null, o);
+				i(ZP.Block, Bw.BlueQuarterBlock, [
 					["Blocks", "QuarterBlock"]
-				], null, null, o), i(ZP.Block, Bw.BlueBlockSlopedDown, [
+				], null, null, o);
+				i(ZP.Block, Bw.BlueBlockSlopedDown, [
 					["Blocks", "BlockSlopedDown"]
 				], [
 					[0, 0, 0],
 					[0, 1, 0]
-				], null, o), i(ZP.Block, Bw.BlueBlockSlopedDownInnerCorner, [
+				], null, o);
+				i(ZP.Block, Bw.BlueBlockSlopedDownInnerCorner, [
 					["Blocks", "BlockSlopedDownInnerCorner"]
 				], [
 					[0, 0, 0],
 					[0, 1, 0]
-				], null, o), i(ZP.Block, Bw.BlueBlockSlopedDownOuterCorner, [
+				], null, o);
+				i(ZP.Block, Bw.BlueBlockSlopedDownOuterCorner, [
 					["Blocks", "BlockSlopedDownOuterCorner"]
 				], [
 					[0, 0, 0],
 					[0, 1, 0]
-				], null, o), i(ZP.Block, Bw.BlueBlockSlopedUp, [
+				], null, o);
+				i(ZP.Block, Bw.BlueBlockSlopedUp, [
 					["Blocks", "BlockSlopedUp"]
 				], [
 					[0, 0, 0],
 					[0, 1, 0]
-				], null, o), i(ZP.Block, Bw.BlueBlockSlopedUpInnerCorner, [
+				], null, o);
+				i(ZP.Block, Bw.BlueBlockSlopedUpInnerCorner, [
 					["Blocks", "BlockSlopedUpInnerCorner"]
 				], [
 					[0, 0, 0],
 					[0, 1, 0]
-				], null, o), i(ZP.Block, Bw.BlueBlockSlopedUpOuterCorner, [
+				], null, o);
+				i(ZP.Block, Bw.BlueBlockSlopedUpOuterCorner, [
 					["Blocks", "BlockSlopedUpOuterCorner"]
 				], [
 					[0, 0, 0],
 					[0, 1, 0]
-				], null, o), i(ZP.Block, Bw.BlueBlockSlopeDown, [
+				], null, o);
+				i(ZP.Block, Bw.BlueBlockSlopeDown, [
 					["Blocks", "BlockSlopeDown"]
-				], null, null, o), i(ZP.Block, Bw.BlueBlockSlopeUp, [
+				], null, null, o);
+				i(ZP.Block, Bw.BlueBlockSlopeUp, [
 					["Blocks", "BlockSlopeUp"]
-				], null, null, o), i(ZP.Block, Bw.BlueBlockBridge, [
+				], null, null, o);
+				i(ZP.Block, Bw.BlueBlockBridge, [
 					["Blocks", "BlockBridge"]
-				], null, null, o), i(ZP.Block, Bw.BlueBlockBridgeCorner, [
+				], null, null, o);
+				i(ZP.Block, Bw.BlueBlockBridgeCorner, [
 					["Blocks", "BlockBridgeCorner"]
-				], null, null, o), i(ZP.Block, Bw.BlueBlockBridgeIntersectionT, [
+				], null, null, o);
+				i(ZP.Block, Bw.BlueBlockBridgeIntersectionT, [
 					["Blocks", "BlockBridgeIntersectionT"]
-				], null, null, o), i(ZP.Block, Bw.BlueBlockBridgeIntersectionCross, [
+				], null, null, o);
+				i(ZP.Block, Bw.BlueBlockBridgeIntersectionCross, [
 					["Blocks", "BlockBridgeIntersectionCross"]
-				], null, null, o), i(ZP.Block, Bw.BlackBlock, [
+				], null, null, o);
+				i(ZP.Block, Bw.BlackBlock, [
 					["Blocks", "Block"]
-				], null, null, s), i(ZP.Block, Bw.BlackHalfBlock, [
+				], null, null, s);
+				i(ZP.Block, Bw.BlackHalfBlock, [
 					["Blocks", "HalfBlock"]
-				], null, null, s), i(ZP.Block, Bw.BlackQuarterBlock, [
+				], null, null, s);
+				i(ZP.Block, Bw.BlackQuarterBlock, [
 					["Blocks", "QuarterBlock"]
-				], null, null, s), i(ZP.Block, Bw.BlackBlockSlopedDown, [
+				], null, null, s);
+				i(ZP.Block, Bw.BlackBlockSlopedDown, [
 					["Blocks", "BlockSlopedDown"]
 				], [
 					[0, 0, 0],
 					[0, 1, 0]
-				], null, s), i(ZP.Block, Bw.BlackBlockSlopedDownInnerCorner, [
+				], null, s);
+				i(ZP.Block, Bw.BlackBlockSlopedDownInnerCorner, [
 					["Blocks", "BlockSlopedDownInnerCorner"]
 				], [
 					[0, 0, 0],
 					[0, 1, 0]
-				], null, s), i(ZP.Block, Bw.BlackBlockSlopedDownOuterCorner, [
+				], null, s);
+				i(ZP.Block, Bw.BlackBlockSlopedDownOuterCorner, [
 					["Blocks", "BlockSlopedDownOuterCorner"]
 				], [
 					[0, 0, 0],
 					[0, 1, 0]
-				], null, s), i(ZP.Block, Bw.BlackBlockSlopedUp, [
+				], null, s);
+				i(ZP.Block, Bw.BlackBlockSlopedUp, [
 					["Blocks", "BlockSlopedUp"]
 				], [
 					[0, 0, 0],
 					[0, 1, 0]
-				], null, s), i(ZP.Block, Bw.BlackBlockSlopedUpInnerCorner, [
+				], null, s);
+				i(ZP.Block, Bw.BlackBlockSlopedUpInnerCorner, [
 					["Blocks", "BlockSlopedUpInnerCorner"]
 				], [
 					[0, 0, 0],
 					[0, 1, 0]
-				], null, s), i(ZP.Block, Bw.BlackBlockSlopedUpOuterCorner, [
+				], null, s);
+				i(ZP.Block, Bw.BlackBlockSlopedUpOuterCorner, [
 					["Blocks", "BlockSlopedUpOuterCorner"]
 				], [
 					[0, 0, 0],
 					[0, 1, 0]
-				], null, s), i(ZP.Block, Bw.BlackBlockSlopeDown, [
+				], null, s);
+				i(ZP.Block, Bw.BlackBlockSlopeDown, [
 					["Blocks", "BlockSlopeDown"]
-				], null, null, s), i(ZP.Block, Bw.BlackBlockSlopeUp, [
+				], null, null, s);
+				i(ZP.Block, Bw.BlackBlockSlopeUp, [
 					["Blocks", "BlockSlopeUp"]
-				], null, null, s), i(ZP.Block, Bw.BlackBlockBridge, [
+				], null, null, s);
+				i(ZP.Block, Bw.BlackBlockBridge, [
 					["Blocks", "BlockBridge"]
-				], null, null, s), i(ZP.Block, Bw.BlackBlockBridgeCorner, [
+				], null, null, s);
+				i(ZP.Block, Bw.BlackBlockBridgeCorner, [
 					["Blocks", "BlockBridgeCorner"]
-				], null, null, s), i(ZP.Block, Bw.BlackBlockBridgeIntersectionT, [
+				], null, null, s);
+				i(ZP.Block, Bw.BlackBlockBridgeIntersectionT, [
 					["Blocks", "BlockBridgeIntersectionT"]
-				], null, null, s), i(ZP.Block, Bw.BlackBlockBridgeIntersectionCross, [
+				], null, null, s);
+				i(ZP.Block, Bw.BlackBlockBridgeIntersectionCross, [
 					["Blocks", "BlockBridgeIntersectionCross"]
-				], null, null, s), i(ZP.WallTrack, Bw.WallTrackTop, [
+				], null, null, s);
+				i(ZP.WallTrack, Bw.WallTrackTop, [
 					["WallTrack", "WallTrackTop"]
 				], [
 					[0, 0, 0],
 					[0, 1, 0],
 					[0, 2, 0],
 					[0, 3, 0]
-				]), i(ZP.WallTrack, Bw.WallTrackMiddle, [
+				]);
+				i(ZP.WallTrack, Bw.WallTrackMiddle, [
 					["WallTrack", "WallTrackMiddle"]
-				]), i(ZP.WallTrack, Bw.WallTrackBottom, [
+				]);
+				i(ZP.WallTrack, Bw.WallTrackBottom, [
 					["WallTrack", "WallTrackBottom"]
 				], [
 					[0, 0, 0],
 					[0, 1, 0],
 					[0, 2, 0],
 					[0, 3, 0]
-				]), i(ZP.WallTrack, Bw.WallTrackTopCorner, [
+				]);
+				i(ZP.WallTrack, Bw.WallTrackTopCorner, [
 					["WallTrack", "WallTrackTopCorner"]
 				], [
 					[0, 0, 0],
 					[0, 1, 0],
 					[0, 2, 0],
 					[0, 3, 0]
-				]), i(ZP.WallTrack, Bw.WallTrackMiddleCorner, [
+				]);
+				i(ZP.WallTrack, Bw.WallTrackMiddleCorner, [
 					["WallTrack", "WallTrackMiddleCorner"]
-				]), i(ZP.WallTrack, Bw.WallTrackBottomCorner, [
+				]);
+				i(ZP.WallTrack, Bw.WallTrackBottomCorner, [
 					["WallTrack", "WallTrackBottomCorner"]
 				], [
 					[0, 0, 0],
 					[0, 1, 0],
 					[0, 2, 0],
 					[0, 3, 0]
-				]), i(ZP.WallTrack, Bw.WallTrackBottomInnerCorner, [
+				]);
+				i(ZP.WallTrack, Bw.WallTrackBottomInnerCorner, [
 					["WallTrack", "WallTrackBottomInnerCorner"]
 				], [
 					[0, 0, 0],
 					[0, 1, 0],
 					[0, 2, 0],
 					[0, 3, 0]
-				]), i(ZP.WallTrack, Bw.WallTrackInnerCorner, [
+				]);
+				i(ZP.WallTrack, Bw.WallTrackInnerCorner, [
 					["WallTrack", "WallTrackInnerCorner"]
-				]), i(ZP.WallTrack, Bw.WallTrackTopInnerCorner, [
+				]);
+				i(ZP.WallTrack, Bw.WallTrackTopInnerCorner, [
 					["WallTrack", "WallTrackTopInnerCorner"]
 				], [
 					[0, 0, 0],
 					[0, 1, 0],
 					[0, 2, 0],
 					[0, 3, 0]
-				]), i(ZP.WallTrack, Bw.WallTrackCeiling, [
+				]);
+				i(ZP.WallTrack, Bw.WallTrackCeiling, [
 					["WallTrack", "WallTrackCeiling"]
-				]), i(ZP.WallTrack, Bw.WallTrackFloor, [
+				]);
+				i(ZP.WallTrack, Bw.WallTrackFloor, [
 					["WallTrack", "WallTrackFloor"]
-				]), i(ZP.Pillar, Bw.PillarTop, [
+				]);
+				i(ZP.Pillar, Bw.PillarTop, [
 					["Pillar", "PillarTop"]
-				]), i(ZP.Pillar, Bw.PillarMiddle, [
+				]);
+				i(ZP.Pillar, Bw.PillarMiddle, [
 					["Pillar", "PillarMiddle"]
-				]), i(ZP.Pillar, Bw.PillarBottom, [
+				]);
+				i(ZP.Pillar, Bw.PillarBottom, [
 					["Pillar", "PillarBottom"]
-				]), i(ZP.Pillar, Bw.PillarShort, [
+				]);
+				i(ZP.Pillar, Bw.PillarShort, [
 					["Pillar", "PillarShort"]
-				]), i(ZP.Pillar, Bw.PillarBranch1, [
+				]);
+				i(ZP.Pillar, Bw.PillarBranch1, [
 					["Pillar", "PillarBranch1"]
-				]), i(ZP.Pillar, Bw.PillarBranch1Top, [
+				]);
+				i(ZP.Pillar, Bw.PillarBranch1Top, [
 					["Pillar", "PillarBranch1Top"]
-				]), i(ZP.Pillar, Bw.PillarBranch1Middle, [
+				]);
+				i(ZP.Pillar, Bw.PillarBranch1Middle, [
 					["Pillar", "PillarBranch1Middle"]
-				]), i(ZP.Pillar, Bw.PillarBranch1Bottom, [
+				]);
+				i(ZP.Pillar, Bw.PillarBranch1Bottom, [
 					["Pillar", "PillarBranch1Bottom"]
-				]), i(ZP.Pillar, Bw.PillarBranch2, [
+				]);
+				i(ZP.Pillar, Bw.PillarBranch2, [
 					["Pillar", "PillarBranch2"]
-				]), i(ZP.Pillar, Bw.PillarBranch2Top, [
+				]);
+				i(ZP.Pillar, Bw.PillarBranch2Top, [
 					["Pillar", "PillarBranch2Top"]
-				]), i(ZP.Pillar, Bw.PillarBranch2Middle, [
+				]);
+				i(ZP.Pillar, Bw.PillarBranch2Middle, [
 					["Pillar", "PillarBranch2Middle"]
-				]), i(ZP.Pillar, Bw.PillarBranch2Bottom, [
+				]);
+				i(ZP.Pillar, Bw.PillarBranch2Bottom, [
 					["Pillar", "PillarBranch2Bottom"]
-				]), i(ZP.Pillar, Bw.PillarBranch3, [
+				]);
+				i(ZP.Pillar, Bw.PillarBranch3, [
 					["Pillar", "PillarBranch3"]
-				]), i(ZP.Pillar, Bw.PillarBranch3Top, [
+				]);
+				i(ZP.Pillar, Bw.PillarBranch3Top, [
 					["Pillar", "PillarBranch3Top"]
-				]), i(ZP.Pillar, Bw.PillarBranch3Middle, [
+				]);
+				i(ZP.Pillar, Bw.PillarBranch3Middle, [
 					["Pillar", "PillarBranch3Middle"]
-				]), i(ZP.Pillar, Bw.PillarBranch3Bottom, [
+				]);
+				i(ZP.Pillar, Bw.PillarBranch3Bottom, [
 					["Pillar", "PillarBranch3Bottom"]
-				]), i(ZP.Pillar, Bw.PillarBranch4, [
+				]);
+				i(ZP.Pillar, Bw.PillarBranch4, [
 					["Pillar", "PillarBranch4"]
-				]), i(ZP.Pillar, Bw.PillarBranch4Top, [
+				]);
+				i(ZP.Pillar, Bw.PillarBranch4Top, [
 					["Pillar", "PillarBranch4Top"]
-				]), i(ZP.Pillar, Bw.PillarBranch4Middle, [
+				]);
+				i(ZP.Pillar, Bw.PillarBranch4Middle, [
 					["Pillar", "PillarBranch4Middle"]
-				]), i(ZP.Pillar, Bw.PillarBranch4Bottom, [
+				]);
+				i(ZP.Pillar, Bw.PillarBranch4Bottom, [
 					["Pillar", "PillarBranch4Bottom"]
-				]), i(ZP.Pillar, Bw.PillarBranch5, [
+				]);
+				i(ZP.Pillar, Bw.PillarBranch5, [
 					["Pillar", "PillarBranch5"]
-				]), i(ZP.Pillar, Bw.PillarBranch5Top, [
+				]);
+				i(ZP.Pillar, Bw.PillarBranch5Top, [
 					["Pillar", "PillarBranch5Top"]
-				]), i(ZP.Pillar, Bw.PillarBranch5Middle, [
+				]);
+				i(ZP.Pillar, Bw.PillarBranch5Middle, [
 					["Pillar", "PillarBranch5Middle"]
-				]), i(ZP.Pillar, Bw.PillarBranch5Bottom, [
+				]);
+				i(ZP.Pillar, Bw.PillarBranch5Bottom, [
 					["Pillar", "PillarBranch5Bottom"]
-				]), i(ZP.Sign, Bw.SignArrowLeft, [
+				]);
+				i(ZP.Sign, Bw.SignArrowLeft, [
 					["Signs", "SignArrowLeft"]
-				]), i(ZP.Sign, Bw.SignArrowRight, [
+				]);
+				i(ZP.Sign, Bw.SignArrowRight, [
 					["Signs", "SignArrowRight"]
-				]), i(ZP.Sign, Bw.SignArrowUp, [
+				]);
+				i(ZP.Sign, Bw.SignArrowUp, [
 					["Signs", "SignArrowUp"]
-				]), i(ZP.Sign, Bw.SignArrowDown, [
+				]);
+				i(ZP.Sign, Bw.SignArrowDown, [
 					["Signs", "SignArrowDown"]
-				]), i(ZP.Sign, Bw.SignWarning, [
+				]);
+				i(ZP.Sign, Bw.SignWarning, [
 					["Signs", "SignWarning"]
-				]), i(ZP.Sign, Bw.SignWrongWay, [
+				]);
+				i(ZP.Sign, Bw.SignWrongWay, [
 					["Signs", "SignWrongWay"]
 				])
 			}))
