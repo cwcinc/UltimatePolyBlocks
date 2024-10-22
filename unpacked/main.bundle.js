@@ -13152,7 +13152,39 @@
 			constructor(e) {
 				super(), this.isMeshStandardMaterial = !0, this.defines = {
 					STANDARD: ""
-				}, this.type = "MeshStandardMaterial", this.color = new tr(16777215), this.roughness = 1, this.metalness = 0, this.map = null, this.lightMap = null, this.lightMapIntensity = 1, this.aoMap = null, this.aoMapIntensity = 1, this.emissive = new tr(0), this.emissiveIntensity = 1, this.emissiveMap = null, this.bumpMap = null, this.bumpScale = 1, this.normalMap = null, this.normalMapType = 0, this.normalScale = new ln(1, 1), this.displacementMap = null, this.displacementScale = 1, this.displacementBias = 0, this.roughnessMap = null, this.metalnessMap = null, this.alphaMap = null, this.envMap = null, this.envMapRotation = new _i, this.envMapIntensity = 1, this.wireframe = !1, this.wireframeLinewidth = 1, this.wireframeLinecap = "round", this.wireframeLinejoin = "round", this.flatShading = !1, this.fog = !0, this.setValues(e)
+				};
+				this.type = "MeshStandardMaterial";
+				this.color = new tr(16777215);
+				this.roughness = 1;
+				this.metalness = 0;
+				this.map = null;
+				this.lightMap = null;
+				this.lightMapIntensity = 1;
+				this.aoMap = null;
+				this.aoMapIntensity = 1;
+				this.emissive = new tr(0);
+				this.emissiveIntensity = 1;
+				this.emissiveMap = null;
+				this.bumpMap = null;
+				this.bumpScale = 1;
+				this.normalMap = null;
+				this.normalMapType = 0;
+				this.normalScale = new ln(1, 1);
+				this.displacementMap = null;
+				this.displacementScale = 1;
+				this.displacementBias = 0;
+				this.roughnessMap = null;
+				this.metalnessMap = null;
+				this.alphaMap = null;
+				this.envMap = null;
+				this.envMapRotation = new _i;
+				this.envMapIntensity = 1;
+				this.wireframe = !1, this.wireframeLinewidth = 1;
+				this.wireframeLinecap = "round";
+				this.wireframeLinejoin = "round";
+				this.flatShading = !1;
+				this.fog = !0;
+				this.setValues(e);
 			}
 			copy(e) {
 				return super.copy(e), this.defines = {
@@ -13219,7 +13251,40 @@
 		}
 		class jc extends rr {
 			constructor(e) {
-				super(), this.isMeshLambertMaterial = !0, this.type = "MeshLambertMaterial", this.color = new tr(16777215), this.map = null, this.lightMap = null, this.lightMapIntensity = 1, this.aoMap = null, this.aoMapIntensity = 1, this.emissive = new tr(0), this.emissiveIntensity = 1, this.emissiveMap = null, this.bumpMap = null, this.bumpScale = 1, this.normalMap = null, this.normalMapType = 0, this.normalScale = new ln(1, 1), this.displacementMap = null, this.displacementScale = 1, this.displacementBias = 0, this.specularMap = null, this.alphaMap = null, this.envMap = null, this.envMapRotation = new _i, this.combine = X, this.reflectivity = 1, this.refractionRatio = .98, this.wireframe = !1, this.wireframeLinewidth = 1, this.wireframeLinecap = "round", this.wireframeLinejoin = "round", this.flatShading = !1, this.fog = !0, this.setValues(e)
+				super();
+				this.isMeshLambertMaterial = !0;
+				this.type = "MeshLambertMaterial";
+				this.color = new tr(16777215);
+				this.map = null;
+				this.lightMap = null;
+				this.lightMapIntensity = 1;
+				this.aoMap = null;
+				this.aoMapIntensity = 1;
+				this.emissive = new tr(0); // IMPORTANT - this makes color do stuff when changed (default tr(0);)
+				this.emissiveIntensity = 1;
+				this.emissiveMap = null;
+				this.bumpMap = null;
+				this.bumpScale = 1;
+				this.normalMap = null;
+				this.normalMapType = 0;
+				this.normalScale = new ln(1, 1);
+				this.displacementMap = null;
+				this.displacementScale = 1;
+				this.displacementBias = 0;
+				this.specularMap = null;
+				this.alphaMap = null;
+				this.envMap = null;
+				this.envMapRotation = new _i;
+				this.combine = X;
+				this.reflectivity = 1;
+				this.refractionRatio = .98;
+				this.wireframe = !1;
+				this.wireframeLinewidth = 1;
+				this.wireframeLinecap = "round";
+				this.wireframeLinejoin = "round";
+				this.flatShading = !1;
+				this.fog = !0;
+				this.setValues(e);
 			}
 			copy(e) {
 				return super.copy(e), this.color.copy(e.color), this.map = e.map, this.lightMap = e.lightMap, this.lightMapIntensity = e.lightMapIntensity, this.aoMap = e.aoMap, this.aoMapIntensity = e.aoMapIntensity, this.emissive.copy(e.emissive), this.emissiveMap = e.emissiveMap, this.emissiveIntensity = e.emissiveIntensity, this.bumpMap = e.bumpMap, this.bumpScale = e.bumpScale, this.normalMap = e.normalMap, this.normalMapType = e.normalMapType, this.normalScale.copy(e.normalScale), this.displacementMap = e.displacementMap, this.displacementScale = e.displacementScale, this.displacementBias = e.displacementBias, this.specularMap = e.specularMap, this.alphaMap = e.alphaMap, this.envMap = e.envMap, this.envMapRotation.copy(e.envMapRotation), this.combine = e.combine, this.reflectivity = e.reflectivity, this.refractionRatio = e.refractionRatio, this.wireframe = e.wireframe, this.wireframeLinewidth = e.wireframeLinewidth, this.wireframeLinecap = e.wireframeLinecap, this.wireframeLinejoin = e.wireframeLinejoin, this.flatShading = e.flatShading, this.fog = e.fog, this
@@ -19442,7 +19507,7 @@
 		! function(e) { 			/*   IMPORTANT - main blocks list   */
 			for (let index = 0; index < moddedBlocks.blocks.length; index++) {
 				let block = moddedBlocks.blocks[index];
-				e[e[block.name] = (179 + index)] = block.name;
+				e[e[block.name] = block.id] = block.name;
 			}
 
 			e[e.Straight = 0] = "Straight";
@@ -23449,7 +23514,7 @@
 			const C = document.createElement("a");
 			C.href = "https://www.kodub.com", C.target = "_blank", C.textContent = "kodub.com - " + t.get("Version") + " " + wC.rE, GC(this, SC, "f").appendChild(C);
 			const P = document.createElement("a");
-			P.href = "https://opengameart.org/content/sci-fi-theme-1", P.target = "_blank", P.textContent = 'UltimatePolyBlocks theme - cwcinc', GC(this, SC, "f").appendChild(P), i.hasLoaded() ? GC(this, yC, "m", zC).call(this) : (VC(this, MC, new uT(GC(this, _C, "f"), t, i), "f"), i.addCompleteListener((() => {
+			P.href = "https://www.youtube.com/watch?v=PiSbmQiPVec", P.target = "_blank", P.textContent = '"I\'m Playing PolyTrack" - cwcinc', GC(this, SC, "f").appendChild(P), i.hasLoaded() ? GC(this, yC, "m", zC).call(this) : (VC(this, MC, new uT(GC(this, _C, "f"), t, i), "f"), i.addCompleteListener((() => {
 				var e;
 				null === (e = GC(this, MC, "f")) || void 0 === e || e.dispose(), VC(this, MC, null, "f");
 				null == o.getToken() ? (E.disabled = !0, GC(this, yC, "m", FC).call(this), u.show(t.get("Failed to create user token.") + " " + t.get("Leaderboard is disabled.") + "\n\n" + t.get("Please try another browser or device."), t.get("Ok"), (() => {
@@ -23953,14 +24018,11 @@
 						])
 				*/
 
-				/*for (let index = 0; index < moddedBlocks.blocks.length; indexindex++) {
+				for (let index = 0; index < moddedBlocks.blocks.length; index++) {
 					let block = moddedBlocks.blocks[index];
 					i(ZP[block.category], Bw[block.name], [[block.blenderSceneName, block.name]]);
-				}*/
-				let block = moddedBlocks.blocks[0];
-				i(ZP[block.category], Bw[block.name], [[block.blenderSceneName, block.name]]);
+				}
 
-				//i(ZP.Minecraft, Bw.Dirt, [["Minecraft", "Dirt"]]);
 				i(ZP.Special, Bw.Start, [["Road", "Start"]]);
 				i(ZP.Special, Bw.Checkpoint, [["Road", "Checkpoint"]], [
 					[0, 0, 0]
@@ -29477,7 +29539,7 @@
 				const t = new sR,
 					n = new iL,
 					i = new hd(e);
-				i.load("music", ["audio/music.mp3", "audio/music.flac"]), i.load("click", ["audio/click.flac"]), i.load("engine", ["audio/engine.flac"]), i.load("suspension", ["audio/suspension.flac"]), i.load("tires", ["audio/tires.flac"]), i.load("collision", ["audio/collision.flac"]), i.load("skidding", ["audio/skidding.flac"]), i.load("editor_edit", ["audio/editor_edit.flac"]), i.load("checkpoint", ["audio/checkpoint.flac"]), i.load("finish", ["audio/checkpoint.flac"]), Ou.initResources(e), Uv.initResources(e), rb.initResources(e);
+				i.load("music", ["ultimateMod/audio/implayingpolytrack.ogg"]), i.load("click", ["audio/click.flac"]), i.load("engine", ["audio/engine.flac"]), i.load("suspension", ["audio/suspension.flac"]), i.load("tires", ["audio/tires.flac"]), i.load("collision", ["audio/collision.flac"]), i.load("skidding", ["audio/skidding.flac"]), i.load("editor_edit", ["audio/editor_edit.flac"]), i.load("checkpoint", ["audio/checkpoint.flac"]), i.load("finish", ["audio/checkpoint.flac"]), Ou.initResources(e), Uv.initResources(e), rb.initResources(e);
 				const r = new rR(e),
 					a = new qR;
 				a.migrate(r), e.addResource();
