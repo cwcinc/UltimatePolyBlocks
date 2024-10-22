@@ -1,3 +1,4 @@
+
 (() => {
 	var e = {
 			811: (e, t, n) => {
@@ -19439,6 +19440,11 @@
 		};
 		var Uw;
 		! function(e) { 			/*   IMPORTANT - main blocks list   */
+			for (let index = 0; index < moddedBlocks.blocks.length; index++) {
+				let block = moddedBlocks.blocks[index];
+				e[e[block.name] = (179 + index)] = block.name;
+			}
+
 			e[e.Straight = 0] = "Straight";
 			e[e.TurnSharp = 1] = "TurnSharp";
 			e[e.SlopeUp = 2] = "SlopeUp";
@@ -23758,8 +23764,21 @@
 			}
 		};
 		var KP;
-		! function(e) {
-			e[e.Special = 0] = "Special", e[e.Road = 1] = "Road", e[e.RoadTurns = 2] = "RoadTurns", e[e.RoadWide = 3] = "RoadWide", e[e.Plane = 4] = "Plane", e[e.Block = 5] = "Block", e[e.WallTrack = 6] = "WallTrack", e[e.Pillar = 7] = "Pillar", e[e.Sign = 8] = "Sign"
+		! function(e) {  /*    IMPORTANT - block categories   */
+			for (let index = 0; index < moddedBlocks.categories.length; index++) {
+				let category = moddedBlocks.categories[index];
+				e[e[category] = (9 + index)] = category;
+			}
+			
+			e[e.Special = 0] = "Special";
+			e[e.Road = 1] = "Road";
+			e[e.RoadTurns = 2] = "RoadTurns";
+			e[e.RoadWide = 3] = "RoadWide";
+			e[e.Plane = 4] = "Plane";
+			e[e.Block = 5] = "Block";
+			e[e.WallTrack = 6] = "WallTrack";
+			e[e.Pillar = 7] = "Pillar";
+			e[e.Sign = 8] = "Sign"
 		}(KP || (KP = {}));
 		const ZP = KP;
 		var JP, QP, $P, eR, tR = function(e, t, n, i) {
@@ -23838,7 +23857,8 @@
 		}
 		QP = new WeakMap, $P = new WeakMap, JP = new WeakSet, eR = function() {
 			return tR(this, void 0, void 0, (function*() {
-				const e = (t = ["models/block.glb", "models/pillar.glb", "models/plane.glb", "models/road.glb", "models/road_wide.glb", "models/signs.glb", "models/wall_track.glb"], Promise.all(t.map((e => {
+				const e = (t = ["models/block.glb", "models/pillar.glb", "models/plane.glb", "models/road.glb", "models/road_wide.glb", "models/signs.glb", "models/wall_track.glb"].concat(moddedBlocks.modelPaths), 
+					Promise.all(t.map((e => {
 					return t = e, new Promise((e => {
 						(new fd).load(t, (t => {
 							e(t)
@@ -23933,6 +23953,14 @@
 						])
 				*/
 
+				/*for (let index = 0; index < moddedBlocks.blocks.length; indexindex++) {
+					let block = moddedBlocks.blocks[index];
+					i(ZP[block.category], Bw[block.name], [[block.blenderSceneName, block.name]]);
+				}*/
+				let block = moddedBlocks.blocks[0];
+				i(ZP[block.category], Bw[block.name], [[block.blenderSceneName, block.name]]);
+
+				//i(ZP.Minecraft, Bw.Dirt, [["Minecraft", "Dirt"]]);
 				i(ZP.Special, Bw.Start, [["Road", "Start"]]);
 				i(ZP.Special, Bw.Checkpoint, [["Road", "Checkpoint"]], [
 					[0, 0, 0]
