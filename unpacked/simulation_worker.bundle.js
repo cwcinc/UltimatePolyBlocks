@@ -24,6 +24,8 @@ const moddedBlocks = {
 		{name: "PolyCarStatueGold", category: "Statues", blenderSceneName: "Statues", id: 195},
 		{name: "PolyCarStatueSilver", category: "Statues", blenderSceneName: "Statues", id: 194},
 		{name: "PolyCarStatueBronze", category: "Statues", blenderSceneName: "Statues", id: 191},
+		{name: "KodubStatue", category: "Statues", blenderSceneName: "Statues", id: 212},
+		{name: "StatueBase", category: "Statues", blenderSceneName: "Statues", id: 213},
 		{name: "PolyCar", category: "Statues", blenderSceneName: "Statues", id: 189},
 
 		{name: "StopSignPole", category: "RoadSigns", blenderSceneName: "RoadSigns", id: 192},
@@ -34,18 +36,21 @@ const moddedBlocks = {
 		{name: "SL500", category: "RoadSigns", blenderSceneName: "RoadSigns", id: 199},
 		{name: "SL999", category: "RoadSigns", blenderSceneName: "RoadSigns", id: 200},
 		
-		{name: "FinishLine", category: "SpecialBlocks", blenderSceneName: "SpecialBlocks", id: 201, isFinish: true},
-		{name: "CheckpointLine", category: "SpecialBlocks", blenderSceneName: "SpecialBlocks", id: 202, isCheckpoint: true},
-		{name: "StartLine", category: "SpecialBlocks", blenderSceneName: "SpecialBlocks", id: 203, isStart: true},
-		{name: "BarlessCheckpoint", category: "SpecialBlocks", blenderSceneName: "SpecialBlocks", id: 204, isFinish: true},
-		{name: "BarlessFinish", category: "SpecialBlocks", blenderSceneName: "SpecialBlocks", id: 205, isCheckpoint: true},
-		{name: "UpsideDownCheckpoint", category: "SpecialBlocks", blenderSceneName: "SpecialBlocks", id: 206, isStart: true},
-		{name: "UpsideDownFinish", category: "SpecialBlocks", blenderSceneName: "SpecialBlocks", id: 207, isCheckpoint: true},
-		{name: "VerticalFinish", category: "SpecialBlocks", blenderSceneName: "SpecialBlocks", id: 208, isStart: true},
-		{name: "WallFinish", category: "SpecialBlocks", blenderSceneName: "SpecialBlocks", id: 209, isCheckpoint: true},
-		{name: "VerticalCheckpoint", category: "SpecialBlocks", blenderSceneName: "SpecialBlocks", id: 210, isStart: true},
-		{name: "WallCheckpoint", category: "SpecialBlocks", blenderSceneName: "SpecialBlocks", id: 211, isStart: true},
-    ]
+		{name: "StartLine", category: "SpecialBlocks", blenderSceneName: "SpecialBlocks", id: 201, isStart: true},
+		{name: "FinishLine", category: "SpecialBlocks", blenderSceneName: "SpecialBlocks", id: 202, isFinish: true},
+		{name: "BarlessFinish", category: "SpecialBlocks", blenderSceneName: "SpecialBlocks", id: 203, isFinish: true},
+		{name: "UpsideDownFinish", category: "SpecialBlocks", blenderSceneName: "SpecialBlocks", id: 204, isFinish: true},
+		{name: "VerticalFinish", category: "SpecialBlocks", blenderSceneName: "SpecialBlocks", id: 205, isFinish: true},
+		{name: "WallFinish", category: "SpecialBlocks", blenderSceneName: "SpecialBlocks", id: 206, isFinish: true},
+		{name: "CheckpointLine", category: "SpecialBlocks", blenderSceneName: "SpecialBlocks", id: 207, isCheckpoint: true},
+		{name: "BarlessCheckpoint", category: "SpecialBlocks", blenderSceneName: "SpecialBlocks", id: 208, isCheckpoint: true},
+		{name: "UpsideDownCheckpoint", category: "SpecialBlocks", blenderSceneName: "SpecialBlocks", id: 209, isCheckpoint: true},
+		{name: "VerticalCheckpoint", category: "SpecialBlocks", blenderSceneName: "SpecialBlocks", id: 210, isCheckpoint: true},
+		{name: "WallCheckpoint", category: "SpecialBlocks", blenderSceneName: "SpecialBlocks", id: 211, isCheckpoint: true},
+    	
+		
+		// next id: 214
+	]
 };
 
 

@@ -24,6 +24,8 @@ const moddedBlocks = {
 		{name: "PolyCarStatueGold", category: "Statues", blenderSceneName: "Statues", id: 195},
 		{name: "PolyCarStatueSilver", category: "Statues", blenderSceneName: "Statues", id: 194},
 		{name: "PolyCarStatueBronze", category: "Statues", blenderSceneName: "Statues", id: 191},
+		{name: "KodubStatue", category: "Statues", blenderSceneName: "Statues", id: 212},
+		{name: "StatueBase", category: "Statues", blenderSceneName: "Statues", id: 213},
 		{name: "PolyCar", category: "Statues", blenderSceneName: "Statues", id: 189},
 
 		{name: "StopSignPole", category: "RoadSigns", blenderSceneName: "RoadSigns", id: 192},
@@ -45,5 +47,8 @@ const moddedBlocks = {
 		{name: "UpsideDownCheckpoint", category: "SpecialBlocks", blenderSceneName: "SpecialBlocks", id: 209, isCheckpoint: true},
 		{name: "VerticalCheckpoint", category: "SpecialBlocks", blenderSceneName: "SpecialBlocks", id: 210, isCheckpoint: true},
 		{name: "WallCheckpoint", category: "SpecialBlocks", blenderSceneName: "SpecialBlocks", id: 211, isCheckpoint: true},
-    ]
+    	
+		
+		// next id: 214
+	]
 };
