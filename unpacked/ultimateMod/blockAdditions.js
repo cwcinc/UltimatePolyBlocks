@@ -1,13 +1,14 @@
 const modVersion = "0.1.0";
 
 const moddedBlocks = {
-	categories: ["Minecraft", "CustomSigns", "Statues", "RoadSigns", "SpecialBlocks"],
+	categories: ["Minecraft", "CustomSigns", "Statues", "RoadSigns", "SpecialBlocks", "Space"],
 	modelPaths: [
 		"ultimateMod/models/minecraft.glb",
 		"ultimateMod/models/customSigns.glb",
 		"ultimateMod/models/statues.glb",
 		"ultimateMod/models/roadSigns.glb",
-		"ultimateMod/models/specialBlocks.glb"
+		"ultimateMod/models/specialBlocks.glb",
+		"ultimateMod/models/space.glb"
 	],
     blocks: [
 		{name: "Grass", category: "Minecraft", blenderSceneName: "Minecraft", id: 180},
@@ -50,7 +51,13 @@ const moddedBlocks = {
 		{name: "VerticalCheckpoint", category: "SpecialBlocks", blenderSceneName: "SpecialBlocks", id: 210, isCheckpoint: true},
 		{name: "WallCheckpoint", category: "SpecialBlocks", blenderSceneName: "SpecialBlocks", id: 211, isCheckpoint: true},
     	
-		
-		// next id: 214
+		{name: "planet1", category: "Space", blenderSceneName: "Space", id: 214},
+		{name: "planet2", category: "Space", blenderSceneName: "Space", id: 215},
+		{name: "planet3", category: "Space", blenderSceneName: "Space", id: 216},
+		{name: "planet4", category: "Space", blenderSceneName: "Space", id: 217},
+		{name: "planet5", category: "Space", blenderSceneName: "Space", id: 218},
+		{name: "planet6", category: "Space", blenderSceneName: "Space", id: 219}
+
+		// next id: 220
 	]
 };
