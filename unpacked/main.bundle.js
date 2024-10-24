@@ -20229,7 +20229,7 @@
 				const o = xy(e, t);
 				return null != o ? o : null
 			}
-			createThumbnail(e) {
+			createThumbnail(e) { // IMPORTANT - creates thumbnail
 				const t = document.createElement("canvas");
 				let n = 0,
 					i = 0,
@@ -20250,7 +20250,7 @@
 					u = [];
 				return this.forEachPart(((t, r, a, o, s) => {
 					const l = e.getPart(o);
-					l.tiles.rotated(s).forEach(((e, r, s) => {		// IMPORTANT - Start block detector (multistart)
+					l.tiles.rotated(s).forEach(((e, r, s) => {		// IMPORTANT - Start block visualize (multistart)
 						c.fillRect(t + e - n, a + s - i, 1, 1), ((o == Bw.Start) || (o == Bw.StartLine)) ? d.push([t + e - n, a + s - i]) : null != l.detector && l.detector.type == yy.Checkpoint ? h.push([t + e - n, a + s - i]) : null != l.detector && l.detector.type == yy.Finish && u.push([t + e - n, a + s - i])
 					}))
 				})), c.fillStyle = "#e2c026", h.forEach((([e, t]) => {

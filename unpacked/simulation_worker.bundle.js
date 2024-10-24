@@ -8563,8 +8563,8 @@ const moddedBlocks = {
 				min: new V,
 				max: new V
 			}, "f")
-		}, bl = function() {
-			const t = Al(this, gl, "f").get(nl.Start);
+		}, bl = function() {  // IMPORTANT - start line (multistart)
+			const t = Al(this, gl, "f").has(nl.StartLine) ? Al(this, gl, "f").get(nl.StartLine) : Al(this, gl, "f").get(nl.Start);
 			return null != t && t.length > 0 ? t[t.length - 1] : null
 		}, El.partWidth = 20, El.partHeight = 5, El.partLength = 20;
 		const Cl = El;
@@ -8573,8 +8573,8 @@ const moddedBlocks = {
 			if ("function" == typeof e ? t !== e || !i : !e.has(t)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
 			return "m" === n ? i : "a" === n ? i.call(t) : i ? i.value : e.get(t)
 		};
-		kl = new WeakMap, Pl = new WeakSet, Il = function() {
-			const t = Nl(this, kl, "f").get(nl.Start);
+		kl = new WeakMap, Pl = new WeakSet, Il = function() { // IMPORTANT - start line (multistart)
+			const t = Nl(this, kl, "f").has(nl.StartLine) ? Nl(this, kl, "f").get(nl.StartLine) : Nl(this, kl, "f").get(nl.Start);
 			return null != t && t.length > 0 ? t[t.length - 1] : null
 		}, Dl = function(t) {
 			const e = t.getPartTypesWithDetector($o.Checkpoint),
@@ -8639,7 +8639,7 @@ const moddedBlocks = {
 				}
 			}
 			hasStartingPoint() {
-				return Nl(this, kl, "f").has(nl.Start)
+				return (Nl(this, kl, "f").has(nl.Start) || Nl(this, kl, "f").has(nl.StartLine))
 			}
 			getStartTransform() {
 				const t = Nl(this, Pl, "m", Il).call(this);
@@ -8781,7 +8781,7 @@ const moddedBlocks = {
 				return this.forEachPart(((e, r, a, o, s) => {
 					const l = t.getPart(o);
 					l.tiles.rotated(s).forEach(((t, r, s) => {
-						c.fillRect(e + t - n, a + s - i, 1, 1), o == nl.Start ? d.push([e + t - n, a + s - i]) : null != l.detector && l.detector.type == $o.Checkpoint ? h.push([e + t - n, a + s - i]) : null != l.detector && l.detector.type == $o.Finish && u.push([e + t - n, a + s - i])
+						c.fillRect(e + t - n, a + s - i, 1, 1), ((o == nl.Start) || (o == nl.StartLine)) ? d.push([e + t - n, a + s - i]) : null != l.detector && l.detector.type == $o.Checkpoint ? h.push([e + t - n, a + s - i]) : null != l.detector && l.detector.type == $o.Finish && u.push([e + t - n, a + s - i])
 					}))
 				})), c.fillStyle = "#e2c026", h.forEach((([t, e]) => {
 					c.fillRect(t, e, 1, 1)
