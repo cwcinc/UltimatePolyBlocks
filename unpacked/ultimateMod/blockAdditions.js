@@ -1,4 +1,5 @@
 const modVersion = "0.1.0";
+const lbVersion = "0.4.1";
 
 const moddedBlocks = {
 	categories: ["Minecraft", "CustomSigns", "Statues", "RoadSigns", "SpecialBlocks", "Space"],

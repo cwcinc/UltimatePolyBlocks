@@ -23350,8 +23350,8 @@
 					gC(this, uC, "f").removeChild(gC(this, pC, "f")), window.removeEventListener("keydown", gC(this, fC, "f"))
 				}
 			},
-			wC = {   // IMPORTANT - mod version
-				rE: modVersion
+			wC = {   // IMPORTANT - game version
+				rE: lbVersion
 			};
 		var yC, bC, xC, _C, kC, EC, SC, MC, TC, AC, CC, PC, RC, LC, IC, NC, DC, UC, BC, OC, zC, FC, WC, HC, VC = function(e, t, n, i, r) {
 				if ("m" === i) throw new TypeError("Private method is not writable");
@@ -23512,7 +23512,7 @@
 			}
 			VC(this, EC, document.createElement("a"), "f"), GC(this, EC, "f").className = "discord-link", GC(this, EC, "f").href = "https://www.kodub.com/discord/polytrack", GC(this, EC, "f").target = "_blank", GC(this, EC, "f").innerHTML = '<img src="images/discord.svg">', GC(this, _C, "f").appendChild(GC(this, EC, "f")), VC(this, SC, document.createElement("div"), "f"), GC(this, SC, "f").className = "info", GC(this, _C, "f").appendChild(GC(this, SC, "f"));
 			const C = document.createElement("a");
-			C.href = "https://www.kodub.com", C.target = "_blank", C.textContent = "UltimatePolyBlocks - " + t.get("Version") + " " + wC.rE, GC(this, SC, "f").appendChild(C);
+			C.href = "https://www.kodub.com", C.target = "_blank", C.textContent = "UltimatePolyBlocks - " + t.get("Version") + " " + modVersion, GC(this, SC, "f").appendChild(C);
 			const P = document.createElement("a");
 			P.href = "https://www.youtube.com/watch?v=PiSbmQiPVec", P.target = "_blank", P.textContent = '"I\'m Playing PolyTrack" - cwcinc', GC(this, SC, "f").appendChild(P), i.hasLoaded() ? GC(this, yC, "m", zC).call(this) : (VC(this, MC, new uT(GC(this, _C, "f"), t, i), "f"), i.addCompleteListener((() => {
 				var e;
