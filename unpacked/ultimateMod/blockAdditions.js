@@ -4,28 +4,28 @@ const lbVersion = "0.4.1";
 const moddedEnvironment = {
 	skyColor: {
 		horizon: {	// Horizon color of sky gradient (default 255 255 255)
-			r: 255,
-			g: 255,
-			b: 255
+			r: 0,
+			g: 0,
+			b: 0
 		},
 		zenith: {	// Top color of sky gradient (default 5 140 255)
-			r: 5,
-			g: 140,
-			b: 255
+			r: 10,
+			g: 5,
+			b: 0
 		}
 	},
 	skyLight: {
 		lightColor: {
-			r: 59,	// default 59
-			g: 97,	// default 97
+			r: 141,	// default 59
+			g: 141,	// default 97
 			b: 141	// default 141
 		},
 		groundColor: {
-			r: 178,	// default 178
-			g: 192,	// default 192
+			r: 195,	// default 178
+			g: 195,	// default 192
 			b: 195	// default 195
 		},
-		intensity: 4.7	// default 4.7
+		intensity: 1	// default 4.7
 	},
 	sun: {
 		size: 1/1000,	// size of the sun (default 1/1000)
@@ -39,18 +39,18 @@ const moddedEnvironment = {
 	sunLight: {
 		color: {
 			r: 255,	// default 255
-			g: 255,	// default 255
-			b: 255	// default 255
+			g: 100,	// default 255
+			b: 0	// default 255
 		},
-		intensity: 4.7	// default 4.7
+		intensity: 1	// default 4.7
 	},
 	fog: {
 		color: {
-			r: 103,	// default 103
-			g: 169,	// default 169
-			b: 169	// default 169
+			r: 0,	// default 103
+			g: 0,	// default 169
+			b: 0	// default 169
 		},
-		density: 0.001	// default 0.001
+		density: 0.02	// default 0.001
 	},
 	mountains: {
 		color: {
