@@ -10916,7 +10916,7 @@
 					this.clear(!1, !1, !0)
 				}, this.dispose = function() {
 					t.removeEventListener("webglcontextlost", Ie, !1), t.removeEventListener("webglcontextrestored", Ne, !1), t.removeEventListener("webglcontextcreationerror", De, !1), he.dispose(), de.dispose(), te.dispose(), ie.dispose(), re.dispose(), se.dispose(), xe.dispose(), ke.dispose(), le.dispose(), Le.dispose(), Le.removeEventListener("sessionstart", Fe), Le.removeEventListener("sessionend", Ve), Ge.stop()
-				}, this.renderBufferDirect = function(e, t, n, i, r, a) {
+				}, this.renderBufferDirect = function(e, t, n, i, r, a) { // IMPORTANT - main rendering code inner
 					null === t && (t = X);
 					const o = r.isMesh && r.matrixWorld.determinant() < 0,
 						s = function(e, t, n, i, r) {
@@ -11086,7 +11086,7 @@
 					for (let e = 0, a = r.length; e < a; e++) je(r[e], t, n, i)
 				}
 
-				function qe(e, t, n, i) {
+				function qe(e, t, n, i) {	// IMPORTANT - even more outer world render
 					const r = e.opaque,
 						a = e.transmissive,
 						o = e.transparent;
@@ -11130,7 +11130,7 @@
 					y.setRenderTarget(s), y.setClearColor(R, L), void 0 !== c && (i.viewport = c), y.toneMapping = l
 				}
 
-				function Ye(e, t, n) {
+				function Ye(e, t, n) { 			// IMPORTANT - more outer world render. (t = all world objects)
 					const i = !0 === t.isScene ? t.overrideMaterial : null;
 					for (let r = 0, a = e.length; r < a; r++) {
 						const a = e[r],
@@ -11142,8 +11142,19 @@
 					}
 				}
 
-				function Ke(e, t, n, i, r, a) {
-					e.onBeforeRender(y, t, n, i, r, a), e.modelViewMatrix.multiplyMatrices(n.matrixWorldInverse, e.matrixWorld), e.normalMatrix.getNormalMatrix(e.modelViewMatrix), !0 === r.transparent && 2 === r.side && !1 === r.forceSinglePass ? (r.side = T, r.needsUpdate = !0, y.renderBufferDirect(n, t, i, r, e, a), r.side = M, r.needsUpdate = !0, y.renderBufferDirect(n, t, i, r, e, a), r.side = 2) : y.renderBufferDirect(n, t, i, r, e, a), e.onAfterRender(y, t, n, i, r, a)
+				function Ke(e, t, n, i, r, a) { // IMPORTANT - main rendering code (outer)
+					e.onBeforeRender(y, t, n, i, r, a);
+					e.modelViewMatrix.multiplyMatrices(n.matrixWorldInverse, e.matrixWorld);
+					e.normalMatrix.getNormalMatrix(e.modelViewMatrix);
+					!0 === r.transparent && 2 === r.side && !1 === r.forceSinglePass ? (
+						r.side = T,
+						r.needsUpdate = !0,
+						y.renderBufferDirect(n, t, i, r, e, a),
+						r.side = M,
+						r.needsUpdate = !0,
+						y.renderBufferDirect(n, t, i, r, e, a), r.side = 2
+					) : y.renderBufferDirect(n, t, i, r, e, a);
+					e.onAfterRender(y, t, n, i, r, a)
 				}
 
 				function Ze(e, t, n) {
@@ -11180,9 +11191,16 @@
 				}
 				Ge.setAnimationLoop((function(e) {
 					Oe && Oe(e)
-				})), "undefined" != typeof self && Ge.setContext(self), this.setAnimationLoop = function(e) {
-					Oe = e, Le.setAnimationLoop(e), null === e ? Ge.stop() : Ge.start()
-				}, Le.addEventListener("sessionstart", Fe), Le.addEventListener("sessionend", Ve), this.render = function(e, t) {
+				}))
+				"undefined" != typeof self && Ge.setContext(self);
+				this.setAnimationLoop = function(e) {
+					Oe = e;
+					Le.setAnimationLoop(e);
+					null === e ? Ge.stop() : Ge.start()
+				};
+				Le.addEventListener("sessionstart", Fe);
+				Le.addEventListener("sessionend", Ve);
+				this.render = function(e, t) {		// IMPORTANT - outermost render function
 					if (void 0 !== t && !0 !== t.isCamera) return void console.error("THREE.WebGLRenderer.render: camera is not an instance of THREE.Camera.");
 					if (!0 === b) return;
 					if (!0 === e.matrixWorldAutoUpdate && e.updateMatrixWorld(), null === t.parent && !0 === t.matrixWorldAutoUpdate && t.updateMatrixWorld(), !0 === Le.enabled && !0 === Le.isPresenting && (!0 === Le.cameraAutoUpdate && Le.updateCamera(t), t = Le.getCamera()), !0 === e.isScene && e.onBeforeRender(y, e, t, k), g = de.get(e, w.length), g.init(t), w.push(g), G.multiplyMatrices(t.projectionMatrix, t.matrixWorldInverse), W.setFromProjectionMatrix(G), V = this.localClippingEnabled, H = ue.init(this.clippingPlanes, V), f = he.get(e, v.length), f.init(), v.push(f), !0 === Le.enabled && !0 === Le.isPresenting) {
@@ -20362,7 +20380,7 @@
 					}
 				})), i
 			}
-			generateMeshes() {
+			generateMeshes() {			// IMPORTANT - generate meshes from track data
 				qy(this, Ry, "m", Wy).call(this);
 				const e = qy(this, Ly, "f").getShadowDirection(),
 					t = new Pn(e.x, e.y, e.z, 0);
@@ -20517,7 +20535,8 @@
 							if (3 != t.rotation) throw "Invalid rotation";
 							i = new Un(n.z, n.y, n.x)
 						}
-						i.add(new Un(t.x * Ky.partWidth, t.y * Ky.partHeight, t.z * Ky.partLength)), i.add(new Un(0, -1.3, 0));
+						i.add(new Un(t.x * Ky.partWidth, t.y * Ky.partHeight, t.z * Ky.partLength)), 
+						i.add(new Un(0, -1.3, 0));
 						const r = nb(Zy, Zy, "f", eb).generateShapes((t.checkpointOrder + 1).toString(), 4),
 							a = new Wc(r);
 						a.computeBoundingBox();
@@ -21678,35 +21697,55 @@
 				$x.add(this), e_.set(this, void 0), t_.set(this, performance.now()), n_.set(this, void 0), i_.set(this, void 0), r_.set(this, void 0), a_.set(this, void 0), o_.set(this, void 0), s_.set(this, void 0), l_.set(this, void 0), c_.set(this, void 0), h_.set(this, void 0), d_.set(this, void 0), u_.set(this, void 0), p_.set(this, void 0), f_.set(this, null), m_.set(this, !1), g_.set(this, void 0), v_.set(this, void 0), w_.set(this, void 0), y_.set(this, void 0), b_.set(this, null), x_.set(this, void 0), __.set(this, void 0), k_.set(this, void 0), E_.set(this, void 0), S_.set(this, void 0), M_.set(this, null), T_.set(this, void 0), A_.set(this, null), C_.set(this, void 0), P_.set(this, void 0), R_.set(this, void 0), L_.set(this, void 0), I_.set(this, void 0), N_.set(this, void 0), D_.set(this, void 0), U_.set(this, void 0), B_.set(this, void 0), O_.set(this, void 0), z_.set(this, void 0), F_.set(this, void 0), W_.set(this, void 0), H_.set(this, !1), V_.set(this, !1), G_.set(this, !1), j_.set(this, !1), q_.set(this, !1), X_.set(this, !1), Y_.set(this, !1), K_.set(this, !0), Z_.set(this, void 0), J_.set(this, void 0), Q_.set(this, void 0), $_.set(this, void 0), ek.set(this, !1), tk.set(this, !1), nk.set(this, null), ik.set(this, null), rk.set(this, !1), ak.set(this, null), ok.set(this, 0), sk.set(this, null), lk.set(this, 1e3), ck.set(this, null), hk.set(this, []), dk.set(this, 1), uk.set(this, []), pk.set(this, null), _k.set(this, null), kk.set(this, null), Ek.set(this, null), Nk(this, n_, e, "f"), Nk(this, e_, t, "f"), Nk(this, i_, n, "f"), Nk(this, r_, i, "f"), Nk(this, a_, r, "f"), Nk(this, o_, a, "f"), Nk(this, h_, o, "f"), Nk(this, s_, s, "f"), Nk(this, l_, l, "f"), Nk(this, c_, c, "f"), Nk(this, d_, h, "f"), Nk(this, u_, d, "f"), Nk(this, p_, u, "f"), Nk(this, F_, new Kr(70, 1, .1, 1e4), "f"), Dk(this, F_, "f").position.set(40, 40, -40), n.scene.add(Dk(this, F_, "f")), Nk(this, W_, new ay(Dk(this, F_, "f"), n.canvas), "f"), Dk(this, W_, "f").mouseButtons = {
 					MIDDLE: g,
 					RIGHT: w
-				}, Dk(this, W_, "f").minDistance = 4, Dk(this, W_, "f").maxDistance = 600, Nk(this, Z_, new jh, "f"), Nk(this, $_, new jc({
+				}, 
+				Dk(this, W_, "f").minDistance = 4, 
+				Dk(this, W_, "f").maxDistance = 600, 
+				Nk(this, Z_, new jh, "f"), 
+				Nk(this, $_, new jc({			// editor transparent block ?
 					transparent: !0,
 					opacity: .3,
 					polygonOffset: !0,
 					polygonOffsetFactor: -.3,
 					depthWrite: !1
-				}), "f"), Nk(this, Q_, new Ws, "f"), Dk(this, Q_, "f").visible = !1, n.scene.add(Dk(this, Q_, "f")), Nk(this, J_, new Br(new ca(1e6, 1e6), new ar({
+				}), "f"), 
+				Nk(this, Q_, new Ws, "f"), 
+				Dk(this, Q_, "f").visible = !1, 
+				n.scene.add(Dk(this, Q_, "f")), 
+				Nk(this, J_, new Br(new ca(1e6, 1e6), new ar({
 					side: 2
-				})), "f"), Dk(this, J_, "f").rotation.x = -Math.PI / 2, Dk(this, J_, "f").updateWorldMatrix(!0, !0), n.canvas.addEventListener("mousemove", Nk(this, C_, (e => {
+				})), "f"), 
+				Dk(this, J_, "f").rotation.x = -Math.PI / 2, 
+				Dk(this, J_, "f").updateWorldMatrix(!0, !0), 
+				n.canvas.addEventListener("mousemove", Nk(this, C_, (e => {
 					const t = e.clientX / window.innerWidth * 2 - 1,
 						n = -e.clientY / window.innerHeight * 2 + 1;
 					null == Dk(this, nk, "f") ? Nk(this, nk, new ln(t, n), "f") : Dk(this, nk, "f").set(t, n)
-				}), "f")), n.canvas.addEventListener("mousedown", Nk(this, P_, (e => {
+				}), "f")), 
+				n.canvas.addEventListener("mousedown", Nk(this, P_, (e => {
 					0 == e.button && Nk(this, tk, !0, "f"), 1 == e.button && e.preventDefault()
-				}), "f")), window.addEventListener("mouseup", Nk(this, R_, (e => {
+				}), "f")), 
+				window.addEventListener("mouseup", Nk(this, R_, (e => {
 					0 == e.button && (Nk(this, tk, !1, "f"), Nk(this, sk, null, "f"))
-				}), "f")), n.canvas.addEventListener("mouseout", Nk(this, L_, (() => {
+				}), "f")), 
+				n.canvas.addEventListener("mouseout", Nk(this, L_, (() => {
 					Nk(this, nk, null, "f")
-				}), "f")), n.canvas.addEventListener("touchstart", Nk(this, I_, (() => {
+				}), "f")), 
+				n.canvas.addEventListener("touchstart", Nk(this, I_, (() => {
 					Dk(this, u_, "f").touchEnabled && Nk(this, ik, Date.now(), "f")
-				}), "f")), n.canvas.addEventListener("click", Nk(this, N_, (() => {
+				}), "f")), 
+				n.canvas.addEventListener("click", Nk(this, N_, (() => {
 					Dk(this, u_, "f").touchEnabled && null != Dk(this, ik, "f") && Date.now() - Dk(this, ik, "f") < 200 && (Nk(this, ik, null, "f"), Nk(this, rk, !0, "f"))
-				}), "f")), window.addEventListener("keydown", Nk(this, D_, (e => {
+				}), "f")), 
+				window.addEventListener("keydown", Nk(this, D_, (e => {
 					Dk(this, $x, "m", Ik).call(this) && (Dk(this, d_, "f").isOpen || Dk(this, S_, "f").isOpen || null != Dk(this, M_, "f") || null != Dk(this, A_, "f") || "Escape" == e.code && (Dk(this, $x, "m", mk).call(this, p), e.preventDefault()), u.checkKeyBinding(e, Lb.EditorRotate) && (Nk(this, ok, (Dk(this, ok, "f") + 1) % 4, "f"), e.preventDefault()), u.checkKeyBinding(e, Lb.EditorHeightModifier) && (Nk(this, H_, !0, "f"), Dk(this, W_, "f").enableZoom = !1, e.preventDefault()), u.checkKeyBinding(e, Lb.EditorDelete) && (Nk(this, ek, !0, "f"), e.preventDefault()), u.checkKeyBinding(e, Lb.EditorMoveForwards) && (Nk(this, V_, !0, "f"), e.preventDefault()), u.checkKeyBinding(e, Lb.EditorMoveRight) && (Nk(this, G_, !0, "f"), e.preventDefault()), u.checkKeyBinding(e, Lb.EditorMoveBackwards) && (Nk(this, j_, !0, "f"), e.preventDefault()), u.checkKeyBinding(e, Lb.EditorMoveLeft) && (Nk(this, q_, !0, "f"), e.preventDefault()), u.checkKeyBinding(e, Lb.EditorRotateLeft) && (Nk(this, X_, !0, "f"), e.preventDefault()), u.checkKeyBinding(e, Lb.EditorRotateRight) && (Nk(this, Y_, !0, "f"), e.preventDefault()), u.checkKeyBinding(e, Lb.EditorMoveDown) && (Nk(this, $x, Math.max(0, Dk(this, $x, "a", Mk) - 1), "a", Tk), e.preventDefault()), u.checkKeyBinding(e, Lb.EditorMoveUp) && (Nk(this, $x, Dk(this, $x, "a", Mk) + 1, "a", Tk), e.preventDefault()), u.checkKeyBinding(e, Lb.EditorTest) && (Dk(this, $x, "m", gk).call(this), e.preventDefault()), u.checkKeyBinding(e, Lb.EditorPick) && (Dk(this, $x, "m", vk).call(this), e.preventDefault()))
-				}), "f")), window.addEventListener("keyup", Nk(this, U_, (e => {
+				}), "f")), 
+				window.addEventListener("keyup", Nk(this, U_, (e => {
 					u.checkKeyBinding(e, Lb.EditorHeightModifier) && (Nk(this, H_, !1, "f"), Dk(this, W_, "f").enableZoom = !0), u.checkKeyBinding(e, Lb.EditorDelete) && Nk(this, ek, !1, "f"), u.checkKeyBinding(e, Lb.EditorMoveForwards) && Nk(this, V_, !1, "f"), u.checkKeyBinding(e, Lb.EditorMoveRight) && Nk(this, G_, !1, "f"), u.checkKeyBinding(e, Lb.EditorMoveBackwards) && Nk(this, j_, !1, "f"), u.checkKeyBinding(e, Lb.EditorMoveLeft) && Nk(this, q_, !1, "f"), u.checkKeyBinding(e, Lb.EditorRotateLeft) && Nk(this, X_, !1, "f"), u.checkKeyBinding(e, Lb.EditorRotateRight) && Nk(this, Y_, !1, "f")
-				}), "f")), window.addEventListener("wheel", Nk(this, B_, (e => {
+				}), "f")), 
+				window.addEventListener("wheel", Nk(this, B_, (e => {
 					Dk(this, H_, "f") && Dk(this, m_, "f") && (e.deltaY > 0 ? Nk(this, $x, Dk(this, $x, "a", Mk) + 1, "a", Tk) : e.deltaY < 0 && Nk(this, $x, Math.max(0, Dk(this, $x, "a", Mk) - 1), "a", Tk))
-				}), "f")), window.addEventListener("beforeunload", Nk(this, O_, (e => !Dk(this, K_, "f") && (e.preventDefault(), e.returnValue = !0, !0)), "f")), Dk(this, $x, "m", fk).call(this, p), d.addChangeListener(Nk(this, z_, (e => {
+				}), "f")), 
+				window.addEventListener("beforeunload", Nk(this, O_, (e => !Dk(this, K_, "f") && (e.preventDefault(), e.returnValue = !0, !0)), "f")), Dk(this, $x, "m", fk).call(this, p), d.addChangeListener(Nk(this, z_, (e => {
 					Dk(this, T_, "f").setEnabled(e)
 				}), "f"))
 			}
@@ -22379,11 +22418,73 @@
 			var e, t;
 			null != CM(this, lM, "f") && (CM(this, lM, "f").record = null !== (t = null === (e = CM(this, vM, "f")) || void 0 === e ? void 0 : e.time) && void 0 !== t ? t : null)
 		};
-		const PM = class {
-			constructor(e, t, n, i, r, a, o, s, l, c, h, d, u, p, f, m, g) {
-				VS.add(this), GS.set(this, void 0), jS.set(this, void 0), qS.set(this, void 0), XS.set(this, void 0), YS.set(this, void 0), KS.set(this, void 0), ZS.set(this, void 0), JS.set(this, void 0), QS.set(this, void 0), $S.set(this, void 0), eM.set(this, void 0), tM.set(this, void 0), nM.set(this, void 0), iM.set(this, void 0), rM.set(this, !0), aM.set(this, void 0), oM.set(this, void 0), sM.set(this, void 0), lM.set(this, void 0), cM.set(this, void 0), hM.set(this, void 0), dM.set(this, void 0), uM.set(this, void 0), pM.set(this, void 0), fM.set(this, null), mM.set(this, null), gM.set(this, null), vM.set(this, void 0), wM.set(this, void 0), yM.set(this, void 0), bM.set(this, void 0), xM.set(this, void 0), this.isPaused = !1, AM(this, GS, e, "f"), AM(this, jS, t, "f"), AM(this, qS, n, "f"), AM(this, XS, i, "f"), AM(this, YS, r, "f"), AM(this, KS, a, "f"), AM(this, ZS, o, "f"), AM(this, JS, s, "f"), AM(this, QS, l, "f"), AM(this, $S, c, "f"), AM(this, eM, h, "f"), AM(this, tM, m, "f"), AM(this, nM, g, "f"), AM(this, vM, p, "f"), AM(this, wM, f, "f"), AM(this, iM, d, "f"), n.loadTrackData(u), n.generateMeshes(), i.generateMountains(n.getBounds()), AM(this, pM, new RS(l), "f"), c.setCursorHiddenWhenInactive(!0), AM(this, dM, new xS(CM(this, pM, "f"), CM(this, ZS, "f"), (() => {
+		const PM = class {				// IMPORTANT - main world class
+			constructor(e, t, n, i, r, a, o, s, l, c, h, d, u, p, f, m, g) {	// main world constructor (on track open)
+				VS.add(this),
+				GS.set(this, void 0), 
+				jS.set(this, void 0), 
+				qS.set(this, void 0), 
+				XS.set(this, void 0), 
+				YS.set(this, void 0), 
+				KS.set(this, void 0), 
+				ZS.set(this, void 0), 
+				JS.set(this, void 0), 
+				QS.set(this, void 0), 
+				$S.set(this, void 0), 
+				eM.set(this, void 0), 
+				tM.set(this, void 0), 
+				nM.set(this, void 0), 
+				iM.set(this, void 0), 
+				rM.set(this, !0), 
+				aM.set(this, void 0), 
+				oM.set(this, void 0), 
+				sM.set(this, void 0), 
+				lM.set(this, void 0), 
+				cM.set(this, void 0), 
+				hM.set(this, void 0), 
+				dM.set(this, void 0), 
+				uM.set(this, void 0), 
+				pM.set(this, void 0), 
+				fM.set(this, null), 
+				mM.set(this, null), 
+				gM.set(this, null), 
+				vM.set(this, void 0), 
+				wM.set(this, void 0), 
+				yM.set(this, void 0), 
+				bM.set(this, void 0), 
+				xM.set(this, void 0), 
+				this.isPaused = !1, 	// init pause state to false
+
+				/*		initializations of main objects		*/
+				AM(this, GS, e, "f"), 	// main car
+				AM(this, jS, t, "f"), 	// car ghost
+				AM(this, qS, n, "f"), 	// track parts
+				AM(this, XS, i, "f"), 	// mountains
+				AM(this, YS, r, "f"), 	// selected langauge
+				AM(this, KS, a, "f"), 	// world object (camera, canvas, scene)
+				AM(this, ZS, o, "f"), 	// audio context
+				AM(this, JS, s, "f"), 	// profile slot
+				AM(this, QS, l, "f"), 	// key bindings
+				AM(this, $S, c, "f"), 	// hide cursor
+				AM(this, eM, h, "f"), 	// touchscreen enabled
+				AM(this, tM, m, "f"), 	// post record function (checks if faster)
+				AM(this, nM, g, "f"), 	// unclear function
+				AM(this, vM, p, "f"), 	// car ghost recording (colors, name, time, recording)
+				AM(this, wM, f, "f"), 	// null
+				AM(this, iM, d, "f"), 	// loaded track name (string)
+				n.loadTrackData(u), 
+				n.generateMeshes(), 	// generate meshes from track data
+				i.generateMountains(n.getBounds()),	// generate mountain geometry
+				AM(this, pM, new RS(l), "f"), 		// set car control keybinds
+				c.setCursorHiddenWhenInactive(!0), 	// hide cursor when inactive
+				AM(this, dM, new xS(CM(this, pM, "f"), CM(this, ZS, "f"), (() => {	// create driving ui html
 					CM(this, VS, "m", kM).call(this)
-				}), g), "f"), CM(this, dM, "f").setEnabled(CM(this, eM, "f").touchEnabled), CM(this, VS, "m", _M).call(this, !0), CM(this, VS, "m", TM).call(this), AM(this, xM, new pS(l), "f"), CM(this, xM, "f").addToggleListener((e => {
+				}), g), "f"),
+				CM(this, dM, "f").setEnabled(CM(this, eM, "f").touchEnabled), 	// check and enable touch control html
+				CM(this, VS, "m", _M).call(this, !0), 	// maybe touch control related
+				CM(this, VS, "m", TM).call(this), 	// something record time related
+				AM(this, xM, new pS(l), "f"), 		// spectator camera related
+				CM(this, xM, "f").addToggleListener((e => {
 					e ? (null != CM(this, fM, "f") && (CM(this, fM, "f").audioVolume = 0), null != CM(this, mM, "f") && (CM(this, mM, "f").audioVolume = 0), CM(this, VS, "m", _M).call(this, !1), a.setCamera(CM(this, xM, "f").camera)) : null != CM(this, fM, "f") && (null != CM(this, fM, "f") && (CM(this, fM, "f").audioVolume = 1), null != CM(this, mM, "f") && (CM(this, mM, "f").audioVolume = .35), CM(this, VS, "m", _M).call(this, CM(this, rM, "f")), a.setCamera(CM(this, fM, "f").cameraOrbit))
 				})), CM(this, eM, "f").addChangeListener(AM(this, uM, (e => {
 					var t, n, i, r, a, o, s, l, c;
@@ -22403,17 +22504,22 @@
 				var t, n;
 				CM(this, $S, "f").setCursorHiddenWhenInactive(!1), CM(this, VS, "m", _M).call(this, !1), CM(this, dM, "f").dispose(), CM(this, eM, "f").removeChangeListener(CM(this, uM, "f")), e && CM(this, qS, "f").clear(), CM(this, XS, "f").clearMountains(), CM(this, pM, "f").dispose(), null === (t = CM(this, fM, "f")) || void 0 === t || t.dispose(), null != (null === (n = CM(this, gM, "f")) || void 0 === n ? void 0 : n.carId) && (CM(this, jS, "f").deleteCar(CM(this, gM, "f").carId), CM(this, gM, "f").carId = null, AM(this, gM, null, "f")), null != CM(this, mM, "f") && (CM(this, mM, "f").dispose(), AM(this, mM, null, "f")), window.removeEventListener("keydown", CM(this, yM, "f")), window.removeEventListener("keyup", CM(this, bM, "f")), CM(this, xM, "f").dispose()
 			}
-			update(e) {
+			update(e) {		// IMPORTANT - main update loop
 				var t, n, i, r, a, o, s, l, c, h;
 				if (!this.isPaused) {
 					let h;
 					if (h = null == CM(this, fM, "f") || CM(this, xM, "f").enabled ? 0 : e, null === (t = CM(this, fM, "f")) || void 0 === t || t.update(h), null == CM(this, fM, "f") || CM(this, xM, "f").enabled) null != CM(this, fM, "f") && (CM(this, fM, "f").isPaused = !0);
 					else {
 						CM(this, fM, "f").isPaused = !1;
-						const t = CM(this, pM, "f").getControls();
-						(t.up || t.down) && (CM(this, fM, "f").hasStarted() || CM(this, fM, "f").start()), null === (n = CM(this, aM, "f")) || void 0 === n || n.update(CM(this, fM, "f"), e), null === (i = CM(this, sM, "f")) || void 0 === i || i.update(CM(this, fM, "f")), null === (r = CM(this, lM, "f")) || void 0 === r || r.update(CM(this, fM, "f")), null === (a = CM(this, oM, "f")) || void 0 === a || a.update(CM(this, fM, "f")), null === (o = CM(this, hM, "f")) || void 0 === o || o.setVisible(!CM(this, fM, "f").hasStarted())
+						const t = CM(this, pM, "f").getControls();	// get current user input controls
+						(t.up || t.down) && (CM(this, fM, "f").hasStarted() || CM(this, fM, "f").start());	// start game when key pressed (if not already started)
+						null === (n = CM(this, aM, "f")) || void 0 === n || n.update(CM(this, fM, "f"), e);	// checks and enables reset hint when below 50 speed
+						null === (i = CM(this, sM, "f")) || void 0 === i || i.update(CM(this, fM, "f"));	// update speedometer html
+						null === (r = CM(this, lM, "f")) || void 0 === r || r.update(CM(this, fM, "f"));	// update timer html
+						null === (a = CM(this, oM, "f")) || void 0 === a || a.update(CM(this, fM, "f"));	// update checkpoint html
+						null === (o = CM(this, hM, "f")) || void 0 === o || o.setVisible(!CM(this, fM, "f").hasStarted());	// show/hide game toolbar html
 					}
-					if (null != CM(this, mM, "f")) {
+					if (null != CM(this, mM, "f")) {		// code branch if currently racing against ghost
 						const e = null === (s = CM(this, fM, "f")) || void 0 === s ? void 0 : s.getTotalTime().numberOfFrames;
 						if (null != e) {
 							for (let t = CM(this, mM, "f").getTotalTime().numberOfFrames + 1; t <= e; t++) {
@@ -22427,9 +22533,11 @@
 						}
 						null === (c = CM(this, mM, "f")) || void 0 === c || c.update(h)
 					}
-					CM(this, VS, "m", MM).call(this), CM(this, xM, "f").update(e)
+					CM(this, VS, "m", MM).call(this);	// set opacity of ghost car based on distance to game car
+					CM(this, xM, "f").update(e); 		// update camera based on current camera mode
 				}
-				CM(this, KS, "f").update(null === (h = CM(this, fM, "f")) || void 0 === h ? void 0 : h.getPosition()), CM(this, ZS, "f").update(e, !1, CM(this, KS, "f"), CM(this, QS, "f"))
+				CM(this, KS, "f").update(null === (h = CM(this, fM, "f")) || void 0 === h ? void 0 : h.getPosition());	// update geometry render based on camera position (scene object: WM(this, DM, "f"))
+				CM(this, ZS, "f").update(e, !1, CM(this, KS, "f"), CM(this, QS, "f")); 	// update audio
 			}
 		};
 		var RM, LM, IM, NM, DM, UM, BM, OM, zM, FM = function(e, t, n, i, r) {
@@ -22455,23 +22563,44 @@
 			WM(this, NM, "f").pixelRatio != i && WM(this, NM, "f").setPixelRatio(i)
 		};
 		const HM = class {
-			constructor(e, t, n = !0, i = !1) {
+			constructor(e, t, n = !0, i = !1) {		// IMPORTANT - world render constructor
 				var r;
 				RM.add(this), LM.set(this, void 0), IM.set(this, void 0), NM.set(this, void 0), DM.set(this, void 0), UM.set(this, new Kr), BM.set(this, void 0), OM.set(this, {
 					x: 8,
 					y: 10,
 					z: 10
-				}), FM(this, LM, e, "f"), FM(this, IM, t, "f"), FM(this, NM, new Zs({
+				});
+				FM(this, LM, e, "f");
+				FM(this, IM, t, "f");
+				FM(this, NM, new Zs({
 					antialias: null === (r = null == t ? void 0 : t.getSettingBoolean(Jh.Antialiasing)) || void 0 === r || r,
 					powerPreference: "high-performance",
 					canvas: e,
 					alpha: i
-				}), "f"), WM(this, NM, "f").outputColorSpace = Ct, WM(this, NM, "f").shadowMap.enabled = !0, FM(this, DM, new Qs, "f"), n && (WM(this, DM, "f").fog = new Js(6793641, .001)), WM(this, DM, "f").add(new xh(3891597, 11714755, 4.7)), FM(this, BM, new Nh(16777215, 4.7), "f"), WM(this, BM, "f").position.set(WM(this, OM, "f").x, WM(this, OM, "f").y, WM(this, OM, "f").z), WM(this, BM, "f").castShadow = !0, WM(this, BM, "f").shadow.camera.top = 10, WM(this, BM, "f").shadow.camera.right = 10, WM(this, BM, "f").shadow.camera.bottom = -10, WM(this, BM, "f").shadow.camera.left = -10, WM(this, BM, "f").shadow.camera.near = 1, WM(this, BM, "f").shadow.camera.far = 50, WM(this, BM, "f").shadow.mapSize.width = 2048, WM(this, BM, "f").shadow.mapSize.height = 2048, WM(this, DM, "f").add(WM(this, BM, "f")), WM(this, DM, "f").add(WM(this, BM, "f").target)
+				}), "f");
+				WM(this, NM, "f").outputColorSpace = Ct;
+				WM(this, NM, "f").shadowMap.enabled = !0;
+				FM(this, DM, new Qs, "f");
+				n && (WM(this, DM, "f").fog = new Js(6793641, .001));	// fog color and density (default 6793641, .001)
+				WM(this, DM, "f").add(new xh(3891597, 11714755, 4.7));	// sky hemisphere light (lightcolor, groundcolor, lightintensity) (default 3891597, 11714755, 4.7) NOT MAIN SKY COLOR, ONLY LIGHT
+				FM(this, BM, new Nh(16777215, 4.7), "f");				// sun directional light (color, intensity) (defualt 16777215, 4.7) GENERATES CAR SHADOW
+				WM(this, BM, "f").position.set(WM(this, OM, "f").x, WM(this, OM, "f").y, WM(this, OM, "f").z);
+				WM(this, BM, "f").castShadow = !0;
+				WM(this, BM, "f").shadow.camera.top = 10;
+				WM(this, BM, "f").shadow.camera.right = 10;
+				WM(this, BM, "f").shadow.camera.bottom = -10;
+				WM(this, BM, "f").shadow.camera.left = -10;
+				WM(this, BM, "f").shadow.camera.near = 1;
+				WM(this, BM, "f").shadow.camera.far = 50;
+				WM(this, BM, "f").shadow.mapSize.width = 2048;
+				WM(this, BM, "f").shadow.mapSize.height = 2048;
+				WM(this, DM, "f").add(WM(this, BM, "f"));
+				WM(this, DM, "f").add(WM(this, BM, "f").target);
 			}
 			clear() {
 				WM(this, NM, "f").clear()
 			}
-			update(e) {
+			update(e) {			// IMPORTANT - primary render update loop
 				var t, n, i;
 				const r = null !== (n = null === (t = WM(this, IM, "f")) || void 0 === t ? void 0 : t.getSettingInteger(Jh.CarShadowQuality)) && void 0 !== n ? n : 0;
 				if (!Number.isFinite(r) || r <= 0) WM(this, BM, "f").castShadow = !1;
@@ -22480,7 +22609,15 @@
 					const e = Math.min(r, WM(this, NM, "f").capabilities.maxTextureSize);
 					WM(this, BM, "f").shadow.mapSize.width == e && WM(this, BM, "f").shadow.mapSize.height == e || (WM(this, BM, "f").shadow.mapSize.setScalar(e), null === (i = WM(this, BM, "f").shadow.map) || void 0 === i || i.dispose(), WM(this, BM, "f").shadow.map = null)
 				}
-				null != e && (WM(this, BM, "f").position.set(e.x + WM(this, OM, "f").x, e.y + WM(this, OM, "f").y, e.z + WM(this, OM, "f").z), WM(this, BM, "f").target.position.copy(e)), WM(this, RM, "m", zM).call(this), WM(this, NM, "f").render(WM(this, DM, "f"), WM(this, UM, "f"))
+				null != e && (
+					WM(this, BM, "f").position.set(
+						e.x + WM(this, OM, "f").x, 
+						e.y + WM(this, OM, "f").y, 
+						e.z + WM(this, OM, "f").z), 
+					WM(this, BM, "f").target.position.copy(e)
+				);
+				WM(this, RM, "m", zM).call(this);
+				WM(this, NM, "f").render(WM(this, DM, "f"), WM(this, UM, "f"));		// render called on world objects
 			}
 			getShadowDirection() {
 				return (new Un).subVectors(WM(this, BM, "f").position, WM(this, BM, "f").target.position).normalize()
@@ -22558,7 +22695,7 @@
 			clearMountains() {
 				null != tT(this, $M, "f") && (tT(this, $M, "f").material.dispose(), tT(this, $M, "f").geometry.dispose(), tT(this, ZM, "f").scene.remove(tT(this, $M, "f")), eT(this, $M, null, "f"))
 			}
-			generateMountains(e) {
+			generateMountains(e) {		// IMPORTANT - generate mountain geometry
 				this.clearMountains();
 				const {
 					vertices: t,
@@ -22566,7 +22703,7 @@
 				} = nT.createMountainVertices(e), i = new yr;
 				i.setAttribute("position", new lr(new Float32Array(t), 3)), i.computeVertexNormals();
 				const r = new Br(i, new jc({
-					color: 3495480
+					color: 3495480					// mountain color
 				}));
 				r.position.copy(n), r.receiveShadow = !0, tT(this, ZM, "f").scene.add(r), eT(this, $M, r, "f")
 			}
@@ -24984,8 +25121,39 @@
 								value: i
 							}
 						},
-						vertexShader: "\n\t\t\t\tvarying vec3 fPos;\n\t\t\t\t\n\t\t\t\tvoid main() {\n\t\t\t\t\tvec4 modelViewPosition = modelViewMatrix * vec4(position, 1.0);\n\t\t\t\t\tgl_Position = projectionMatrix * modelViewPosition;\n\t\t\t\t\tgl_Position.z = 0.0;\n\t\t\t\t\tfPos = position;\n\t\t\t\t}\n\t\t\t",
-						fragmentShader: "\n\t\t\t\tvarying vec3 fPos;\n\n\t\t\t\tuniform vec2 offset;\n\t\t\t\tuniform vec2 scrollA;\n\t\t\t\tuniform vec2 scrollB;\n\t\t\t\tuniform sampler2D sampler;\n\n\t\t\t\tuniform float cloudDensity;\n\t\t\t\tuniform vec3 cloudLight;\n\n\t\t\t\tuniform vec3 sunPosition;\n\n\t\t\t\tvoid main()\n\t\t\t\t{\n\t\t\t\t\t#ifdef CLOUDS_ENABLED\n\t\t\t\t\t\tfloat c00 = texture2D(sampler, vec2(fPos.x / ((fPos.y + 0.06) / 0.1) - scrollB.x * 0.981, fPos.z / ((fPos.y + 0.06) / 0.1) - scrollB.y * 1.041) + scrollA).r;\n\t\t\t\t\t\tfloat c10 = texture2D(sampler, vec2(fPos.x / ((fPos.y + 0.06) / 0.1) + scrollB.x * 0.821, fPos.z / ((fPos.y + 0.06) / 0.1) - scrollB.y * 0.951) + scrollA).r;\n\t\t\t\t\t\tfloat c01 = texture2D(sampler, vec2(fPos.x / ((fPos.y + 0.06) / 0.1) - scrollB.x * 1.043, fPos.z / ((fPos.y + 0.06) / 0.1) + scrollB.y * 0.899) + scrollA).r;\n\t\t\t\t\t\tfloat c11 = texture2D(sampler, vec2(fPos.x / ((fPos.y + 0.06) / 0.1) + scrollB.x * 0.901, fPos.z / ((fPos.y + 0.06) / 0.1) + scrollB.y * 1.045) + scrollA).r;\n\t\t\t\t\t\tfloat cloud = min(1.0, max(0.0, (c00 + c10 + c01 + c11) / 4.0 - (1.0 - cloudDensity)) * 3.0);\n\n\t\t\t\t\t\tvec3 cloudColor = vec3(min(1.0, (c00 + c10 + c01 + c11) / 4.0 - (1.0 - cloudDensity)) * 4.0 + cloudDensity) * cloudLight;\n\t\t\t\t\t\tfloat cloudIntensity = cloud * min(1.0, max(0.0, fPos.y * 2.0 / 1000000.0));\n\t\t\t\t\t#else\n\t\t\t\t\t\tvec3 cloudColor = vec3(0.0);\n\t\t\t\t\t\tfloat cloudIntensity = 0.0;\n\t\t\t\t\t#endif\n\t\t\t\t\t\n\t\t\t\t\tvec3 horizonColor = vec3(255.0 / 255.0, 255.0 / 255.0, 255.0 / 255.0);\n\t\t\t\t\tvec3 zenithColor = vec3(5.0 / 255.0, 140.0 / 255.0, 255.0 / 255.0);\n\t\t\t\t\tfloat h = pow(clamp(fPos.y / 1000000.0, 0.01, 1.0), 0.2);\n\t\t\t\t\tvec3 skyColor = zenithColor * h + horizonColor * (1.0 - h);\n\n\t\t\t\t\tvec3 normal = normalize(-fPos);\n\t\t\t\t\tfloat sun = pow(max(0.0, max(0.0, dot(normal, sunPosition)) - 0.999), 4.0) * 60000000000.0;\n\t\t\t\t\tvec3 sunColor = vec3(20.0 * sun, 20.0 * sun, 19.0 * sun);\n\n\t\t\t\t\tgl_FragColor = vec4((skyColor * (1.0 - cloudIntensity) + cloudColor * cloudIntensity) * max(vec3(0.0), vec3(1.0) - sunColor) + sunColor, 1.0);\n\t\t\t\t}\n\t\t\t"
+						vertexShader: "\nvarying vec3 fPos;\n\nvoid main() {\n\tvec4 modelViewPosition = modelViewMatrix * vec4(position, 1.0);\n\tgl_Position = projectionMatrix * modelViewPosition;\n\tgl_Position.z = 0.0;\n\tfPos = position;\n}\n\t\t\t",
+						fragmentShader: 	// IMPORTANT - sky shader
+						"\nvarying vec3 fPos;" +
+						"\nuniform vec2 offset;" +
+						"\nuniform vec2 scrollA;" +
+						"\nuniform vec2 scrollB;" +
+						"\nuniform sampler2D sampler;" +
+						"\nuniform float cloudDensity;" +
+						"\nuniform vec3 cloudLight;" +
+						"\nuniform vec3 sunPosition;" +
+						"\nvoid main()" +
+						"\n{" +
+						"\n#ifdef CLOUDS_ENABLED" +
+						"\nfloat c00 = texture2D(sampler, vec2(fPos.x / ((fPos.y + 0.06) / 0.1) - scrollB.x * 0.981, fPos.z / ((fPos.y + 0.06) / 0.1) - scrollB.y * 1.041) + scrollA).r;" +
+						"\n\tfloat c10 = texture2D(sampler, vec2(fPos.x / ((fPos.y + 0.06) / 0.1) + scrollB.x * 0.821, fPos.z / ((fPos.y + 0.06) / 0.1) - scrollB.y * 0.951) + scrollA).r;" +
+						"\n\tfloat c01 = texture2D(sampler, vec2(fPos.x / ((fPos.y + 0.06) / 0.1) - scrollB.x * 1.043, fPos.z / ((fPos.y + 0.06) / 0.1) + scrollB.y * 0.899) + scrollA).r;" +
+						"\n\tfloat c11 = texture2D(sampler, vec2(fPos.x / ((fPos.y + 0.06) / 0.1) + scrollB.x * 0.901, fPos.z / ((fPos.y + 0.06) / 0.1) + scrollB.y * 1.045) + scrollA).r;" +
+						"\n\tfloat cloud = min(1.0, max(0.0, (c00 + c10 + c01 + c11) / 4.0 - (1.0 - cloudDensity)) * 3.0);" +
+						"\n\tvec3 cloudColor = vec3(min(1.0, (c00 + c10 + c01 + c11) / 4.0 - (1.0 - cloudDensity)) * 4.0 + cloudDensity) * cloudLight;" +
+						"\n\tfloat cloudIntensity = cloud * min(1.0, max(0.0, fPos.y * 2.0 / 1000000.0));" +
+						"\n\t#else" +
+						"\n\tvec3 cloudColor = vec3(0.0);" +
+						"\n\tfloat cloudIntensity = 0.0;" +
+						"\n\t#endif" +
+						"\n\t" +
+						"\n\tvec3 horizonColor = vec3(255.0 / 255.0, 255.0 / 255.0, 255.0 / 255.0);" +
+						"\n\tvec3 zenithColor = vec3(5.0 / 255.0, 140.0 / 255.0, 255.0 / 255.0);" +
+						"\n\tfloat h = pow(clamp(fPos.y / 1000000.0, 0.01, 1.0), 0.2);" + 									// height of shader (0 is horizon 1 is top of sky)
+						"\n\tvec3 skyColor = zenithColor * h + horizonColor * (1.0 - h);" +									// gradient between horizon and sky (linear)
+						"\n\tvec3 normal = normalize(-fPos);" +
+						"\n\tfloat sun = pow(max(0.0, max(0.0, dot(normal, sunPosition)) - 0.999), 4.0) * 60000000000.0;" +
+						"\n\tvec3 sunColor = vec3(20.0 * sun, 20.0 * sun, 19.0 * sun);" +
+						"\n\tgl_FragColor = vec4((skyColor * (1.0 - cloudIntensity) + cloudColor * cloudIntensity) * max(vec3(0.0), vec3(1.0) - sunColor) + sunColor, 1.0);\n}\n\t\t\t"
 					});
 				o.side = T, o.depthWrite = !1, hR(this, cR, new Br(a, o), "f"), dR(this, cR, "f").renderOrder = -3, dR(this, cR, "f").matrixAutoUpdate = !1, dR(this, cR, "f").updateMatrix(), e.scene.add(dR(this, cR, "f"))
 			}

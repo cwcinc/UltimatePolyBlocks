@@ -1,6 +1,21 @@
 const modVersion = "0.1.0";
 const lbVersion = "0.4.1";
 
+const moddedEnvironment = {
+	skyColor: {
+		horizon: {
+			r: 255,
+			g: 255,
+			b: 255
+		},
+		zenith: {
+			r: 5,
+			g: 140,
+			b: 255
+		}
+	}
+}
+
 const moddedBlocks = {
 	categories: ["Minecraft", "CustomSigns", "Statues", "RoadSigns", "SpecialBlocks", "Space"],
 	modelPaths: [
