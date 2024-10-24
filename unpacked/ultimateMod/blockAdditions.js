@@ -3,12 +3,12 @@ const lbVersion = "0.4.1";
 
 const moddedEnvironment = {
 	skyColor: {
-		horizon: {
+		horizon: {	// Horizon color of sky gradient (default 255 255 255)
 			r: 255,
 			g: 255,
 			b: 255
 		},
-		zenith: {
+		zenith: {	// Top color of sky gradient (default 5 140 255)
 			r: 5,
 			g: 140,
 			b: 255

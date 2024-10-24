@@ -25121,39 +25121,45 @@
 								value: i
 							}
 						},
-						vertexShader: "\nvarying vec3 fPos;\n\nvoid main() {\n\tvec4 modelViewPosition = modelViewMatrix * vec4(position, 1.0);\n\tgl_Position = projectionMatrix * modelViewPosition;\n\tgl_Position.z = 0.0;\n\tfPos = position;\n}\n\t\t\t",
+						vertexShader: 		// set fpos based on shader render pos
+						"varying vec3 fPos;" +
+						"void main() {" +
+							"vec4 modelViewPosition = modelViewMatrix * vec4(position, 1.0);" +
+							"gl_Position = projectionMatrix * modelViewPosition;" +
+							"gl_Position.z = 0.0;" +
+							"fPos = position;" +
+						"}",
 						fragmentShader: 	// IMPORTANT - sky shader
-						"\nvarying vec3 fPos;" +
-						"\nuniform vec2 offset;" +
-						"\nuniform vec2 scrollA;" +
-						"\nuniform vec2 scrollB;" +
-						"\nuniform sampler2D sampler;" +
-						"\nuniform float cloudDensity;" +
-						"\nuniform vec3 cloudLight;" +
-						"\nuniform vec3 sunPosition;" +
-						"\nvoid main()" +
-						"\n{" +
-						"\n#ifdef CLOUDS_ENABLED" +
-						"\nfloat c00 = texture2D(sampler, vec2(fPos.x / ((fPos.y + 0.06) / 0.1) - scrollB.x * 0.981, fPos.z / ((fPos.y + 0.06) / 0.1) - scrollB.y * 1.041) + scrollA).r;" +
-						"\n\tfloat c10 = texture2D(sampler, vec2(fPos.x / ((fPos.y + 0.06) / 0.1) + scrollB.x * 0.821, fPos.z / ((fPos.y + 0.06) / 0.1) - scrollB.y * 0.951) + scrollA).r;" +
-						"\n\tfloat c01 = texture2D(sampler, vec2(fPos.x / ((fPos.y + 0.06) / 0.1) - scrollB.x * 1.043, fPos.z / ((fPos.y + 0.06) / 0.1) + scrollB.y * 0.899) + scrollA).r;" +
-						"\n\tfloat c11 = texture2D(sampler, vec2(fPos.x / ((fPos.y + 0.06) / 0.1) + scrollB.x * 0.901, fPos.z / ((fPos.y + 0.06) / 0.1) + scrollB.y * 1.045) + scrollA).r;" +
-						"\n\tfloat cloud = min(1.0, max(0.0, (c00 + c10 + c01 + c11) / 4.0 - (1.0 - cloudDensity)) * 3.0);" +
-						"\n\tvec3 cloudColor = vec3(min(1.0, (c00 + c10 + c01 + c11) / 4.0 - (1.0 - cloudDensity)) * 4.0 + cloudDensity) * cloudLight;" +
-						"\n\tfloat cloudIntensity = cloud * min(1.0, max(0.0, fPos.y * 2.0 / 1000000.0));" +
-						"\n\t#else" +
-						"\n\tvec3 cloudColor = vec3(0.0);" +
-						"\n\tfloat cloudIntensity = 0.0;" +
-						"\n\t#endif" +
-						"\n\t" +
-						"\n\tvec3 horizonColor = vec3(255.0 / 255.0, 255.0 / 255.0, 255.0 / 255.0);" +
-						"\n\tvec3 zenithColor = vec3(5.0 / 255.0, 140.0 / 255.0, 255.0 / 255.0);" +
-						"\n\tfloat h = pow(clamp(fPos.y / 1000000.0, 0.01, 1.0), 0.2);" + 									// height of shader (0 is horizon 1 is top of sky)
-						"\n\tvec3 skyColor = zenithColor * h + horizonColor * (1.0 - h);" +									// gradient between horizon and sky (linear)
-						"\n\tvec3 normal = normalize(-fPos);" +
-						"\n\tfloat sun = pow(max(0.0, max(0.0, dot(normal, sunPosition)) - 0.999), 4.0) * 60000000000.0;" +
-						"\n\tvec3 sunColor = vec3(20.0 * sun, 20.0 * sun, 19.0 * sun);" +
-						"\n\tgl_FragColor = vec4((skyColor * (1.0 - cloudIntensity) + cloudColor * cloudIntensity) * max(vec3(0.0), vec3(1.0) - sunColor) + sunColor, 1.0);\n}\n\t\t\t"
+						"varying vec3 fPos;" +
+						"uniform vec2 offset;" +
+						"uniform vec2 scrollA;" +
+						"uniform vec2 scrollB;" +
+						"uniform sampler2D sampler;" +
+						"uniform float cloudDensity;" +
+						"uniform vec3 cloudLight;" +
+						"uniform vec3 sunPosition;" +
+						"void main()" +
+						"{" +
+						"\n#ifdef CLOUDS_ENABLED\n" +	// branch if clouds enabled
+							"float c00 = texture2D(sampler, vec2(fPos.x / ((fPos.y + 0.06) / 0.1) - scrollB.x * 0.981, fPos.z / ((fPos.y + 0.06) / 0.1) - scrollB.y * 1.041) + scrollA).r;" +
+							"float c10 = texture2D(sampler, vec2(fPos.x / ((fPos.y + 0.06) / 0.1) + scrollB.x * 0.821, fPos.z / ((fPos.y + 0.06) / 0.1) - scrollB.y * 0.951) + scrollA).r;" +
+							"float c01 = texture2D(sampler, vec2(fPos.x / ((fPos.y + 0.06) / 0.1) - scrollB.x * 1.043, fPos.z / ((fPos.y + 0.06) / 0.1) + scrollB.y * 0.899) + scrollA).r;" +
+							"float c11 = texture2D(sampler, vec2(fPos.x / ((fPos.y + 0.06) / 0.1) + scrollB.x * 0.901, fPos.z / ((fPos.y + 0.06) / 0.1) + scrollB.y * 1.045) + scrollA).r;" +
+							"float cloud = min(1.0, max(0.0, (c00 + c10 + c01 + c11) / 4.0 - (1.0 - cloudDensity)) * 3.0);" +
+							"vec3 cloudColor = vec3(min(1.0, (c00 + c10 + c01 + c11) / 4.0 - (1.0 - cloudDensity)) * 4.0 + cloudDensity) * cloudLight;" +
+							"float cloudIntensity = cloud * min(1.0, max(0.0, fPos.y * 2.0 / 1000000.0));" +
+						"\n#else\n" +					// branch if clouds disabled
+							"vec3 cloudColor = vec3(0.0);" +
+							"float cloudIntensity = 0.0;" +
+						"\n#endif\n" +
+							`vec3 horizonColor = vec3(${moddedEnvironment.skyColor.horizon.r}.0 / 255.0, ${moddedEnvironment.skyColor.horizon.g}.0 / 255.0, ${moddedEnvironment.skyColor.horizon.b}.0 / 255.0);` +
+							`vec3 zenithColor = vec3(${moddedEnvironment.skyColor.zenith.r}.0 / 255.0, ${moddedEnvironment.skyColor.zenith.g}.0 / 255.0, ${moddedEnvironment.skyColor.zenith.b}.0 / 255.0);` +
+							"float h = pow(clamp(fPos.y / 1000000.0, 0.01, 1.0), 0.2);" + 	// height of shader (0 is horizon 1 is top of sky)
+							"vec3 skyColor = zenithColor * h + horizonColor * (1.0 - h);" +	// gradient between horizon and sky (linear)
+							"vec3 normal = normalize(-fPos);" +		// normalized direction vector pointing to the sky
+							"float sun = pow(max(0.0, max(0.0, dot(normal, sunPosition)) - 0.999), 4.0) * 60000000000.0;" +	// relative sun intensity in the sky
+							"vec3 sunColor = vec3(20.0 * sun, 20.0 * sun, 19.0 * sun);" +	// sun color (default 20, 20, 19)
+							"gl_FragColor = vec4((skyColor * (1.0 - cloudIntensity) + cloudColor * cloudIntensity) * max(vec3(0.0), vec3(1.0) - sunColor) + sunColor, 1.0);\n}\n\t\t\t"
 					});
 				o.side = T, o.depthWrite = !1, hR(this, cR, new Br(a, o), "f"), dR(this, cR, "f").renderOrder = -3, dR(this, cR, "f").matrixAutoUpdate = !1, dR(this, cR, "f").updateMatrix(), e.scene.add(dR(this, cR, "f"))
 			}
