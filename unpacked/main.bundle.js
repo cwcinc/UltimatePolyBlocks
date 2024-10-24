@@ -5813,7 +5813,7 @@
 						value: null
 					}
 				},
-				fog: {
+				fog: {	// IMPORTANT - more fog info?? redundant?
 					fogDensity: {
 						value: 25e-5
 					},
@@ -22581,9 +22581,9 @@
 				WM(this, NM, "f").outputColorSpace = Ct;
 				WM(this, NM, "f").shadowMap.enabled = !0;
 				FM(this, DM, new Qs, "f");
-				n && (WM(this, DM, "f").fog = new Js(6793641, .001));	// fog color and density (default 6793641, .001)
-				WM(this, DM, "f").add(new xh(3891597, 11714755, 4.7));	// sky hemisphere light (lightcolor, groundcolor, lightintensity) (default 3891597, 11714755, 4.7) NOT MAIN SKY COLOR, ONLY LIGHT
-				FM(this, BM, new Nh(16777215, 4.7), "f");				// sun directional light (color, intensity) (defualt 16777215, 4.7) GENERATES CAR SHADOW
+				n && (WM(this, DM, "f").fog = new Js(rgbDecimal(moddedEnvironment.fog.color), moddedEnvironment.fog.density));	// fog color and density (default 6793641, .001)
+				WM(this, DM, "f").add(new xh(rgbDecimal(moddedEnvironment.skyLight.lightColor), rgbDecimal(moddedEnvironment.skyLight.groundColor), moddedEnvironment.skyLight.intensity));	// sky hemisphere light (lightcolor, groundcolor, lightintensity) (default 3891597, 11714755, 4.7) NOT MAIN SKY COLOR, ONLY LIGHT
+				FM(this, BM, new Nh(rgbDecimal(moddedEnvironment.sunLight.color), moddedEnvironment.sunLight.intensity), "f");	// sun directional light (color, intensity) (defualt 16777215, 4.7) GENERATES CAR SHADOW
 				WM(this, BM, "f").position.set(WM(this, OM, "f").x, WM(this, OM, "f").y, WM(this, OM, "f").z);
 				WM(this, BM, "f").castShadow = !0;
 				WM(this, BM, "f").shadow.camera.top = 10;
@@ -22684,13 +22684,33 @@
 			};
 		class nT {
 			constructor(e) {
-				ZM.set(this, void 0), JM.set(this, void 0), QM.set(this, void 0), $M.set(this, null), eT(this, ZM, e, "f"), eT(this, JM, new Br(new dc(9e3, 32), new jc({
-					color: 3495480,
+				ZM.set(this, void 0);
+				JM.set(this, void 0);
+				QM.set(this, void 0);
+				$M.set(this, null);
+				eT(this, ZM, e, "f");
+
+							// IMPORTANT - ground plane models
+				/*  Deleting any of the following models breaks the game  */
+
+				// Entire ground plane
+				eT(this, JM, new Br(new dc(9e3, 32), new jc({
+					color: rgbDecimal(moddedEnvironment.ground.color),
 					depthWrite: !1
-				})), "f"), tT(this, JM, "f").rotation.x = -Math.PI / 2, tT(this, JM, "f").renderOrder = -3, e.scene.add(tT(this, JM, "f")), eT(this, QM, new Br(new ca(120, 120), new jc({
-					color: 3495480,
+				})), "f");
+				tT(this, JM, "f").rotation.x = -Math.PI / 2;
+				tT(this, JM, "f").renderOrder = -3;
+				e.scene.add(tT(this, JM, "f"));
+
+				// Square of ground that moves under the car (collision square?)
+				eT(this, QM, new Br(new ca(120, 120), new jc({
+					color: rgbDecimal(moddedEnvironment.ground.color),
 					depthWrite: !1
-				})), "f"), tT(this, QM, "f").rotation.x = -Math.PI / 2, tT(this, QM, "f").receiveShadow = !0, tT(this, QM, "f").renderOrder = -2, e.scene.add(tT(this, QM, "f"))
+				})), "f");
+				tT(this, QM, "f").rotation.x = -Math.PI / 2;
+				tT(this, QM, "f").receiveShadow = !0;
+				tT(this, QM, "f").renderOrder = -2;
+				e.scene.add(tT(this, QM, "f"));
 			}
 			clearMountains() {
 				null != tT(this, $M, "f") && (tT(this, $M, "f").material.dispose(), tT(this, $M, "f").geometry.dispose(), tT(this, ZM, "f").scene.remove(tT(this, $M, "f")), eT(this, $M, null, "f"))
@@ -22703,7 +22723,7 @@
 				} = nT.createMountainVertices(e), i = new yr;
 				i.setAttribute("position", new lr(new Float32Array(t), 3)), i.computeVertexNormals();
 				const r = new Br(i, new jc({
-					color: 3495480					// mountain color
+					color: rgbDecimal(moddedEnvironment.mountains.color)		// mountain color (default 3495480)
 				}));
 				r.position.copy(n), r.receiveShadow = !0, tT(this, ZM, "f").scene.add(r), eT(this, $M, r, "f")
 			}
@@ -25152,14 +25172,14 @@
 							"vec3 cloudColor = vec3(0.0);" +
 							"float cloudIntensity = 0.0;" +
 						"\n#endif\n" +
-							`vec3 horizonColor = vec3(${moddedEnvironment.skyColor.horizon.r}.0 / 255.0, ${moddedEnvironment.skyColor.horizon.g}.0 / 255.0, ${moddedEnvironment.skyColor.horizon.b}.0 / 255.0);` +
-							`vec3 zenithColor = vec3(${moddedEnvironment.skyColor.zenith.r}.0 / 255.0, ${moddedEnvironment.skyColor.zenith.g}.0 / 255.0, ${moddedEnvironment.skyColor.zenith.b}.0 / 255.0);` +
+							`vec3 horizonColor = vec3(${moddedEnvironment.skyColor.horizon.r.toFixed(1)} / 255.0, ${moddedEnvironment.skyColor.horizon.g.toFixed(1)} / 255.0, ${moddedEnvironment.skyColor.horizon.b.toFixed(1)} / 255.0);` +
+							`vec3 zenithColor = vec3(${moddedEnvironment.skyColor.zenith.r.toFixed(1)} / 255.0, ${moddedEnvironment.skyColor.zenith.g.toFixed(1)} / 255.0, ${moddedEnvironment.skyColor.zenith.b.toFixed(1)} / 255.0);` +
 							"float h = pow(clamp(fPos.y / 1000000.0, 0.01, 1.0), 0.2);" + 	// height of shader (0 is horizon 1 is top of sky)
 							"vec3 skyColor = zenithColor * h + horizonColor * (1.0 - h);" +	// gradient between horizon and sky (linear)
 							"vec3 normal = normalize(-fPos);" +		// normalized direction vector pointing to the sky
-							"float sun = pow(max(0.0, max(0.0, dot(normal, sunPosition)) - 0.999), 4.0) * 60000000000.0;" +	// relative sun intensity in the sky
-							"vec3 sunColor = vec3(20.0 * sun, 20.0 * sun, 19.0 * sun);" +	// sun color (default 20, 20, 19)
-							"gl_FragColor = vec4((skyColor * (1.0 - cloudIntensity) + cloudColor * cloudIntensity) * max(vec3(0.0), vec3(1.0) - sunColor) + sunColor, 1.0);\n}\n\t\t\t"
+							`float sun = pow(max(0.0, max(0.0, dot(normal, sunPosition)) - ${(1 - moddedEnvironment.sun.size).toFixed(5)}), 4.0) * ${moddedEnvironment.sun.intensity.toFixed(1)};` +	// relative sun intensity in the sky
+							`vec3 sunColor = vec3(${moddedEnvironment.sun.color.r.toFixed(1)} * sun, ${moddedEnvironment.sun.color.g.toFixed(1)} * sun, ${moddedEnvironment.sun.color.b.toFixed(1)} * sun);` +	// sun color (default 20, 20, 19)
+							"gl_FragColor = vec4((skyColor * (1.0 - cloudIntensity) + cloudColor * cloudIntensity) * max(vec3(0.0), vec3(1.0) - sunColor) + sunColor, 1.0);}"
 					});
 				o.side = T, o.depthWrite = !1, hR(this, cR, new Br(a, o), "f"), dR(this, cR, "f").renderOrder = -3, dR(this, cR, "f").matrixAutoUpdate = !1, dR(this, cR, "f").updateMatrix(), e.scene.add(dR(this, cR, "f"))
 			}

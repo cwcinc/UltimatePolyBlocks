@@ -13,6 +13,58 @@ const moddedEnvironment = {
 			g: 140,
 			b: 255
 		}
+	},
+	skyLight: {
+		lightColor: {
+			r: 59,	// default 59
+			g: 97,	// default 97
+			b: 141	// default 141
+		},
+		groundColor: {
+			r: 178,	// default 178
+			g: 192,	// default 192
+			b: 195	// default 195
+		},
+		intensity: 4.7	// default 4.7
+	},
+	sun: {
+		size: 1/1000,	// size of the sun (default 1/1000)
+		intensity: 60000000000,	// intensity of the sun (default 60000000000)
+		color: {
+			r: 20,	// default 20
+			g: 20,	// default 20
+			b: 19	// default 19
+		}
+	},
+	sunLight: {
+		color: {
+			r: 255,	// default 255
+			g: 255,	// default 255
+			b: 255	// default 255
+		},
+		intensity: 4.7	// default 4.7
+	},
+	fog: {
+		color: {
+			r: 103,	// default 103
+			g: 169,	// default 169
+			b: 169	// default 169
+		},
+		density: 0.001	// default 0.001
+	},
+	mountains: {
+		color: {
+			r: 53,	// default 53
+			g: 86,	// default 86
+			b: 56	// default 56
+		}
+	},
+	ground: {
+		color: {
+			r: 53,	// default 53
+			g: 86,	// default 86
+			b: 56	// default 56
+		}
 	}
 }
 
@@ -77,3 +129,7 @@ const moddedBlocks = {
 		// next id: 220
 	]
 };
+
+const rgbDecimal = (rgb) => {
+	return (rgb.r << 16) + (rgb.g << 8) + (rgb.b);
+}
