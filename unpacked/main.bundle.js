@@ -14799,7 +14799,7 @@
 					const t = this.context.createBufferSource();
 					t.buffer = e;
 					const n = this.context.createGain();
-					n.gain.value = .0075, t.connect(n), n.connect(this.destinationSfx), t.start(0)
+					n.gain.value = .1, t.connect(n), n.connect(this.destinationSfx), t.start(0)
 				}
 			}
 			refreshListener(e) {
@@ -18701,9 +18701,9 @@
 				const e = Nv(this, Rg, "f").getBuffer("checkpoint");
 				if (null != e && null != Nv(this, Rg, "f").context && null != Nv(this, Rg, "f").destinationMaster) {
 					const t = Nv(this, Rg, "f").context.createBufferSource();
-					t.buffer = e, t.playbackRate.value = 1.25;
+					t.buffer = e, t.playbackRate.value = 1;
 					const n = Nv(this, Rg, "f").context.createGain();
-					n.gain.value = .03 * i, t.connect(n), n.connect(Nv(this, Rg, "f").destinationMaster), t.start(0)
+					n.gain.value = 1, t.connect(n), n.connect(Nv(this, Rg, "f").destinationMaster), t.start(0)
 				}
 			}
 		}, _v = function() {
@@ -18714,9 +18714,9 @@
 				const e = Nv(this, Rg, "f").getBuffer("finish");
 				if (null != e && null != Nv(this, Rg, "f").context && null != Nv(this, Rg, "f").destinationMaster) {
 					const t = Nv(this, Rg, "f").context.createBufferSource();
-					t.buffer = e, t.playbackRate.value = 1.25;
+					t.buffer = e, t.playbackRate.value = 1;
 					const n = Nv(this, Rg, "f").context.createGain();
-					n.gain.value = .03, t.connect(n), n.connect(Nv(this, Rg, "f").destinationMaster), t.start(0)
+					n.gain.value = .2, t.connect(n), n.connect(Nv(this, Rg, "f").destinationMaster), t.start(0)
 				}
 			}
 		}, kv = function(e) {
@@ -18789,7 +18789,7 @@
 							const i = Nv(this, Rg, "f").context.createBufferSource();
 							i.buffer = n, i.playbackRate.value = .7 + .1 * Math.random();
 							const r = Nv(this, Rg, "f").context.createGain();
-							r.gain.value = Math.min(.285, e / 140), i.connect(r), r.connect(Nv(this, Fg, "f")[t]), i.start(Nv(this, Rg, "f").context.currentTime + .02 * Math.random()), Nv(this, Ug, "f")[t] = .1
+							r.gain.value = 2.5*Math.min(.3, e / 140), i.connect(r), r.connect(Nv(this, Fg, "f")[t]), i.start(Nv(this, Rg, "f").context.currentTime + .02 * Math.random()), Nv(this, Ug, "f")[t] = .1
 						}
 					}
 				}
@@ -18834,9 +18834,11 @@
 				const t = Nv(this, Rg, "f").getBuffer("collision");
 				if (null != t && null != Nv(this, Rg, "f").context) {
 					const n = Nv(this, Rg, "f").context.createBufferSource();
-					n.buffer = t, n.playbackRate.value = .5 - .3 * Math.max(0, Math.min(1, e / 1e3)) + .2 * Math.random();
+					n.buffer = t, n.playbackRate.value = 1 + 0.1 * Math.random();
 					const i = Nv(this, Rg, "f").context.createGain();
-					i.gain.value = Math.max(.3, Math.min(e / 2e3, 1)) / 3.5, n.connect(i), i.connect(Nv(this, zg, "f")), n.start(0)
+					i.gain.value = 0.02;
+					n.connect(i);
+					i.connect(Nv(this, zg, "f")), n.start(0);
 				}
 			}
 		}, Pv = function() {
@@ -29768,7 +29770,7 @@
 				const t = new sR,
 					n = new iL,
 					i = new hd(e);
-				i.load("music", ["ultimateMod/audio/implayingpolytrack.ogg"]), i.load("click", ["audio/click.flac"]), i.load("engine", ["audio/engine.flac"]), i.load("suspension", ["audio/suspension.flac"]), i.load("tires", ["audio/tires.flac"]), i.load("collision", ["audio/collision.flac"]), i.load("skidding", ["audio/skidding.flac"]), i.load("editor_edit", ["audio/editor_edit.flac"]), i.load("checkpoint", ["audio/checkpoint.flac"]), i.load("finish", ["audio/checkpoint.flac"]), Ou.initResources(e), Uv.initResources(e), rb.initResources(e);
+				i.load("music", ["ultimateMod/intense-horror-music.mp3"]), i.load("click", ["ultimateMod/spooky-organ-horror-chord.mp3"]), i.load("engine", ["ultimateMod/horror-background-atmosphere.mp3"]), i.load("suspension", ["ultimateMod/scary-creaking-knocking-wood.mp3"]), i.load("tires", ["ultimateMod/growl.mp3"]), i.load("collision", ["ultimateMod/scary-scream-3.mp3"]), i.load("skidding", ["ultimateMod/scream-with-echo.mp3"]), i.load("editor_edit", ["ultimateMod/spooky-organ-horror-chord.mp3"]), i.load("checkpoint", ["ultimateMod/horror-jump-scare.mp3"]), i.load("finish", ["ultimateMod/halloween-impact.mp3"]), Ou.initResources(e), Uv.initResources(e), rb.initResources(e);
 				const r = new rR(e),
 					a = new qR;
 				a.migrate(r), e.addResource();
