@@ -6567,7 +6567,7 @@ const moddedBlocks = {
 				if (S <<= 1, S -= T[p], S < 0) return -1;
 			if (S > 0 && (0 === t || 1 !== v)) return -1;
 			for (E[1] = 0, p = 1; p < ca; p++) E[p + 1] = E[p] + T[p];
-			for (g = 0; g < i; g++) 0 !== e[n + g] && (o[E[e[n + g]]++] = g);
+			for (g = 0; g < i; g++) 0 !== e[n + g] && (o[t[t[n + g]]++] = g);
 			if (0 === t ? (A = I = o, m = 20) : 1 === t ? (A = ha, I = da, m = 257) : (A = ua, I = fa, m = 0), M = 0, g = 0, p = _, f = a, x = y, w = 0, d = -1, b = 1 << y, u = b - 1, 1 === t && b > 852 || 2 === t && b > 592) return 1;
 			for (;;) {
 				C = p - w, o[g] + 1 < m ? (P = 0, k = o[g]) : o[g] >= m ? (P = I[o[g] - m], k = A[o[g] - m]) : (P = 96, k = 0), c = 1 << p - w, h = 1 << x, _ = h;
@@ -8225,6 +8225,43 @@ const moddedBlocks = {
             t[t.BlackBlockBridgeCorner = 176] = "BlackBlockBridgeCorner";
             t[t.BlackBlockBridgeIntersectionT = 177] = "BlackBlockBridgeIntersectionT";
             t[t.BlackBlockBridgeIntersectionCross = 178] = "BlackBlockBridgeIntersectionCross"
+
+			for (let index = 1; index < 10; i++) {
+				t[t["BlackBlock" + index] = 300 + 15*(index-1)] = "BlackBlock" + index;
+				t[t["BlackHalfBlock" + index] = 301 + 15*(index-1)] = "BlackHalfBlock" + index;
+				t[t["BlackQuarterBlock" + index] = 302 + 15*(index-1)] = "BlackQuarterBlock" + index;
+				t[t["BlackBlockSlopedDown" + index] = 303 + 15*(index-1)] = "BlackBlockSlopedDown" + index;
+				t[t["BlackBlockSlopedDownInnerCorner" + index] = 304 + 15*(index-1)] = "BlackBlockSlopedDownInnerCorner" + index;
+				t[t["BlackBlockSlopedDownOuterCorner" + index] = 305 + 15*(index-1)] = "BlackBlockSlopedDownOuterCorner" + index;
+				t[t["BlackBlockSlopedUp" + index] = 306 + 15*(index-1)] = "BlackBlockSlopedUp" + index;
+				t[t["BlackBlockSlopedUpInnerCorner" + index] = 307 + 15*(index-1)] = "BlackBlockSlopedUpInnerCorner" + index;
+				t[t["BlackBlockSlopedUpOuterCorner" + index] = 308 + 15*(index-1)] = "BlackBlockSlopedUpOuterCorner" + index;
+				t[t["BlackBlockSlopeDown" + index] = 309 + 15*(index-1)] = "BlackBlockSlopeDown" + index;
+				t[t["BlackBlockSlopeUp" + index] = 310 + 15*(index-1)] = "BlackBlockSlopeUp" + index;
+				t[t["BlackBlockBridge" + index] = 311 + 15*(index-1)] = "BlackBlockBridge" + index;
+				t[t["BlackBlockBridgeCorner" + index] = 312 + 15*(index-1)] = "BlackBlockBridgeCorner" + index;
+				t[t["BlackBlockBridgeIntersectionT" + index] = 313 + 15*(index-1)] = "BlackBlockBridgeIntersectionT" + index;
+				t[t["BlackBlockBridgeIntersectionCross" + index] = 314 + 15*(index-1)] = "BlackBlockBridgeIntersectionCross" + index;
+			};
+
+			for (let index = 1; index < 10; index++) {
+				t[t["ShadeBlock" + index] = 500 + 15*(index-1)] = "ShadeBlock" + index;
+				t[t["ShadeHalfBlock" + index] = 501 + 15*(index-1)] = "ShadeHalfBlock" + index;
+				t[t["ShadeQuarterBlock" + index] = 502 + 15*(index-1)] = "ShadeQuarterBlock" + index;
+				t[t["ShadeBlockSlopedDown" + index] = 503 + 15*(index-1)] = "ShadeBlockSlopedDown" + index;
+				t[t["ShadeBlockSlopedDownInnerCorner" + index] = 504 + 15*(index-1)] = "ShadeBlockSlopedDownInnerCorner" + index;
+				t[t["ShadeBlockSlopedDownOuterCorner" + index] = 505 + 15*(index-1)] = "ShadeBlockSlopedDownOuterCorner" + index;
+				t[t["ShadeBlockSlopedUp" + index] = 506 + 15*(index-1)] = "ShadeBlockSlopedUp" + index;
+				t[t["ShadeBlockSlopedUpInnerCorner" + index] = 507 + 15*(index-1)] = "ShadeBlockSlopedUpInnerCorner" + index;
+				t[t["ShadeBlockSlopedUpOuterCorner" + index] = 508 + 15*(index-1)] = "ShadeBlockSlopedUpOuterCorner" + index;
+				t[t["ShadeBlockSlopeDown" + index] = 509 + 15*(index-1)] = "ShadeBlockSlopeDown" + index;
+				t[t["ShadeBlockSlopeUp" + index] = 510 + 15*(index-1)] = "ShadeBlockSlopeUp" + index;
+				t[t["ShadeBlockBridge" + index] = 511 + 15*(index-1)] = "ShadeBlockBridge" + index;
+				t[t["ShadeBlockBridgeCorner" + index] = 512 + 15*(index-1)] = "ShadeBlockBridgeCorner" + index;
+				t[t["ShadeBlockBridgeIntersectionT" + index] = 513 + 15*(index-1)] = "ShadeBlockBridgeIntersectionT" + index;
+				t[t["ShadeBlockBridgeIntersectionCross" + index] = 514 + 15*(index-1)] = "ShadeBlockBridgeIntersectionCross" + index;
+			};
+
 		}(el || (el = {}));
 		const nl = el;
 

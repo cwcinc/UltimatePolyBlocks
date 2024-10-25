@@ -19706,6 +19706,44 @@
 			e[e.BlackBlockBridgeCorner = 176] = "BlackBlockBridgeCorner";
 			e[e.BlackBlockBridgeIntersectionT = 177] = "BlackBlockBridgeIntersectionT";
 			e[e.BlackBlockBridgeIntersectionCross = 178] = "BlackBlockBridgeIntersectionCross";
+
+			for (let i = 1; i < 10; i++) {
+				e[e["BlackBlock" + i] = 300 + 15*(i-1)] = "BlackBlock" + i;
+				e[e["BlackHalfBlock" + i] = 301 + 15*(i-1)] = "BlackHalfBlock" + i;
+				e[e["BlackQuarterBlock" + i] = 302 + 15*(i-1)] = "BlackQuarterBlock" + i;
+				e[e["BlackBlockSlopedDown" + i] = 303 + 15*(i-1)] = "BlackBlockSlopedDown" + i;
+				e[e["BlackBlockSlopedDownInnerCorner" + i] = 304 + 15*(i-1)] = "BlackBlockSlopedDownInnerCorner" + i;
+				e[e["BlackBlockSlopedDownOuterCorner" + i] = 305 + 15*(i-1)] = "BlackBlockSlopedDownOuterCorner" + i;
+				e[e["BlackBlockSlopedUp" + i] = 306 + 15*(i-1)] = "BlackBlockSlopedUp" + i;
+				e[e["BlackBlockSlopedUpInnerCorner" + i] = 307 + 15*(i-1)] = "BlackBlockSlopedUpInnerCorner" + i;
+				e[e["BlackBlockSlopedUpOuterCorner" + i] = 308 + 15*(i-1)] = "BlackBlockSlopedUpOuterCorner" + i;
+				e[e["BlackBlockSlopeDown" + i] = 309 + 15*(i-1)] = "BlackBlockSlopeDown" + i;
+				e[e["BlackBlockSlopeUp" + i] = 310 + 15*(i-1)] = "BlackBlockSlopeUp" + i;
+				e[e["BlackBlockBridge" + i] = 311 + 15*(i-1)] = "BlackBlockBridge" + i;
+				e[e["BlackBlockBridgeCorner" + i] = 312 + 15*(i-1)] = "BlackBlockBridgeCorner" + i;
+				e[e["BlackBlockBridgeIntersectionT" + i] = 313 + 15*(i-1)] = "BlackBlockBridgeIntersectionT" + i;
+				e[e["BlackBlockBridgeIntersectionCross" + i] = 314 + 15*(i-1)] = "BlackBlockBridgeIntersectionCross" + i;
+			};
+
+			for (let i = 1; i < 10; i++) {
+				e[e["ShadeBlock" + i] = 500 + 15*(i-1)] = "ShadeBlock" + i;
+				e[e["ShadeHalfBlock" + i] = 501 + 15*(i-1)] = "ShadeHalfBlock" + i;
+				e[e["ShadeQuarterBlock" + i] = 502 + 15*(i-1)] = "ShadeQuarterBlock" + i;
+				e[e["ShadeBlockSlopedDown" + i] = 503 + 15*(i-1)] = "ShadeBlockSlopedDown" + i;
+				e[e["ShadeBlockSlopedDownInnerCorner" + i] = 504 + 15*(i-1)] = "ShadeBlockSlopedDownInnerCorner" + i;
+				e[e["ShadeBlockSlopedDownOuterCorner" + i] = 505 + 15*(i-1)] = "ShadeBlockSlopedDownOuterCorner" + i;
+				e[e["ShadeBlockSlopedUp" + i] = 506 + 15*(i-1)] = "ShadeBlockSlopedUp" + i;
+				e[e["ShadeBlockSlopedUpInnerCorner" + i] = 507 + 15*(i-1)] = "ShadeBlockSlopedUpInnerCorner" + i;
+				e[e["ShadeBlockSlopedUpOuterCorner" + i] = 508 + 15*(i-1)] = "ShadeBlockSlopedUpOuterCorner" + i;
+				e[e["ShadeBlockSlopeDown" + i] = 509 + 15*(i-1)] = "ShadeBlockSlopeDown" + i;
+				e[e["ShadeBlockSlopeUp" + i] = 510 + 15*(i-1)] = "ShadeBlockSlopeUp" + i;
+				e[e["ShadeBlockBridge" + i] = 511 + 15*(i-1)] = "ShadeBlockBridge" + i;
+				e[e["ShadeBlockBridgeCorner" + i] = 512 + 15*(i-1)] = "ShadeBlockBridgeCorner" + i;
+				e[e["ShadeBlockBridgeIntersectionT" + i] = 513 + 15*(i-1)] = "ShadeBlockBridgeIntersectionT" + i;
+				e[e["ShadeBlockBridgeIntersectionCross" + i] = 514 + 15*(i-1)] = "ShadeBlockBridgeIntersectionCross" + i;
+			};
+
+
 		}(Uw || (Uw = {}));
 		const Bw = Uw;
 		var Ow, zw, Fw, Ww, Hw, Vw, Gw, jw = function(e, t, n, i, r) {
@@ -24157,15 +24195,82 @@
 				}
 
 				function a(e) {
-					return r(e, 0, .5, 0)
+					return r(e, 0, .5, 0)		// red
 				}
 
 				function o(e) {
-					return r(e, .65, .4, 0)
+					return r(e, .65, .6, 0)		// blue
+				}
+
+				function o1(e) {
+					return r(e, .1, .6, 0)		// blue
+				}
+
+				function o2(e) {
+					return r(e, .2, .6, 0)		// blue
+				}
+
+				function o3(e) {
+					return r(e, .3, .6, 0)		// blue
+				}
+
+				function o4(e) {
+					return r(e, .4, .6, 0)		// blue
+				}
+
+				function o5(e) {
+					return r(e, .5, .6, 0)		// blue
+				}
+
+				function o6(e) {
+					return r(e, .6, .6, 0)		// blue
+				}
+
+				function o7(e) {
+					return r(e, .7, .6, 0)		// blue
+				}
+
+				function o8(e) {
+					return r(e, .8, .6, 0)		// blue
+				}
+
+				function o9(e) {
+					return r(e, .9, .6, 0)		// blue
 				}
 
 				function s(e) {
-					return r(e, 0, 0, -.135)
+					return r(e, 0, 0, -.135)	// black
+				}
+
+				function s1(e) {
+					return r(e, 0, 0, -.1)	// black
+				}
+
+				function s2(e) {
+					return r(e, 0, 0, -0.05)	// black
+				}
+
+				function s3(e) {
+					return r(e, 0, 0, 0.05)	// black
+				}
+
+				function s4(e) {
+					return r(e, 0, 0, 0.1)	// black
+				}
+				function s5(e) {
+					return r(e, 0, 0, 0.15)	// black
+				}
+				function s6(e) {
+					return r(e, 0, 0, 0.2)	// black
+				}
+				function s7(e) {
+					return r(e, 0, 0, 0.25)	// black
+				}
+				function s8(e) {
+					return r(e, 0, 0, 0.3)	// black
+				}
+				function s9(e) {
+					return r(e, 0, 0, 0.35)	// black
 				}
 
 				/**    IMPORTANT - second block declaration (categorical)     */
@@ -24921,6 +25026,1168 @@
 				i(ZP.Block, Bw.BlackBlockBridgeIntersectionCross, [
 					["Blocks", "BlockBridgeIntersectionCross"]
 				], null, null, s);
+
+
+
+
+				i(ZP.Block, Bw.BlackBlock1, [
+					["Blocks", "Block"]
+				], null, null, o1);
+				i(ZP.Block, Bw.BlackHalfBlock1, [
+					["Blocks", "HalfBlock"]
+				], null, null, o1);
+				i(ZP.Block, Bw.BlackQuarterBlock1, [
+					["Blocks", "QuarterBlock"]
+				], null, null, o1);
+				i(ZP.Block, Bw.BlackBlockSlopedDown1, [
+					["Blocks", "BlockSlopedDown"]
+				], [
+					[0, 0, 0],
+					[0, 1, 0]
+				], null, o1);
+				i(ZP.Block, Bw.BlackBlockSlopedDownInnerCorner1, [
+					["Blocks", "BlockSlopedDownInnerCorner"]
+				], [
+					[0, 0, 0],
+					[0, 1, 0]
+				], null, o1);
+				i(ZP.Block, Bw.BlackBlockSlopedDownOuterCorner1, [
+					["Blocks", "BlockSlopedDownOuterCorner"]
+				], [
+					[0, 0, 0],
+					[0, 1, 0]
+				], null, o1);
+				i(ZP.Block, Bw.BlackBlockSlopedUp1, [
+					["Blocks", "BlockSlopedUp"]
+				], [
+					[0, 0, 0],
+					[0, 1, 0]
+				], null, o1);
+				i(ZP.Block, Bw.BlackBlockSlopedUpInnerCorner1, [
+					["Blocks", "BlockSlopedUpInnerCorner"]
+				], [
+					[0, 0, 0],
+					[0, 1, 0]
+				], null, o1);
+				i(ZP.Block, Bw.BlackBlockSlopedUpOuterCorner1, [
+					["Blocks", "BlockSlopedUpOuterCorner"]
+				], [
+					[0, 0, 0],
+					[0, 1, 0]
+				], null, o1);
+				i(ZP.Block, Bw.BlackBlockSlopeDown1, [
+					["Blocks", "BlockSlopeDown"]
+				], null, null, o1);
+				i(ZP.Block, Bw.BlackBlockSlopeUp1, [
+					["Blocks", "BlockSlopeUp"]
+				], null, null, o1);
+				i(ZP.Block, Bw.BlackBlockBridge1, [
+					["Blocks", "BlockBridge"]
+				], null, null, o1);
+				i(ZP.Block, Bw.BlackBlockBridgeCorner1, [
+					["Blocks", "BlockBridgeCorner"]
+				], null, null, o1);
+				i(ZP.Block, Bw.BlackBlockBridgeIntersectionT1, [
+					["Blocks", "BlockBridgeIntersectionT"]
+				], null, null, o1);
+				i(ZP.Block, Bw.BlackBlockBridgeIntersectionCross1, [
+					["Blocks", "BlockBridgeIntersectionCross"]
+				], null, null, o1);
+
+				i(ZP.Block, Bw.BlackBlock2, [
+					["Blocks", "Block"]
+				], null, null, o2);
+				i(ZP.Block, Bw.BlackHalfBlock2, [
+					["Blocks", "HalfBlock"]
+				], null, null, o2);
+				i(ZP.Block, Bw.BlackQuarterBlock2, [
+					["Blocks", "QuarterBlock"]
+				], null, null, o2);
+				i(ZP.Block, Bw.BlackBlockSlopedDown2, [
+					["Blocks", "BlockSlopedDown"]
+				], [
+					[0, 0, 0],
+					[0, 1, 0]
+				], null, o2);
+				i(ZP.Block, Bw.BlackBlockSlopedDownInnerCorner2, [
+					["Blocks", "BlockSlopedDownInnerCorner"]
+				], [
+					[0, 0, 0],
+					[0, 1, 0]
+				], null, o2);
+				i(ZP.Block, Bw.BlackBlockSlopedDownOuterCorner2, [
+					["Blocks", "BlockSlopedDownOuterCorner"]
+				], [
+					[0, 0, 0],
+					[0, 1, 0]
+				], null, o2);
+				i(ZP.Block, Bw.BlackBlockSlopedUp2, [
+					["Blocks", "BlockSlopedUp"]
+				], [
+					[0, 0, 0],
+					[0, 1, 0]
+				], null, o2);
+				i(ZP.Block, Bw.BlackBlockSlopedUpInnerCorner2, [
+					["Blocks", "BlockSlopedUpInnerCorner"]
+				], [
+					[0, 0, 0],
+					[0, 1, 0]
+				], null, o2);
+				i(ZP.Block, Bw.BlackBlockSlopedUpOuterCorner2, [
+					["Blocks", "BlockSlopedUpOuterCorner"]
+				], [
+					[0, 0, 0],
+					[0, 1, 0]
+				], null, o2);
+				i(ZP.Block, Bw.BlackBlockSlopeDown2, [
+					["Blocks", "BlockSlopeDown"]
+				], null, null, o2);
+				i(ZP.Block, Bw.BlackBlockSlopeUp2, [
+					["Blocks", "BlockSlopeUp"]
+				], null, null, o2);
+				i(ZP.Block, Bw.BlackBlockBridge2, [
+					["Blocks", "BlockBridge"]
+				], null, null, o2);
+				i(ZP.Block, Bw.BlackBlockBridgeCorner2, [
+					["Blocks", "BlockBridgeCorner"]
+				], null, null, o2);
+				i(ZP.Block, Bw.BlackBlockBridgeIntersectionT2, [
+					["Blocks", "BlockBridgeIntersectionT"]
+				], null, null, o2);
+				i(ZP.Block, Bw.BlackBlockBridgeIntersectionCross2, [
+					["Blocks", "BlockBridgeIntersectionCross"]
+				], null, null, o2);
+
+				i(ZP.Block, Bw.BlackBlock3, [
+					["Blocks", "Block"]
+				], null, null, o3);
+				i(ZP.Block, Bw.BlackHalfBlock3, [
+					["Blocks", "HalfBlock"]
+				], null, null, o3);
+				i(ZP.Block, Bw.BlackQuarterBlock3, [
+					["Blocks", "QuarterBlock"]
+				], null, null, o3);
+				i(ZP.Block, Bw.BlackBlockSlopedDown3, [
+					["Blocks", "BlockSlopedDown"]
+				], [
+					[0, 0, 0],
+					[0, 1, 0]
+				], null, o3);
+				i(ZP.Block, Bw.BlackBlockSlopedDownInnerCorner3, [
+					["Blocks", "BlockSlopedDownInnerCorner"]
+				], [
+					[0, 0, 0],
+					[0, 1, 0]
+				], null, o3);
+				i(ZP.Block, Bw.BlackBlockSlopedDownOuterCorner3, [
+					["Blocks", "BlockSlopedDownOuterCorner"]
+				], [
+					[0, 0, 0],
+					[0, 1, 0]
+				], null, o3);
+				i(ZP.Block, Bw.BlackBlockSlopedUp3, [
+					["Blocks", "BlockSlopedUp"]
+				], [
+					[0, 0, 0],
+					[0, 1, 0]
+				], null, o3);
+				i(ZP.Block, Bw.BlackBlockSlopedUpInnerCorner3, [
+					["Blocks", "BlockSlopedUpInnerCorner"]
+				], [
+					[0, 0, 0],
+					[0, 1, 0]
+				], null, o3);
+				i(ZP.Block, Bw.BlackBlockSlopedUpOuterCorner3, [
+					["Blocks", "BlockSlopedUpOuterCorner"]
+				], [
+					[0, 0, 0],
+					[0, 1, 0]
+				], null, o3);
+				i(ZP.Block, Bw.BlackBlockSlopeDown3, [
+					["Blocks", "BlockSlopeDown"]
+				], null, null, o3);
+				i(ZP.Block, Bw.BlackBlockSlopeUp3, [
+					["Blocks", "BlockSlopeUp"]
+				], null, null, o3);
+				i(ZP.Block, Bw.BlackBlockBridge3, [
+					["Blocks", "BlockBridge"]
+				], null, null, o3);
+				i(ZP.Block, Bw.BlackBlockBridgeCorner3, [
+					["Blocks", "BlockBridgeCorner"]
+				], null, null, o3);
+				i(ZP.Block, Bw.BlackBlockBridgeIntersectionT3, [
+					["Blocks", "BlockBridgeIntersectionT"]
+				], null, null, o3);
+				i(ZP.Block, Bw.BlackBlockBridgeIntersectionCross3, [
+					["Blocks", "BlockBridgeIntersectionCross"]
+				], null, null, o3);
+
+				i(ZP.Block, Bw.BlackBlock4, [
+					["Blocks", "Block"]
+				], null, null, o4);
+				i(ZP.Block, Bw.BlackHalfBlock4, [
+					["Blocks", "HalfBlock"]
+				], null, null, o4);
+				i(ZP.Block, Bw.BlackQuarterBlock4, [
+					["Blocks", "QuarterBlock"]
+				], null, null, o4);
+				i(ZP.Block, Bw.BlackBlockSlopedDown4, [
+					["Blocks", "BlockSlopedDown"]
+				], [
+					[0, 0, 0],
+					[0, 1, 0]
+				], null, o4);
+				i(ZP.Block, Bw.BlackBlockSlopedDownInnerCorner4, [
+					["Blocks", "BlockSlopedDownInnerCorner"]
+				], [
+					[0, 0, 0],
+					[0, 1, 0]
+				], null, o4);
+				i(ZP.Block, Bw.BlackBlockSlopedDownOuterCorner4, [
+					["Blocks", "BlockSlopedDownOuterCorner"]
+				], [
+					[0, 0, 0],
+					[0, 1, 0]
+				], null, o4);
+				i(ZP.Block, Bw.BlackBlockSlopedUp4, [
+					["Blocks", "BlockSlopedUp"]
+				], [
+					[0, 0, 0],
+					[0, 1, 0]
+				], null, o4);
+				i(ZP.Block, Bw.BlackBlockSlopedUpInnerCorner4, [
+					["Blocks", "BlockSlopedUpInnerCorner"]
+				], [
+					[0, 0, 0],
+					[0, 1, 0]
+				], null, o4);
+				i(ZP.Block, Bw.BlackBlockSlopedUpOuterCorner4, [
+					["Blocks", "BlockSlopedUpOuterCorner"]
+				], [
+					[0, 0, 0],
+					[0, 1, 0]
+				], null, o4);
+				i(ZP.Block, Bw.BlackBlockSlopeDown4, [
+					["Blocks", "BlockSlopeDown"]
+				], null, null, o4);
+				i(ZP.Block, Bw.BlackBlockSlopeUp4, [
+					["Blocks", "BlockSlopeUp"]
+				], null, null, o4);
+				i(ZP.Block, Bw.BlackBlockBridge4, [
+					["Blocks", "BlockBridge"]
+				], null, null, o4);
+				i(ZP.Block, Bw.BlackBlockBridgeCorner4, [
+					["Blocks", "BlockBridgeCorner"]
+				], null, null, o4);
+				i(ZP.Block, Bw.BlackBlockBridgeIntersectionT4, [
+					["Blocks", "BlockBridgeIntersectionT"]
+				], null, null, o4);
+				i(ZP.Block, Bw.BlackBlockBridgeIntersectionCross4, [
+					["Blocks", "BlockBridgeIntersectionCross"]
+				], null, null, o4);
+
+				i(ZP.Block, Bw.BlackBlock5, [
+					["Blocks", "Block"]
+				], null, null, o5);
+				i(ZP.Block, Bw.BlackHalfBlock5, [
+					["Blocks", "HalfBlock"]
+				], null, null, o5);
+				i(ZP.Block, Bw.BlackQuarterBlock5, [
+					["Blocks", "QuarterBlock"]
+				], null, null, o5);
+				i(ZP.Block, Bw.BlackBlockSlopedDown5, [
+					["Blocks", "BlockSlopedDown"]
+				], [
+					[0, 0, 0],
+					[0, 1, 0]
+				], null, o5);
+				i(ZP.Block, Bw.BlackBlockSlopedDownInnerCorner5, [
+					["Blocks", "BlockSlopedDownInnerCorner"]
+				], [
+					[0, 0, 0],
+					[0, 1, 0]
+				], null, o5);
+				i(ZP.Block, Bw.BlackBlockSlopedDownOuterCorner5, [
+					["Blocks", "BlockSlopedDownOuterCorner"]
+				], [
+					[0, 0, 0],
+					[0, 1, 0]
+				], null, o5);
+				i(ZP.Block, Bw.BlackBlockSlopedUp5, [
+					["Blocks", "BlockSlopedUp"]
+				], [
+					[0, 0, 0],
+					[0, 1, 0]
+				], null, o5);
+				i(ZP.Block, Bw.BlackBlockSlopedUpInnerCorner5, [
+					["Blocks", "BlockSlopedUpInnerCorner"]
+				], [
+					[0, 0, 0],
+					[0, 1, 0]
+				], null, o5);
+				i(ZP.Block, Bw.BlackBlockSlopedUpOuterCorner5, [
+					["Blocks", "BlockSlopedUpOuterCorner"]
+				], [
+					[0, 0, 0],
+					[0, 1, 0]
+				], null, o5);
+				i(ZP.Block, Bw.BlackBlockSlopeDown5, [
+					["Blocks", "BlockSlopeDown"]
+				], null, null, o5);
+				i(ZP.Block, Bw.BlackBlockSlopeUp5, [
+					["Blocks", "BlockSlopeUp"]
+				], null, null, o5);
+				i(ZP.Block, Bw.BlackBlockBridge5, [
+					["Blocks", "BlockBridge"]
+				], null, null, o5);
+				i(ZP.Block, Bw.BlackBlockBridgeCorner5, [
+					["Blocks", "BlockBridgeCorner"]
+				], null, null, o5);
+				i(ZP.Block, Bw.BlackBlockBridgeIntersectionT5, [
+					["Blocks", "BlockBridgeIntersectionT"]
+				], null, null, o5);
+				i(ZP.Block, Bw.BlackBlockBridgeIntersectionCross5, [
+					["Blocks", "BlockBridgeIntersectionCross"]
+				], null, null, o5);
+
+				i(ZP.Block, Bw.BlackBlock6, [
+					["Blocks", "Block"]
+				], null, null, o6);
+				i(ZP.Block, Bw.BlackHalfBlock6, [
+					["Blocks", "HalfBlock"]
+				], null, null, o6);
+				i(ZP.Block, Bw.BlackQuarterBlock6, [
+					["Blocks", "QuarterBlock"]
+				], null, null, o6);
+				i(ZP.Block, Bw.BlackBlockSlopedDown6, [
+					["Blocks", "BlockSlopedDown"]
+				], [
+					[0, 0, 0],
+					[0, 1, 0]
+				], null, o6);
+				i(ZP.Block, Bw.BlackBlockSlopedDownInnerCorner6, [
+					["Blocks", "BlockSlopedDownInnerCorner"]
+				], [
+					[0, 0, 0],
+					[0, 1, 0]
+				], null, o6);
+				i(ZP.Block, Bw.BlackBlockSlopedDownOuterCorner6, [
+					["Blocks", "BlockSlopedDownOuterCorner"]
+				], [
+					[0, 0, 0],
+					[0, 1, 0]
+				], null, o6);
+				i(ZP.Block, Bw.BlackBlockSlopedUp6, [
+					["Blocks", "BlockSlopedUp"]
+				], [
+					[0, 0, 0],
+					[0, 1, 0]
+				], null, o6);
+				i(ZP.Block, Bw.BlackBlockSlopedUpInnerCorner6, [
+					["Blocks", "BlockSlopedUpInnerCorner"]
+				], [
+					[0, 0, 0],
+					[0, 1, 0]
+				], null, o6);
+				i(ZP.Block, Bw.BlackBlockSlopedUpOuterCorner6, [
+					["Blocks", "BlockSlopedUpOuterCorner"]
+				], [
+					[0, 0, 0],
+					[0, 1, 0]
+				], null, o6);
+				i(ZP.Block, Bw.BlackBlockSlopeDown6, [
+					["Blocks", "BlockSlopeDown"]
+				], null, null, o6);
+				i(ZP.Block, Bw.BlackBlockSlopeUp6, [
+					["Blocks", "BlockSlopeUp"]
+				], null, null, o6);
+				i(ZP.Block, Bw.BlackBlockBridge6, [
+					["Blocks", "BlockBridge"]
+				], null, null, o6);
+				i(ZP.Block, Bw.BlackBlockBridgeCorner6, [
+					["Blocks", "BlockBridgeCorner"]
+				], null, null, o6);
+				i(ZP.Block, Bw.BlackBlockBridgeIntersectionT6, [
+					["Blocks", "BlockBridgeIntersectionT"]
+				], null, null, o6);
+				i(ZP.Block, Bw.BlackBlockBridgeIntersectionCross6, [
+					["Blocks", "BlockBridgeIntersectionCross"]
+				], null, null, o6);
+
+				i(ZP.Block, Bw.BlackBlock7, [
+					["Blocks", "Block"]
+				], null, null, o7);
+				i(ZP.Block, Bw.BlackHalfBlock7, [
+					["Blocks", "HalfBlock"]
+				], null, null, o7);
+				i(ZP.Block, Bw.BlackQuarterBlock7, [
+					["Blocks", "QuarterBlock"]
+				], null, null, o7);
+				i(ZP.Block, Bw.BlackBlockSlopedDown7, [
+					["Blocks", "BlockSlopedDown"]
+				], [
+					[0, 0, 0],
+					[0, 1, 0]
+				], null, o7);
+				i(ZP.Block, Bw.BlackBlockSlopedDownInnerCorner7, [
+					["Blocks", "BlockSlopedDownInnerCorner"]
+				], [
+					[0, 0, 0],
+					[0, 1, 0]
+				], null, o7);
+				i(ZP.Block, Bw.BlackBlockSlopedDownOuterCorner7, [
+					["Blocks", "BlockSlopedDownOuterCorner"]
+				], [
+					[0, 0, 0],
+					[0, 1, 0]
+				], null, o7);
+				i(ZP.Block, Bw.BlackBlockSlopedUp7, [
+					["Blocks", "BlockSlopedUp"]
+				], [
+					[0, 0, 0],
+					[0, 1, 0]
+				], null, o7);
+				i(ZP.Block, Bw.BlackBlockSlopedUpInnerCorner7, [
+					["Blocks", "BlockSlopedUpInnerCorner"]
+				], [
+					[0, 0, 0],
+					[0, 1, 0]
+				], null, o7);
+				i(ZP.Block, Bw.BlackBlockSlopedUpOuterCorner7, [
+					["Blocks", "BlockSlopedUpOuterCorner"]
+				], [
+					[0, 0, 0],
+					[0, 1, 0]
+				], null, o7);
+				i(ZP.Block, Bw.BlackBlockSlopeDown7, [
+					["Blocks", "BlockSlopeDown"]
+				], null, null, o7);
+				i(ZP.Block, Bw.BlackBlockSlopeUp7, [
+					["Blocks", "BlockSlopeUp"]
+				], null, null, o7);
+				i(ZP.Block, Bw.BlackBlockBridge7, [
+					["Blocks", "BlockBridge"]
+				], null, null, o7);
+				i(ZP.Block, Bw.BlackBlockBridgeCorner7, [
+					["Blocks", "BlockBridgeCorner"]
+				], null, null, o7);
+				i(ZP.Block, Bw.BlackBlockBridgeIntersectionT7, [
+					["Blocks", "BlockBridgeIntersectionT"]
+				], null, null, o7);
+				i(ZP.Block, Bw.BlackBlockBridgeIntersectionCross7, [
+					["Blocks", "BlockBridgeIntersectionCross"]
+				], null, null, o7);
+
+				i(ZP.Block, Bw.BlackBlock8, [
+					["Blocks", "Block"]
+				], null, null, o8);
+				i(ZP.Block, Bw.BlackHalfBlock8, [
+					["Blocks", "HalfBlock"]
+				], null, null, o8);
+				i(ZP.Block, Bw.BlackQuarterBlock8, [
+					["Blocks", "QuarterBlock"]
+				], null, null, o8);
+				i(ZP.Block, Bw.BlackBlockSlopedDown8, [
+					["Blocks", "BlockSlopedDown"]
+				], [
+					[0, 0, 0],
+					[0, 1, 0]
+				], null, o8);
+				i(ZP.Block, Bw.BlackBlockSlopedDownInnerCorner8, [
+					["Blocks", "BlockSlopedDownInnerCorner"]
+				], [
+					[0, 0, 0],
+					[0, 1, 0]
+				], null, o8);
+				i(ZP.Block, Bw.BlackBlockSlopedDownOuterCorner8, [
+					["Blocks", "BlockSlopedDownOuterCorner"]
+				], [
+					[0, 0, 0],
+					[0, 1, 0]
+				], null, o8);
+				i(ZP.Block, Bw.BlackBlockSlopedUp8, [
+					["Blocks", "BlockSlopedUp"]
+				], [
+					[0, 0, 0],
+					[0, 1, 0]
+				], null, o8);
+				i(ZP.Block, Bw.BlackBlockSlopedUpInnerCorner8, [
+					["Blocks", "BlockSlopedUpInnerCorner"]
+				], [
+					[0, 0, 0],
+					[0, 1, 0]
+				], null, o8);
+				i(ZP.Block, Bw.BlackBlockSlopedUpOuterCorner8, [
+					["Blocks", "BlockSlopedUpOuterCorner"]
+				], [
+					[0, 0, 0],
+					[0, 1, 0]
+				], null, o8);
+				i(ZP.Block, Bw.BlackBlockSlopeDown8, [
+					["Blocks", "BlockSlopeDown"]
+				], null, null, o8);
+				i(ZP.Block, Bw.BlackBlockSlopeUp8, [
+					["Blocks", "BlockSlopeUp"]
+				], null, null, o8);
+				i(ZP.Block, Bw.BlackBlockBridge8, [
+					["Blocks", "BlockBridge"]
+				], null, null, o8);
+				i(ZP.Block, Bw.BlackBlockBridgeCorner8, [
+					["Blocks", "BlockBridgeCorner"]
+				], null, null, o8);
+				i(ZP.Block, Bw.BlackBlockBridgeIntersectionT8, [
+					["Blocks", "BlockBridgeIntersectionT"]
+				], null, null, o8);
+				i(ZP.Block, Bw.BlackBlockBridgeIntersectionCross8, [
+					["Blocks", "BlockBridgeIntersectionCross"]
+				], null, null, o8);
+
+				i(ZP.Block, Bw.BlackBlock9, [
+					["Blocks", "Block"]
+				], null, null, o9);
+				i(ZP.Block, Bw.BlackHalfBlock9, [
+					["Blocks", "HalfBlock"]
+				], null, null, o9);
+				i(ZP.Block, Bw.BlackQuarterBlock9, [
+					["Blocks", "QuarterBlock"]
+				], null, null, o9);
+				i(ZP.Block, Bw.BlackBlockSlopedDown9, [
+					["Blocks", "BlockSlopedDown"]
+				], [
+					[0, 0, 0],
+					[0, 1, 0]
+				], null, o9);
+				i(ZP.Block, Bw.BlackBlockSlopedDownInnerCorner9, [
+					["Blocks", "BlockSlopedDownInnerCorner"]
+				], [
+					[0, 0, 0],
+					[0, 1, 0]
+				], null, o9);
+				i(ZP.Block, Bw.BlackBlockSlopedDownOuterCorner9, [
+					["Blocks", "BlockSlopedDownOuterCorner"]
+				], [
+					[0, 0, 0],
+					[0, 1, 0]
+				], null, o9);
+				i(ZP.Block, Bw.BlackBlockSlopedUp9, [
+					["Blocks", "BlockSlopedUp"]
+				], [
+					[0, 0, 0],
+					[0, 1, 0]
+				], null, o9);
+				i(ZP.Block, Bw.BlackBlockSlopedUpInnerCorner9, [
+					["Blocks", "BlockSlopedUpInnerCorner"]
+				], [
+					[0, 0, 0],
+					[0, 1, 0]
+				], null, o9);
+				i(ZP.Block, Bw.BlackBlockSlopedUpOuterCorner9, [
+					["Blocks", "BlockSlopedUpOuterCorner"]
+				], [
+					[0, 0, 0],
+					[0, 1, 0]
+				], null, o9);
+				i(ZP.Block, Bw.BlackBlockSlopeDown9, [
+					["Blocks", "BlockSlopeDown"]
+				], null, null, o9);
+				i(ZP.Block, Bw.BlackBlockSlopeUp9, [
+					["Blocks", "BlockSlopeUp"]
+				], null, null, o9);
+				i(ZP.Block, Bw.BlackBlockBridge9, [
+					["Blocks", "BlockBridge"]
+				], null, null, o9);
+				i(ZP.Block, Bw.BlackBlockBridgeCorner9, [
+					["Blocks", "BlockBridgeCorner"]
+				], null, null, o9);
+				i(ZP.Block, Bw.BlackBlockBridgeIntersectionT9, [
+					["Blocks", "BlockBridgeIntersectionT"]
+				], null, null, o9);
+				i(ZP.Block, Bw.BlackBlockBridgeIntersectionCross9, [
+					["Blocks", "BlockBridgeIntersectionCross"]
+				], null, null, o9);
+
+
+
+				i(ZP.Block, Bw.ShadeBlock1, [
+					["Blocks", "Block"]
+				], null, null, s1);
+				i(ZP.Block, Bw.ShadeHalfBlock1, [
+					["Blocks", "HalfBlock"]
+				], null, null, s1);
+				i(ZP.Block, Bw.ShadeQuarterBlock1, [
+					["Blocks", "QuarterBlock"]
+				], null, null, s1);
+				i(ZP.Block, Bw.ShadeBlockSlopedDown1, [
+					["Blocks", "BlockSlopedDown"]
+				], [
+					[0, 0, 0],
+					[0, 1, 0]
+				], null, s1);
+				i(ZP.Block, Bw.ShadeBlockSlopedDownInnerCorner1, [
+					["Blocks", "BlockSlopedDownInnerCorner"]
+				], [
+					[0, 0, 0],
+					[0, 1, 0]
+				], null, s1);
+				i(ZP.Block, Bw.ShadeBlockSlopedDownOuterCorner1, [
+					["Blocks", "BlockSlopedDownOuterCorner"]
+				], [
+					[0, 0, 0],
+					[0, 1, 0]
+				], null, s1);
+				i(ZP.Block, Bw.ShadeBlockSlopedUp1, [
+					["Blocks", "BlockSlopedUp"]
+				], [
+					[0, 0, 0],
+					[0, 1, 0]
+				], null, s1);
+				i(ZP.Block, Bw.ShadeBlockSlopedUpInnerCorner1, [
+					["Blocks", "BlockSlopedUpInnerCorner"]
+				], [
+					[0, 0, 0],
+					[0, 1, 0]
+				], null, s1);
+				i(ZP.Block, Bw.ShadeBlockSlopedUpOuterCorner1, [
+					["Blocks", "BlockSlopedUpOuterCorner"]
+				], [
+					[0, 0, 0],
+					[0, 1, 0]
+				], null, s1);
+				i(ZP.Block, Bw.ShadeBlockSlopeDown1, [
+					["Blocks", "BlockSlopeDown"]
+				], null, null, s1);
+				i(ZP.Block, Bw.ShadeBlockSlopeUp1, [
+					["Blocks", "BlockSlopeUp"]
+				], null, null, s1);
+				i(ZP.Block, Bw.ShadeBlockBridge1, [
+					["Blocks", "BlockBridge"]
+				], null, null, s1);
+				i(ZP.Block, Bw.ShadeBlockBridgeCorner1, [
+					["Blocks", "BlockBridgeCorner"]
+				], null, null, s1);
+				i(ZP.Block, Bw.ShadeBlockBridgeIntersectionT1, [
+					["Blocks", "BlockBridgeIntersectionT"]
+				], null, null, s1);
+				i(ZP.Block, Bw.ShadeBlockBridgeIntersectionCross1, [
+					["Blocks", "BlockBridgeIntersectionCross"]
+				], null, null, s1);
+
+				i(ZP.Block, Bw.ShadeBlock2, [
+					["Blocks", "Block"]
+				], null, null, s2);
+				i(ZP.Block, Bw.ShadeHalfBlock2, [
+					["Blocks", "HalfBlock"]
+				], null, null, s2);
+				i(ZP.Block, Bw.ShadeQuarterBlock2, [
+					["Blocks", "QuarterBlock"]
+				], null, null, s2);
+				i(ZP.Block, Bw.ShadeBlockSlopedDown2, [
+					["Blocks", "BlockSlopedDown"]
+				], [
+					[0, 0, 0],
+					[0, 1, 0]
+				], null, s2);
+				i(ZP.Block, Bw.ShadeBlockSlopedDownInnerCorner2, [
+					["Blocks", "BlockSlopedDownInnerCorner"]
+				], [
+					[0, 0, 0],
+					[0, 1, 0]
+				], null, s2);
+				i(ZP.Block, Bw.ShadeBlockSlopedDownOuterCorner2, [
+					["Blocks", "BlockSlopedDownOuterCorner"]
+				], [
+					[0, 0, 0],
+					[0, 1, 0]
+				], null, s2);
+				i(ZP.Block, Bw.ShadeBlockSlopedUp2, [
+					["Blocks", "BlockSlopedUp"]
+				], [
+					[0, 0, 0],
+					[0, 1, 0]
+				], null, s2);
+				i(ZP.Block, Bw.ShadeBlockSlopedUpInnerCorner2, [
+					["Blocks", "BlockSlopedUpInnerCorner"]
+				], [
+					[0, 0, 0],
+					[0, 1, 0]
+				], null, s2);
+				i(ZP.Block, Bw.ShadeBlockSlopedUpOuterCorner2, [
+					["Blocks", "BlockSlopedUpOuterCorner"]
+				], [
+					[0, 0, 0],
+					[0, 1, 0]
+				], null, s2);
+				i(ZP.Block, Bw.ShadeBlockSlopeDown2, [
+					["Blocks", "BlockSlopeDown"]
+				], null, null, s2);
+				i(ZP.Block, Bw.ShadeBlockSlopeUp2, [
+					["Blocks", "BlockSlopeUp"]
+				], null, null, s2);
+				i(ZP.Block, Bw.ShadeBlockBridge2, [
+					["Blocks", "BlockBridge"]
+				], null, null, s2);
+				i(ZP.Block, Bw.ShadeBlockBridgeCorner2, [
+					["Blocks", "BlockBridgeCorner"]
+				], null, null, s2);
+				i(ZP.Block, Bw.ShadeBlockBridgeIntersectionT2, [
+					["Blocks", "BlockBridgeIntersectionT"]
+				], null, null, s2);
+				i(ZP.Block, Bw.ShadeBlockBridgeIntersectionCross2, [
+					["Blocks", "BlockBridgeIntersectionCross"]
+				], null, null, s2);
+
+				i(ZP.Block, Bw.ShadeBlock3, [
+					["Blocks", "Block"]
+				], null, null, s3);
+				i(ZP.Block, Bw.ShadeHalfBlock3, [
+					["Blocks", "HalfBlock"]
+				], null, null, s3);
+				i(ZP.Block, Bw.ShadeQuarterBlock3, [
+					["Blocks", "QuarterBlock"]
+				], null, null, s3);
+				i(ZP.Block, Bw.ShadeBlockSlopedDown3, [
+					["Blocks", "BlockSlopedDown"]
+				], [
+					[0, 0, 0],
+					[0, 1, 0]
+				], null, s3);
+				i(ZP.Block, Bw.ShadeBlockSlopedDownInnerCorner3, [
+					["Blocks", "BlockSlopedDownInnerCorner"]
+				], [
+					[0, 0, 0],
+					[0, 1, 0]
+				], null, s3);
+				i(ZP.Block, Bw.ShadeBlockSlopedDownOuterCorner3, [
+					["Blocks", "BlockSlopedDownOuterCorner"]
+				], [
+					[0, 0, 0],
+					[0, 1, 0]
+				], null, s3);
+				i(ZP.Block, Bw.ShadeBlockSlopedUp3, [
+					["Blocks", "BlockSlopedUp"]
+				], [
+					[0, 0, 0],
+					[0, 1, 0]
+				], null, s3);
+				i(ZP.Block, Bw.ShadeBlockSlopedUpInnerCorner3, [
+					["Blocks", "BlockSlopedUpInnerCorner"]
+				], [
+					[0, 0, 0],
+					[0, 1, 0]
+				], null, s3);
+				i(ZP.Block, Bw.ShadeBlockSlopedUpOuterCorner3, [
+					["Blocks", "BlockSlopedUpOuterCorner"]
+				], [
+					[0, 0, 0],
+					[0, 1, 0]
+				], null, s3);
+				i(ZP.Block, Bw.ShadeBlockSlopeDown3, [
+					["Blocks", "BlockSlopeDown"]
+				], null, null, s3);
+				i(ZP.Block, Bw.ShadeBlockSlopeUp3, [
+					["Blocks", "BlockSlopeUp"]
+				], null, null, s3);
+				i(ZP.Block, Bw.ShadeBlockBridge3, [
+					["Blocks", "BlockBridge"]
+				], null, null, s3);
+				i(ZP.Block, Bw.ShadeBlockBridgeCorner3, [
+					["Blocks", "BlockBridgeCorner"]
+				], null, null, s3);
+				i(ZP.Block, Bw.ShadeBlockBridgeIntersectionT3, [
+					["Blocks", "BlockBridgeIntersectionT"]
+				], null, null, s3);
+				i(ZP.Block, Bw.ShadeBlockBridgeIntersectionCross3, [
+					["Blocks", "BlockBridgeIntersectionCross"]
+				], null, null, s3);
+
+				i(ZP.Block, Bw.ShadeBlock4, [
+					["Blocks", "Block"]
+				], null, null, s4);
+				i(ZP.Block, Bw.ShadeHalfBlock4, [
+					["Blocks", "HalfBlock"]
+				], null, null, s4);
+				i(ZP.Block, Bw.ShadeQuarterBlock4, [
+					["Blocks", "QuarterBlock"]
+				], null, null, s4);
+				i(ZP.Block, Bw.ShadeBlockSlopedDown4, [
+					["Blocks", "BlockSlopedDown"]
+				], [
+					[0, 0, 0],
+					[0, 1, 0]
+				], null, s4);
+				i(ZP.Block, Bw.ShadeBlockSlopedDownInnerCorner4, [
+					["Blocks", "BlockSlopedDownInnerCorner"]
+				], [
+					[0, 0, 0],
+					[0, 1, 0]
+				], null, s4);
+				i(ZP.Block, Bw.ShadeBlockSlopedDownOuterCorner4, [
+					["Blocks", "BlockSlopedDownOuterCorner"]
+				], [
+					[0, 0, 0],
+					[0, 1, 0]
+				], null, s4);
+				i(ZP.Block, Bw.ShadeBlockSlopedUp4, [
+					["Blocks", "BlockSlopedUp"]
+				], [
+					[0, 0, 0],
+					[0, 1, 0]
+				], null, s4);
+				i(ZP.Block, Bw.ShadeBlockSlopedUpInnerCorner4, [
+					["Blocks", "BlockSlopedUpInnerCorner"]
+				], [
+					[0, 0, 0],
+					[0, 1, 0]
+				], null, s4);
+				i(ZP.Block, Bw.ShadeBlockSlopedUpOuterCorner4, [
+					["Blocks", "BlockSlopedUpOuterCorner"]
+				], [
+					[0, 0, 0],
+					[0, 1, 0]
+				], null, s4);
+				i(ZP.Block, Bw.ShadeBlockSlopeDown4, [
+					["Blocks", "BlockSlopeDown"]
+				], null, null, s4);
+				i(ZP.Block, Bw.ShadeBlockSlopeUp4, [
+					["Blocks", "BlockSlopeUp"]
+				], null, null, s4);
+				i(ZP.Block, Bw.ShadeBlockBridge4, [
+					["Blocks", "BlockBridge"]
+				], null, null, s4);
+				i(ZP.Block, Bw.ShadeBlockBridgeCorner4, [
+					["Blocks", "BlockBridgeCorner"]
+				], null, null, s4);
+				i(ZP.Block, Bw.ShadeBlockBridgeIntersectionT4, [
+					["Blocks", "BlockBridgeIntersectionT"]
+				], null, null, s4);
+				i(ZP.Block, Bw.ShadeBlockBridgeIntersectionCross4, [
+					["Blocks", "BlockBridgeIntersectionCross"]
+				], null, null, s4);
+
+				i(ZP.Block, Bw.ShadeBlock5, [
+					["Blocks", "Block"]
+				], null, null, s5);
+				i(ZP.Block, Bw.ShadeHalfBlock5, [
+					["Blocks", "HalfBlock"]
+				], null, null, s5);
+				i(ZP.Block, Bw.ShadeQuarterBlock5, [
+					["Blocks", "QuarterBlock"]
+				], null, null, s5);
+				i(ZP.Block, Bw.ShadeBlockSlopedDown5, [
+					["Blocks", "BlockSlopedDown"]
+				], [
+					[0, 0, 0],
+					[0, 1, 0]
+				], null, s5);
+				i(ZP.Block, Bw.ShadeBlockSlopedDownInnerCorner5, [
+					["Blocks", "BlockSlopedDownInnerCorner"]
+				], [
+					[0, 0, 0],
+					[0, 1, 0]
+				], null, s5);
+				i(ZP.Block, Bw.ShadeBlockSlopedDownOuterCorner5, [
+					["Blocks", "BlockSlopedDownOuterCorner"]
+				], [
+					[0, 0, 0],
+					[0, 1, 0]
+				], null, s5);
+				i(ZP.Block, Bw.ShadeBlockSlopedUp5, [
+					["Blocks", "BlockSlopedUp"]
+				], [
+					[0, 0, 0],
+					[0, 1, 0]
+				], null, s5);
+				i(ZP.Block, Bw.ShadeBlockSlopedUpInnerCorner5, [
+					["Blocks", "BlockSlopedUpInnerCorner"]
+				], [
+					[0, 0, 0],
+					[0, 1, 0]
+				], null, s5);
+				i(ZP.Block, Bw.ShadeBlockSlopedUpOuterCorner5, [
+					["Blocks", "BlockSlopedUpOuterCorner"]
+				], [
+					[0, 0, 0],
+					[0, 1, 0]
+				], null, s5);
+				i(ZP.Block, Bw.ShadeBlockSlopeDown5, [
+					["Blocks", "BlockSlopeDown"]
+				], null, null, s5);
+				i(ZP.Block, Bw.ShadeBlockSlopeUp5, [
+					["Blocks", "BlockSlopeUp"]
+				], null, null, s5);
+				i(ZP.Block, Bw.ShadeBlockBridge5, [
+					["Blocks", "BlockBridge"]
+				], null, null, s5);
+				i(ZP.Block, Bw.ShadeBlockBridgeCorner5, [
+					["Blocks", "BlockBridgeCorner"]
+				], null, null, s5);
+				i(ZP.Block, Bw.ShadeBlockBridgeIntersectionT5, [
+					["Blocks", "BlockBridgeIntersectionT"]
+				], null, null, s5);
+				i(ZP.Block, Bw.ShadeBlockBridgeIntersectionCross5, [
+					["Blocks", "BlockBridgeIntersectionCross"]
+				], null, null, s5);
+
+				i(ZP.Block, Bw.ShadeBlock6, [
+					["Blocks", "Block"]
+				], null, null, s6);
+				i(ZP.Block, Bw.ShadeHalfBlock6, [
+					["Blocks", "HalfBlock"]
+				], null, null, s6);
+				i(ZP.Block, Bw.ShadeQuarterBlock6, [
+					["Blocks", "QuarterBlock"]
+				], null, null, s6);
+				i(ZP.Block, Bw.ShadeBlockSlopedDown6, [
+					["Blocks", "BlockSlopedDown"]
+				], [
+					[0, 0, 0],
+					[0, 1, 0]
+				], null, s6);
+				i(ZP.Block, Bw.ShadeBlockSlopedDownInnerCorner6, [
+					["Blocks", "BlockSlopedDownInnerCorner"]
+				], [
+					[0, 0, 0],
+					[0, 1, 0]
+				], null, s6);
+				i(ZP.Block, Bw.ShadeBlockSlopedDownOuterCorner6, [
+					["Blocks", "BlockSlopedDownOuterCorner"]
+				], [
+					[0, 0, 0],
+					[0, 1, 0]
+				], null, s6);
+				i(ZP.Block, Bw.ShadeBlockSlopedUp6, [
+					["Blocks", "BlockSlopedUp"]
+				], [
+					[0, 0, 0],
+					[0, 1, 0]
+				], null, s6);
+				i(ZP.Block, Bw.ShadeBlockSlopedUpInnerCorner6, [
+					["Blocks", "BlockSlopedUpInnerCorner"]
+				], [
+					[0, 0, 0],
+					[0, 1, 0]
+				], null, s6);
+				i(ZP.Block, Bw.ShadeBlockSlopedUpOuterCorner6, [
+					["Blocks", "BlockSlopedUpOuterCorner"]
+				], [
+					[0, 0, 0],
+					[0, 1, 0]
+				], null, s6);
+				i(ZP.Block, Bw.ShadeBlockSlopeDown6, [
+					["Blocks", "BlockSlopeDown"]
+				], null, null, s6);
+				i(ZP.Block, Bw.ShadeBlockSlopeUp6, [
+					["Blocks", "BlockSlopeUp"]
+				], null, null, s6);
+				i(ZP.Block, Bw.ShadeBlockBridge6, [
+					["Blocks", "BlockBridge"]
+				], null, null, s6);
+				i(ZP.Block, Bw.ShadeBlockBridgeCorner6, [
+					["Blocks", "BlockBridgeCorner"]
+				], null, null, s6);
+				i(ZP.Block, Bw.ShadeBlockBridgeIntersectionT6, [
+					["Blocks", "BlockBridgeIntersectionT"]
+				], null, null, s6);
+				i(ZP.Block, Bw.ShadeBlockBridgeIntersectionCross6, [
+					["Blocks", "BlockBridgeIntersectionCross"]
+				], null, null, s6);
+
+				i(ZP.Block, Bw.ShadeBlock7, [
+					["Blocks", "Block"]
+				], null, null, s7);
+				i(ZP.Block, Bw.ShadeHalfBlock7, [
+					["Blocks", "HalfBlock"]
+				], null, null, s7);
+				i(ZP.Block, Bw.ShadeQuarterBlock7, [
+					["Blocks", "QuarterBlock"]
+				], null, null, s7);
+				i(ZP.Block, Bw.ShadeBlockSlopedDown7, [
+					["Blocks", "BlockSlopedDown"]
+				], [
+					[0, 0, 0],
+					[0, 1, 0]
+				], null, s7);
+				i(ZP.Block, Bw.ShadeBlockSlopedDownInnerCorner7, [
+					["Blocks", "BlockSlopedDownInnerCorner"]
+				], [
+					[0, 0, 0],
+					[0, 1, 0]
+				], null, s7);
+				i(ZP.Block, Bw.ShadeBlockSlopedDownOuterCorner7, [
+					["Blocks", "BlockSlopedDownOuterCorner"]
+				], [
+					[0, 0, 0],
+					[0, 1, 0]
+				], null, s7);
+				i(ZP.Block, Bw.ShadeBlockSlopedUp7, [
+					["Blocks", "BlockSlopedUp"]
+				], [
+					[0, 0, 0],
+					[0, 1, 0]
+				], null, s7);
+				i(ZP.Block, Bw.ShadeBlockSlopedUpInnerCorner7, [
+					["Blocks", "BlockSlopedUpInnerCorner"]
+				], [
+					[0, 0, 0],
+					[0, 1, 0]
+				], null, s7);
+				i(ZP.Block, Bw.ShadeBlockSlopedUpOuterCorner7, [
+					["Blocks", "BlockSlopedUpOuterCorner"]
+				], [
+					[0, 0, 0],
+					[0, 1, 0]
+				], null, s7);
+				i(ZP.Block, Bw.ShadeBlockSlopeDown7, [
+					["Blocks", "BlockSlopeDown"]
+				], null, null, s7);
+				i(ZP.Block, Bw.ShadeBlockSlopeUp7, [
+					["Blocks", "BlockSlopeUp"]
+				], null, null, s7);
+				i(ZP.Block, Bw.ShadeBlockBridge7, [
+					["Blocks", "BlockBridge"]
+				], null, null, s7);
+				i(ZP.Block, Bw.ShadeBlockBridgeCorner7, [
+					["Blocks", "BlockBridgeCorner"]
+				], null, null, s7);
+				i(ZP.Block, Bw.ShadeBlockBridgeIntersectionT7, [
+					["Blocks", "BlockBridgeIntersectionT"]
+				], null, null, s7);
+				i(ZP.Block, Bw.ShadeBlockBridgeIntersectionCross7, [
+					["Blocks", "BlockBridgeIntersectionCross"]
+				], null, null, s7);
+
+				i(ZP.Block, Bw.ShadeBlock8, [
+					["Blocks", "Block"]
+				], null, null, s8);
+				i(ZP.Block, Bw.ShadeHalfBlock8, [
+					["Blocks", "HalfBlock"]
+				], null, null, s8);
+				i(ZP.Block, Bw.ShadeQuarterBlock8, [
+					["Blocks", "QuarterBlock"]
+				], null, null, s8);
+				i(ZP.Block, Bw.ShadeBlockSlopedDown8, [
+					["Blocks", "BlockSlopedDown"]
+				], [
+					[0, 0, 0],
+					[0, 1, 0]
+				], null, s8);
+				i(ZP.Block, Bw.ShadeBlockSlopedDownInnerCorner8, [
+					["Blocks", "BlockSlopedDownInnerCorner"]
+				], [
+					[0, 0, 0],
+					[0, 1, 0]
+				], null, s8);
+				i(ZP.Block, Bw.ShadeBlockSlopedDownOuterCorner8, [
+					["Blocks", "BlockSlopedDownOuterCorner"]
+				], [
+					[0, 0, 0],
+					[0, 1, 0]
+				], null, s8);
+				i(ZP.Block, Bw.ShadeBlockSlopedUp8, [
+					["Blocks", "BlockSlopedUp"]
+				], [
+					[0, 0, 0],
+					[0, 1, 0]
+				], null, s8);
+				i(ZP.Block, Bw.ShadeBlockSlopedUpInnerCorner8, [
+					["Blocks", "BlockSlopedUpInnerCorner"]
+				], [
+					[0, 0, 0],
+					[0, 1, 0]
+				], null, s8);
+				i(ZP.Block, Bw.ShadeBlockSlopedUpOuterCorner8, [
+					["Blocks", "BlockSlopedUpOuterCorner"]
+				], [
+					[0, 0, 0],
+					[0, 1, 0]
+				], null, s8);
+				i(ZP.Block, Bw.ShadeBlockSlopeDown8, [
+					["Blocks", "BlockSlopeDown"]
+				], null, null, s8);
+				i(ZP.Block, Bw.ShadeBlockSlopeUp8, [
+					["Blocks", "BlockSlopeUp"]
+				], null, null, s8);
+				i(ZP.Block, Bw.ShadeBlockBridge8, [
+					["Blocks", "BlockBridge"]
+				], null, null, s8);
+				i(ZP.Block, Bw.ShadeBlockBridgeCorner8, [
+					["Blocks", "BlockBridgeCorner"]
+				], null, null, s8);
+				i(ZP.Block, Bw.ShadeBlockBridgeIntersectionT8, [
+					["Blocks", "BlockBridgeIntersectionT"]
+				], null, null, s8);
+				i(ZP.Block, Bw.ShadeBlockBridgeIntersectionCross8, [
+					["Blocks", "BlockBridgeIntersectionCross"]
+				], null, null, s8);
+
+				i(ZP.Block, Bw.ShadeBlock9, [
+					["Blocks", "Block"]
+				], null, null, s9);
+				i(ZP.Block, Bw.ShadeHalfBlock9, [
+					["Blocks", "HalfBlock"]
+				], null, null, s9);
+				i(ZP.Block, Bw.ShadeQuarterBlock9, [
+					["Blocks", "QuarterBlock"]
+				], null, null, s9);
+				i(ZP.Block, Bw.ShadeBlockSlopedDown9, [
+					["Blocks", "BlockSlopedDown"]
+				], [
+					[0, 0, 0],
+					[0, 1, 0]
+				], null, s9);
+				i(ZP.Block, Bw.ShadeBlockSlopedDownInnerCorner9, [
+					["Blocks", "BlockSlopedDownInnerCorner"]
+				], [
+					[0, 0, 0],
+					[0, 1, 0]
+				], null, s9);
+				i(ZP.Block, Bw.ShadeBlockSlopedDownOuterCorner9, [
+					["Blocks", "BlockSlopedDownOuterCorner"]
+				], [
+					[0, 0, 0],
+					[0, 1, 0]
+				], null, s9);
+				i(ZP.Block, Bw.ShadeBlockSlopedUp9, [
+					["Blocks", "BlockSlopedUp"]
+				], [
+					[0, 0, 0],
+					[0, 1, 0]
+				], null, s9);
+				i(ZP.Block, Bw.ShadeBlockSlopedUpInnerCorner9, [
+					["Blocks", "BlockSlopedUpInnerCorner"]
+				], [
+					[0, 0, 0],
+					[0, 1, 0]
+				], null, s9);
+				i(ZP.Block, Bw.ShadeBlockSlopedUpOuterCorner9, [
+					["Blocks", "BlockSlopedUpOuterCorner"]
+				], [
+					[0, 0, 0],
+					[0, 1, 0]
+				], null, s9);
+				i(ZP.Block, Bw.ShadeBlockSlopeDown9, [
+					["Blocks", "BlockSlopeDown"]
+				], null, null, s9);
+				i(ZP.Block, Bw.ShadeBlockSlopeUp9, [
+					["Blocks", "BlockSlopeUp"]
+				], null, null, s9);
+				i(ZP.Block, Bw.ShadeBlockBridge9, [
+					["Blocks", "BlockBridge"]
+				], null, null, s9);
+				i(ZP.Block, Bw.ShadeBlockBridgeCorner9, [
+					["Blocks", "BlockBridgeCorner"]
+				], null, null, s9);
+				i(ZP.Block, Bw.ShadeBlockBridgeIntersectionT9, [
+					["Blocks", "BlockBridgeIntersectionT"]
+				], null, null, s9);
+				i(ZP.Block, Bw.ShadeBlockBridgeIntersectionCross9, [
+					["Blocks", "BlockBridgeIntersectionCross"]
+				], null, null, s9);
+
+
+
+
+
 				i(ZP.WallTrack, Bw.WallTrackTop, [
 					["WallTrack", "WallTrackTop"]
 				], [
