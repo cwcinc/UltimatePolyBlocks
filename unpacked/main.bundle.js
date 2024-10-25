@@ -22702,7 +22702,7 @@
 				tT(this, JM, "f").renderOrder = -3;
 				e.scene.add(tT(this, JM, "f"));
 
-				// Square of ground that moves under the car (collision square?)
+				// Square of ground that moves under the car (shadow renders)
 				eT(this, QM, new Br(new ca(120, 120), new jc({
 					color: rgbDecimal(moddedEnvironment.ground.color),
 					depthWrite: !1

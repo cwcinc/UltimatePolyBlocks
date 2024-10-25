@@ -25,7 +25,7 @@ const moddedEnvironment = {
 			g: 195,	// default 192
 			b: 195	// default 195
 		},
-		intensity: 1	// default 4.7
+		intensity: 4.7	// default 4.7
 	},
 	sun: {
 		size: 1/1000,	// size of the sun (default 1/1000)
