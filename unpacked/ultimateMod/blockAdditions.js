@@ -17,23 +17,23 @@ const moddedEnvironment = {
 	skyLight: {
 		lightColor: {
 			r: 141,	// default 59
-			g: 141,	// default 97
-			b: 141	// default 141
+			g: 120,	// default 97
+			b: 100	// default 141
 		},
 		groundColor: {
 			r: 195,	// default 178
 			g: 195,	// default 192
 			b: 195	// default 195
 		},
-		intensity: 1	// default 4.7
+		intensity: 8	// default 4.7
 	},
 	sun: {
 		size: 1/1000,	// size of the sun (default 1/1000)
 		intensity: 60000000000,	// intensity of the sun (default 60000000000)
 		color: {
 			r: 20,	// default 20
-			g: 20,	// default 20
-			b: 19	// default 19
+			g: 10,	// default 20
+			b: 0	// default 19
 		}
 	},
 	sunLight: {
@@ -54,15 +54,15 @@ const moddedEnvironment = {
 	},
 	mountains: {
 		color: {
-			r: 53,	// default 53
-			g: 86,	// default 86
-			b: 56	// default 56
+			r: 100,	// default 53
+			g: 100,	// default 86
+			b: 80	// default 56
 		}
 	},
 	ground: {
 		color: {
 			r: 53,	// default 53
-			g: 86,	// default 86
+			g: 60,	// default 86
 			b: 56	// default 56
 		}
 	}

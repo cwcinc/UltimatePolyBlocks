@@ -22727,7 +22727,7 @@
 				}));
 				r.position.copy(n), r.receiveShadow = !0, tT(this, ZM, "f").scene.add(r), eT(this, $M, r, "f")
 			}
-			static createMountainVertices(e) {
+			static createMountainVertices(e) {	// IMPORTANT - creates mountain vertices
 				const t = new KM,
 					n = Math.max(200, 160 + Math.max(Math.abs(e.max.x - e.min.x) * Ky.partWidth / 2 * Math.SQRT2, Math.abs(e.max.y - e.min.y) * Ky.partLength / 2 * Math.SQRT2)),
 					i = new ln((e.min.x + (e.max.x - e.min.x) / 2) * Ky.partWidth, (e.min.y + (e.max.y - e.min.y) / 2) * Ky.partLength);
@@ -22735,7 +22735,7 @@
 					vertices: [],
 					offset: new Un
 				};
-				const r = Math.floor(n / 10),
+				const r = Math.floor(n / 10) * 100,
 					a = [];
 				for (let e = 0; e < r; ++e) {
 					const e = [];
@@ -22753,7 +22753,9 @@
 					for (let e = 0; e < r.length - 1; ++e) {
 						const a = n + 100 * e,
 							c = n + 100 * (e + 1);
-						s.push(Math.cos(t) * a, r[e] * o, Math.sin(t) * a), s.push(Math.cos(i) * a, l[e] * o, Math.sin(i) * a), s.push(Math.cos(i) * c, l[e + 1] * o, Math.sin(i) * c), s.push(Math.cos(t) * a, r[e] * o, Math.sin(t) * a), s.push(Math.cos(i) * c, l[e + 1] * o, Math.sin(i) * c), s.push(Math.cos(t) * c, r[e + 1] * o, Math.sin(t) * c)
+						s.push(Math.cos(t) * a, r[e] * o, Math.sin(t) * a), s.push(Math.cos(i) * a, l[e] * o, Math.sin(i) * a), s.push(Math.cos(i) * c, l[e + 1] * o, Math.sin(i) * c), s.push(Math.cos(t) * a, r[e] * o, Math.sin(t) * a), s.push(Math.cos(i) * c, l[e + 1] * o, Math.sin(i) * c), s.push(Math.cos(t) * c, r[e + 1] * o, Math.sin(t) * c);
+						s.push(Math.cos(i) * a, l[e+1] * o, Math.sin(i) * a);
+						//s.push(Math.cos(i) * a, l[e] * o, Math.sin(i) * a), s.push(Math.cos(i+0.1) * c, l[e + 1] * o, Math.sin(i) * c);
 					}
 				}
 				return {
