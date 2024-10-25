@@ -1,4 +1,3 @@
-
 (() => {
 	var e = {
 			811: (e, t, n) => {
@@ -22735,7 +22734,7 @@
 					vertices: [],
 					offset: new Un
 				};
-				const r = Math.floor(n / 10) * 100,
+				const r = Math.floor(n / 10) * 60,
 					a = [];
 				for (let e = 0; e < r; ++e) {
 					const e = [];
@@ -22753,7 +22752,7 @@
 					for (let e = 0; e < r.length - 1; ++e) {
 						const a = n + 100 * e,
 							c = n + 100 * (e + 1);
-
+						
 						s.push(Math.cos(t) * a, r[e] * o, Math.sin(t) * a);
 						s.push(Math.cos(i) * a, l[e] * o, Math.sin(i) * a);
 						s.push(Math.cos(i) * c, l[e + 1] * o, Math.sin(i) * c);
@@ -22763,6 +22762,7 @@
 						s.push(Math.cos(i) * a, l[e+1] * o, Math.sin(i) * a);
 						//s.push(Math.cos(i) * a, l[e] * o, Math.sin(i) * a), s.push(Math.cos(i+0.1) * c, l[e + 1] * o, Math.sin(i) * c);
 					}
+
 				}
 				return {
 					vertices: s,

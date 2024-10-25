@@ -25,11 +25,11 @@ const moddedEnvironment = {
 			g: 195,	// default 192
 			b: 195	// default 195
 		},
-		intensity: 8	// default 4.7
+		intensity: 6	// default 4.7
 	},
 	sun: {
 		size: 20/1000,	// size of the sun (default 1/1000)
-		intensity: 100000,	// intensity of the sun (default 60000000000)
+		intensity: 300000,	// intensity of the sun (default 60000000000)
 		color: {
 			r: 20,	// default 20
 			g: 10,	// default 20
@@ -50,7 +50,7 @@ const moddedEnvironment = {
 			g: 0,	// default 169
 			b: 0	// default 169
 		},
-		density: 0//0.02	// default 0.001
+		density: 0.02	// default 0.001
 	},
 	mountains: {
 		color: {

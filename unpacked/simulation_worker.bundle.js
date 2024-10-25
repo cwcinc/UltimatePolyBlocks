@@ -7302,7 +7302,7 @@ const moddedBlocks = {
 				Ammo.destroy(r), Ammo.destroy(a), Go(this, bo, "m", Ho).call(this, o), Wo(this, zo, e, "f")
 			}
 			createMountains(t, e) {
-				if (t.length % 9 != 0) throw "Number of mountain vertices is not dividable by 9";
+				//if (t.length % 9 != 0) throw "Number of mountain vertices is not dividable by 9";
 				if (t.length > 0) {
 					if (null != Go(this, Uo, "f")) throw "Mountains are already initialized";
 					const n = new Ammo.btTriangleMesh;
