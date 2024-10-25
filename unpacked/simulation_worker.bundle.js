@@ -1,12 +1,14 @@
 const moddedBlocks = {
-	categories: ["Minecraft", "CustomSigns", "Statues", "RoadSigns", "SpecialBlocks", "Space"],
+	categories: ["Minecraft", "CustomSigns", "Statues", "RoadSigns", "SpecialBlocks", "Space", "Environment", "SlopedTurns"],
 	modelPaths: [
 		"ultimateMod/models/minecraft.glb",
 		"ultimateMod/models/customSigns.glb",
 		"ultimateMod/models/statues.glb",
 		"ultimateMod/models/roadSigns.glb",
 		"ultimateMod/models/specialBlocks.glb",
-		"ultimateMod/models/space.glb"
+		"ultimateMod/models/space.glb",
+		"ultimateMod/models/environment.glb",
+		"ultimateMod/models/slopedTurns.glb",
 	],
     blocks: [
 		{name: "Grass", category: "Minecraft", blenderSceneName: "Minecraft", id: 180},
@@ -54,7 +56,19 @@ const moddedBlocks = {
 		{name: "planet3", category: "Space", blenderSceneName: "Space", id: 216},
 		{name: "planet4", category: "Space", blenderSceneName: "Space", id: 217},
 		{name: "planet5", category: "Space", blenderSceneName: "Space", id: 218},
-		{name: "planet6", category: "Space", blenderSceneName: "Space", id: 219}
+		{name: "planet6", category: "Space", blenderSceneName: "Space", id: 219},
+		
+		{name: "SandyHill", category: "Environment", blenderSceneName: "Environment", id: 220},
+		{name: "SnowyMt", category: "Environment", blenderSceneName: "Environment", id: 221},
+		{name: "Volcano", category: "Environment", blenderSceneName: "Environment", id: 222},
+
+		{name: "TurnLong2Diag", category: "SlopedTurns", blenderSceneName: "SlopedTurns", id: 223},
+		{name: "TurnLong3Diag", category: "SlopedTurns", blenderSceneName: "SlopedTurns", id: 224},
+		{name: "TurnLongDiag", category: "SlopedTurns", blenderSceneName: "SlopedTurns", id: 225},
+		{name: "TurnSharpDiag", category: "SlopedTurns", blenderSceneName: "SlopedTurns", id: 226},
+		{name: "TurnShortDiag", category: "SlopedTurns", blenderSceneName: "SlopedTurns", id: 227},
+		{name: "TurnSLeftDiag", category: "SlopedTurns", blenderSceneName: "SlopedTurns", id: 228},
+		{name: "TurnSRightDiag", category: "SlopedTurns", blenderSceneName: "SlopedTurns", id: 229}
 
 		// next id: 220
 	]
