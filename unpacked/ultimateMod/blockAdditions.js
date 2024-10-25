@@ -1,4 +1,6 @@
-const modVersion = "0.1.0";
+const modVersion = "10.31.2024";
+const modName = "SpookyTrack"
+
 const lbVersion = "0.4.1";
 
 const moddedEnvironment = {
@@ -9,30 +11,30 @@ const moddedEnvironment = {
 			b: 0
 		},
 		zenith: {	// Top color of sky gradient (default 5 140 255)
-			r: 10,
-			g: 5,
+			r: 30,
+			g: 10,
 			b: 0
 		}
 	},
 	skyLight: {
 		lightColor: {
 			r: 141,	// default 59
-			g: 120,	// default 97
-			b: 100	// default 141
+			g: 100,	// default 97
+			b: 60	// default 141
 		},
 		groundColor: {
 			r: 195,	// default 178
-			g: 195,	// default 192
-			b: 195	// default 195
+			g: 170,	// default 192
+			b: 130	// default 195
 		},
 		intensity: 6	// default 4.7
 	},
 	sun: {
-		size: 20/1000,	// size of the sun (default 1/1000)
-		intensity: 300000,	// intensity of the sun (default 60000000000)
+		size: 50/1000,	// size of the sun (default 1/1000)
+		intensity: 10000,	// intensity of the sun (default 60000000000)
 		color: {
 			r: 20,	// default 20
-			g: 10,	// default 20
+			g: 5,	// default 20
 			b: 0	// default 19
 		}
 	},
@@ -61,9 +63,9 @@ const moddedEnvironment = {
 	},
 	ground: {
 		color: {
-			r: 53,	// default 53
-			g: 60,	// default 86
-			b: 56	// default 56
+			r: 50,	// default 53
+			g: 50,	// default 86
+			b: 50	// default 56
 		}
 	}
 }
