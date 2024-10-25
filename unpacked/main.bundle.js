@@ -22462,6 +22462,9 @@
 				AM(this, XS, i, "f"), 	// mountains
 				AM(this, YS, r, "f"), 	// selected langauge
 				AM(this, KS, a, "f"), 	// world object (camera, canvas, scene)
+
+				window.getWorld = () => {return AM(this, KS, a, "f")},	// cwcinc
+
 				AM(this, ZS, o, "f"), 	// audio context
 				AM(this, JS, s, "f"), 	// profile slot
 				AM(this, QS, l, "f"), 	// key bindings

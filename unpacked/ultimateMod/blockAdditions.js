@@ -16,9 +16,9 @@ const moddedEnvironment = {
 	},
 	skyLight: {
 		lightColor: {
-			r: 141,	// default 59
-			g: 141,	// default 97
-			b: 141	// default 141
+			r: 255,	// default 59
+			g: 255,	// default 97
+			b: 255	// default 141
 		},
 		groundColor: {
 			r: 195,	// default 178
@@ -147,3 +147,55 @@ const moddedBlocks = {
 const rgbDecimal = (rgb) => {
 	return (rgb.r << 16) + (rgb.g << 8) + (rgb.b);
 }
+
+/*
+var rainbowTime = 0;
+setInterval(() => {
+	let r = (Math.cos(rainbowTime) + 1) / 2;
+	let g = (Math.cos(rainbowTime + (2 * Math.PI / 3)) + 1) / 2;
+	let b = (Math.cos(rainbowTime + (4 * Math.PI / 3)) + 1) / 2;
+	window.getWorld().scene.children[0].r = r;
+	window.getWorld().scene.children[0].g = g;
+	window.getWorld().scene.children[0].b = b;
+	rainbowTime = (rainbowTime + 0.02) % (Math.PI * 2);
+}, 50);
+*/
+
+/*
+
+	Global Functions:
+		getWorld():
+			camera:
+				position(x,y,z)
+				rotation(_x,_y,_z)
+				aspect(1.925)
+				near(0.1)
+				far(10000)
+				coordinateSystem(2000)
+				filmGauge(35)
+				filmOffset(0)
+				focus(10)
+				fov(70)
+				zoom(1)
+				scale(x,y,z)
+				up(x(0),y(1),z(0))
+
+			canvas  // html canvas
+
+			scene:
+				children[array]:
+					[
+						0: HemisphereLight (sky light): {color(r,g,b), groundColor(r,g,b), intensity, position(x,y,z), rotation(_x,_y,_z)}
+						1: DirectionalLight (sun light): same as HemisphereLight excluding groundColor
+					]
+
+				fog:
+					color(r,g,b)
+					density
+
+				position
+				rotation
+				scale
+				up
+
+*/
