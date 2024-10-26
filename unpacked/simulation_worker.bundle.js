@@ -1,5 +1,5 @@
 const moddedBlocks = {
-	categories: ["Minecraft", "CustomSigns", "Statues", "RoadSigns", "SpecialBlocks", "Space", "Environment", "SlopedTurns"],
+	categories: ["Minecraft", "CustomSigns", "Statues", "RoadSigns", "SpecialBlocks", "Space", "Environment", "SlopedTurns", "Spooky"],
 	modelPaths: [
 		"ultimateMod/models/minecraft.glb",
 		"ultimateMod/models/customSigns.glb",
@@ -8,7 +8,9 @@ const moddedBlocks = {
 		"ultimateMod/models/specialBlocks.glb",
 		"ultimateMod/models/space.glb",
 		"ultimateMod/models/environment.glb",
-		"ultimateMod/models/slopedTurns.glb",
+		"ultimateMod/models/diagonalRoads.glb",
+		"ultimateMod/models/spookyTrack.glb",
+		"ultimateMod/models/hayBales.glb"
 	],
     blocks: [
 		{name: "Grass", category: "Minecraft", blenderSceneName: "Minecraft", id: 180},
@@ -62,15 +64,45 @@ const moddedBlocks = {
 		{name: "SnowyMt", category: "Environment", blenderSceneName: "Environment", id: 221},
 		{name: "Volcano", category: "Environment", blenderSceneName: "Environment", id: 222},
 
-		{name: "TurnLong2Diag", category: "SlopedTurns", blenderSceneName: "SlopedTurns", id: 223},
-		{name: "TurnLong3Diag", category: "SlopedTurns", blenderSceneName: "SlopedTurns", id: 224},
-		{name: "TurnLongDiag", category: "SlopedTurns", blenderSceneName: "SlopedTurns", id: 225},
-		{name: "TurnSharpDiag", category: "SlopedTurns", blenderSceneName: "SlopedTurns", id: 226},
-		{name: "TurnShortDiag", category: "SlopedTurns", blenderSceneName: "SlopedTurns", id: 227},
-		{name: "TurnSLeftDiag", category: "SlopedTurns", blenderSceneName: "SlopedTurns", id: 228},
-		{name: "TurnSRightDiag", category: "SlopedTurns", blenderSceneName: "SlopedTurns", id: 229}
+		{name: "TurnLong2Diag", category: "SlopedTurns", blenderSceneName: "DiagonalRoads", id: 223},
+		{name: "TurnLong3Diag", category: "SlopedTurns", blenderSceneName: "DiagonalRoads", id: 224},
+		{name: "TurnLongDiag", category: "SlopedTurns", blenderSceneName: "DiagonalRoads", id: 225},
+		{name: "TurnSharpDiag", category: "SlopedTurns", blenderSceneName: "DiagonalRoads", id: 226},
+		{name: "TurnShortDiag", category: "SlopedTurns", blenderSceneName: "DiagonalRoads", id: 227},
+		{name: "TurnSLeftDiag", category: "SlopedTurns", blenderSceneName: "DiagonalRoads", id: 228},
+		{name: "TurnSRightDiag", category: "SlopedTurns", blenderSceneName: "DiagonalRoads", id: 229},
 
-		// next id: 220
+		{name: "CandyCorn", category: "Spooky", blenderSceneName: "Spooky", id: 230},
+		{name: "CandyCornCluster", category: "Spooky", blenderSceneName: "Spooky", id: 231},
+		{name: "CandyCornTriple", category: "Spooky", blenderSceneName: "Spooky", id: 232},
+		{name: "Grave1", category: "Spooky", blenderSceneName: "Spooky", id: 233},
+		{name: "Grave1Double", category: "Spooky", blenderSceneName: "Spooky", id: 234},
+		{name: "Grave2", category: "Spooky", blenderSceneName: "Spooky", id: 235},
+		{name: "Grave2Double", category: "Spooky", blenderSceneName: "Spooky", id: 236},
+		{name: "JackOLanternAngry", category: "Spooky", blenderSceneName: "Spooky", id: 237},
+		{name: "JackOLanternAngryBig", category: "Spooky", blenderSceneName: "Spooky", id: 238},
+		{name: "JackOLanternSmile", category: "Spooky", blenderSceneName: "Spooky", id: 239},
+		{name: "JackOLanternSmileBig", category: "Spooky", blenderSceneName: "Spooky", id: 240},
+		{name: "Lollipop", category: "Spooky", blenderSceneName: "Spooky", id: 241},
+		{name: "LollipopGate", category: "Spooky", blenderSceneName: "Spooky", id: 242},
+		{name: "Pumpkin", category: "Spooky", blenderSceneName: "Spooky", id: 243},
+		{name: "PumpkinBig", category: "Spooky", blenderSceneName: "Spooky", id: 244},
+		{name: "PumpkinTall", category: "Spooky", blenderSceneName: "Spooky", id: 245},
+		{name: "PumpkinTrio", category: "Spooky", blenderSceneName: "Spooky", id: 246},
+		{name: "Boggy", category: "Spooky", blenderSceneName: "Spooky", id: 247},
+		{name: "DeadTree1", category: "Spooky", blenderSceneName: "Spooky", id: 248},
+		{name: "DeadTree2", category: "Spooky", blenderSceneName: "Spooky", id: 249},
+		{name: "DeadTree3", category: "Spooky", blenderSceneName: "Spooky", id: 250},
+		{name: "Eye1", category: "Spooky", blenderSceneName: "Spooky", id: 251},
+		{name: "Eye2", category: "Spooky", blenderSceneName: "Spooky", id: 252},
+		{name: "Mushroom1", category: "Spooky", blenderSceneName: "Spooky", id: 253},
+		{name: "Mushroom2", category: "Spooky", blenderSceneName: "Spooky", id: 254},
+
+		{name: "HayBale", category: "Spooky", blenderSceneName: "HayBales", id: 255},
+		{name: "HayBaleTriple", category: "Spooky", blenderSceneName: "HayBales", id: 256},
+		{name: "HayBaleStack", category: "Spooky", blenderSceneName: "HayBales", id: 257}
+
+		// next id: 258
 	]
 };
 
