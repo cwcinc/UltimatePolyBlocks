@@ -74,7 +74,8 @@ const moddedBlocks = {
 	categories: ["Spooky"],
 	modelPaths: [
 		"ultimateMod/models/spookyTrack.glb",
-		"ultimateMod/models/hayBales.glb"
+		"ultimateMod/models/hayBales.glb",
+		"ultimateMod/models/polySpiders.glb"
 	],
     blocks: [
 		{name: "CandyCorn", category: "Spooky", blenderSceneName: "Spooky", id: 230},
@@ -98,16 +99,28 @@ const moddedBlocks = {
 		{name: "DeadTree1", category: "Spooky", blenderSceneName: "Spooky", id: 248},
 		{name: "DeadTree2", category: "Spooky", blenderSceneName: "Spooky", id: 249},
 		{name: "DeadTree3", category: "Spooky", blenderSceneName: "Spooky", id: 250},
+		{name: "DeadTree4", category: "Spooky", blenderSceneName: "Spooky", id: 260},
+		{name: "DeadTreeBig1", category: "Spooky", blenderSceneName: "Spooky", id: 261},
+		{name: "DeadTreeBig2", category: "Spooky", blenderSceneName: "Spooky", id: 262},
+		{name: "DeadTreeBig3", category: "Spooky", blenderSceneName: "Spooky", id: 263},
+		{name: "DeadTreeBig4", category: "Spooky", blenderSceneName: "Spooky", id: 264},
+		{name: "DeadTreeBig5", category: "Spooky", blenderSceneName: "Spooky", id: 265},
 		{name: "Eye1", category: "Spooky", blenderSceneName: "Spooky", id: 251},
 		{name: "Eye2", category: "Spooky", blenderSceneName: "Spooky", id: 252},
 		{name: "Mushroom1", category: "Spooky", blenderSceneName: "Spooky", id: 253},
 		{name: "Mushroom2", category: "Spooky", blenderSceneName: "Spooky", id: 254},
+		{name: "MushroomRed1", category: "Spooky", blenderSceneName: "Spooky", id: 258},
+		{name: "MushroomRed2", category: "Spooky", blenderSceneName: "Spooky", id: 259},
 
 		{name: "HayBale", category: "Spooky", blenderSceneName: "HayBales", id: 255},
 		{name: "HayBaleTriple", category: "Spooky", blenderSceneName: "HayBales", id: 256},
-		{name: "HayBaleStack", category: "Spooky", blenderSceneName: "HayBales", id: 257}
+		{name: "HayBaleStack", category: "Spooky", blenderSceneName: "HayBales", id: 257},
 
-		// next id: 258
+		{name: "Spider", category: "Spooky", blenderSceneName: "Spiders", id: 266},
+		{name: "SpiderBig", category: "Spooky", blenderSceneName: "Spiders", id: 267},
+		{name: "SpiderPile", category: "Spooky", blenderSceneName: "Spiders", id: 268}
+
+		// next id: 266
 	]
 };
 
