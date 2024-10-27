@@ -3,7 +3,9 @@ const moddedBlocks = {
 	modelPaths: [
 		"ultimateMod/models/spookyTrack.glb",
 		"ultimateMod/models/hayBales.glb",
-		"ultimateMod/models/polySpiders.glb"
+		"ultimateMod/models/polySpiders.glb",
+		"ultimateMod/models/lanternHanging.glb",
+		"ultimateMod/models/cauldron.glb"
 	],
     blocks: [
 		{name: "CandyCorn", category: "Spooky", blenderSceneName: "Spooky", id: 230},
@@ -28,11 +30,11 @@ const moddedBlocks = {
 		{name: "DeadTree2", category: "Spooky", blenderSceneName: "Spooky", id: 249},
 		{name: "DeadTree3", category: "Spooky", blenderSceneName: "Spooky", id: 250},
 		{name: "DeadTree4", category: "Spooky", blenderSceneName: "Spooky", id: 260},
-		/*{name: "DeadTreeBig1", category: "Spooky", blenderSceneName: "Spooky", id: 261},
+		{name: "DeadTreeBig1", category: "Spooky", blenderSceneName: "Spooky", id: 261},
 		{name: "DeadTreeBig2", category: "Spooky", blenderSceneName: "Spooky", id: 262},
 		{name: "DeadTreeBig3", category: "Spooky", blenderSceneName: "Spooky", id: 263},
 		{name: "DeadTreeBig4", category: "Spooky", blenderSceneName: "Spooky", id: 264},
-		{name: "DeadTreeBig5", category: "Spooky", blenderSceneName: "Spooky", id: 265},*/
+		{name: "DeadTreeBig5", category: "Spooky", blenderSceneName: "Spooky", id: 265},
 		{name: "Eye1", category: "Spooky", blenderSceneName: "Spooky", id: 251},
 		{name: "Eye2", category: "Spooky", blenderSceneName: "Spooky", id: 252},
 		{name: "Mushroom1", category: "Spooky", blenderSceneName: "Spooky", id: 253},
@@ -46,9 +48,12 @@ const moddedBlocks = {
 
 		{name: "Spider", category: "Spooky", blenderSceneName: "Spiders", id: 266},
 		{name: "SpiderBig", category: "Spooky", blenderSceneName: "Spiders", id: 267},
-		{name: "SpiderPile", category: "Spooky", blenderSceneName: "Spiders", id: 268}
+		{name: "SpiderPile", category: "Spooky", blenderSceneName: "Spiders", id: 268},
 
-		// next id: 266
+		{name: "Cauldron", category: "Spooky", blenderSceneName: "Cauldron", id: 270},
+		//{name: "LanternHanging", category: "Spooky", blenderSceneName: "LanternHanging", id: 282}
+
+		// next id: 270
 	]
 };
 

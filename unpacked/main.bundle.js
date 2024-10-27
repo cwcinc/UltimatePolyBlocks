@@ -14702,7 +14702,25 @@
 				}
 			})), "undefined" != typeof window && (window.__THREE__ ? console.warn("WARNING: Multiple instances of Three.js being imported.") : window.__THREE__ = m),
 			function(e) {
-				e[e.ImperialUnitsEnabled = 0] = "ImperialUnitsEnabled", e[e.ResetHintEnabled = 1] = "ResetHintEnabled", e[e.GhostCarEnabled = 2] = "GhostCarEnabled", e[e.CockpitCameraToggle = 3] = "CockpitCameraToggle", e[e.CheckpointsPosition = 4] = "CheckpointsPosition", e[e.TimerPosition = 5] = "TimerPosition", e[e.SpeedometerPosition = 6] = "SpeedometerPosition", e[e.Language = 7] = "Language", e[e.CarShadowQuality = 8] = "CarShadowQuality", e[e.TrackShadowEnabled = 9] = "TrackShadowEnabled", e[e.CloudsEnabled = 10] = "CloudsEnabled", e[e.ParticlesEnabled = 11] = "ParticlesEnabled", e[e.SkidmarksEnabled = 12] = "SkidmarksEnabled", e[e.RenderScale = 13] = "RenderScale", e[e.Antialiasing = 14] = "Antialiasing", e[e.SoundEffectVolume = 15] = "SoundEffectVolume", e[e.MusicVolume = 16] = "MusicVolume", e[e.CheckpointVolume = 17] = "CheckpointVolume"
+				e[e.ImperialUnitsEnabled = 0] = "ImperialUnitsEnabled";
+				e[e.ResetHintEnabled = 1] = "ResetHintEnabled";
+				e[e.GhostCarEnabled = 2] = "GhostCarEnabled";
+				e[e.CockpitCameraToggle = 3] = "CockpitCameraToggle";
+				e[e.CheckpointsPosition = 4] = "CheckpointsPosition";
+				e[e.TimerPosition = 5] = "TimerPosition";
+				e[e.SpeedometerPosition = 6] = "SpeedometerPosition";
+				e[e.Language = 7] = "Language";
+				e[e.CarShadowQuality = 8] = "CarShadowQuality";
+				e[e.TrackShadowEnabled = 9] = "TrackShadowEnabled";
+				e[e.CloudsEnabled = 10] = "CloudsEnabled";
+				e[e.ParticlesEnabled = 11] = "ParticlesEnabled";
+				e[e.SkidmarksEnabled = 12] = "SkidmarksEnabled";
+				e[e.RenderScale = 13] = "RenderScale";
+				e[e.Antialiasing = 14] = "Antialiasing";
+				e[e.SoundEffectVolume = 15] = "SoundEffectVolume";
+				e[e.MusicVolume = 16] = "MusicVolume";
+				e[e.CheckpointVolume = 17] = "CheckpointVolume";
+				e[e.Spookyness = 18] = "Spookyness";
 			}(Zh || (Zh = {}));
 		const Jh = Zh;
 		var Qh, $h, ed, td, nd, id, rd, ad, od, sd, ld = function(e, t, n, i, r) {
@@ -22583,6 +22601,9 @@
 				WM(this, NM, "f").shadowMap.enabled = !0;
 				FM(this, DM, new Qs, "f");
 				n && (WM(this, DM, "f").fog = new Js(rgbDecimal(moddedEnvironment.fog.color), moddedEnvironment.fog.density));	// fog color and density (default 6793641, .001)
+
+				window.globalScene == null && (window.globalScene = WM(this, DM, "f"));
+
 				WM(this, DM, "f").add(new xh(rgbDecimal(moddedEnvironment.skyLight.lightColor), rgbDecimal(moddedEnvironment.skyLight.groundColor), moddedEnvironment.skyLight.intensity));	// sky hemisphere light (lightcolor, groundcolor, lightintensity) (default 3891597, 11714755, 4.7) NOT MAIN SKY COLOR, ONLY LIGHT
 				FM(this, BM, new Nh(rgbDecimal(moddedEnvironment.sunLight.color), moddedEnvironment.sunLight.intensity), "f");	// sun directional light (color, intensity) (defualt 16777215, 4.7) GENERATES CAR SHADOW
 				WM(this, BM, "f").position.set(WM(this, OM, "f").x, WM(this, OM, "f").y, WM(this, OM, "f").z);
@@ -23010,7 +23031,40 @@
 			}, {
 				title: UT(this, vT, "f").get("On"),
 				value: "true"
-			}], Jh.Antialiasing), UT(this, mT, "m", RT).call(this, UT(this, vT, "f").get("Audio")), UT(this, mT, "m", IT).call(this, UT(this, vT, "f").get("Sound effect volume"), Jh.SoundEffectVolume), UT(this, mT, "m", IT).call(this, UT(this, vT, "f").get("Music volume"), Jh.MusicVolume), UT(this, mT, "m", IT).call(this, UT(this, vT, "f").get("Checkpoint volume"), Jh.CheckpointVolume), UT(this, mT, "m", RT).call(this, UT(this, vT, "f").get("Controls")), UT(this, mT, "m", NT).call(this, UT(this, vT, "f").get("Vehicle accelerate"), Lb.VehicleAccelerate), UT(this, mT, "m", NT).call(this, UT(this, vT, "f").get("Vehicle brake"), Lb.VehicleBrake), UT(this, mT, "m", NT).call(this, UT(this, vT, "f").get("Vehicle turn left"), Lb.VehicleTurnLeft), UT(this, mT, "m", NT).call(this, UT(this, vT, "f").get("Vehicle turn right"), Lb.VehicleTurnRight), UT(this, mT, "m", NT).call(this, UT(this, vT, "f").get("Vehicle reset"), Lb.VehicleReset), UT(this, mT, "m", NT).call(this, UT(this, vT, "f").get("Vehicle cockpit camera"), Lb.VehicleCockpitCamera), UT(this, mT, "m", NT).call(this, UT(this, vT, "f").get("Hide UI"), Lb.ToggleUI), UT(this, mT, "m", NT).call(this, UT(this, vT, "f").get("Editor rotate part"), Lb.EditorRotate), UT(this, mT, "m", NT).call(this, UT(this, vT, "f").get("Editor height modifier"), Lb.EditorHeightModifier), UT(this, mT, "m", NT).call(this, UT(this, vT, "f").get("Editor delete part"), Lb.EditorDelete), UT(this, mT, "m", NT).call(this, UT(this, vT, "f").get("Editor forwards"), Lb.EditorMoveForwards), UT(this, mT, "m", NT).call(this, UT(this, vT, "f").get("Editor backwards"), Lb.EditorMoveBackwards), UT(this, mT, "m", NT).call(this, UT(this, vT, "f").get("Editor left"), Lb.EditorMoveLeft), UT(this, mT, "m", NT).call(this, UT(this, vT, "f").get("Editor right"), Lb.EditorMoveRight), UT(this, mT, "m", NT).call(this, UT(this, vT, "f").get("Editor rotate left"), Lb.EditorRotateLeft), UT(this, mT, "m", NT).call(this, UT(this, vT, "f").get("Editor rotate right"), Lb.EditorRotateRight), UT(this, mT, "m", NT).call(this, UT(this, vT, "f").get("Editor move down"), Lb.EditorMoveDown), UT(this, mT, "m", NT).call(this, UT(this, vT, "f").get("Editor move up"), Lb.EditorMoveUp), UT(this, mT, "m", NT).call(this, UT(this, vT, "f").get("Editor test"), Lb.EditorTest), UT(this, mT, "m", NT).call(this, UT(this, vT, "f").get("Editor pick"), Lb.EditorPick), UT(this, mT, "m", NT).call(this, UT(this, vT, "f").get("Toggle FPS counter"), Lb.ToggleFpsCounter), UT(this, mT, "m", NT).call(this, UT(this, vT, "f").get("Toggle spectator camera"), Lb.ToggleSpectatorCamera), UT(this, mT, "m", NT).call(this, UT(this, vT, "f").get("Spectator forwards"), Lb.SpectatorMoveForwards), UT(this, mT, "m", NT).call(this, UT(this, vT, "f").get("Spectator backwards"), Lb.SpectatorMoveBackwards), UT(this, mT, "m", NT).call(this, UT(this, vT, "f").get("Spectator left"), Lb.SpectatorMoveLeft), UT(this, mT, "m", NT).call(this, UT(this, vT, "f").get("Spectator right"), Lb.SpectatorMoveRight), UT(this, mT, "m", NT).call(this, UT(this, vT, "f").get("Spectator speed modifier"), Lb.SpectatorSpeedModifier)
+			}], Jh.Antialiasing), 
+			UT(this, mT, "m", RT).call(this, UT(this, vT, "f").get("Audio")), 
+			UT(this, mT, "m", IT).call(this, UT(this, vT, "f").get("Sound effect volume"), Jh.SoundEffectVolume), 
+			UT(this, mT, "m", IT).call(this, UT(this, vT, "f").get("Music volume"), Jh.MusicVolume), 
+			UT(this, mT, "m", IT).call(this, UT(this, vT, "f").get("Checkpoint volume"), Jh.CheckpointVolume), 
+			UT(this, mT, "m", IT).call(this, "Spookyness", Jh.Spookyness), 
+			UT(this, mT, "m", RT).call(this, UT(this, vT, "f").get("Controls")), 
+			UT(this, mT, "m", NT).call(this, UT(this, vT, "f").get("Vehicle accelerate"), Lb.VehicleAccelerate), 
+			UT(this, mT, "m", NT).call(this, UT(this, vT, "f").get("Vehicle brake"), Lb.VehicleBrake), 
+			UT(this, mT, "m", NT).call(this, UT(this, vT, "f").get("Vehicle turn left"), Lb.VehicleTurnLeft), 
+			UT(this, mT, "m", NT).call(this, UT(this, vT, "f").get("Vehicle turn right"), Lb.VehicleTurnRight), 
+			UT(this, mT, "m", NT).call(this, UT(this, vT, "f").get("Vehicle reset"), Lb.VehicleReset), 
+			UT(this, mT, "m", NT).call(this, UT(this, vT, "f").get("Vehicle cockpit camera"), Lb.VehicleCockpitCamera), 
+			UT(this, mT, "m", NT).call(this, UT(this, vT, "f").get("Hide UI"), Lb.ToggleUI), 
+			UT(this, mT, "m", NT).call(this, UT(this, vT, "f").get("Editor rotate part"), Lb.EditorRotate), 
+			UT(this, mT, "m", NT).call(this, UT(this, vT, "f").get("Editor height modifier"), Lb.EditorHeightModifier), 
+			UT(this, mT, "m", NT).call(this, UT(this, vT, "f").get("Editor delete part"), Lb.EditorDelete), 
+			UT(this, mT, "m", NT).call(this, UT(this, vT, "f").get("Editor forwards"), Lb.EditorMoveForwards), 
+			UT(this, mT, "m", NT).call(this, UT(this, vT, "f").get("Editor backwards"), Lb.EditorMoveBackwards), 
+			UT(this, mT, "m", NT).call(this, UT(this, vT, "f").get("Editor left"), Lb.EditorMoveLeft), 
+			UT(this, mT, "m", NT).call(this, UT(this, vT, "f").get("Editor right"), Lb.EditorMoveRight), 
+			UT(this, mT, "m", NT).call(this, UT(this, vT, "f").get("Editor rotate left"), Lb.EditorRotateLeft), 
+			UT(this, mT, "m", NT).call(this, UT(this, vT, "f").get("Editor rotate right"), Lb.EditorRotateRight), 
+			UT(this, mT, "m", NT).call(this, UT(this, vT, "f").get("Editor move down"), Lb.EditorMoveDown), 
+			UT(this, mT, "m", NT).call(this, UT(this, vT, "f").get("Editor move up"), Lb.EditorMoveUp), 
+			UT(this, mT, "m", NT).call(this, UT(this, vT, "f").get("Editor test"), Lb.EditorTest), 
+			UT(this, mT, "m", NT).call(this, UT(this, vT, "f").get("Editor pick"), Lb.EditorPick), 
+			UT(this, mT, "m", NT).call(this, UT(this, vT, "f").get("Toggle FPS counter"), Lb.ToggleFpsCounter), 
+			UT(this, mT, "m", NT).call(this, UT(this, vT, "f").get("Toggle spectator camera"), Lb.ToggleSpectatorCamera), 
+			UT(this, mT, "m", NT).call(this, UT(this, vT, "f").get("Spectator forwards"), Lb.SpectatorMoveForwards), 
+			UT(this, mT, "m", NT).call(this, UT(this, vT, "f").get("Spectator backwards"), Lb.SpectatorMoveBackwards), 
+			UT(this, mT, "m", NT).call(this, UT(this, vT, "f").get("Spectator left"), Lb.SpectatorMoveLeft), 
+			UT(this, mT, "m", NT).call(this, UT(this, vT, "f").get("Spectator right"), Lb.SpectatorMoveRight), 
+			UT(this, mT, "m", NT).call(this, UT(this, vT, "f").get("Spectator speed modifier"), Lb.SpectatorSpeedModifier)
 		}, RT = function(e) {
 			const t = document.createElement("h2");
 			t.textContent = e, UT(this, kT, "f").appendChild(t)
@@ -23100,7 +23154,19 @@
 				})), l.appendChild(h);
 				const d = document.createElement("button");
 				d.className = "button apply", d.append(document.createTextNode(t.get("Apply"))), d.innerHTML += ' <img class="button-icon" src="images/apply.svg">', d.addEventListener("click", (() => {
-					n.playUIClick(), i.updateSettings(Array.from(UT(this, MT, "f"))), i.saveSettings(), i.setKeyBindings(Array.from(UT(this, TT, "f"))), r.generateMeshes(), t.language = i.getSetting(Jh.Language), o()
+					n.playUIClick();
+
+					const spookyNess = i.getSettingFloat(Jh.Spookyness);	// Spookyness setting from 0 to 1
+					moddedEnvironment.fog.density = 0.005 + spookyNess * 0.3;
+					window.globalScene.fog.density = moddedEnvironment.fog.density;
+					
+
+					i.updateSettings(Array.from(UT(this, MT, "f")));
+					i.saveSettings();
+					i.setKeyBindings(Array.from(UT(this, TT, "f")));
+					r.generateMeshes();
+					t.language = i.getSetting(Jh.Language);
+					o();
 				})), l.appendChild(d), window.addEventListener("keydown", DT(this, ET, (e => {
 					"Escape" == e.code && (o(), e.preventDefault())
 				}), "f"))
@@ -26037,7 +26103,8 @@
 					[Jh.Antialiasing, "true"],
 					[Jh.SoundEffectVolume, "1"],
 					[Jh.MusicVolume, "1"],
-					[Jh.CheckpointVolume, "1"]
+					[Jh.CheckpointVolume, "1"],
+					[Jh.Spookyness, "1"]
 				])
 			}
 			defaultKeyBindings() {

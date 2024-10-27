@@ -3,7 +3,7 @@ const modName = "SpookyTrack by cwcinc"
 
 const lbVersion = "0.4.1";
 
-const moddedEnvironment = {
+var moddedEnvironment = {
 	skyColor: {
 		horizon: {	// Horizon color of sky gradient (default 255 255 255)
 			r: 0,
@@ -75,7 +75,9 @@ const moddedBlocks = {
 	modelPaths: [
 		"ultimateMod/models/spookyTrack.glb",
 		"ultimateMod/models/hayBales.glb",
-		"ultimateMod/models/polySpiders.glb"
+		"ultimateMod/models/polySpiders.glb",
+		"ultimateMod/models/lanternHanging.glb",
+		"ultimateMod/models/cauldron.glb"
 	],
     blocks: [
 		{name: "CandyCorn", category: "Spooky", blenderSceneName: "Spooky", id: 230},
@@ -118,9 +120,12 @@ const moddedBlocks = {
 
 		{name: "Spider", category: "Spooky", blenderSceneName: "Spiders", id: 266},
 		{name: "SpiderBig", category: "Spooky", blenderSceneName: "Spiders", id: 267},
-		{name: "SpiderPile", category: "Spooky", blenderSceneName: "Spiders", id: 268}
+		{name: "SpiderPile", category: "Spooky", blenderSceneName: "Spiders", id: 268},
 
-		// next id: 266
+		{name: "Cauldron", category: "Spooky", blenderSceneName: "Cauldron", id: 270},
+		//{name: "LanternHanging", category: "Spooky", blenderSceneName: "LanternHanging", id: 282}
+
+		// next id: 270
 	]
 };
 
