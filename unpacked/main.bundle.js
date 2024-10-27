@@ -22757,7 +22757,7 @@
 					vertices: [],
 					offset: new Un
 				};
-				const r = 2700,
+				const r = 900,
 					a = [];
 				for (let e = 0; e < r; ++e) {
 					const e = [];
