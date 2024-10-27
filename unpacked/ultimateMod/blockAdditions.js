@@ -70,13 +70,12 @@ var moddedEnvironment = {
 	}
 }
 
-const moddedBlocks = {
+var moddedBlocks = {
 	categories: ["Spooky"],
 	modelPaths: [
 		"ultimateMod/models/spookyTrack.glb",
 		"ultimateMod/models/hayBales.glb",
-		"ultimateMod/models/polySpiders.glb",
-		"ultimateMod/models/lanternHanging.glb"
+		"ultimateMod/models/polySpiders.glb"
 	],
     blocks: [
 		{name: "CandyCorn", category: "Spooky", blenderSceneName: "Spooky", id: 230},
@@ -132,9 +131,7 @@ const moddedBlocks = {
 		{name: "FenceHalf", category: "Spooky", blenderSceneName: "Spooky", id: 278},
 
 		{name: "CornLight", category: "Spooky", blenderSceneName: "Spooky", id: 279},
-		{name: "CornMazeSingle", category: "Spooky", blenderSceneName: "Spooky", id: 280},
-		{name: "CornMazeDouble", category: "Spooky", blenderSceneName: "Spooky", id: 281},
-		{name: "CornMazeTriple", category: "Spooky", blenderSceneName: "Spooky", id: 282}
+		{name: "CornMazeSingle", category: "Spooky", blenderSceneName: "Spooky", id: 280}
 
 		//{name: "LanternHanging", category: "Spooky", blenderSceneName: "LanternHanging", id: 283}
 
