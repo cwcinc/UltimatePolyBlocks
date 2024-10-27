@@ -1,11 +1,12 @@
+var ENGINE = new Map();
+
 const moddedBlocks = {
 	categories: ["Spooky"],
 	modelPaths: [
 		"ultimateMod/models/spookyTrack.glb",
 		"ultimateMod/models/hayBales.glb",
 		"ultimateMod/models/polySpiders.glb",
-		"ultimateMod/models/lanternHanging.glb",
-		"ultimateMod/models/cauldron.glb"
+		"ultimateMod/models/lanternHanging.glb"
 	],
     blocks: [
 		{name: "CandyCorn", category: "Spooky", blenderSceneName: "Spooky", id: 230},
@@ -20,12 +21,11 @@ const moddedBlocks = {
 		{name: "JackOLanternSmile", category: "Spooky", blenderSceneName: "Spooky", id: 239},
 		{name: "JackOLanternSmileBig", category: "Spooky", blenderSceneName: "Spooky", id: 240},
 		{name: "Lollipop", category: "Spooky", blenderSceneName: "Spooky", id: 241},
-		{name: "LollipopGate", category: "Spooky", blenderSceneName: "Spooky", id: 242},
+		{name: "LollipopGate", category: "Spooky", blenderSceneName: "Spooky", id: 242, isSpooky:true},
 		{name: "Pumpkin", category: "Spooky", blenderSceneName: "Spooky", id: 243},
 		{name: "PumpkinBig", category: "Spooky", blenderSceneName: "Spooky", id: 244},
 		{name: "PumpkinTall", category: "Spooky", blenderSceneName: "Spooky", id: 245},
 		{name: "PumpkinTrio", category: "Spooky", blenderSceneName: "Spooky", id: 246},
-		{name: "Boggy", category: "Spooky", blenderSceneName: "Spooky", id: 247},
 		{name: "DeadTree1", category: "Spooky", blenderSceneName: "Spooky", id: 248},
 		{name: "DeadTree2", category: "Spooky", blenderSceneName: "Spooky", id: 249},
 		{name: "DeadTree3", category: "Spooky", blenderSceneName: "Spooky", id: 250},
@@ -50,13 +50,27 @@ const moddedBlocks = {
 		{name: "SpiderBig", category: "Spooky", blenderSceneName: "Spiders", id: 267},
 		{name: "SpiderPile", category: "Spooky", blenderSceneName: "Spiders", id: 268},
 
-		{name: "Cauldron", category: "Spooky", blenderSceneName: "Cauldron", id: 270},
-		//{name: "LanternHanging", category: "Spooky", blenderSceneName: "LanternHanging", id: 282}
+		{name: "Boggy", category: "Spooky", blenderSceneName: "Spooky", id: 247},
+		{name: "BoggyBig", category: "Spooky", blenderSceneName: "Spooky", id: 270},
+		{name: "Cauldron", category: "Spooky", blenderSceneName: "Spooky", id: 271},
+		{name: "CauldronGoopGreen", category: "Spooky", blenderSceneName: "Spooky", id: 272},
+		{name: "CauldronGoopPurple", category: "Spooky", blenderSceneName: "Spooky", id: 273},
+		{name: "FenceCorner", category: "Spooky", blenderSceneName: "Spooky", id: 274},
+		{name: "FenceFull", category: "Spooky", blenderSceneName: "Spooky", id: 275},
+		{name: "FenceGate", category: "Spooky", blenderSceneName: "Spooky", id: 276},
+		{name: "FenceGate2", category: "Spooky", blenderSceneName: "Spooky", id: 277},
+		{name: "FenceHalf", category: "Spooky", blenderSceneName: "Spooky", id: 278},
 
-		// next id: 270
+		{name: "CornLight", category: "Spooky", blenderSceneName: "Spooky", id: 279},
+		{name: "CornMazeSingle", category: "Spooky", blenderSceneName: "Spooky", id: 280},
+		{name: "CornMazeDouble", category: "Spooky", blenderSceneName: "Spooky", id: 281},
+		{name: "CornMazeTriple", category: "Spooky", blenderSceneName: "Spooky", id: 282},
+
+		//{name: "LanternHanging", category: "Spooky", blenderSceneName: "LanternHanging", id: 283}
+
+		// next id: 283
 	]
 };
-
 
 (() => {
 	var t = {
@@ -7738,8 +7752,9 @@ const moddedBlocks = {
 					down: a,
 					left: o
 				}), Rs(this, ws, "f").increment()), Rs(this, Ss, "f").increment()), i && !Rs(this, ys, "f") && Rs(this, xs, "f")) {
-				const t = 4e3;
-				Rs(this, us, "f").applyEngineForce(t, 2), Rs(this, us, "f").applyEngineForce(t, 3)
+				const t = ENGINE.hasOwnProperty(Rs(this, us, "f")) && ENGINE[Rs(this, us, "f")].isSpooky ? 16000 : 4000; // default 4000 speed
+				Rs(this, us, "f").applyEngineForce(t, 2);
+				Rs(this, us, "f").applyEngineForce(t, 3);
 			} else Rs(this, us, "f").applyEngineForce(0, 2), Rs(this, us, "f").applyEngineForce(0, 3);
 			if (a && !Rs(this, ys, "f") && Rs(this, xs, "f"))
 				if (this.getSpeedKmh() > 1) {
@@ -7751,7 +7766,7 @@ const moddedBlocks = {
 				}
 			else Rs(this, us, "f").setBrake(0, 0), Rs(this, us, "f").setBrake(0, 1), Rs(this, us, "f").setBrake(0, 2), Rs(this, us, "f").setBrake(0, 3);
 			const s = Rs(this, cs, "m", ks).call(this).applyQuaternion(this.getQuaternion().invert()),
-				l = -new V(s.x, s.z).normalize().angle() + Math.PI / 2;
+				l = -new V(s.x, s.z).normalize().angle() + Math.PI / 2;			// IMPORTANT - car drive engine physics
 			let c = Math.max(0, Math.min(1, this.getSpeedKmh() / 30));
 			this.getWheelInContact(0) || this.getWheelInContact(1) || (c = 0);
 			const h = 144 / Math.pow(46, 1.55),
@@ -7764,9 +7779,17 @@ const moddedBlocks = {
 		};
 		const Ls = class {
 			constructor(t, e, n, i, r, a, o, s) {
+				//ENGINE.set(Rs(this, us, "f"), {isSpooky: false});
+				function spook() {	// cwcinc
+					ENGINE.get(Rs(this, us, "f")).isSpooky = true;
+					
+					setTimeout(() => {ENGINE[Rs(this, us, "f")].isSpooky = false}, 500);
+				}
+
 				cs.add(this), hs.set(this, void 0), ds.set(this, void 0), us.set(this, void 0), fs.set(this, void 0), ms.set(this, void 0), ps.set(this, void 0), gs.set(this, void 0), _s.set(this, 0), vs.set(this, new So), ys.set(this, !1), xs.set(this, !1), ws.set(this, new Qo), Ss.set(this, new Qo), bs.set(this, 0), Ms.set(this, !1), As.set(this, void 0), Ts.set(this, void 0), Ns(this, gs, o, "f"), Ns(this, ps, a, "f"), Ns(this, ds, new jo, "f"), Rs(this, ds, "f").createGroundPlane(), Rs(this, ds, "f").createMountains(t, e), Ns(this, hs, new ls(Rs(this, ds, "f"), n, i), "f"), Rs(this, ds, "f").addPreStepEventListener(Ns(this, As, (t => {
 					null != Rs(this, us, "f") && (Rs(this, ds, "f").activePhysicsAt(this.getPosition()), Rs(this, cs, "m", Is).call(this), Rs(this, cs, "m", Ds).call(this, t, o))
-				}), "f")), Rs(this, ds, "f").addPostStepEventListener(Ns(this, Ts, (() => {
+				}), "f"));
+				Rs(this, ds, "f").addPostStepEventListener(Ns(this, Ts, (() => {
 					var t;
 					if (null != Rs(this, us, "f") && !Rs(this, ys, "f")) {
 						const e = this.getMatrix4(),
@@ -7778,11 +7801,15 @@ const moddedBlocks = {
 							if (Rs(this, hs, "f").checkFinish(i)) {
 								Ns(this, ys, !0, "f");
 							}
-							
+
 						} else {
 							if (Rs(this, hs, "f").checkCheckpoint(i, Rs(this, bs, "f"))) {
 								Ns(this, bs, (t = Rs(this, bs, "f"), ++t), "f");
 							}
+						}
+
+						if (Rs(this, hs, "f").checkSpooky(i)) {
+							// spook();
 						}
 					}
 				}), "f"));
@@ -8838,7 +8865,8 @@ const moddedBlocks = {
 				return this.forEachPart(((e, r, a, o, s) => {
 					const l = t.getPart(o);
 					l.tiles.rotated(s).forEach(((t, r, s) => {
-						c.fillRect(e + t - n, a + s - i, 1, 1), ((o == nl.Start) || (o == nl.StartLine)) ? d.push([e + t - n, a + s - i]) : null != l.detector && l.detector.type == $o.Checkpoint ? h.push([e + t - n, a + s - i]) : null != l.detector && l.detector.type == $o.Finish && u.push([e + t - n, a + s - i])
+						c.fillRect(e + t - n, a + s - i, 1, 1);
+						((o == nl.Start) || (o == nl.StartLine)) ? d.push([e + t - n, a + s - i]) : null != l.detector && l.detector.type == $o.Checkpoint ? h.push([e + t - n, a + s - i]) : null != l.detector && l.detector.type == $o.Finish && u.push([e + t - n, a + s - i])
 					}))
 				})), c.fillStyle = "#e2c026", h.forEach((([t, e]) => {
 					c.fillRect(t, e, 1, 1)

@@ -24278,6 +24278,18 @@
 								size: [11, 3.8, 2]
 							}
 						);
+					} else if (block.hasOwnProperty("isSpooky")) {
+						i(
+							ZP[block.category], 
+							Bw[block.name], 
+							[[block.blenderSceneName, block.name]],
+							[[0,0,0]], 
+							{
+								type: yy.Spooky,
+								center: [0, 2.2, 0],
+								size: [11, 3.8, 2]
+							}
+						);
 					} else {
 						i(ZP[block.category], Bw[block.name], [[block.blenderSceneName, block.name]]);
 					}
