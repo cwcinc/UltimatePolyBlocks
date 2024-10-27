@@ -1,4 +1,4 @@
-var ENGINE = new Map();
+var ENGINE = {};
 
 var moddedBlocks = {
 	categories: ["Spooky"],
@@ -7749,7 +7749,7 @@ var moddedBlocks = {
 					down: a,
 					left: o
 				}), Rs(this, ws, "f").increment()), Rs(this, Ss, "f").increment()), i && !Rs(this, ys, "f") && Rs(this, xs, "f")) {
-				const t = ENGINE.hasOwnProperty(Rs(this, us, "f")) && ENGINE[Rs(this, us, "f")].isSpooky ? 16000 : 4000; // default 4000 speed
+				const t = ENGINE.isSpooky ? 16000 : 4000; // default 4000 speed
 				Rs(this, us, "f").applyEngineForce(t, 2);
 				Rs(this, us, "f").applyEngineForce(t, 3);
 			} else Rs(this, us, "f").applyEngineForce(0, 2), Rs(this, us, "f").applyEngineForce(0, 3);
@@ -7776,14 +7776,42 @@ var moddedBlocks = {
 		};
 		const Ls = class {
 			constructor(t, e, n, i, r, a, o, s) {
-				//ENGINE.set(Rs(this, us, "f"), {isSpooky: false});
-				function spook() {	// cwcinc
-					ENGINE.get(Rs(this, us, "f")).isSpooky = true;
-					
-					setTimeout(() => {ENGINE[Rs(this, us, "f")].isSpooky = false}, 500);
+				cs.add(this);
+				hs.set(this, void 0);
+				ds.set(this, void 0);
+				us.set(this, void 0);
+				fs.set(this, void 0);
+				ms.set(this, void 0);
+				ps.set(this, void 0);
+				gs.set(this, void 0);
+				_s.set(this, 0);
+				vs.set(this, new So);
+				ys.set(this, !1);
+				xs.set(this, !1);
+				ws.set(this, new Qo);
+				Ss.set(this, new Qo);
+				bs.set(this, 0);
+				Ms.set(this, !1);
+				As.set(this, void 0);
+				Ts.set(this, void 0);
+				Ns(this, gs, o, "f");
+				Ns(this, ps, a, "f");
+				Ns(this, ds, new jo, "f");
+				Rs(this, ds, "f").createGroundPlane();
+				Rs(this, ds, "f").createMountains(t, e);
+				Ns(this, hs, new ls(Rs(this, ds, "f"), n, i), "f");
+
+				ENGINE = {isSpooky: false, spookyTimeout: 0};	// cwcinc - init ENGINE
+
+				function spook(This) {
+					try {clearTimeout(ENGINE.spookyTimeout)} catch(e) {};
+					let spookyTimeout = setTimeout(() => {
+						ENGINE = {isSpooky: false, spookyTimeout:-1};
+					}, 500);
+					ENGINE = {isSpooky: true, spookyTimeout: spookyTimeout};
 				}
 
-				cs.add(this), hs.set(this, void 0), ds.set(this, void 0), us.set(this, void 0), fs.set(this, void 0), ms.set(this, void 0), ps.set(this, void 0), gs.set(this, void 0), _s.set(this, 0), vs.set(this, new So), ys.set(this, !1), xs.set(this, !1), ws.set(this, new Qo), Ss.set(this, new Qo), bs.set(this, 0), Ms.set(this, !1), As.set(this, void 0), Ts.set(this, void 0), Ns(this, gs, o, "f"), Ns(this, ps, a, "f"), Ns(this, ds, new jo, "f"), Rs(this, ds, "f").createGroundPlane(), Rs(this, ds, "f").createMountains(t, e), Ns(this, hs, new ls(Rs(this, ds, "f"), n, i), "f"), Rs(this, ds, "f").addPreStepEventListener(Ns(this, As, (t => {
+				Rs(this, ds, "f").addPreStepEventListener(Ns(this, As, (t => {
 					null != Rs(this, us, "f") && (Rs(this, ds, "f").activePhysicsAt(this.getPosition()), Rs(this, cs, "m", Is).call(this), Rs(this, cs, "m", Ds).call(this, t, o))
 				}), "f"));
 				Rs(this, ds, "f").addPostStepEventListener(Ns(this, Ts, (() => {
@@ -7806,7 +7834,7 @@ var moddedBlocks = {
 						}
 
 						if (Rs(this, hs, "f").checkSpooky(i)) {
-							// spook();
+							spook(this);
 						}
 					}
 				}), "f"));
