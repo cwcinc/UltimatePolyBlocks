@@ -19725,6 +19725,9 @@
 			e[e.BlackBlockBridgeCorner = 176] = "BlackBlockBridgeCorner";
 			e[e.BlackBlockBridgeIntersectionT = 177] = "BlackBlockBridgeIntersectionT";
 			e[e.BlackBlockBridgeIntersectionCross = 178] = "BlackBlockBridgeIntersectionCross";
+
+			e[e.WhiteBlock = 400] = "WhiteBlock";
+			e[e.WhiteHalfBlock = 401] = "WhiteHalfBlock";
 		}(Uw || (Uw = {}));
 		const Bw = Uw;
 		var Ow, zw, Fw, Ww, Hw, Vw, Gw, jw = function(e, t, n, i, r) {
@@ -24238,6 +24241,10 @@
 					return r(e, 0, 0, -.135)
 				}
 
+				function whiteColor(e) {
+					return r(e, 0, 0, 0.25)
+				}
+
 				/**    IMPORTANT - second block declaration (categorical)     */
 
 				/** 
@@ -24976,6 +24983,7 @@
 				i(ZP.Block, Bw.BlackHalfBlock, [
 					["Blocks", "HalfBlock"]
 				], null, null, s);
+
 				i(ZP.Block, Bw.BlackQuarterBlock, [
 					["Blocks", "QuarterBlock"]
 				], null, null, s);
@@ -25033,6 +25041,14 @@
 				i(ZP.Block, Bw.BlackBlockBridgeIntersectionCross, [
 					["Blocks", "BlockBridgeIntersectionCross"]
 				], null, null, s);
+
+				i(ZP.Block, Bw.WhiteBlock, [
+					["Blocks", "Block"]
+				], null, null, whiteColor);
+				i(ZP.Block, Bw.WhiteHalfBlock, [
+					["Blocks", "HalfBlock"]
+				], null, null, whiteColor);
+
 				i(ZP.WallTrack, Bw.WallTrackTop, [
 					["WallTrack", "WallTrackTop"]
 				], [

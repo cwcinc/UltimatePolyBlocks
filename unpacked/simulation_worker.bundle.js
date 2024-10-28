@@ -8335,7 +8335,10 @@ var moddedBlocks = {
             t[t.BlackBlockBridge = 175] = "BlackBlockBridge";
             t[t.BlackBlockBridgeCorner = 176] = "BlackBlockBridgeCorner";
             t[t.BlackBlockBridgeIntersectionT = 177] = "BlackBlockBridgeIntersectionT";
-            t[t.BlackBlockBridgeIntersectionCross = 178] = "BlackBlockBridgeIntersectionCross"
+            t[t.BlackBlockBridgeIntersectionCross = 178] = "BlackBlockBridgeIntersectionCross";
+
+			t[t.WhiteBlock = 400] = "WhiteBlock";
+			t[t.WhiteHalfBlock = 401] = "WhiteHalfBlock";
 		}(el || (el = {}));
 		const nl = el;
 
