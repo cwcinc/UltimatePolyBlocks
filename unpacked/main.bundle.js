@@ -24260,7 +24260,7 @@
 							{
 								type: yy.Checkpoint,
 								center: [0, 2.2, 0],
-								size: [11, 3.8, 2]
+								size: [20, 3.8, 2]
 							}
 						);
 					} else if (block.hasOwnProperty("isFinish")) {
@@ -24272,7 +24272,7 @@
 							{
 								type: yy.Finish,
 								center: [0, 2.2, 0],
-								size: [11, 3.8, 2]
+								size: [20, 3.8, 2]
 							}
 						);
 					} else if (block.hasOwnProperty("isSpooky")) {
@@ -24284,7 +24284,7 @@
 							{
 								type: yy.Spooky,
 								center: [0, 2.2, 0],
-								size: [11, 3.8, 2]
+								size: [20, 3.8, 20]
 							}
 						);
 					} else {

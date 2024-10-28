@@ -7806,12 +7806,13 @@ var moddedBlocks = {
 
 				ENGINE = {isSpooky: false, spookyTimeout: 0};	// cwcinc - init ENGINE
 
-				function spook(This) {
-					try {clearTimeout(ENGINE.spookyTimeout)} catch(e) {};
+				function spook() {
+					/*try {clearTimeout(ENGINE.spookyTimeout)} catch(e) {};
 					let spookyTimeout = setTimeout(() => {
 						ENGINE = {isSpooky: false, spookyTimeout:-1};
 					}, 500);
-					ENGINE = {isSpooky: true, spookyTimeout: spookyTimeout};
+					ENGINE = {isSpooky: true, spookyTimeout: spookyTimeout};*/
+					ENGINE.isSpooky = true;
 				}
 
 				Rs(this, ds, "f").addPreStepEventListener(Ns(this, As, (t => {
@@ -7837,7 +7838,9 @@ var moddedBlocks = {
 						}
 
 						if (Rs(this, hs, "f").checkSpooky(i)) {
-							spook(this);
+							spook();
+						} else {
+							ENGINE.isSpooky = false;
 						}
 					}
 				}), "f"));
