@@ -1,12 +1,13 @@
 var ENGINE = {};
 
 var moddedBlocks = {
-	categories: ["Spooky"],
+	categories: ["Spooky", "Zones"],
 	modelPaths: [
 		"ultimateMod/models/spookyTrack.glb",
 		"ultimateMod/models/hayBales.glb",
 		"ultimateMod/models/polySpiders.glb",
-		"ultimateMod/models/cobblestone.glb"
+		"ultimateMod/models/cobblestone.glb",
+		"ultimateMod/models/zones.glb"
 	],
     blocks: [
 		{name: "CandyCorn", category: "Spooky", blenderSceneName: "Spooky", id: 230},
@@ -64,13 +65,18 @@ var moddedBlocks = {
 		{name: "CornLight", category: "Spooky", blenderSceneName: "Spooky", id: 279},
 		{name: "CornMazeSingle", category: "Spooky", blenderSceneName: "Spooky", id: 280},
 
-		{name: "CobbleStraight", category: "Spooky", blenderSceneName: "Cobblestone", id: 281}
+		{name: "CobbleStraight", category: "Spooky", blenderSceneName: "Cobblestone", id: 281},
+		{name: "CobbleCheckpoint", category: "Spooky", blenderSceneName: "Cobblestone", id: 283, isCheckpoint: true},
+		//{name: "CobbleFinish", category: "Spooky", blenderSceneName: "Cobblestone", id: 285}
+		//{name: "CobbleStart", category: "Spooky", blenderSceneName: "Cobblestone", id: 284}
 
-		//{name: "LanternHanging", category: "Spooky", blenderSceneName: "LanternHanging", id: 283}
+		{name: "CheckpointZone", category: "Spooky", blenderSceneName: "Zones", id: 286, isCheckpoint: true},
+		{name: "FinishZone", category: "Zones", blenderSceneName: "Zones", id: 287, isFinish: true}
 
 		// next id: 283
 	]
 };
+
 
 (() => {
 	var t = {
@@ -7752,14 +7758,18 @@ var moddedBlocks = {
 					down: a,
 					left: o
 				}), Rs(this, ws, "f").increment()), Rs(this, Ss, "f").increment()), i && !Rs(this, ys, "f") && Rs(this, xs, "f")) {
-				const t = ENGINE.isSpooky ? 16000 : 4000; // default 4000 speed
+				const t = ENGINE.isSpooky ? 100*4000 : 4000; // default 4000 speed
 				Rs(this, us, "f").applyEngineForce(t, 2);
 				Rs(this, us, "f").applyEngineForce(t, 3);
 			} else Rs(this, us, "f").applyEngineForce(0, 2), Rs(this, us, "f").applyEngineForce(0, 3);
 			if (a && !Rs(this, ys, "f") && Rs(this, xs, "f"))
 				if (this.getSpeedKmh() > 1) {
 					const t = 10;
-					Rs(this, us, "f").setBrake(t, 0), Rs(this, us, "f").setBrake(t, 1), Rs(this, us, "f").setBrake(t, 2), Rs(this, us, "f").setBrake(t, 3), Ns(this, Ms, !0, "f")
+					Rs(this, us, "f").setBrake(t, 0);
+					Rs(this, us, "f").setBrake(t, 1);
+					Rs(this, us, "f").setBrake(t, 2);
+					Rs(this, us, "f").setBrake(t, 3);
+					Ns(this, Ms, !0, "f")
 				} else {
 					const t = -1e3;
 					Rs(this, us, "f").applyEngineForce(t, 2), Rs(this, us, "f").applyEngineForce(t, 3), Rs(this, us, "f").setBrake(0, 0), Rs(this, us, "f").setBrake(0, 1), Rs(this, us, "f").setBrake(0, 2), Rs(this, us, "f").setBrake(0, 3)
@@ -8679,7 +8689,7 @@ var moddedBlocks = {
 				max: new V
 			}, "f")
 		}, bl = function() {  // IMPORTANT - start line (multistart)
-			const t = Al(this, gl, "f").has(nl.StartLine) ? Al(this, gl, "f").get(nl.StartLine) : Al(this, gl, "f").get(nl.Start);
+			const t = Al(this, gl, "f").has(nl.CobbleStart) ? Al(this, gl, "f").get(nl.CobbleStart) : Al(this, gl, "f").get(nl.Start);
 			return null != t && t.length > 0 ? t[t.length - 1] : null
 		}, El.partWidth = 20, El.partHeight = 5, El.partLength = 20;
 		const Cl = El;
@@ -8689,7 +8699,7 @@ var moddedBlocks = {
 			return "m" === n ? i : "a" === n ? i.call(t) : i ? i.value : e.get(t)
 		};
 		kl = new WeakMap, Pl = new WeakSet, Il = function() { // IMPORTANT - start line (multistart)
-			const t = Nl(this, kl, "f").has(nl.StartLine) ? Nl(this, kl, "f").get(nl.StartLine) : Nl(this, kl, "f").get(nl.Start);
+			const t = Nl(this, kl, "f").has(nl.CobbleStart) ? Nl(this, kl, "f").get(nl.CobbleStart) : Nl(this, kl, "f").get(nl.Start);
 			return null != t && t.length > 0 ? t[t.length - 1] : null
 		}, Dl = function(t) {
 			const e = t.getPartTypesWithDetector($o.Checkpoint),
@@ -8754,7 +8764,7 @@ var moddedBlocks = {
 				}
 			}
 			hasStartingPoint() {
-				return (Nl(this, kl, "f").has(nl.Start) || Nl(this, kl, "f").has(nl.StartLine))
+				return (Nl(this, kl, "f").has(nl.Start) || Nl(this, kl, "f").has(nl.CobbleStart))
 			}
 			getStartTransform() {
 				const t = Nl(this, Pl, "m", Il).call(this);
@@ -8897,7 +8907,7 @@ var moddedBlocks = {
 					const l = t.getPart(o);
 					l.tiles.rotated(s).forEach(((t, r, s) => {
 						c.fillRect(e + t - n, a + s - i, 1, 1);
-						((o == nl.Start) || (o == nl.StartLine)) ? d.push([e + t - n, a + s - i]) : null != l.detector && l.detector.type == $o.Checkpoint ? h.push([e + t - n, a + s - i]) : null != l.detector && l.detector.type == $o.Finish && u.push([e + t - n, a + s - i])
+						((o == nl.Start) || (o == nl.CobbleStart)) ? d.push([e + t - n, a + s - i]) : null != l.detector && l.detector.type == $o.Checkpoint ? h.push([e + t - n, a + s - i]) : null != l.detector && l.detector.type == $o.Finish && u.push([e + t - n, a + s - i])
 					}))
 				})), c.fillStyle = "#e2c026", h.forEach((([t, e]) => {
 					c.fillRect(t, e, 1, 1)

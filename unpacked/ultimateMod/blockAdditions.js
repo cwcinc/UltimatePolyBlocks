@@ -1,5 +1,5 @@
 const modVersion = "10.31.2024";
-const modName = "SpookyTrack by cwcinc and ShovelFish"
+const modName = "SpookyTrack by cwcinc and Shovelfish"
 
 const lbVersion = "0.4.1";
 
@@ -71,12 +71,13 @@ var moddedEnvironment = {
 }
 
 var moddedBlocks = {
-	categories: ["Spooky"],
+	categories: ["Spooky", "Zones"],
 	modelPaths: [
 		"ultimateMod/models/spookyTrack.glb",
 		"ultimateMod/models/hayBales.glb",
 		"ultimateMod/models/polySpiders.glb",
-		"ultimateMod/models/cobblestone.glb"
+		"ultimateMod/models/cobblestone.glb",
+		"ultimateMod/models/zones.glb"
 	],
     blocks: [
 		{name: "CandyCorn", category: "Spooky", blenderSceneName: "Spooky", id: 230},
@@ -134,9 +135,13 @@ var moddedBlocks = {
 		{name: "CornLight", category: "Spooky", blenderSceneName: "Spooky", id: 279},
 		{name: "CornMazeSingle", category: "Spooky", blenderSceneName: "Spooky", id: 280},
 
-		{name: "CobbleStraight", category: "Spooky", blenderSceneName: "Cobblestone", id: 281}
+		{name: "CobbleStraight", category: "Spooky", blenderSceneName: "Cobblestone", id: 281},
+		{name: "CobbleCheckpoint", category: "Spooky", blenderSceneName: "Cobblestone", id: 283, isCheckpoint: true},
+		//{name: "CobbleFinish", category: "Spooky", blenderSceneName: "Cobblestone", id: 285}
+		//{name: "CobbleStart", category: "Spooky", blenderSceneName: "Cobblestone", id: 284}
 
-		//{name: "LanternHanging", category: "Spooky", blenderSceneName: "LanternHanging", id: 283}
+		{name: "CheckpointZone", category: "Zones", blenderSceneName: "Zones", id: 286, isCheckpoint: true},
+		{name: "FinishZone", category: "Zones", blenderSceneName: "Zones", id: 287, isFinish: true}
 
 		// next id: 283
 	]

@@ -18648,7 +18648,7 @@
 			}
 			static initResources(e) {
 				e.addResource();
-				(new fd).load("models/car.glb", (t => {
+				(new fd).load("ultimateMod/models/car.glb", (t => {
 					function n(e) {
 						const n = t.scene.getObjectByName(e);
 						if (null == n) throw 'Mesh "' + e + '" does not exist';
@@ -20095,7 +20095,7 @@
 			return "m" === n ? i : "a" === n ? i.call(e) : i ? i.value : t.get(e)
 		};
 		My = new WeakMap, Sy = new WeakSet, Ty = function() { // IMPORTANT - start block return (multistart)
-			const e = Cy(this, My, "f").has(Bw.StartLine) ? Cy(this, My, "f").get(Bw.StartLine) : Cy(this, My, "f").get(Bw.Start);
+			const e = Cy(this, My, "f").has(Bw.CobbleStart) ? Cy(this, My, "f").get(Bw.CobbleStart) : Cy(this, My, "f").get(Bw.Start);
 			return null != e && e.length > 0 ? e[e.length - 1] : null
 		}, Ay = function(e) {
 			const t = e.getPartTypesWithDetector(yy.Checkpoint),
@@ -20160,7 +20160,7 @@
 				}
 			}
 			hasStartingPoint() {   // IMPORTANT - Start block check (multistart)
-				return Cy(this, My, "f").has(Bw.Start) || Cy(this, My, "f").has(Bw.StartLine)
+				return Cy(this, My, "f").has(Bw.Start) || Cy(this, My, "f").has(Bw.CobbleStart)
 			}
 			getStartTransform() {
 				const e = Cy(this, Sy, "m", Ty).call(this);
@@ -20288,7 +20288,7 @@
 				return this.forEachPart(((t, r, a, o, s) => {
 					const l = e.getPart(o);
 					l.tiles.rotated(s).forEach(((e, r, s) => {		// IMPORTANT - Start block visualize (multistart)
-						c.fillRect(t + e - n, a + s - i, 1, 1), ((o == Bw.Start) || (o == Bw.StartLine)) ? d.push([t + e - n, a + s - i]) : null != l.detector && l.detector.type == yy.Checkpoint ? h.push([t + e - n, a + s - i]) : null != l.detector && l.detector.type == yy.Finish && u.push([t + e - n, a + s - i])
+						c.fillRect(t + e - n, a + s - i, 1, 1), ((o == Bw.Start) || (o == Bw.CobbleStart)) ? d.push([t + e - n, a + s - i]) : null != l.detector && l.detector.type == yy.Checkpoint ? h.push([t + e - n, a + s - i]) : null != l.detector && l.detector.type == yy.Finish && u.push([t + e - n, a + s - i])
 					}))
 				})), c.fillStyle = "#e2c026", h.forEach((([e, t]) => {
 					c.fillRect(e, t, 1, 1)
@@ -20502,7 +20502,7 @@
 				max: new ln
 			}, "f")
 		}, Gy = function() { // IMPORTANT - Start block return 2 (multistart)
-			const e = qy(this, By, "f").has(Bw.StartLine) ? qy(this, By, "f").get(Bw.StartLine) : qy(this, By, "f").get(Bw.Start);
+			const e = qy(this, By, "f").has(Bw.CobbleStart) ? qy(this, By, "f").get(Bw.CobbleStart) : qy(this, By, "f").get(Bw.Start);
 			return null != e && e.length > 0 ? e[e.length - 1] : null
 		}, Yy.partWidth = 20, Yy.partHeight = 5, Yy.partLength = 20;
 		const Ky = Yy;
@@ -24250,6 +24250,36 @@
 
 				for (let index = 0; index < moddedBlocks.blocks.length; index++) {
 					let block = moddedBlocks.blocks[index];
+
+					if (block.name == "CheckpointZone") {
+						i(
+							ZP[block.category], 
+							Bw[block.name], 
+							[[block.blenderSceneName, block.name]],
+							[[0,0,0]], 
+							{
+								type: yy.Checkpoint,
+								center: [0, 2.2, 0],
+								size: [20, 1000, 20]
+							}
+						);
+						continue;
+					}
+
+					if (block.name == "FinishZone") {
+						i(
+							ZP[block.category], 
+							Bw[block.name], 
+							[[block.blenderSceneName, block.name]],
+							[[0,0,0]], 
+							{
+								type: yy.Finish,
+								center: [0, 2.2, 0],
+								size: [20, 1000, 20]
+							}
+						);
+						continue;
+					}
 					
 					if (block.hasOwnProperty("isCheckpoint")) {
 						i(
@@ -24260,7 +24290,7 @@
 							{
 								type: yy.Checkpoint,
 								center: [0, 2.2, 0],
-								size: [20, 3.8, 2]
+								size: [11, 3.8, 2]
 							}
 						);
 					} else if (block.hasOwnProperty("isFinish")) {
@@ -24272,7 +24302,7 @@
 							{
 								type: yy.Finish,
 								center: [0, 2.2, 0],
-								size: [20, 3.8, 2]
+								size: [11, 3.8, 2]
 							}
 						);
 					} else if (block.hasOwnProperty("isSpooky")) {
