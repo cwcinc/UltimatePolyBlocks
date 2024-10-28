@@ -1,5 +1,5 @@
 const modVersion = "10.31.2024";
-const modName = "SpookyTrack by cwcinc"
+const modName = "SpookyTrack by cwcinc and ShovelFish"
 
 const lbVersion = "0.4.1";
 
@@ -75,7 +75,8 @@ var moddedBlocks = {
 	modelPaths: [
 		"ultimateMod/models/spookyTrack.glb",
 		"ultimateMod/models/hayBales.glb",
-		"ultimateMod/models/polySpiders.glb"
+		"ultimateMod/models/polySpiders.glb",
+		"ultimateMod/models/cobblestone.glb"
 	],
     blocks: [
 		{name: "CandyCorn", category: "Spooky", blenderSceneName: "Spooky", id: 230},
@@ -131,7 +132,9 @@ var moddedBlocks = {
 		{name: "FenceHalf", category: "Spooky", blenderSceneName: "Spooky", id: 278},
 
 		{name: "CornLight", category: "Spooky", blenderSceneName: "Spooky", id: 279},
-		{name: "CornMazeSingle", category: "Spooky", blenderSceneName: "Spooky", id: 280}
+		{name: "CornMazeSingle", category: "Spooky", blenderSceneName: "Spooky", id: 280},
+
+		{name: "CobbleStraight", category: "Spooky", blenderSceneName: "Cobblestone", id: 281}
 
 		//{name: "LanternHanging", category: "Spooky", blenderSceneName: "LanternHanging", id: 283}
 

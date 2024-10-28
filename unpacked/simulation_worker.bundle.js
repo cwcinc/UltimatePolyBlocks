@@ -5,7 +5,8 @@ var moddedBlocks = {
 	modelPaths: [
 		"ultimateMod/models/spookyTrack.glb",
 		"ultimateMod/models/hayBales.glb",
-		"ultimateMod/models/polySpiders.glb"
+		"ultimateMod/models/polySpiders.glb",
+		"ultimateMod/models/cobblestone.glb"
 	],
     blocks: [
 		{name: "CandyCorn", category: "Spooky", blenderSceneName: "Spooky", id: 230},
@@ -62,6 +63,8 @@ var moddedBlocks = {
 
 		{name: "CornLight", category: "Spooky", blenderSceneName: "Spooky", id: 279},
 		{name: "CornMazeSingle", category: "Spooky", blenderSceneName: "Spooky", id: 280},
+
+		{name: "CobbleStraight", category: "Spooky", blenderSceneName: "Cobblestone", id: 281}
 
 		//{name: "LanternHanging", category: "Spooky", blenderSceneName: "LanternHanging", id: 283}
 
