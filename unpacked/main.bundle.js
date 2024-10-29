@@ -19788,7 +19788,7 @@
 				ty(this, Zw, "f") ? this.hide() : this.show()
 			}
 			update(e) {
-				ey(this, Qw, ty(this, Qw, "f") + e, "f"), ey(this, $w, ty(this, $w, "f") + 1, "f"), ty(this, Qw, "f") >= 1 && (ty(this, Jw, "f").textContent = "Spoooky FPS: " + (ty(this, $w, "f") * 1052138), ey(this, Qw, ty(this, Qw, "f") - Math.trunc(ty(this, Qw, "f")), "f"), ey(this, $w, 0, "f"))
+				ey(this, Qw, ty(this, Qw, "f") + e, "f"), ey(this, $w, ty(this, $w, "f") + 1, "f"), ty(this, Qw, "f") >= 1 && (ty(this, Jw, "f").textContent = "Spooky FPS: " + (ty(this, $w, "f")), ey(this, Qw, ty(this, Qw, "f") - Math.trunc(ty(this, Qw, "f")), "f"), ey(this, $w, 0, "f"))
 			}
 		};
 		var iy = n(57),
@@ -20904,7 +20904,7 @@
 		}, Sx = function() {
 			Tx(this, bx, "f").innerHTML = "", Tx(this, fx, "f").refreshCustomTracks();
 			const e = document.createElement("h2");
-			if (e.textContent = Tx(this, hx, "f").get("Standard tracks"), Tx(this, bx, "f").appendChild(e), Tx(this, fx, "f").forEachStandard(((e, t, n, i) => {
+			if (e.textContent = "Spooky tracks", Tx(this, bx, "f").appendChild(e), Tx(this, fx, "f").forEachStandard(((e, t, n, i) => {
 					Tx(this, lx, "m", Ex).call(this, n, t, e, i)
 				})), !Tx(this, fx, "f").isCustomTracksEmpty()) {
 				const e = document.createElement("h2");
@@ -21946,7 +21946,7 @@
 					if (e.getSpeedKmh() < 50 || e.hasFinished()) {
 						if (0 != mE(this, hE, "f") && (fE(this, hE, mE(this, hE, "f") - t, "f"), mE(this, hE, "f") <= 0)) {
 							const e = mE(this, sE, "f").getKeyBindings(Lb.VehicleReset);
-							null != e[0] && null != e[1] ? mE(this, rE, "m", dE).call(this, mE(this, aE, "f").get("Press [{0}] or [{1}] to restart", [e[0], e[1]])) : null != e[0] ? mE(this, rE, "m", dE).call(this, mE(this, aE, "f").get("Press [{0}] to restart", [e[0]])) : null != e[1] && mE(this, rE, "m", dE).call(this, mE(this, aE, "f").get("Press [{0}] to restart", [e[1]])), fE(this, hE, 0, "f")
+							null != e[0] && null != e[1] ? mE(this, rE, "m", dE).call(this, "Boo!") : null != e[0] ? mE(this, rE, "m", dE).call(this, mE(this, aE, "f").get("Press [{0}] to restart", [e[0]])) : null != e[1] && mE(this, rE, "m", dE).call(this, mE(this, aE, "f").get("Press [{0}] to restart", [e[1]])), fE(this, hE, 0, "f")
 						}
 					} else mE(this, rE, "m", uE).call(this);
 				else mE(this, rE, "m", pE).call(this)
@@ -24026,7 +24026,7 @@
 		};
 		const YP = class {
 			constructor(e, t, n) {
-				zP.add(this), FP.set(this, []), WP.set(this, []), HP.set(this, void 0), VP.set(this, void 0), qP(this, HP, n, "f"), qP(this, VP, t, "f"), Promise.all([XP(this, zP, "m", GP).call(this, "tracks/track1.track", e), XP(this, zP, "m", GP).call(this, "tracks/track2.track", e), XP(this, zP, "m", GP).call(this, "tracks/track3.track", e), XP(this, zP, "m", GP).call(this, "tracks/track4.track", e), XP(this, zP, "m", GP).call(this, "tracks/track5.track", e), XP(this, zP, "m", GP).call(this, "tracks/track6.track", e), XP(this, zP, "m", GP).call(this, "tracks/track7.track", e), XP(this, zP, "m", GP).call(this, "tracks/track8.track", e), XP(this, zP, "m", GP).call(this, "tracks/track9.track", e), XP(this, zP, "m", GP).call(this, "tracks/track10.track", e), XP(this, zP, "m", GP).call(this, "tracks/track11.track", e), XP(this, zP, "m", GP).call(this, "tracks/track12.track", e), XP(this, zP, "m", GP).call(this, "tracks/track13.track", e)]).then((e => {
+				zP.add(this), FP.set(this, []), WP.set(this, []), HP.set(this, void 0), VP.set(this, void 0), qP(this, HP, n, "f"), qP(this, VP, t, "f"), Promise.all([XP(this, zP, "m", GP).call(this, "ultimateMod/tracks/weaversWeb.track", e), XP(this, zP, "m", GP).call(this, "ultimateMod/tracks/frightfulForest.track", e), XP(this, zP, "m", GP).call(this, "ultimateMod/tracks/boggysBastion.track", e), XP(this, zP, "m", GP).call(this, "ultimateMod/tracks/candyCornCrashCourse.track", e), XP(this, zP, "m", GP).call(this, "ultimateMod/tracks/pumpkinPatchPurgatory.track", e), XP(this, zP, "m", GP).call(this, "ultimateMod/tracks/ghoulishGraveyard.track", e)]).then((e => {
 					qP(this, FP, e, "f")
 				}))
 			}
