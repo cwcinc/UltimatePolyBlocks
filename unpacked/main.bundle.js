@@ -24321,7 +24321,7 @@
 							{
 								type: yy.Spooky,
 								center: [0, 2.2, 0],
-								size: [20, 3.8, 20]
+								size: [20, 4.5, 20]
 							}
 						);
 					} else {
