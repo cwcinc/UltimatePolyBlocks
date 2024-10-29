@@ -131,6 +131,7 @@ var moddedBlocks = {
 		{name: "FenceGate", category: "Spooky", blenderSceneName: "Spooky", id: 276},
 		{name: "FenceGate2", category: "Spooky", blenderSceneName: "Spooky", id: 277},
 		{name: "FenceHalf", category: "Spooky", blenderSceneName: "Spooky", id: 278},
+		{name: "FenceTee", category: "Spooky", blenderSceneName: "Spooky", id: 288},
 
 		{name: "CornLight", category: "Spooky", blenderSceneName: "Spooky", id: 279},
 		{name: "CornMazeSingle", category: "Spooky", blenderSceneName: "Spooky", id: 280},
@@ -141,7 +142,7 @@ var moddedBlocks = {
 		//{name: "CobbleStart", category: "Spooky", blenderSceneName: "Cobblestone", id: 284}
 
 		{name: "CheckpointZone", category: "Zones", blenderSceneName: "Zones", id: 286, isCheckpoint: true},
-		{name: "FinishZone", category: "Zones", blenderSceneName: "Zones", id: 287, isFinish: true}
+		{name: "FinishZone", category: "Zones", blenderSceneName: "Zones", id: 287, isFinish: true},
 
 		// next id: 283
 	]
