@@ -52,7 +52,7 @@ var moddedEnvironment = {
 			g: 0,	// default 169
 			b: 0	// default 169
 		},
-		density: 0.02	// default 0.001
+		density: 0.005	// default 0.001
 	},
 	mountains: {
 		color: {

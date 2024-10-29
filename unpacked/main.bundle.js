@@ -22752,7 +22752,8 @@
 				}));
 				r.position.copy(n), r.receiveShadow = !0, tT(this, ZM, "f").scene.add(r), eT(this, $M, r, "f")
 			}
-			static createMountainVertices(e) {	// IMPORTANT - creates mountain vertices
+
+			static createMountainVertices(e) {	// creates mountain vertices
 				const t = new KM,
 					n = Math.max(200, 160 + Math.max(Math.abs(e.max.x - e.min.x) * Ky.partWidth / 2 * Math.SQRT2, Math.abs(e.max.y - e.min.y) * Ky.partLength / 2 * Math.SQRT2)),
 					i = new ln((e.min.x + (e.max.x - e.min.x) / 2) * Ky.partWidth, (e.min.y + (e.max.y - e.min.y) / 2) * Ky.partLength);
@@ -22760,7 +22761,7 @@
 					vertices: [],
 					offset: new Un
 				};
-				const r = Math.max(90, 2700 - 9 * Math.floor(n / 5)),
+				const r = Math.floor(n / 10),
 					a = [];
 				for (let e = 0; e < r; ++e) {
 					const e = [];
@@ -22778,20 +22779,15 @@
 					for (let e = 0; e < r.length - 1; ++e) {
 						const a = n + 100 * e,
 							c = n + 100 * (e + 1);
-						
-						s.push(Math.cos(t) * a, r[e] * o, Math.sin(t) * a);
-						s.push(Math.cos(i) * a, l[e] * o, Math.sin(i) * a);
-						s.push(Math.cos(i) * c, l[e + 1] * o, Math.sin(i) * c);
-						s.push(Math.cos(i) * a, l[e+1] * o, Math.sin(i) * a);
-						//s.push(Math.cos(i) * a, l[e] * o, Math.sin(i) * a), s.push(Math.cos(i+0.1) * c, l[e + 1] * o, Math.sin(i) * c);
+						s.push(Math.cos(t) * a, r[e] * o, Math.sin(t) * a), s.push(Math.cos(i) * a, l[e] * o, Math.sin(i) * a), s.push(Math.cos(i) * c, l[e + 1] * o, Math.sin(i) * c), s.push(Math.cos(t) * a, r[e] * o, Math.sin(t) * a), s.push(Math.cos(i) * c, l[e + 1] * o, Math.sin(i) * c), s.push(Math.cos(t) * c, r[e + 1] * o, Math.sin(t) * c)
 					}
-
 				}
 				return {
 					vertices: s,
 					offset: new Un(i.x, 0, i.y)
 				}
 			}
+
 			getMountainVertices() {
 				if (null == tT(this, $M, "f")) return [];
 				const e = tT(this, $M, "f").geometry;
@@ -23036,7 +23032,7 @@
 			UT(this, mT, "m", IT).call(this, UT(this, vT, "f").get("Sound effect volume"), Jh.SoundEffectVolume), 
 			UT(this, mT, "m", IT).call(this, UT(this, vT, "f").get("Music volume"), Jh.MusicVolume), 
 			UT(this, mT, "m", IT).call(this, UT(this, vT, "f").get("Checkpoint volume"), Jh.CheckpointVolume), 
-			UT(this, mT, "m", IT).call(this, "Spookyness", Jh.Spookyness), 
+			UT(this, mT, "m", IT).call(this, "Spookiness", Jh.Spookyness), 
 			UT(this, mT, "m", RT).call(this, UT(this, vT, "f").get("Controls")), 
 			UT(this, mT, "m", NT).call(this, UT(this, vT, "f").get("Vehicle accelerate"), Lb.VehicleAccelerate), 
 			UT(this, mT, "m", NT).call(this, UT(this, vT, "f").get("Vehicle brake"), Lb.VehicleBrake), 
@@ -26159,7 +26155,7 @@
 					[Jh.SoundEffectVolume, "1"],
 					[Jh.MusicVolume, "1"],
 					[Jh.CheckpointVolume, "1"],
-					[Jh.Spookyness, "0.05"]
+					[Jh.Spookyness, "0"]
 				])
 			}
 			defaultKeyBindings() {
