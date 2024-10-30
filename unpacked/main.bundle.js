@@ -24026,7 +24026,7 @@
 		};
 		const YP = class {
 			constructor(e, t, n) {
-				zP.add(this), FP.set(this, []), WP.set(this, []), HP.set(this, void 0), VP.set(this, void 0), qP(this, HP, n, "f"), qP(this, VP, t, "f"), Promise.all([XP(this, zP, "m", GP).call(this, "ultimateMod/tracks/weaversWeb.track", e), XP(this, zP, "m", GP).call(this, "ultimateMod/tracks/frightfulForest.track", e), XP(this, zP, "m", GP).call(this, "ultimateMod/tracks/boggysBastion.track", e), XP(this, zP, "m", GP).call(this, "ultimateMod/tracks/candyCornCrashCourse.track", e), XP(this, zP, "m", GP).call(this, "ultimateMod/tracks/pumpkinPatchPurgatory.track", e), XP(this, zP, "m", GP).call(this, "ultimateMod/tracks/ghoulishGraveyard.track", e)]).then((e => {
+				zP.add(this), FP.set(this, []), WP.set(this, []), HP.set(this, void 0), VP.set(this, void 0), qP(this, HP, n, "f"), qP(this, VP, t, "f"), Promise.all([XP(this, zP, "m", GP).call(this, "ultimateMod/tracks/weaversWeb.track", e), XP(this, zP, "m", GP).call(this, "ultimateMod/tracks/ghoulishGraveyard.track", e), XP(this, zP, "m", GP).call(this, "ultimateMod/tracks/frightfulForest.track", e), XP(this, zP, "m", GP).call(this, "ultimateMod/tracks/boggysBastion.track", e), XP(this, zP, "m", GP).call(this, "ultimateMod/tracks/candyCornCrashCourse.track", e), XP(this, zP, "m", GP).call(this, "ultimateMod/tracks/pumpkinPatchPurgatory.track", e)]).then((e => {
 					qP(this, FP, e, "f")
 				}))
 			}
