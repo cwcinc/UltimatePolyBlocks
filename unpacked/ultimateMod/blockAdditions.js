@@ -1,7 +1,7 @@
 const modVersion = "0.1.0";
 const lbVersion = "0.4.1";
 
-const moddedEnvironment = {
+var moddedEnvironment = {
 	skyColor: {
 		horizon: {	// Horizon color of sky gradient (default 255 255 255)
 			r: 255,
@@ -69,7 +69,7 @@ const moddedEnvironment = {
 }
 
 const moddedBlocks = {
-	categories: ["Minecraft", "CustomSigns", "Statues", "RoadSigns", "SpecialBlocks", "Space", "Environment", "SlopedTurns", "Spooky"],
+	categories: ["Minecraft", "CustomSigns", "Statues", "RoadSigns", "SpecialBlocks", "Space", "Environment", "SlopedTurns", "Spooky", "Zones"],
 	modelPaths: [
 		"ultimateMod/models/minecraft.glb",
 		"ultimateMod/models/customSigns.glb",
@@ -80,6 +80,9 @@ const moddedBlocks = {
 		"ultimateMod/models/environment.glb",
 		"ultimateMod/models/diagonalRoads.glb",
 		"ultimateMod/models/spookyTrack.glb",
+		"ultimateMod/models/cobblestone.glb",
+		"ultimateMod/models/zones.glb",
+		"ultimateMod/models/polySpiders.glb",
 		"ultimateMod/models/hayBales.glb"
 	],
     blocks: [
@@ -154,25 +157,58 @@ const moddedBlocks = {
 		{name: "JackOLanternSmile", category: "Spooky", blenderSceneName: "Spooky", id: 239},
 		{name: "JackOLanternSmileBig", category: "Spooky", blenderSceneName: "Spooky", id: 240},
 		{name: "Lollipop", category: "Spooky", blenderSceneName: "Spooky", id: 241},
-		{name: "LollipopGate", category: "Spooky", blenderSceneName: "Spooky", id: 242},
+		{name: "LollipopGate", category: "Spooky", blenderSceneName: "Spooky", id: 242, isSpooky:true},
 		{name: "Pumpkin", category: "Spooky", blenderSceneName: "Spooky", id: 243},
 		{name: "PumpkinBig", category: "Spooky", blenderSceneName: "Spooky", id: 244},
 		{name: "PumpkinTall", category: "Spooky", blenderSceneName: "Spooky", id: 245},
 		{name: "PumpkinTrio", category: "Spooky", blenderSceneName: "Spooky", id: 246},
-		{name: "Boggy", category: "Spooky", blenderSceneName: "Spooky", id: 247},
 		{name: "DeadTree1", category: "Spooky", blenderSceneName: "Spooky", id: 248},
 		{name: "DeadTree2", category: "Spooky", blenderSceneName: "Spooky", id: 249},
 		{name: "DeadTree3", category: "Spooky", blenderSceneName: "Spooky", id: 250},
+		{name: "DeadTree4", category: "Spooky", blenderSceneName: "Spooky", id: 260},
+		{name: "DeadTreeBig1", category: "Spooky", blenderSceneName: "Spooky", id: 261},
+		{name: "DeadTreeBig2", category: "Spooky", blenderSceneName: "Spooky", id: 262},
+		{name: "DeadTreeBig3", category: "Spooky", blenderSceneName: "Spooky", id: 263},
+		{name: "DeadTreeBig4", category: "Spooky", blenderSceneName: "Spooky", id: 264},
+		{name: "DeadTreeBig5", category: "Spooky", blenderSceneName: "Spooky", id: 265},
 		{name: "Eye1", category: "Spooky", blenderSceneName: "Spooky", id: 251},
 		{name: "Eye2", category: "Spooky", blenderSceneName: "Spooky", id: 252},
 		{name: "Mushroom1", category: "Spooky", blenderSceneName: "Spooky", id: 253},
 		{name: "Mushroom2", category: "Spooky", blenderSceneName: "Spooky", id: 254},
+		{name: "MushroomRed1", category: "Spooky", blenderSceneName: "Spooky", id: 258},
+		{name: "MushroomRed2", category: "Spooky", blenderSceneName: "Spooky", id: 259},
 
 		{name: "HayBale", category: "Spooky", blenderSceneName: "HayBales", id: 255},
 		{name: "HayBaleTriple", category: "Spooky", blenderSceneName: "HayBales", id: 256},
-		{name: "HayBaleStack", category: "Spooky", blenderSceneName: "HayBales", id: 257}
+		{name: "HayBaleStack", category: "Spooky", blenderSceneName: "HayBales", id: 257},
 
-		// next id: 258
+		{name: "Spider", category: "Spooky", blenderSceneName: "Spiders", id: 266},
+		{name: "SpiderBig", category: "Spooky", blenderSceneName: "Spiders", id: 267},
+		{name: "SpiderPile", category: "Spooky", blenderSceneName: "Spiders", id: 268},
+
+		{name: "Boggy", category: "Spooky", blenderSceneName: "Spooky", id: 247},
+		{name: "BoggyBig", category: "Spooky", blenderSceneName: "Spooky", id: 270},
+		{name: "Cauldron", category: "Spooky", blenderSceneName: "Spooky", id: 271},
+		{name: "CauldronGoopGreen", category: "Spooky", blenderSceneName: "Spooky", id: 272},
+		{name: "CauldronGoopPurple", category: "Spooky", blenderSceneName: "Spooky", id: 273},
+		{name: "FenceCorner", category: "Spooky", blenderSceneName: "Spooky", id: 274},
+		{name: "FenceFull", category: "Spooky", blenderSceneName: "Spooky", id: 275},
+		{name: "FenceGate", category: "Spooky", blenderSceneName: "Spooky", id: 276},
+		{name: "FenceGate2", category: "Spooky", blenderSceneName: "Spooky", id: 277},
+		{name: "FenceHalf", category: "Spooky", blenderSceneName: "Spooky", id: 278},
+		{name: "FenceTee", category: "Spooky", blenderSceneName: "Spooky", id: 288},
+
+		{name: "CornLight", category: "Spooky", blenderSceneName: "Spooky", id: 279},
+		//{name: "CornMazeSingle", category: "Spooky", blenderSceneName: "Spooky", id: 280},
+
+		//{name: "CobbleStraight", category: "Spooky", blenderSceneName: "Cobblestone", id: 281},
+		//{name: "CobbleCheckpoint", category: "Spooky", blenderSceneName: "Cobblestone", id: 283, isCheckpoint: true},
+		//{name: "CobbleFinish", category: "Spooky", blenderSceneName: "Cobblestone", id: 285}
+		//{name: "CobbleStart", category: "Spooky", blenderSceneName: "Cobblestone", id: 284}
+
+		{name: "CheckpointZone", category: "Zones", blenderSceneName: "Zones", id: 286, isCheckpoint: true},
+		{name: "FinishZone", category: "Zones", blenderSceneName: "Zones", id: 287, isFinish: true},
+		// next id: 288
 	]
 };
 

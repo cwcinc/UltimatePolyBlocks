@@ -1,5 +1,5 @@
 const moddedBlocks = {
-	categories: ["Minecraft", "CustomSigns", "Statues", "RoadSigns", "SpecialBlocks", "Space", "Environment", "SlopedTurns", "Spooky"],
+	categories: ["Minecraft", "CustomSigns", "Statues", "RoadSigns", "SpecialBlocks", "Space", "Environment", "SlopedTurns", "Spooky", "Zones"],
 	modelPaths: [
 		"ultimateMod/models/minecraft.glb",
 		"ultimateMod/models/customSigns.glb",
@@ -10,6 +10,9 @@ const moddedBlocks = {
 		"ultimateMod/models/environment.glb",
 		"ultimateMod/models/diagonalRoads.glb",
 		"ultimateMod/models/spookyTrack.glb",
+		"ultimateMod/models/cobblestone.glb",
+		"ultimateMod/models/zones.glb",
+		"ultimateMod/models/polySpiders.glb",
 		"ultimateMod/models/hayBales.glb"
 	],
     blocks: [
@@ -84,25 +87,58 @@ const moddedBlocks = {
 		{name: "JackOLanternSmile", category: "Spooky", blenderSceneName: "Spooky", id: 239},
 		{name: "JackOLanternSmileBig", category: "Spooky", blenderSceneName: "Spooky", id: 240},
 		{name: "Lollipop", category: "Spooky", blenderSceneName: "Spooky", id: 241},
-		{name: "LollipopGate", category: "Spooky", blenderSceneName: "Spooky", id: 242},
+		{name: "LollipopGate", category: "Spooky", blenderSceneName: "Spooky", id: 242, isSpooky:true},
 		{name: "Pumpkin", category: "Spooky", blenderSceneName: "Spooky", id: 243},
 		{name: "PumpkinBig", category: "Spooky", blenderSceneName: "Spooky", id: 244},
 		{name: "PumpkinTall", category: "Spooky", blenderSceneName: "Spooky", id: 245},
 		{name: "PumpkinTrio", category: "Spooky", blenderSceneName: "Spooky", id: 246},
-		{name: "Boggy", category: "Spooky", blenderSceneName: "Spooky", id: 247},
 		{name: "DeadTree1", category: "Spooky", blenderSceneName: "Spooky", id: 248},
 		{name: "DeadTree2", category: "Spooky", blenderSceneName: "Spooky", id: 249},
 		{name: "DeadTree3", category: "Spooky", blenderSceneName: "Spooky", id: 250},
+		{name: "DeadTree4", category: "Spooky", blenderSceneName: "Spooky", id: 260},
+		{name: "DeadTreeBig1", category: "Spooky", blenderSceneName: "Spooky", id: 261},
+		{name: "DeadTreeBig2", category: "Spooky", blenderSceneName: "Spooky", id: 262},
+		{name: "DeadTreeBig3", category: "Spooky", blenderSceneName: "Spooky", id: 263},
+		{name: "DeadTreeBig4", category: "Spooky", blenderSceneName: "Spooky", id: 264},
+		{name: "DeadTreeBig5", category: "Spooky", blenderSceneName: "Spooky", id: 265},
 		{name: "Eye1", category: "Spooky", blenderSceneName: "Spooky", id: 251},
 		{name: "Eye2", category: "Spooky", blenderSceneName: "Spooky", id: 252},
 		{name: "Mushroom1", category: "Spooky", blenderSceneName: "Spooky", id: 253},
 		{name: "Mushroom2", category: "Spooky", blenderSceneName: "Spooky", id: 254},
+		{name: "MushroomRed1", category: "Spooky", blenderSceneName: "Spooky", id: 258},
+		{name: "MushroomRed2", category: "Spooky", blenderSceneName: "Spooky", id: 259},
 
 		{name: "HayBale", category: "Spooky", blenderSceneName: "HayBales", id: 255},
 		{name: "HayBaleTriple", category: "Spooky", blenderSceneName: "HayBales", id: 256},
-		{name: "HayBaleStack", category: "Spooky", blenderSceneName: "HayBales", id: 257}
+		{name: "HayBaleStack", category: "Spooky", blenderSceneName: "HayBales", id: 257},
 
-		// next id: 258
+		{name: "Spider", category: "Spooky", blenderSceneName: "Spiders", id: 266},
+		{name: "SpiderBig", category: "Spooky", blenderSceneName: "Spiders", id: 267},
+		{name: "SpiderPile", category: "Spooky", blenderSceneName: "Spiders", id: 268},
+
+		{name: "Boggy", category: "Spooky", blenderSceneName: "Spooky", id: 247},
+		{name: "BoggyBig", category: "Spooky", blenderSceneName: "Spooky", id: 270},
+		{name: "Cauldron", category: "Spooky", blenderSceneName: "Spooky", id: 271},
+		{name: "CauldronGoopGreen", category: "Spooky", blenderSceneName: "Spooky", id: 272},
+		{name: "CauldronGoopPurple", category: "Spooky", blenderSceneName: "Spooky", id: 273},
+		{name: "FenceCorner", category: "Spooky", blenderSceneName: "Spooky", id: 274},
+		{name: "FenceFull", category: "Spooky", blenderSceneName: "Spooky", id: 275},
+		{name: "FenceGate", category: "Spooky", blenderSceneName: "Spooky", id: 276},
+		{name: "FenceGate2", category: "Spooky", blenderSceneName: "Spooky", id: 277},
+		{name: "FenceHalf", category: "Spooky", blenderSceneName: "Spooky", id: 278},
+		{name: "FenceTee", category: "Spooky", blenderSceneName: "Spooky", id: 288},
+
+		{name: "CornLight", category: "Spooky", blenderSceneName: "Spooky", id: 279},
+		{name: "CornMazeSingle", category: "Spooky", blenderSceneName: "Spooky", id: 280},
+
+		{name: "CobbleStraight", category: "Spooky", blenderSceneName: "Cobblestone", id: 281},
+		{name: "CobbleCheckpoint", category: "Spooky", blenderSceneName: "Cobblestone", id: 283, isCheckpoint: true},
+		//{name: "CobbleFinish", category: "Spooky", blenderSceneName: "Cobblestone", id: 285}
+		//{name: "CobbleStart", category: "Spooky", blenderSceneName: "Cobblestone", id: 284}
+
+		{name: "CheckpointZone", category: "Zones", blenderSceneName: "Zones", id: 286, isCheckpoint: true},
+		{name: "FinishZone", category: "Zones", blenderSceneName: "Zones", id: 287, isFinish: true},
+		// next id: 288
 	]
 };
 
@@ -7737,7 +7773,7 @@ const moddedBlocks = {
 					down: a,
 					left: o
 				}), Rs(this, ws, "f").increment()), Rs(this, Ss, "f").increment()), i && !Rs(this, ys, "f") && Rs(this, xs, "f")) {
-				const t = 4e3;
+				const t = ENGINE.isSpooky ? 100*4000 : 4000;;
 				Rs(this, us, "f").applyEngineForce(t, 2), Rs(this, us, "f").applyEngineForce(t, 3)
 			} else Rs(this, us, "f").applyEngineForce(0, 2), Rs(this, us, "f").applyEngineForce(0, 3);
 			if (a && !Rs(this, ys, "f") && Rs(this, xs, "f"))
@@ -7763,16 +7799,69 @@ const moddedBlocks = {
 		};
 		const Ls = class {
 			constructor(t, e, n, i, r, a, o, s) {
-				cs.add(this), hs.set(this, void 0), ds.set(this, void 0), us.set(this, void 0), fs.set(this, void 0), ms.set(this, void 0), ps.set(this, void 0), gs.set(this, void 0), _s.set(this, 0), vs.set(this, new So), ys.set(this, !1), xs.set(this, !1), ws.set(this, new Qo), Ss.set(this, new Qo), bs.set(this, 0), Ms.set(this, !1), As.set(this, void 0), Ts.set(this, void 0), Ns(this, gs, o, "f"), Ns(this, ps, a, "f"), Ns(this, ds, new jo, "f"), Rs(this, ds, "f").createGroundPlane(), Rs(this, ds, "f").createMountains(t, e), Ns(this, hs, new ls(Rs(this, ds, "f"), n, i), "f"), Rs(this, ds, "f").addPreStepEventListener(Ns(this, As, (t => {
+				cs.add(this);
+				hs.set(this, void 0);
+				ds.set(this, void 0);
+				us.set(this, void 0);
+				fs.set(this, void 0);
+				ms.set(this, void 0);
+				ps.set(this, void 0);
+				gs.set(this, void 0);
+				_s.set(this, 0);
+				vs.set(this, new So);
+				ys.set(this, !1);
+				xs.set(this, !1);
+				ws.set(this, new Qo);
+				Ss.set(this, new Qo);
+				bs.set(this, 0);
+				Ms.set(this, !1);
+				As.set(this, void 0);
+				Ts.set(this, void 0);
+				Ns(this, gs, o, "f");
+				Ns(this, ps, a, "f");
+				Ns(this, ds, new jo, "f");
+				Rs(this, ds, "f").createGroundPlane();
+				Rs(this, ds, "f").createMountains(t, e);
+				Ns(this, hs, new ls(Rs(this, ds, "f"), n, i), "f");
+
+				ENGINE = {isSpooky: false, spookyTimeout: 0};	// cwcinc - init ENGINE
+
+				function spook() {
+					/*try {clearTimeout(ENGINE.spookyTimeout)} catch(e) {};
+					let spookyTimeout = setTimeout(() => {
+						ENGINE = {isSpooky: false, spookyTimeout:-1};
+					}, 500);
+					ENGINE = {isSpooky: true, spookyTimeout: spookyTimeout};*/
+					ENGINE.isSpooky = true;
+				}
+
+				Rs(this, ds, "f").addPreStepEventListener(Ns(this, As, (t => {
 					null != Rs(this, us, "f") && (Rs(this, ds, "f").activePhysicsAt(this.getPosition()), Rs(this, cs, "m", Is).call(this), Rs(this, cs, "m", Ds).call(this, t, o))
-				}), "f")), Rs(this, ds, "f").addPostStepEventListener(Ns(this, Ts, (() => {
+				}), "f"));
+				Rs(this, ds, "f").addPostStepEventListener(Ns(this, Ts, (() => {
 					var t;
 					if (null != Rs(this, us, "f") && !Rs(this, ys, "f")) {
 						const e = this.getMatrix4(),
 							n = .16,
 							i = [new be(new ct(0, n, -1.65436).applyMatrix4(e), new ct(.701253, n, -.458486).applyMatrix4(e), new ct(-.701253, n, -.458486).applyMatrix4(e)), new be(new ct(0, n, 1.94498).applyMatrix4(e), new ct(.701253, n, -.458486).applyMatrix4(e), new ct(-.701253, n, -.458486).applyMatrix4(e))],
 							r = Rs(this, hs, "f").getTotalNumberOfCheckpointIndices();
-						Rs(this, bs, "f") == r ? Rs(this, hs, "f").checkFinish(i) && Ns(this, ys, !0, "f") : Rs(this, hs, "f").checkCheckpoint(i, Rs(this, bs, "f")) && Ns(this, bs, (t = Rs(this, bs, "f"), ++t), "f")
+						
+						if (Rs(this, bs, "f") == r) {
+							if (Rs(this, hs, "f").checkFinish(i)) {
+								Ns(this, ys, !0, "f");
+							}
+
+						} else {
+							if (Rs(this, hs, "f").checkCheckpoint(i, Rs(this, bs, "f"))) {
+								Ns(this, bs, (t = Rs(this, bs, "f"), ++t), "f");
+							}
+						}
+
+						if (Rs(this, hs, "f").checkSpooky(i)) {
+							spook();
+						} else {
+							ENGINE.isSpooky = false;
+						}
 					}
 				}), "f"));
 				const l = new Ammo.btTransform;

@@ -24180,6 +24180,36 @@
 
 				for (let index = 0; index < moddedBlocks.blocks.length; index++) {
 					let block = moddedBlocks.blocks[index];
+
+					if (block.name == "CheckpointZone") {
+						i(
+							ZP[block.category], 
+							Bw[block.name], 
+							[[block.blenderSceneName, block.name]],
+							[[0,0,0]], 
+							{
+								type: yy.Checkpoint,
+								center: [0, 2.2, 0],
+								size: [20, 1000, 20]
+							}
+						);
+						continue;
+					}
+
+					if (block.name == "FinishZone") {
+						i(
+							ZP[block.category], 
+							Bw[block.name], 
+							[[block.blenderSceneName, block.name]],
+							[[0,0,0]], 
+							{
+								type: yy.Finish,
+								center: [0, 2.2, 0],
+								size: [20, 1000, 20]
+							}
+						);
+						continue;
+					}
 					
 					if (block.hasOwnProperty("isCheckpoint")) {
 						i(
@@ -24203,6 +24233,18 @@
 								type: yy.Finish,
 								center: [0, 2.2, 0],
 								size: [11, 3.8, 2]
+							}
+						);
+					} else if (block.hasOwnProperty("isSpooky")) {
+						i(
+							ZP[block.category], 
+							Bw[block.name], 
+							[[block.blenderSceneName, block.name]],
+							[[0,0,0]], 
+							{
+								type: yy.Spooky,
+								center: [0, 2.2, 0],
+								size: [20, 4.5, 20]
 							}
 						);
 					} else {
