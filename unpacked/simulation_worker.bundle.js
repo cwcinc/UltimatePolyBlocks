@@ -1,7 +1,7 @@
 var ENGINE = {};
 
 const moddedBlocks = {
-	categories: ["Minecraft", "CustomSigns", "Statues", "RoadSigns", "SpecialBlocks", "Space", "Environment", "SlopedTurns", "Spooky", "Zones"],
+	categories: ["Minecraft", "CustomSigns", "Statues", "RoadSigns", "SpecialBlocks", "Space", "Environment", "SlopedTurns", "Spooky", "Zones", "BlocksPlus"],
 	modelPaths: [
 		"ultimateMod/models/minecraft.glb",
 		"ultimateMod/models/customSigns.glb",
@@ -15,7 +15,8 @@ const moddedBlocks = {
 		"ultimateMod/models/cobblestone.glb",
 		"ultimateMod/models/zones.glb",
 		"ultimateMod/models/polySpiders.glb",
-		"ultimateMod/models/hayBales.glb"
+		"ultimateMod/models/hayBales.glb",
+		"ultimateMod/models/blocksplus.glb"
 	],
     blocks: [
 		{name: "Grass", category: "Minecraft", blenderSceneName: "Minecraft", id: 180},
@@ -131,15 +132,48 @@ const moddedBlocks = {
 		{name: "FenceTee", category: "Spooky", blenderSceneName: "Spooky", id: 288},
 
 		{name: "CornLight", category: "Spooky", blenderSceneName: "Spooky", id: 279},
-		{name: "CornMazeSingle", category: "Spooky", blenderSceneName: "Spooky", id: 280},
+		//{name: "CornMazeSingle", category: "Spooky", blenderSceneName: "Spooky", id: 280},
 
-		{name: "CobbleStraight", category: "Spooky", blenderSceneName: "Cobblestone", id: 281},
-		{name: "CobbleCheckpoint", category: "Spooky", blenderSceneName: "Cobblestone", id: 283, isCheckpoint: true},
+		//{name: "CobbleStraight", category: "Spooky", blenderSceneName: "Cobblestone", id: 281},
+		//{name: "CobbleCheckpoint", category: "Spooky", blenderSceneName: "Cobblestone", id: 283, isCheckpoint: true},
 		//{name: "CobbleFinish", category: "Spooky", blenderSceneName: "Cobblestone", id: 285}
 		//{name: "CobbleStart", category: "Spooky", blenderSceneName: "Cobblestone", id: 284}
 
 		{name: "CheckpointZone", category: "Zones", blenderSceneName: "Zones", id: 286, isCheckpoint: true},
 		{name: "FinishZone", category: "Zones", blenderSceneName: "Zones", id: 287, isFinish: true},
+
+		{name: "BlockFullRamp", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 290},
+		{name: "BlockFullRampCorner", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 291},
+		{name: "BlockFullRampCornerFlipped", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 292},
+		{name: "BlockFullRampFlipped", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 293},
+		{name: "BlockGap", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 294},
+		{name: "BlockGapCross", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 295},
+		{name: "BlockHalfHeight", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 296},
+		{name: "BlockHalfSide", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 297},
+		{name: "BlockHole", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 298},
+		{name: "BlockHoleInverted", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 299},
+		{name: "BlockInvertedPizzaSlice", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 300},
+		{name: "BlockInvertedPizzaSlice1x2", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 301},
+		{name: "BlockInvertedPizzaSlice2x1", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 302},
+		{name: "BlockInvertedPizzaSlice2x2", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 303},
+		{name: "BlockInvertedPizzaSlice3x3", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 304},
+		{name: "BlockPizzaSlice", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 305},
+		{name: "BlockRoof", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 306},
+		{name: "BlockRoofCross", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 307},
+		{name: "BlockRoofPyramid", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 308},
+		{name: "BlockSlopedFlatter", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 309},
+		{name: "BlockSlopedFlatterUpInnerCorner", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 310},
+		{name: "BlockSlopedFlatterUpOuterCorner", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 311},
+		{name: "BlockSlopedTaller", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 312},
+		{name: "BlockSlopedTallerUpInnerCorner", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 313},
+		{name: "BlockSlopedTallerUpOuterCorner", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 314},
+		{name: "BlockSlopeFlatterDown", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 315},
+		{name: "BlockSlopeFlatterUp", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 316},
+		{name: "BlockSlopeTallerDown", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 317},
+		{name: "BlockSlopeTallerUp", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 318},
+
+
+
 		// next id: 288
 	]
 };
