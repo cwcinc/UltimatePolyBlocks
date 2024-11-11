@@ -26237,8 +26237,14 @@
 			}
 			createCar(e, t, n, i, r, a) {
 				var o, s;
-				if (null == CL(this, _L, "f")) throw "TrackPartManager is not initialized";
-				if (null == Uv.models) throw "Car collision model not loaded";
+				if (null == CL(this, _L, "f")) {
+					alert("TrackPartManager is not initialized");
+					throw "TrackPartManager is not initialized";
+				}
+				if (null == Uv.models) {
+					alert("Car collision model not loaded");
+					throw "Car collision model not loaded";
+				}
 				const l = (AL(this, SL, (s = CL(this, SL, "f"), o = s++, s), "f"), o),
 					c = e => {
 						if (e.data.messageType == bL.UpdateResult) {
