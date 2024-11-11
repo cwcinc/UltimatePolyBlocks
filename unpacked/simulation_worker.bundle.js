@@ -1,7 +1,21 @@
 var ENGINE = {};
 
 const moddedBlocks = {
-	categories: ["Minecraft", "CustomSigns", "Statues", "RoadSigns", "SpecialBlocks", "Space", "Environment", "SlopedTurns", "Spooky", "Zones", "BlocksPlus"],
+	categories: [
+		"Minecraft", 
+		"CustomSigns", 
+		"Statues", 
+		"RoadSigns", 
+		"SpecialBlocks", 
+		"Space", 
+		"Environment", 
+		"SlopedTurns", 
+		"Spooky", 
+		"Zones", 
+		"BlocksPlus", 
+		"BlockMixingRoads",
+		"Text"
+	],
 	modelPaths: [
 		"ultimateMod/models/minecraft.glb",
 		"ultimateMod/models/customSigns.glb",
@@ -16,7 +30,9 @@ const moddedBlocks = {
 		"ultimateMod/models/zones.glb",
 		"ultimateMod/models/polySpiders.glb",
 		"ultimateMod/models/hayBales.glb",
-		"ultimateMod/models/blocksplus.glb"
+		"ultimateMod/models/blocksplus.glb",
+		"ultimateMod/models/blockmixingroads.glb",
+		"ultimateMod/models/text.glb"
 	],
     blocks: [
 		{name: "Grass", category: "Minecraft", blenderSceneName: "Minecraft", id: 180},
@@ -172,12 +188,86 @@ const moddedBlocks = {
 		{name: "BlockSlopeTallerDown", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 317},
 		{name: "BlockSlopeTallerUp", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 318},
 
+		
+		{name: "A", category: "Text", blenderSceneName: "Text", id: 319},
+		{name: "B", category: "Text", blenderSceneName: "Text", id: 320},
+		{name: "C", category: "Text", blenderSceneName: "Text", id: 321},
+		{name: "D", category: "Text", blenderSceneName: "Text", id: 322},
+		{name: "E", category: "Text", blenderSceneName: "Text", id: 323},
+		{name: "F", category: "Text", blenderSceneName: "Text", id: 324},
+		{name: "G", category: "Text", blenderSceneName: "Text", id: 325},
+		{name: "H", category: "Text", blenderSceneName: "Text", id: 326},
+		{name: "I", category: "Text", blenderSceneName: "Text", id: 327},
+		{name: "J", category: "Text", blenderSceneName: "Text", id: 328},
+		{name: "K", category: "Text", blenderSceneName: "Text", id: 329},
+		{name: "L", category: "Text", blenderSceneName: "Text", id: 330},
+		{name: "M", category: "Text", blenderSceneName: "Text", id: 331},
+		{name: "N", category: "Text", blenderSceneName: "Text", id: 332},
+		{name: "O", category: "Text", blenderSceneName: "Text", id: 333},
+		{name: "P", category: "Text", blenderSceneName: "Text", id: 334},
+		{name: "Q", category: "Text", blenderSceneName: "Text", id: 335},
+		{name: "R", category: "Text", blenderSceneName: "Text", id: 336},
+		{name: "S", category: "Text", blenderSceneName: "Text", id: 337},
+		{name: "T", category: "Text", blenderSceneName: "Text", id: 338},
+		{name: "U", category: "Text", blenderSceneName: "Text", id: 339},
+		{name: "V", category: "Text", blenderSceneName: "Text", id: 340},
+		{name: "W", category: "Text", blenderSceneName: "Text", id: 341},
+		{name: "X", category: "Text", blenderSceneName: "Text", id: 342},
+		{name: "Y", category: "Text", blenderSceneName: "Text", id: 343},
+		{name: "Z", category: "Text", blenderSceneName: "Text", id: 344},
+		{name: "0", category: "Text", blenderSceneName: "Text", id: 345},
+		{name: "1", category: "Text", blenderSceneName: "Text", id: 346},
+		{name: "2", category: "Text", blenderSceneName: "Text", id: 347},
+		{name: "3", category: "Text", blenderSceneName: "Text", id: 348},
+		{name: "4", category: "Text", blenderSceneName: "Text", id: 349},
+		{name: "5", category: "Text", blenderSceneName: "Text", id: 350},
+		{name: "6", category: "Text", blenderSceneName: "Text", id: 351},
+		{name: "7", category: "Text", blenderSceneName: "Text", id: 352},
+		{name: "8", category: "Text", blenderSceneName: "Text", id: 353},
+		{name: "9", category: "Text", blenderSceneName: "Text", id: 354},
+		
+		{name: "A_Black", category: "Text", blenderSceneName: "Text", id: 355},
+		{name: "B_Black", category: "Text", blenderSceneName: "Text", id: 356},
+		{name: "C_Black", category: "Text", blenderSceneName: "Text", id: 357},
+		{name: "D_Black", category: "Text", blenderSceneName: "Text", id: 358},
+		{name: "E_Black", category: "Text", blenderSceneName: "Text", id: 359},
+		{name: "F_Black", category: "Text", blenderSceneName: "Text", id: 360},
+		{name: "G_Black", category: "Text", blenderSceneName: "Text", id: 361},
+		{name: "H_Black", category: "Text", blenderSceneName: "Text", id: 362},
+		{name: "I_Black", category: "Text", blenderSceneName: "Text", id: 363},
+		{name: "J_Black", category: "Text", blenderSceneName: "Text", id: 364},
+		{name: "K_Black", category: "Text", blenderSceneName: "Text", id: 365},
+		{name: "L_Black", category: "Text", blenderSceneName: "Text", id: 366},
+		{name: "M_Black", category: "Text", blenderSceneName: "Text", id: 367},
+		{name: "N_Black", category: "Text", blenderSceneName: "Text", id: 368},
+		{name: "O_Black", category: "Text", blenderSceneName: "Text", id: 369},
+		{name: "P_Black", category: "Text", blenderSceneName: "Text", id: 370},
+		{name: "Q_Black", category: "Text", blenderSceneName: "Text", id: 371},
+		{name: "R_Black", category: "Text", blenderSceneName: "Text", id: 372},
+		{name: "S_Black", category: "Text", blenderSceneName: "Text", id: 373},
+		{name: "T_Black", category: "Text", blenderSceneName: "Text", id: 374},
+		{name: "U_Black", category: "Text", blenderSceneName: "Text", id: 375},
+		{name: "V_Black", category: "Text", blenderSceneName: "Text", id: 376},
+		{name: "W_Black", category: "Text", blenderSceneName: "Text", id: 377},
+		{name: "X_Black", category: "Text", blenderSceneName: "Text", id: 378},
+		{name: "Y_Black", category: "Text", blenderSceneName: "Text", id: 379},
+		{name: "Z_Black", category: "Text", blenderSceneName: "Text", id: 380},
+		{name: "0_Black", category: "Text", blenderSceneName: "Text", id: 381},
+		{name: "1_Black", category: "Text", blenderSceneName: "Text", id: 382},
+		{name: "2_Black", category: "Text", blenderSceneName: "Text", id: 383},
+		{name: "3_Black", category: "Text", blenderSceneName: "Text", id: 384},
+		{name: "4_Black", category: "Text", blenderSceneName: "Text", id: 385},
+		{name: "5_Black", category: "Text", blenderSceneName: "Text", id: 386},
+		{name: "6_Black", category: "Text", blenderSceneName: "Text", id: 387},
+		{name: "7_Black", category: "Text", blenderSceneName: "Text", id: 388},
+		{name: "8_Black", category: "Text", blenderSceneName: "Text", id: 389},
+		{name: "9_Black", category: "Text", blenderSceneName: "Text", id: 390},
+
 
 
 		// next id: 288
 	]
 };
-
 
 (() => {
 	var t = {
