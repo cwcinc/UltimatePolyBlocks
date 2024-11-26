@@ -5,19 +5,20 @@ var gravityState = -9.82;
 
 const moddedBlocks = {
 	categories: [
+		"SlopedTurns", 
+		"Forty",
+		"BlocksPlus", 
+		"BlockMixingRoads",
+		"Zones", 
+		"Text",
 		"Minecraft", 
 		"CustomSigns", 
 		"Statues", 
-		"RoadSigns", 
+		"RoadSigns",
 		"SpecialBlocks", 
 		"Space", 
 		"Environment", 
-		"SlopedTurns", 
-		"Spooky", 
-		"Zones", 
-		"BlocksPlus", 
-		"BlockMixingRoads",
-		"Text"
+		"Spooky"
 	],
 	modelPaths: [
 		"ultimateMod/models/minecraft.glb",
@@ -35,7 +36,8 @@ const moddedBlocks = {
 		"ultimateMod/models/hayBales.glb",
 		"ultimateMod/models/blocksplus.glb",
 		"ultimateMod/models/blockmixingroads.glb",
-		"ultimateMod/models/text.glb"
+		"ultimateMod/models/text.glb",
+		"ultimateMod/models/forty.glb"
 	],
     blocks: [
 		{name: "Grass", category: "Minecraft", blenderSceneName: "Minecraft", id: 180},
@@ -267,6 +269,55 @@ const moddedBlocks = {
 		{name: "8_Black", category: "Text", blenderSceneName: "Text", id: 389},
 		{name: "9_Black", category: "Text", blenderSceneName: "Text", id: 390},
 
+		
+		{name: "Forty1", category: "Forty", blenderSceneName: "Forty", id: 391},
+		{name: "Forty2", category: "Forty", blenderSceneName: "Forty", id: 392},
+		{name: "Forty3", category: "Forty", blenderSceneName: "Forty", id: 393},
+		{name: "Forty4", category: "Forty", blenderSceneName: "Forty", id: 394},
+		{name: "Forty5", category: "Forty", blenderSceneName: "Forty", id: 395},
+		{name: "Forty6", category: "Forty", blenderSceneName: "Forty", id: 396},
+		{name: "Forty7", category: "Forty", blenderSceneName: "Forty", id: 397},
+		{name: "Forty8", category: "Forty", blenderSceneName: "Forty", id: 398},
+		{name: "Forty9", category: "Forty", blenderSceneName: "Forty", id: 399},
+		{name: "Forty10", category: "Forty", blenderSceneName: "Forty", id: 400},
+		{name: "Forty11", category: "Forty", blenderSceneName: "Forty", id: 401},
+		{name: "Forty12", category: "Forty", blenderSceneName: "Forty", id: 402},
+		{name: "Forty13", category: "Forty", blenderSceneName: "Forty", id: 403},
+		{name: "Forty14", category: "Forty", blenderSceneName: "Forty", id: 404},
+		{name: "Forty15", category: "Forty", blenderSceneName: "Forty", id: 405},
+		{name: "Forty16", category: "Forty", blenderSceneName: "Forty", id: 406},
+		{name: "Forty17", category: "Forty", blenderSceneName: "Forty", id: 407},
+		{name: "Forty18", category: "Forty", blenderSceneName: "Forty", id: 408},
+		{name: "Forty19", category: "Forty", blenderSceneName: "Forty", id: 409},
+		{name: "Forty20", category: "Forty", blenderSceneName: "Forty", id: 410},
+		{name: "Forty21", category: "Forty", blenderSceneName: "Forty", id: 411},
+		{name: "Forty22", category: "Forty", blenderSceneName: "Forty", id: 412},
+		{name: "Forty23", category: "Forty", blenderSceneName: "Forty", id: 413},
+		{name: "Forty24", category: "Forty", blenderSceneName: "Forty", id: 414},
+		{name: "Forty25", category: "Forty", blenderSceneName: "Forty", id: 415},
+		{name: "Forty26", category: "Forty", blenderSceneName: "Forty", id: 416},
+		{name: "Forty27", category: "Forty", blenderSceneName: "Forty", id: 417},
+		{name: "Forty28", category: "Forty", blenderSceneName: "Forty", id: 418},
+		{name: "Forty29", category: "Forty", blenderSceneName: "Forty", id: 419},
+		{name: "Forty30", category: "Forty", blenderSceneName: "Forty", id: 420},
+		{name: "Forty31", category: "Forty", blenderSceneName: "Forty", id: 421},
+		{name: "Forty32", category: "Forty", blenderSceneName: "Forty", id: 422},
+		{name: "Forty33", category: "Forty", blenderSceneName: "Forty", id: 423},
+		{name: "Forty34", category: "Forty", blenderSceneName: "Forty", id: 424},
+		{name: "Forty35", category: "Forty", blenderSceneName: "Forty", id: 425},
+		{name: "Forty36", category: "Forty", blenderSceneName: "Forty", id: 426},
+		{name: "Forty37", category: "Forty", blenderSceneName: "Forty", id: 427},
+		{name: "Forty38", category: "Forty", blenderSceneName: "Forty", id: 428},
+		{name: "Forty39", category: "Forty", blenderSceneName: "Forty", id: 429},
+		{name: "Forty40", category: "Forty", blenderSceneName: "Forty", id: 430},
+		{name: "Forty41", category: "Forty", blenderSceneName: "Forty", id: 431},
+		{name: "Forty42", category: "Forty", blenderSceneName: "Forty", id: 432},
+		{name: "Forty43", category: "Forty", blenderSceneName: "Forty", id: 433},
+		{name: "Forty44", category: "Forty", blenderSceneName: "Forty", id: 434},
+		{name: "Forty45", category: "Forty", blenderSceneName: "Forty", id: 435},
+		{name: "Forty46", category: "Forty", blenderSceneName: "Forty", id: 436},
+		{name: "Forty47", category: "Forty", blenderSceneName: "Forty", id: 437},
+		{name: "Forty48", category: "Forty", blenderSceneName: "Forty", id: 438},
 
 
 		// next id: 288
@@ -8161,14 +8212,22 @@ const moddedBlocks = {
 				const c = new Ammo.btDefaultMotionState(l);
 				Ammo.destroy(l);
 				const h = new Ammo.btVector3(0, 0, 0);
-				Ns(this, ms, Rs(this, cs, "m", Es).call(this, r), "f"), Rs(this, ms, "f").calculateLocalInertia(400, h);
+				Ns(this, ms, Rs(this, cs, "m", Es).call(this, r), "f");
+				Rs(this, ms, "f").calculateLocalInertia(400, h);
 				const d = new Ammo.btRigidBodyConstructionInfo(400, c, Rs(this, ms, "f"), h),
 					u = new Ammo.btRigidBody(d);
-				Ammo.destroy(d), Ammo.destroy(h), u.setDamping(.1, .1), u.setActivationState(4), Rs(this, ds, "f").world.addRigidBody(u, 1, 2), Ns(this, fs, u, "f");
+				Ammo.destroy(d);
+				Ammo.destroy(h);
+				u.setDamping(.1, .1);
+				u.setActivationState(4);
+				Rs(this, ds, "f").world.addRigidBody(u, 1, 2);
+				Ns(this, fs, u, "f");
 				const f = new Ammo.btVehicleTuning,
 					m = new Ammo.btDefaultVehicleRaycaster(Rs(this, ds, "f").world),
 					p = new Ammo.btRaycastVehicle(f, u, m);
-				p.setCoordinateSystem(0, 1, 2), Rs(this, ds, "f").world.addAction(p), Ns(this, us, p, "f");
+				p.setCoordinateSystem(0, 1, 2);
+				Rs(this, ds, "f").world.addAction(p);
+				Ns(this, us, p, "f");
 				const g = new Ammo.btVector3(0, -1, 0),
 					_ = new Ammo.btVector3(-1, 0, 0);
 				["WheelFL", "WheelFR", "WheelBL", "WheelBR"].forEach((t => {
@@ -8182,14 +8241,27 @@ const moddedBlocks = {
 					}
 					const n = "WheelFL" == t || "WheelFR" == t,
 						i = p.addWheel(e, g, _, .12, .331, f, n);
-					Ammo.destroy(e), i.set_m_maxSuspensionTravelCm(1e3), i.set_m_maxSuspensionForce(1e6), i.set_m_suspensionStiffness(50), i.set_m_wheelsDampingRelaxation(5), i.set_m_wheelsDampingCompression(200), i.set_m_frictionSlip(3), i.set_m_rollInfluence(.75)
+					Ammo.destroy(e);			// IMPORTANT - car driving physics
+					i.set_m_maxSuspensionTravelCm(1e3);
+					i.set_m_maxSuspensionForce(1e6);
+					i.set_m_suspensionStiffness(50);
+					i.set_m_wheelsDampingRelaxation(5);
+					i.set_m_wheelsDampingCompression(200);
+					i.set_m_frictionSlip(3);
+					i.set_m_rollInfluence(.75);
 				})), Ammo.destroy(g), Ammo.destroy(_);
 				const v = new Ammo.btTransform;
 				v.setIdentity();
 				const y = new Ammo.btVector3(s.position.x, s.position.y, s.position.z);
 				v.setOrigin(y), Ammo.destroy(y);
 				const x = new Ammo.btQuaternion(s.quaternion.x, s.quaternion.y, s.quaternion.z, s.quaternion.w);
-				v.setRotation(x), Ammo.destroy(x), Rs(this, fs, "f").setWorldTransform(v), Rs(this, fs, "f").getMotionState().setWorldTransform(v), Ammo.destroy(v), Rs(this, us, "f").resetSuspension(), Rs(this, us, "f").setSteeringValue(0, 0), Rs(this, us, "f").setSteeringValue(0, 1);
+				v.setRotation(x);
+				Ammo.destroy(x);
+				Rs(this, fs, "f").setWorldTransform(v);
+				Rs(this, fs, "f").getMotionState().setWorldTransform(v);
+				Ammo.destroy(v), Rs(this, us, "f").resetSuspension();
+				Rs(this, us, "f").setSteeringValue(0, 0);
+				Rs(this, us, "f").setSteeringValue(0, 1);
 				const w = Rs(this, us, "f").getNumWheels();
 				for (let t = 0; t < w; t++) Rs(this, us, "f").updateWheelTransform(t, !0)
 			}
