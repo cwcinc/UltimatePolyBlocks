@@ -1,5 +1,8 @@
 var ENGINE = {};
 
+var setGravity = () => {}
+var gravityState = -9.82;
+
 const moddedBlocks = {
 	categories: [
 		"Minecraft", 
@@ -106,7 +109,7 @@ const moddedBlocks = {
 		{name: "JackOLanternSmile", category: "Spooky", blenderSceneName: "Spooky", id: 239},
 		{name: "JackOLanternSmileBig", category: "Spooky", blenderSceneName: "Spooky", id: 240},
 		{name: "Lollipop", category: "Spooky", blenderSceneName: "Spooky", id: 241},
-		{name: "LollipopGate", category: "Spooky", blenderSceneName: "Spooky", id: 242, isSpooky:true},
+		{name: "LollipopGate", category: "Spooky", blenderSceneName: "Spooky", id: 242, isBoost:true},
 		{name: "Pumpkin", category: "Spooky", blenderSceneName: "Spooky", id: 243},
 		{name: "PumpkinBig", category: "Spooky", blenderSceneName: "Spooky", id: 244},
 		{name: "PumpkinTall", category: "Spooky", blenderSceneName: "Spooky", id: 245},
@@ -133,9 +136,9 @@ const moddedBlocks = {
 
 		{name: "Spider", category: "Spooky", blenderSceneName: "Spiders", id: 266},
 		{name: "SpiderBig", category: "Spooky", blenderSceneName: "Spiders", id: 267},
-		{name: "SpiderPile", category: "Spooky", blenderSceneName: "Spiders", id: 268},
+		//{name: "SpiderPile", category: "Spooky", blenderSceneName: "Spiders", id: 268},
 
-		{name: "Boggy", category: "Spooky", blenderSceneName: "Spooky", id: 247},
+		//{name: "Boggy", category: "Spooky", blenderSceneName: "Spooky", id: 247},
 		{name: "BoggyBig", category: "Spooky", blenderSceneName: "Spooky", id: 270},
 		{name: "Cauldron", category: "Spooky", blenderSceneName: "Spooky", id: 271},
 		{name: "CauldronGoopGreen", category: "Spooky", blenderSceneName: "Spooky", id: 272},
@@ -147,7 +150,7 @@ const moddedBlocks = {
 		{name: "FenceHalf", category: "Spooky", blenderSceneName: "Spooky", id: 278},
 		{name: "FenceTee", category: "Spooky", blenderSceneName: "Spooky", id: 288},
 
-		{name: "CornLight", category: "Spooky", blenderSceneName: "Spooky", id: 279},
+		//{name: "CornLight", category: "Spooky", blenderSceneName: "Spooky", id: 279},
 		//{name: "CornMazeSingle", category: "Spooky", blenderSceneName: "Spooky", id: 280},
 
 		//{name: "CobbleStraight", category: "Spooky", blenderSceneName: "Cobblestone", id: 281},
@@ -190,18 +193,18 @@ const moddedBlocks = {
 
 		
 		{name: "A", category: "Text", blenderSceneName: "Text", id: 319},
-		{name: "B", category: "Text", blenderSceneName: "Text", id: 320},
+		{name: "B", category: "Text", blenderSceneName: "Text", id: 320, isBoostZone: true},
 		{name: "C", category: "Text", blenderSceneName: "Text", id: 321},
 		{name: "D", category: "Text", blenderSceneName: "Text", id: 322},
 		{name: "E", category: "Text", blenderSceneName: "Text", id: 323},
 		{name: "F", category: "Text", blenderSceneName: "Text", id: 324},
-		{name: "G", category: "Text", blenderSceneName: "Text", id: 325},
+		{name: "G", category: "Text", blenderSceneName: "Text", id: 325, isHighGravity: true},
 		{name: "H", category: "Text", blenderSceneName: "Text", id: 326},
 		{name: "I", category: "Text", blenderSceneName: "Text", id: 327},
 		{name: "J", category: "Text", blenderSceneName: "Text", id: 328},
 		{name: "K", category: "Text", blenderSceneName: "Text", id: 329},
 		{name: "L", category: "Text", blenderSceneName: "Text", id: 330},
-		{name: "M", category: "Text", blenderSceneName: "Text", id: 331},
+		{name: "M", category: "Text", blenderSceneName: "Text", id: 331, isLowGravity: true},
 		{name: "N", category: "Text", blenderSceneName: "Text", id: 332},
 		{name: "O", category: "Text", blenderSceneName: "Text", id: 333},
 		{name: "P", category: "Text", blenderSceneName: "Text", id: 334},
@@ -245,6 +248,7 @@ const moddedBlocks = {
 		{name: "Q_Black", category: "Text", blenderSceneName: "Text", id: 371},
 		{name: "R_Black", category: "Text", blenderSceneName: "Text", id: 372},
 		{name: "S_Black", category: "Text", blenderSceneName: "Text", id: 373},
+
 		{name: "T_Black", category: "Text", blenderSceneName: "Text", id: 374},
 		{name: "U_Black", category: "Text", blenderSceneName: "Text", id: 375},
 		{name: "V_Black", category: "Text", blenderSceneName: "Text", id: 376},
@@ -265,7 +269,7 @@ const moddedBlocks = {
 
 
 
-		// next id: 391
+		// next id: 288
 	]
 };
 
@@ -7479,7 +7483,17 @@ const moddedBlocks = {
 			constructor() {
 				bo.add(this), Ao.set(this, void 0), To.set(this, void 0), Eo.set(this, void 0), Co.set(this, void 0), Po.set(this, void 0), ko.set(this, void 0), Io.set(this, []), Do.set(this, []), No.set(this, new Map), Lo.set(this, []), zo.set(this, null), Uo.set(this, null), Bo.set(this, 0), Oo.set(this, 1e3), Vo.set(this, []), Fo.set(this, []), Wo(this, Ao, new Ammo.btDefaultCollisionConfiguration, "f"), Wo(this, To, new Ammo.btCollisionDispatcher(Go(this, Ao, "f")), "f"), Wo(this, Eo, new Ammo.btDbvtBroadphase, "f"), Wo(this, Co, new Ammo.btSequentialImpulseConstraintSolver, "f"), Wo(this, Po, new Ammo.btDiscreteDynamicsWorld(Go(this, To, "f"), Go(this, Eo, "f"), Go(this, Co, "f"), Go(this, Ao, "f")), "f"), Wo(this, ko, new Ammo.btGhostPairCallback, "f"), Go(this, Po, "f").getPairCache().setInternalGhostPairCallback(Go(this, ko, "f"));
 				const t = new Ammo.btVector3(0, -9.82, 0);
-				Go(this, Po, "f").setGravity(t), Ammo.destroy(t)
+				Go(this, Po, "f").setGravity(t);
+				Ammo.destroy(t);
+				setGravity = (grav) => {
+					if (grav == gravityState) {
+						return;
+					}
+					gravityState = grav;
+					const gVec = new Ammo.btVector3(0, grav, 0);
+					Go(this, Po, "f").setGravity(gVec);
+					Ammo.destroy(gVec);
+				}
 			}
 			dispose() {
 				Go(this, Io, "f").forEach((t => {
@@ -7677,7 +7691,7 @@ const moddedBlocks = {
 		const Qo = Jo;
 		var Ko;
 		! function(t) {
-			t[t.Checkpoint = 0] = "Checkpoint", t[t.Finish = 1] = "Finish"
+			t[t.Checkpoint = 0] = "Checkpoint", t[t.Finish = 1] = "Finish", t[t.HighGravity = 2] = "HighGravity", t[t.LowGravity = 3] = "LowGravity", t[t.Boost = 4] = "Boost"
 		}(Ko || (Ko = {}));
 		const $o = Ko;
 		var ts, es, ns, is, rs, as = function(t, e, n, i, r) {
@@ -7769,12 +7783,102 @@ const moddedBlocks = {
 			}
 
 													/* IMPORTANT - cwcinc custom colliders */
-			checkSpooky(t) {	// boost
-				return this.checkCustomCollider(t, "Spooky");
+			checkBoost(t) {	// boost
+				let n = [],
+					i = null;
+				os(this, ns, "f").getPartTypesWithDetector($o.Boost).forEach((t => {
+					const e = os(this, ns, "f").getDetector(t);
+					if (null == e) throw "Part detector is missing";
+					const i = os(this, is, "f").get(t);
+					null != i && (n = n.concat(i.map((({
+						x: t,
+						y: n,
+						z: i,
+						rotation: r,
+						checkpointOrder: a
+					}) => ({
+						x: t,
+						y: n,
+						z: i,
+						rotation: r,
+						checkpointOrder: a,
+						detector: e
+					})))))
+				}));
+				return n.some((({
+					x: e,
+					y: n,
+					z: r,
+					rotation: a,
+					checkpointOrder: o,
+					detector: s
+				}) => {
+					if (o == i) {
+						const i = new ct(...s.center),
+							o = new ct(...s.size);
+						let l, c;
+						if (0 == a) l = new ct(i.x, i.y, i.z), c = new ct(o.x, o.y, o.z);
+						else if (1 == a) l = new ct(i.z, i.y, -i.x), c = new ct(o.z, o.y, o.x);
+						else if (2 == a) l = new ct(-i.x, i.y, -i.z), c = new ct(o.x, o.y, o.z);
+						else {
+							if (3 != a) throw "Invalid rotation";
+							l = new ct(i.z, i.y, i.x), c = new ct(o.z, o.y, o.x)
+						}
+						l.add(new ct(e * es.partWidth, n * es.partHeight, r * es.partLength));
+						const h = (new ut).setFromCenterAndSize(l, c);
+						return t.some((t => h.intersectsTriangle(t)))
+					}
+					return !1
+				}));
 			}
 
-			checkHighGravity(t) {
-				return this.checkCustomCollider(t, "HighGravity");
+			checkHighGravity(t) {	// high g
+				let n = [],
+					i = null;
+				os(this, ns, "f").getPartTypesWithDetector($o.HighGravity).forEach((t => {
+					const e = os(this, ns, "f").getDetector(t);
+					if (null == e) throw "Part detector is missing";
+					const i = os(this, is, "f").get(t);
+					null != i && (n = n.concat(i.map((({
+						x: t,
+						y: n,
+						z: i,
+						rotation: r,
+						checkpointOrder: a
+					}) => ({
+						x: t,
+						y: n,
+						z: i,
+						rotation: r,
+						checkpointOrder: a,
+						detector: e
+					})))))
+				}));
+				return n.some((({
+					x: e,
+					y: n,
+					z: r,
+					rotation: a,
+					checkpointOrder: o,
+					detector: s
+				}) => {
+					if (o == i) {
+						const i = new ct(...s.center),
+							o = new ct(...s.size);
+						let l, c;
+						if (0 == a) l = new ct(i.x, i.y, i.z), c = new ct(o.x, o.y, o.z);
+						else if (1 == a) l = new ct(i.z, i.y, -i.x), c = new ct(o.z, o.y, o.x);
+						else if (2 == a) l = new ct(-i.x, i.y, -i.z), c = new ct(o.x, o.y, o.z);
+						else {
+							if (3 != a) throw "Invalid rotation";
+							l = new ct(i.z, i.y, i.x), c = new ct(o.z, o.y, o.x)
+						}
+						l.add(new ct(e * es.partWidth, n * es.partHeight, r * es.partLength));
+						const h = (new ut).setFromCenterAndSize(l, c);
+						return t.some((t => h.intersectsTriangle(t)))
+					}
+					return !1
+				}));
 			}
 
 			checkLowGravity(t) {
@@ -7962,7 +8066,7 @@ const moddedBlocks = {
 					down: a,
 					left: o
 				}), Rs(this, ws, "f").increment()), Rs(this, Ss, "f").increment()), i && !Rs(this, ys, "f") && Rs(this, xs, "f")) {
-				const t = ENGINE.isSpooky ? 100*4000 : 4000;;
+				const t = ENGINE.isBoost ? 100*4000 : 4000;;
 				Rs(this, us, "f").applyEngineForce(t, 2), Rs(this, us, "f").applyEngineForce(t, 3)
 			} else Rs(this, us, "f").applyEngineForce(0, 2), Rs(this, us, "f").applyEngineForce(0, 3);
 			if (a && !Rs(this, ys, "f") && Rs(this, xs, "f"))
@@ -8013,7 +8117,7 @@ const moddedBlocks = {
 				Rs(this, ds, "f").createMountains(t, e);
 				Ns(this, hs, new ls(Rs(this, ds, "f"), n, i), "f");
 
-				ENGINE = {isSpooky: false};	// cwcinc - init ENGINE
+				ENGINE = {isBoost: false};	// cwcinc - init ENGINE
 
 				Rs(this, ds, "f").addPreStepEventListener(Ns(this, As, (t => {
 					null != Rs(this, us, "f") && (Rs(this, ds, "f").activePhysicsAt(this.getPosition()), Rs(this, cs, "m", Is).call(this), Rs(this, cs, "m", Ds).call(this, t, o))
@@ -8037,10 +8141,18 @@ const moddedBlocks = {
 							}
 						}
 
-						if (Rs(this, hs, "f").checkSpooky(i)) {
-							ENGINE.isSpooky = true;
+						if (Rs(this, hs, "f").checkBoost(i)) {
+							ENGINE.isBoost = true;
 						} else {
-							ENGINE.isSpooky = false;
+							ENGINE.isBoost = false;
+						}
+
+						if (Rs(this, hs, "f").checkHighGravity(i)) {
+							setGravity(-40);
+						} else if (Rs(this, hs, "f").checkLowGravity(i)) {
+							setGravity(-0.1);
+						} else {
+							setGravity(-9.82);
 						}
 					}
 				}), "f"));

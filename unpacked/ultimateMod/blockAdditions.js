@@ -174,7 +174,7 @@ const moddedBlocks = {
 		{name: "JackOLanternSmile", category: "Spooky", blenderSceneName: "Spooky", id: 239},
 		{name: "JackOLanternSmileBig", category: "Spooky", blenderSceneName: "Spooky", id: 240},
 		{name: "Lollipop", category: "Spooky", blenderSceneName: "Spooky", id: 241},
-		{name: "LollipopGate", category: "Spooky", blenderSceneName: "Spooky", id: 242, isSpooky:true},
+		{name: "LollipopGate", category: "Spooky", blenderSceneName: "Spooky", id: 242, isBoost:true},
 		{name: "Pumpkin", category: "Spooky", blenderSceneName: "Spooky", id: 243},
 		{name: "PumpkinBig", category: "Spooky", blenderSceneName: "Spooky", id: 244},
 		{name: "PumpkinTall", category: "Spooky", blenderSceneName: "Spooky", id: 245},
@@ -258,7 +258,7 @@ const moddedBlocks = {
 
 		
 		{name: "A", category: "Text", blenderSceneName: "Text", id: 319},
-		{name: "B", category: "Text", blenderSceneName: "Text", id: 320},
+		{name: "B", category: "Text", blenderSceneName: "Text", id: 320, isBoostZone: true},
 		{name: "C", category: "Text", blenderSceneName: "Text", id: 321},
 		{name: "D", category: "Text", blenderSceneName: "Text", id: 322},
 		{name: "E", category: "Text", blenderSceneName: "Text", id: 323},

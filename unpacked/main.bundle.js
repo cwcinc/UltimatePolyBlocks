@@ -19928,8 +19928,8 @@
 			}
 		}
 		var wy;
-		! function(e) {
-			e[e.Checkpoint = 0] = "Checkpoint", e[e.Finish = 1] = "Finish"
+		! function(e) {	// IMPORTANT - colliders
+			e[e.Checkpoint = 0] = "Checkpoint", e[e.Finish = 1] = "Finish", e[e.HighGravity = 2] = "HighGravity", e[e.LowGravity = 3] = "LowGravity", e[e.Boost = 4] = "Boost"
 		}(wy || (wy = {}));
 		const yy = wy;
 
@@ -24211,36 +24211,6 @@
 						);
 						continue;
 					}
-
-					if (block.hasOwnProperty("isHighGravity")) {
-						i(
-							ZP[block.category], 
-							Bw[block.name], 
-							[[block.blenderSceneName, block.name]],
-							[[0,0,0]], 
-							{
-								type: yy.HighGravity,
-								center: [0, 2.2, 0],
-								size: [20, 1000, 20]
-							}
-						);
-						continue;
-					}
-
-					if (block.hasOwnProperty("isLowGravity")) {
-						i(
-							ZP[block.category], 
-							Bw[block.name], 
-							[[block.blenderSceneName, block.name]],
-							[[0,0,0]], 
-							{
-								type: yy.LowGravity,
-								center: [0, 2.2, 0],
-								size: [20, 1000, 20]
-							}
-						);
-						continue;
-					}
 					
 					if (block.hasOwnProperty("isCheckpoint")) {
 						i(
@@ -24266,16 +24236,52 @@
 								size: [11, 3.8, 2]
 							}
 						);
-					} else if (block.hasOwnProperty("isSpooky")) {
+					} else if (block.hasOwnProperty("isBoost")) {
 						i(
 							ZP[block.category], 
 							Bw[block.name], 
 							[[block.blenderSceneName, block.name]],
 							[[0,0,0]], 
 							{
-								type: yy.Spooky,
+								type: yy.Boost,
 								center: [0, 2.2, 0],
 								size: [20, 4.5, 20]
+							}
+						);
+					} else if (block.hasOwnProperty("isBoostZone")) {
+						i(
+							ZP[block.category], 
+							Bw[block.name], 
+							[[block.blenderSceneName, block.name]],
+							[[0,0,0]], 
+							{
+								type: yy.Boost,
+								center: [0, 2.2, 0],
+								size: [20, 1000, 20]
+							}
+						);
+					} else if (block.hasOwnProperty("isHighGravity")) {
+						i(
+							ZP[block.category], 
+							Bw[block.name], 
+							[[block.blenderSceneName, block.name]],
+							[[0,0,0]], 
+							{
+								type: yy.HighGravity,
+								center: [0, 2.2, 0],
+								size: [20, 1000, 20]
+							}
+						);
+					} else if (block.hasOwnProperty("isLowGravity")) {
+						i(
+							ZP[block.category], 
+							Bw[block.name], 
+							[[block.blenderSceneName, block.name]],
+							[[0,0,0]], 
+							{
+								type: yy.LowGravity,
+								center: [0, 2.2, 0],
+								size: [20, 1000, 20]
 							}
 						);
 					} else {
