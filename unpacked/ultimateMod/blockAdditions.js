@@ -201,9 +201,9 @@ const moddedBlocks = {
 
 		{name: "Spider", category: "Spooky", blenderSceneName: "Spiders", id: 266},
 		{name: "SpiderBig", category: "Spooky", blenderSceneName: "Spiders", id: 267},
-		{name: "SpiderPile", category: "Spooky", blenderSceneName: "Spiders", id: 268},
+		//{name: "SpiderPile", category: "Spooky", blenderSceneName: "Spiders", id: 268},
 
-		{name: "Boggy", category: "Spooky", blenderSceneName: "Spooky", id: 247},
+		//{name: "Boggy", category: "Spooky", blenderSceneName: "Spooky", id: 247},
 		{name: "BoggyBig", category: "Spooky", blenderSceneName: "Spooky", id: 270},
 		{name: "Cauldron", category: "Spooky", blenderSceneName: "Spooky", id: 271},
 		{name: "CauldronGoopGreen", category: "Spooky", blenderSceneName: "Spooky", id: 272},
@@ -215,7 +215,7 @@ const moddedBlocks = {
 		{name: "FenceHalf", category: "Spooky", blenderSceneName: "Spooky", id: 278},
 		{name: "FenceTee", category: "Spooky", blenderSceneName: "Spooky", id: 288},
 
-		{name: "CornLight", category: "Spooky", blenderSceneName: "Spooky", id: 279},
+		//{name: "CornLight", category: "Spooky", blenderSceneName: "Spooky", id: 279},
 		//{name: "CornMazeSingle", category: "Spooky", blenderSceneName: "Spooky", id: 280},
 
 		//{name: "CobbleStraight", category: "Spooky", blenderSceneName: "Cobblestone", id: 281},
@@ -263,13 +263,13 @@ const moddedBlocks = {
 		{name: "D", category: "Text", blenderSceneName: "Text", id: 322},
 		{name: "E", category: "Text", blenderSceneName: "Text", id: 323},
 		{name: "F", category: "Text", blenderSceneName: "Text", id: 324},
-		{name: "G", category: "Text", blenderSceneName: "Text", id: 325},
+		{name: "G", category: "Text", blenderSceneName: "Text", id: 325, isHighGravity: true},
 		{name: "H", category: "Text", blenderSceneName: "Text", id: 326},
 		{name: "I", category: "Text", blenderSceneName: "Text", id: 327},
 		{name: "J", category: "Text", blenderSceneName: "Text", id: 328},
 		{name: "K", category: "Text", blenderSceneName: "Text", id: 329},
 		{name: "L", category: "Text", blenderSceneName: "Text", id: 330},
-		{name: "M", category: "Text", blenderSceneName: "Text", id: 331},
+		{name: "M", category: "Text", blenderSceneName: "Text", id: 331, isLowGravity: true},
 		{name: "N", category: "Text", blenderSceneName: "Text", id: 332},
 		{name: "O", category: "Text", blenderSceneName: "Text", id: 333},
 		{name: "P", category: "Text", blenderSceneName: "Text", id: 334},
@@ -313,6 +313,7 @@ const moddedBlocks = {
 		{name: "Q_Black", category: "Text", blenderSceneName: "Text", id: 371},
 		{name: "R_Black", category: "Text", blenderSceneName: "Text", id: 372},
 		{name: "S_Black", category: "Text", blenderSceneName: "Text", id: 373},
+
 		{name: "T_Black", category: "Text", blenderSceneName: "Text", id: 374},
 		{name: "U_Black", category: "Text", blenderSceneName: "Text", id: 375},
 		{name: "V_Black", category: "Text", blenderSceneName: "Text", id: 376},

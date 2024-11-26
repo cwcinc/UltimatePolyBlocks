@@ -15547,8 +15547,8 @@
 						magic: n.decode(new Uint8Array(e.slice(0, 4))),
 						version: t.getUint32(4, !0),
 						length: t.getUint32(8, !0)
-					}, this.header.magic !== Dd) throw new Error("THREE.GLTFLoader: Unsupported glTF-Binary header.");
-				if (this.header.version < 2) throw new Error("THREE.GLTFLoader: Legacy binary file detected.");
+					}, this.header.magic !== Dd) {alert("THREE.GLTFLoader: Unsupported glTF-Binary header."); throw new Error("THREE.GLTFLoader: Unsupported glTF-Binary header.")};
+				if (this.header.version < 2) {alert("THREE.GLTFLoader: Legacy binary file detected."); throw new Error("THREE.GLTFLoader: Legacy binary file detected.")};
 				const i = this.header.length - 12,
 					r = new DataView(e, 12);
 				let a = 0;
@@ -15565,12 +15565,12 @@
 					}
 					a += t
 				}
-				if (null === this.content) throw new Error("THREE.GLTFLoader: JSON content not found.")
+				if (null === this.content) {alert("THREE.GLTFLoader: JSON content not found."); throw new Error("THREE.GLTFLoader: JSON content not found.")}
 			}
 		}
 		class zd {
 			constructor(e, t) {
-				if (!t) throw new Error("THREE.GLTFLoader: No DRACOLoader instance provided.");
+				if (!t) {alert("THREE.GLTFLoader: No DRACOLoader instance provided."); throw new Error("THREE.GLTFLoader: No DRACOLoader instance provided.")};
 				this.name = gd.KHR_DRACO_MESH_COMPRESSION, this.json = e, this.dracoLoader = t, this.dracoLoader.preload()
 			}
 			decodePrimitive(e, t) {
@@ -15788,6 +15788,7 @@
 				case Uint16Array:
 					return 1 / 65535;
 				default:
+					alert("THREE.GLTFLoader: Unsupported normalized accessor component type.");
 					throw new Error("THREE.GLTFLoader: Unsupported normalized accessor component type.")
 			}
 		}
@@ -16772,7 +16773,7 @@
 		class ip {
 			constructor(e) {
 				if (ep.set(this, 0), null != e) {
-					if (!Number.isSafeInteger(e)) throw "Frames is not a safe integer";
+					if (!Number.isSafeInteger(e)) {alert("Frames is not a safe integer"); throw "Frames is not a safe integer"};
 					tp(this, ep, e, "f")
 				}
 			}
@@ -17487,7 +17488,7 @@
 
 		function lm(e) {
 			this.options = Xf.assign({
-				level: am,
+		 		level: am,
 				method: sm,
 				chunkSize: 16384,
 				windowBits: 15,
@@ -18866,7 +18867,7 @@
 			null != Nv(this, rv, "f") && (e ? Nv(this, rv, "f").emissive.setRGB(1, .4, .3) : Nv(this, rv, "f").emissive.setRGB(0, 0, 0))
 		}, Lv = function(e) {
 			const t = e.geometry.toNonIndexed();
-			if (!(t.attributes.position instanceof lr)) throw "Vertices must use BufferAttribute";
+			if (!(t.attributes.position instanceof lr)) {alert("Vertices must use BufferAttribute"); throw "Vertices must use BufferAttribute"};
 			return Array.from(t.attributes.position.array)
 		}, Dv.massOffset = .6, Dv.models = null, Dv.images = null;
 		const Uv = Dv;
@@ -19909,7 +19910,7 @@
 		}
 
 		function gy(e, t) {
-			if (t >= 8 * e.length) throw "Out of range";
+			if (t >= 8 * e.length) {alert("Out of range"); throw "Out of range"};
 			const n = Math.floor(t / 8),
 				i = e[n],
 				r = t - 8 * n;
@@ -20082,14 +20083,14 @@
 			const t = e.getPartTypesWithDetector(yy.Checkpoint),
 				n = [];
 			return Cy(this, My, "f").forEach(((e, i) => {
-				if (i < 0 || i > 65535) throw "Type id is out of range";
+				if (i < 0 || i > 65535) {alert("Type id is out of range"); throw "Type id is out of range"};
 				const r = e.length;
 				n.push(255 & i, i >>> 8 & 255, 255 & r, r >>> 8 & 255, r >>> 16 & 255, r >>> 24 & 255), e.forEach((e => {
 					const r = e.x + Math.pow(2, 23),
 						a = e.y,
 						o = e.z + Math.pow(2, 23);
 					if (n.push(255 & r, r >>> 8 & 255, r >>> 16 & 255, 255 & a, a >>> 8 & 255, a >>> 16 & 255, 255 & o, o >>> 8 & 255, o >>> 16 & 255, 3 & e.rotation), t.includes(i)) {
-						if (null == e.checkpointOrder) throw "Checkpoint has no checkpoint order";
+						if (null == e.checkpointOrder) {alert("Checkpoint has no checkpoint order"); throw "Checkpoint has no checkpoint order"};
 						n.push(255 & e.checkpointOrder, e.checkpointOrder >>> 8 & 255)
 					}
 				}))
@@ -20294,8 +20295,8 @@
 		class Xy {
 			constructor(e, t, n, i, r, a, o) {
 				if (this.checkpointOrder = null, this.x = e, this.y = t, this.z = n, this.rotation = i, this.type = r, this.matrix = a, this.checkpointOrder = o, null != r.detector && r.detector.type == yy.Checkpoint) {
-					if (null == o) throw "Checkpoint has no checkpoint order"
-				} else if (null != o) throw "Non-checkpoint has checkpoint order"
+					if (null == o) {alert("Checkpoint has no checkpoint order"); throw "Checkpoint has no checkpoint order"}
+				} else if (null != o) {alert("Non-checkpoint has checkpoint order"); throw "Non-checkpoint has checkpoint order"}
 			}
 		}
 		class Yy {
@@ -20327,7 +20328,7 @@
 				qy(this, Dy, "f").push(s);
 				o.tiles.rotated(r).forEach(((i, r, a) => {
 					const o = e + i + "|" + (t + r) + "|" + (n + a);
-					if (this.hasPartAt(e + i, t + r, n + a)) throw "Track part collision";
+					if (this.hasPartAt(e + i, t + r, n + a)) {alert("Track part collision"); throw "Track part collision"};
 					qy(this, Uy, "f").set(o, s)
 				}));
 				const l = qy(this, By, "f").get(i);
@@ -20335,27 +20336,27 @@
 			}
 			deletePart(e, t, n) {
 				const i = qy(this, Uy, "f").get(e + "|" + t + "|" + n);
-				if (null == i) throw "Track part missing from parts by position map";
+				if (null == i) {alert("Track part missing from parts by position map"); throw "Track part missing from parts by position map"};
 				for (let e = 0; e < qy(this, Dy, "f").length; ++e) {
 					if (qy(this, Dy, "f")[e] == i) {
 						qy(this, Dy, "f").splice(e, 1);
 						break
 					}
-					if (e == qy(this, Dy, "f").length - 1) throw "Track part missing from parts list"
+					if (e == qy(this, Dy, "f").length - 1) {alert("Track part missing from parts list"); throw "Track part missing from parts list"}
 				}
 				i.type.tiles.rotated(i.rotation).forEach(((e, t, n) => {
 					const r = i.x + e + "|" + (i.y + t) + "|" + (i.z + n);
-					if (!qy(this, Uy, "f").has(r)) throw "Track part section missing";
+					if (!qy(this, Uy, "f").has(r)) {alert("Track part section missing"); throw "Track part section missing"};
 					qy(this, Uy, "f").delete(r)
 				}));
 				const r = qy(this, By, "f").get(i.type.id);
-				if (null == r) throw "Track part type is missing from parts by type map";
+				if (null == r) {alert("Track part type is missing from parts by type map"); throw "Track part type is missing from parts by type map"};
 				for (let e = 0; e < r.length; ++e) {
 					if (r[e] == i) {
 						r.splice(e, 1);
 						break
 					}
-					if (e == r.length - 1) throw "Track part is missing from parts by type map"
+					if (e == r.length - 1) {alert("Track part is missing from parts by type map"); throw "Track part is missing from parts by type map"}
 				}
 			}
 			getBounds() {
@@ -20372,7 +20373,7 @@
 						}
 				let i = null;
 				return n.forEach((t => {
-					if (null == t.type.mesh) throw "Track part is not loaded yet";
+					if (null == t.type.mesh) {alert("Track part is not loaded yet"); throw "Track part is not loaded yet"};
 					if (null == i) {
 						t.type.mesh.matrixWorld.copy(t.matrix);
 						const n = e.intersectObject(t.type.mesh, !0);
@@ -20388,7 +20389,7 @@
 					const n = [];
 					for (let t = 0; t < qy(this, Dy, "f").length; ++t) qy(this, Dy, "f")[t].type == e && n.push(qy(this, Dy, "f")[t]);
 					if (n.length > 0) {
-						if (null == e.mesh) throw "Mesh is not loaded";
+						if (null == e.mesh) {alert("Mesh is not loaded"); throw "Mesh is not loaded"}
 						const i = new Sl(e.mesh.geometry, e.mesh.material, n.length);
 						i.frustumCulled = !1, i.receiveShadow = !0;
 						for (let e = 0; e < n.length; ++e) i.setMatrixAt(e, n[e].matrix);
@@ -20405,8 +20406,8 @@
 					const n = qy(this, By, "f").get(t);
 					null != n && (e = e.concat(n))
 				})), e.map((e => {
-					if (null == e.checkpointOrder) throw "Checkpoint has no checkpoint order";
-					if (null == e.type.detector) throw "Checkpoint has no detector";
+					if (null == e.checkpointOrder) {alert("Checkpoint has no checkpoint order"); throw "Checkpoint has no checkpoint order"}
+					if (null == e.type.detector) {alert("Checkpoint has no detector"); throw "Checkpoint has no detector"};
 					return {
 						x: e.x,
 						y: e.y,
@@ -20423,8 +20424,8 @@
 					const n = qy(this, By, "f").get(t);
 					null != n && (e = e.concat(n))
 				})), e.map((e => {
-					if (null == e.checkpointOrder) throw "Checkpoint has no checkpoint order";
-					if (null == e.type.detector) throw "Checkpoint has no detector";
+					if (null == e.checkpointOrder) {alert("Checkpoint has no checkpoint order"); throw "Checkpoint has no checkpoint order"}
+					if (null == e.type.detector) {alert("Checkpoint has no detector"); throw "Checkpoint has no detector"};
 					return e.checkpointOrder
 				}))
 			}
@@ -20525,14 +20526,14 @@
 						color: 16777215
 					});
 					t.forEach((t => {
-						if (null == nb(Zy, Zy, "f", eb)) throw "Font is not loaded yet";
+						if (null == nb(Zy, Zy, "f", eb)) {alert("Font is not loaded yet"); throw "Font is not loaded yet"};
 						const n = new Un(...t.detector.center);
 						let i;
 						if (0 == t.rotation) i = new Un(n.x, n.y, n.z);
 						else if (1 == t.rotation) i = new Un(n.z, n.y, -n.x);
 						else if (2 == t.rotation) i = new Un(-n.x, n.y, -n.z);
 						else {
-							if (3 != t.rotation) throw "Invalid rotation";
+							if (3 != t.rotation) {alert("Invalid rotation"); throw "Invalid rotation"};
 							i = new Un(n.z, n.y, n.x)
 						}
 						i.add(new Un(t.x * Ky.partWidth, t.y * Ky.partHeight, t.z * Ky.partLength)), 
@@ -20968,7 +20969,8 @@
 							t.push([-r, i, n]);
 							break;
 						default:
-							throw "Invalid rotation"
+							alert("Invalid rotation");
+							throw "Invalid rotation";
 					}
 				})), new Lx(t)
 			}
@@ -21481,13 +21483,13 @@
 			c.className = "button", c.innerHTML = '<img class="button-icon" src="images/help.svg"> ', c.append(document.createTextNode(Dk(this, n_, "f").get("Help"))), c.addEventListener("click", (() => {
 				Dk(this, e_, "f").playUIClick();
 				const e = Dk(this, o_, "f").getPart(Bw.Start).mesh;
-				if (null == e) throw new Error("Starting point mesh is null");
+				if (null == e) {alert("Starting point mesh is null"); throw new Error("Starting point mesh is null")};
 				const t = Dk(this, $x, "m", Sk).call(this, e),
 					n = Dk(this, o_, "f").getPart(Bw.Checkpoint).mesh;
-				if (null == n) throw new Error("Checkpoint mesh is null");
+				if (null == n) {alert("Checkpoint mesh is null"); throw new Error("Checkpoint mesh is null")};
 				const i = Dk(this, $x, "m", Sk).call(this, n),
 					r = Dk(this, o_, "f").getPart(Bw.Finish).mesh;
-				if (null == r) throw new Error("Finish line mesh is null");
+				if (null == r) {alert("Finish line mesh is null"); throw new Error("Finish line mesh is null")};
 				const a = Dk(this, $x, "m", Sk).call(this, r);
 				Dk(this, g_, "f").className = "hidden", Nk(this, A_, new Qx(Dk(this, e_, "f"), Dk(this, n_, "f"), Dk(this, p_, "f"), Dk(this, u_, "f"), t, i, a, (() => {
 					var e;
@@ -21533,7 +21535,7 @@
 			})))
 		}, gk = function() {
 			if (null != Dk(this, a_, "f").getStartTransform()) {
-				if (null == Dk(this, f_, "f")) throw "Test callback is null";
+				if (null == Dk(this, f_, "f")) {alert("Test callback is null"); throw "Test callback is null"};
 				Dk(this, f_, "f").call(this)
 			} else Dk(this, $x, "m", wk).call(this, Dk(this, n_, "f").get("Starting point is missing!"), !1)
 		}, vk = function() {
@@ -21555,7 +21557,7 @@
 			const t = Dk(this, o_, "f").getAllParts();
 			for (let n = 0; n < t.length; ++n) {
 				const i = t[n];
-				if (null == i.mesh) throw "Mesh is not loaded";
+				if (null == i.mesh) {alert("Mesh is not loaded"); throw "Mesh is not loaded"};
 				const r = i.mesh.clone(),
 					a = Dk(this, $x, "m", Sk).call(this, r);
 				let o = null === (e = Dk(this, uk, "f").find((e => e.category == i.category))) || void 0 === e ? void 0 : e.partPanel;
@@ -21596,7 +21598,7 @@
 					})), null == e) Dk(this, $x, "m", xk).call(this, 0);
 				else {
 					let n = null === (t = Dk(this, uk, "f").find((t => t.category == e))) || void 0 === t ? void 0 : t.selectedIndex;
-					if (null == n && (n = Dk(this, hk, "f").findIndex((t => t.category == e)), n < 0)) throw "Empty category";
+					if (null == n && (n = Dk(this, hk, "f").findIndex((t => t.category == e)), n < 0)) {alert("Empty category"); throw "Empty category"};
 					Dk(this, $x, "m", xk).call(this, n)
 				}
 		}, xk = function(e) {
@@ -22314,8 +22316,8 @@
 			}
 			push(e) {
 				if (IS(this, LS, "f").length > 0) {
-					if (e.totalFrames != IS(this, LS, "f")[IS(this, LS, "f").length - 1].totalFrames + 1) throw "Car states are not continuous"
-				} else if (e.totalFrames > 0) throw "First frame must be zero";
+					if (e.totalFrames != IS(this, LS, "f")[IS(this, LS, "f").length - 1].totalFrames + 1) {alert("Car states are not continuous"); throw "Car states are not continuous"}
+				} else if (e.totalFrames > 0) {alert("First frame must be zero"); throw "First frame must be zero"};
 				IS(this, LS, "f").push(e)
 			}
 			getFrame(e) {
@@ -22661,7 +22663,7 @@
 		class YM {
 			constructor(e) {
 				if (GM.set(this, void 0), null != e) {
-					if (!Number.isInteger(e)) throw "Seed must be an integer";
+					if (!Number.isInteger(e)) {alert("Seed must be an integer"); throw "Seed must be an integer"};
 					XM(this, GM, e % qM(VM, VM, "f", jM).length, "f")
 				} else XM(this, GM, 0, "f")
 			}
@@ -22767,7 +22769,7 @@
 			getMountainVertices() {
 				if (null == tT(this, $M, "f")) return [];
 				const e = tT(this, $M, "f").geometry;
-				if (!(e.attributes.position instanceof lr)) throw "Vertices must use BufferAttribute";
+				if (!(e.attributes.position instanceof lr)) {alert("Vertices must use BufferAttribute"); throw "Vertices must use BufferAttribute"};
 				return Array.from(e.attributes.position.array)
 			}
 			getMountainOffset() {
@@ -23161,7 +23163,7 @@
 				EA(this, oA, "f").removeChild(EA(this, sA, "f"))
 			}
 			static getPositionSuffix(e) {
-				if (e <= 0 || !Number.isInteger(e)) throw "Position must be a positive integer.";
+				if (e <= 0 || !Number.isInteger(e)) {alert("Position must be a positive integer."); throw "Position must be a positive integer."};
 				const t = e % 100;
 				if (t >= 11 && t <= 13) return "th";
 				switch (e % 10) {
@@ -23919,7 +23921,7 @@
 					if (4 == i.readyState && 200 == i.status) {
 						t.loadedResource();
 						const e = Py.fromExportString(i.responseText, XP(this, VP, "f"));
-						if (null == e) throw "Failed to load standard track";
+						if (null == e) {alert("Failed to load standard track"); throw "Failed to load standard track"};
 						const {
 							trackName: r,
 							trackData: a
@@ -23994,7 +23996,6 @@
 				let category = moddedBlocks.categories[index];
 				e[e[category] = (9 + index)] = category;
 			}
-			
 			e[e.Special = 0] = "Special";
 			e[e.Road = 1] = "Road";
 			e[e.RoadTurns = 2] = "RoadTurns";
@@ -24067,7 +24068,7 @@
 			}
 			getPart(e) {
 				const t = iR(this, $P, "f").get(e);
-				if (null == t) throw 'Track part with the id "' + e + '" does not exist';
+				if (null == t) {alert('Track part with the id "' + e + '" does not exist'); throw 'Track part with the id "' + e + '" does not exist'};
 				return t
 			}
 			getAllParts() {
@@ -24096,7 +24097,7 @@
 						vertexColors: !0
 					}),
 					i = (t, i, r, ...a) => tR(this, [t, i, r, ...a], void 0, (function*(t, i, r, a = null, o = null, s = null) {
-						if (iR(this, QP, "f").addResource(), iR(this, $P, "f").has(i)) throw "Track part types have same Id";
+						if (iR(this, QP, "f").addResource(), iR(this, $P, "f").has(i)) {alert("Track part types have same Id"); throw "Track part types have same Id"};
 						const l = {
 							id: i,
 							mesh: null,
@@ -24112,7 +24113,7 @@
 
 						function h(e) {
 							const t = e.material;
-							if (!(t instanceof Vc)) throw "Material is not a MeshStandardMaterial";
+							if (!(t instanceof Vc)) {alert("Material is not a MeshStandardMaterial"); throw "Material is not a MeshStandardMaterial"};
 							const n = e.geometry.clone(),
 								i = new Float32Array(n.attributes.position.array.length);
 							for (let e = 0; e < i.length; e += 3) i[e + 0] = t.color.r, i[e + 1] = t.color.g, i[e + 2] = t.color.b;
@@ -24123,9 +24124,9 @@
 						r.forEach((([e, t]) => {
 							const i = function(e, t) {
 								const i = c.find((t => t.scene.name == e));
-								if (null == i) throw 'Scene "' + e + '" does not exist';
+								if (null == i) {alert('Scene "' + e + '" does not exist'); throw 'Scene "' + e + '" does not exist'};
 								const r = i.scene.getObjectByName(t);
-								if (null == r) throw 'Mesh "' + t + '" does not exist in scene "' + e + '"';
+								if (null == r) {alert('Mesh "' + t + '" does not exist in scene "' + e + '"'); throw 'Mesh "' + t + '" does not exist in scene "' + e + '"'};
 								let a;
 								if (0 == r.children.length) {
 									const e = r;
@@ -24139,7 +24140,7 @@
 							}(e, t);
 							d.push(i);
 							const r = i.geometry.toNonIndexed();
-							if (!(r.attributes.position instanceof lr)) throw "Vertices must use BufferAttribute";
+							if (!(r.attributes.position instanceof lr)) {alert("Vertices must use BufferAttribute"); throw "Vertices must use BufferAttribute"};
 							u = u.concat(Array.from(r.attributes.position.array))
 						}));
 						const p = dd(d.map((e => e.geometry)), !0),
@@ -24148,7 +24149,7 @@
 					}));
 
 				function r(e, t, n, i) {
-					if (null == e.mesh) throw "Mesh not loaded";
+					if (null == e.mesh) {alert("Mesh not loaded"); throw "Mesh not loaded"};
 					const r = e.mesh.geometry.attributes.color.array;
 					for (let e = 0; e < 3 * r.length; e += 3) {
 						const a = new tr(r[e + 0], r[e + 1], r[e + 2]);
@@ -24204,6 +24205,36 @@
 							[[0,0,0]], 
 							{
 								type: yy.Finish,
+								center: [0, 2.2, 0],
+								size: [20, 1000, 20]
+							}
+						);
+						continue;
+					}
+
+					if (block.hasOwnProperty("isHighGravity")) {
+						i(
+							ZP[block.category], 
+							Bw[block.name], 
+							[[block.blenderSceneName, block.name]],
+							[[0,0,0]], 
+							{
+								type: yy.HighGravity,
+								center: [0, 2.2, 0],
+								size: [20, 1000, 20]
+							}
+						);
+						continue;
+					}
+
+					if (block.hasOwnProperty("isLowGravity")) {
+						i(
+							ZP[block.category], 
+							Bw[block.name], 
+							[[block.blenderSceneName, block.name]],
+							[[0,0,0]], 
+							{
+								type: yy.LowGravity,
 								center: [0, 2.2, 0],
 								size: [20, 1000, 20]
 							}
@@ -25279,7 +25310,7 @@
 				_R(this, gR, "f").deleteAllRecords(e), _R(this, gR, "f").deleteUserProfile(e)
 			}
 			setProfileSlot(e) {
-				if (!Number.isSafeInteger(e) || e < 0) throw "Profile slot is invalid";
+				if (!Number.isSafeInteger(e) || e < 0) {alert("Profile slot is invalid"); throw "Profile slot is invalid"};
 				xR(this, vR, e, "f"), xR(this, wR, _R(this, fR, "m", bR).call(this, _R(this, vR, "f")), "f"), _R(this, gR, "f").saveUserProfileSlot(_R(this, vR, "f"))
 			}
 			setNickname(e, t = _R(this, vR, "f")) {
@@ -25360,7 +25391,7 @@
 				GR(MR, MR, "f", TR) || GR(MR, MR, "f", AR) || GR(this, SR, "m", BR).call(this) || (GR(this, SR, "m", PR).call(this, e), GR(this, SR, "m", RR).call(this, e), GR(this, SR, "m", LR).call(this, e), GR(this, SR, "m", UR).call(this))
 			}
 			saveRecord(e, t, n, i, r) {
-				if (!Number.isSafeInteger(e) || e < 0) throw "Profile slot is invalid";
+				if (!Number.isSafeInteger(e) || e < 0) {alert("Profile slot is invalid"); throw "Profile slot is invalid"};
 				try {
 					localStorage.setItem(GR(MR, MR, "f", OR) + e + "_" + t, JSON.stringify({
 						uploadId: n,
@@ -25372,7 +25403,7 @@
 				}
 			}
 			loadRecord(e, t) {
-				if (!Number.isSafeInteger(e) || e < 0) throw "Profile slot is invalid";
+				if (!Number.isSafeInteger(e) || e < 0) {alert("Profile slot is invalid"); throw "Profile slot is invalid"};
 				try {
 					const n = localStorage.getItem(GR(MR, MR, "f", OR) + e + "_" + t);
 					if (null == n) return null;
@@ -25399,7 +25430,7 @@
 				return null
 			}
 			deleteAllRecords(e) {
-				if (!Number.isSafeInteger(e) || e < 0) throw "Profile slot is invalid";
+				if (!Number.isSafeInteger(e) || e < 0) {alert("Profile slot is invalid"); throw "Profile slot is invalid"};
 				try {
 					Object.keys(localStorage).forEach((t => {
 						t.startsWith(GR(MR, MR, "f", OR) + e + "_") && localStorage.removeItem(t)
@@ -25461,7 +25492,7 @@
 				return e.filter((e => e.startsWith(GR(MR, MR, "f", zR)))).map((e => e.substring(GR(MR, MR, "f", zR).length)))
 			}
 			saveUserProfileSlot(e) {
-				if (!Number.isSafeInteger(e) || e < 0) throw "Profile slot is invalid";
+				if (!Number.isSafeInteger(e) || e < 0) {alert("Profile slot is invalid"); throw "Profile slot is invalid"};
 				try {
 					localStorage.setItem(GR(MR, MR, "f", FR), JSON.stringify(e))
 				} catch (e) {
@@ -25473,7 +25504,7 @@
 					const e = localStorage.getItem(GR(MR, MR, "f", FR));
 					if (null != e) try {
 						const t = JSON.parse(e);
-						if (!Number.isSafeInteger(t) || t < 0) throw "Profile slot is invalid";
+						if (!Number.isSafeInteger(t) || t < 0) {alert("Profile slot is invalid"); throw "Profile slot is invalid"};
 						return t
 					} catch (e) {
 						console.error(e)
@@ -25484,7 +25515,7 @@
 				return null
 			}
 			saveUserProfile(e, t, n, i) {
-				if (!Number.isSafeInteger(e) || e < 0) throw "Profile slot is invalid";
+				if (!Number.isSafeInteger(e) || e < 0) {alert("Profile slot is invalid"); throw "Profile slot is invalid"};
 				try {
 					localStorage.setItem(GR(MR, MR, "f", WR) + e, JSON.stringify({
 						token: t,
@@ -25496,15 +25527,15 @@
 				}
 			}
 			loadUserProfile(e) {
-				if (!Number.isSafeInteger(e) || e < 0) throw "Profile slot is invalid";
+				if (!Number.isSafeInteger(e) || e < 0) {alert("Profile slot is invalid"); throw "Profile slot is invalid"};
 				try {
 					const t = localStorage.getItem(GR(MR, MR, "f", WR) + e);
 					if (null != t) try {
 						const e = JSON.parse(t);
-						if ("object" != typeof e) throw "User profile is not an object";
-						if ("string" != typeof e.token) throw "User profile token field has invalid type";
-						if ("string" != typeof e.nickname) throw "User profile nickname field has invalid type";
-						if ("string" != typeof e.carColors) throw "User profile carColors field has invalid type";
+						if ("object" != typeof e) {alert("User profile is not an object"); throw "User profile is not an object"};
+						if ("string" != typeof e.token) {alert("User profile token field has invalid type"); throw "User profile token field has invalid type"};
+						if ("string" != typeof e.nickname) {alert("User profile nickname field has invalid type"); throw "User profile nickname field has invalid type"};
+						if ("string" != typeof e.carColors) {alert("User profile carColors field has invalid type"); throw "User profile carColors field has invalid type"};
 						return {
 							token: e.token,
 							nickname: e.nickname,
@@ -25764,7 +25795,7 @@
 			constructor() {
 				XR.add(this), KR.set(this, void 0), ZR.set(this, !1), JR.set(this, null);
 				const e = document.getElementById("ui");
-				if (null == e) throw "Failed to find UI element";
+				if (null == e) {alert("Failed to find UI element"); throw "Failed to find UI element"};
 				eL(this, KR, e, "f"), window.addEventListener("mousemove", (() => {
 					document.body.classList.remove("hide-cursor"), tL(this, ZR, "f") && (null != tL(this, JR, "f") && clearTimeout(tL(this, JR, "f")), eL(this, JR, setTimeout((() => {
 						document.body.classList.add("hide-cursor"), eL(this, JR, null, "f")
@@ -26041,7 +26072,7 @@
 			};
 		uL = new WeakMap, pL = new WeakMap, fL = new WeakMap, dL = new WeakSet, mL = function(e) {
 			e.forEach((([e, t]) => {
-				if (!vL(this, fL, "f").has(e)) throw "Key binding is missing";
+				if (!vL(this, fL, "f").has(e)) {alert("Key binding is missing"); throw "Key binding is missing"};
 				vL(this, fL, "f").set(e, t)
 			}))
 		};
@@ -26111,7 +26142,7 @@
 			}
 			getSetting(e) {
 				const t = vL(this, pL, "f").get(e);
-				if (null == t) throw "Setting name is missing";
+				if (null == t) {alert("Setting name is missing"); throw "Setting name is missing"};
 				return t
 			}
 			getSettingBoolean(e) {
@@ -26125,7 +26156,7 @@
 			}
 			updateSettings(e) {
 				e.forEach((([e, t]) => {
-					if (!vL(this, pL, "f").has(e)) throw "Setting name is missing";
+					if (!vL(this, pL, "f").has(e)) {alert("Setting name is missing"); throw "Setting name is missing"};
 					vL(this, pL, "f").set(e, t)
 				}))
 			}
@@ -26187,8 +26218,8 @@
 					if (null == s) i(!1);
 					else {
 						const l = iT.createMountainVertices(e.getBounds());
-						if (null == CL(this, _L, "f")) throw "TrackPartManager is not initialized";
-						if (null == Uv.models) throw "Car collision model not loaded";
+						if (null == CL(this, _L, "f")) {alert("TrackPartManager is not initialized"); throw "TrackPartManager is not initialized"};
+						if (null == Uv.models) {alert("Car collision model not loaded"); throw "Car collision model not loaded"};
 						const c = (AL(this, SL, (o = CL(this, SL, "f"), a = o++, o), "f"), a),
 							h = setInterval((() => {
 								CL(this, EL, "f") && (clearInterval(h), r("Simulation has been disposed"))
@@ -26324,7 +26355,7 @@
 					carId: e
 				});
 				const t = CL(this, ML, "f").get(e);
-				if (null == t) throw "Deleting non-existant car";
+				if (null == t) {alert("Deleting non-existant car"); throw "Deleting non-existant car"};
 				CL(this, kL, "f").removeEventListener("message", t), CL(this, ML, "f").delete(e)
 			}
 			startCar(e, t) {
@@ -29637,7 +29668,7 @@
 			constructor(e, t, n, i, r, a, o, s, l, c) {
 				MN.add(this), TN.set(this, void 0), AN.set(this, void 0), CN.set(this, void 0), PN.set(this, void 0), RN.set(this, void 0), LN.set(this, void 0), IN.set(this, void 0), NN.set(this, void 0), DN.set(this, void 0), UN.set(this, void 0), BN.set(this, null), ON.set(this, void 0), zN.set(this, !1), FN.set(this, 0), WN.set(this, 0), HN.set(this, void 0), VN.set(this, !0), GN.set(this, void 0), jN.set(this, void 0), qN.set(this, void 0), XN.set(this, void 0), YN.set(this, void 0), KN.set(this, void 0), ZN.set(this, void 0), $N(this, TN, e, "f"), $N(this, AN, t, "f"), $N(this, CN, i, "f"), $N(this, PN, r, "f"), $N(this, RN, a, "f"), $N(this, LN, o, "f"), $N(this, IN, s, "f"), $N(this, NN, l, "f"), $N(this, DN, c, "f"), t.loadTrackData(n), t.generateMeshes(), i.generateMountains(t.getBounds());
 				const h = t.getStartTransform();
-				if (null == h) throw "Track has no starting point";
+				if (null == h) {alert("Track has no starting point"); throw "Track has no starting point"};
 				$N(this, UN, new NS, "f");
 				const d = e.createCar(h, eD(this, CN, "f").getMountainVertices(), eD(this, CN, "f").getMountainOffset(), eD(this, AN, "f").getTrackData(), l.recording, (t => {
 					eD(this, UN, "f").push(t), null != eD(this, BN, "f") && t.totalFrames >= l.time.numberOfFrames && (e.deleteCar(eD(this, BN, "f")), $N(this, BN, null, "f"))

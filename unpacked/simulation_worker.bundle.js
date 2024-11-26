@@ -265,7 +265,7 @@ const moddedBlocks = {
 
 
 
-		// next id: 288
+		// next id: 391
 	]
 };
 
@@ -7719,10 +7719,10 @@ const moddedBlocks = {
 			checkFinish(t) {
 				return this.checkFinishOrCheckpoint(t)
 			}
-			checkSpooky(t) {	// cwcinc - spooky collider
+			checkCustomCollider(t, name) {
 				let n = [],
 					i = null;
-				os(this, ns, "f").getPartTypesWithDetector($o.Spooky).forEach((t => {
+				os(this, ns, "f").getPartTypesWithDetector($o[name]).forEach((t => {
 					const e = os(this, ns, "f").getDetector(t);
 					if (null == e) throw "Part detector is missing";
 					const i = os(this, is, "f").get(t);
@@ -7767,6 +7767,21 @@ const moddedBlocks = {
 					return !1
 				}));
 			}
+
+													/* IMPORTANT - cwcinc custom colliders */
+			checkSpooky(t) {	// boost
+				return this.checkCustomCollider(t, "Spooky");
+			}
+
+			checkHighGravity(t) {
+				return this.checkCustomCollider(t, "HighGravity");
+			}
+
+			checkLowGravity(t) {
+				return this.checkCustomCollider(t, "LowGravity");
+			}
+
+			
 			checkFinishOrCheckpoint(t, e) {
 				let n = [],
 					i = null;
@@ -7998,16 +8013,7 @@ const moddedBlocks = {
 				Rs(this, ds, "f").createMountains(t, e);
 				Ns(this, hs, new ls(Rs(this, ds, "f"), n, i), "f");
 
-				ENGINE = {isSpooky: false, spookyTimeout: 0};	// cwcinc - init ENGINE
-
-				function spook() {
-					/*try {clearTimeout(ENGINE.spookyTimeout)} catch(e) {};
-					let spookyTimeout = setTimeout(() => {
-						ENGINE = {isSpooky: false, spookyTimeout:-1};
-					}, 500);
-					ENGINE = {isSpooky: true, spookyTimeout: spookyTimeout};*/
-					ENGINE.isSpooky = true;
-				}
+				ENGINE = {isSpooky: false};	// cwcinc - init ENGINE
 
 				Rs(this, ds, "f").addPreStepEventListener(Ns(this, As, (t => {
 					null != Rs(this, us, "f") && (Rs(this, ds, "f").activePhysicsAt(this.getPosition()), Rs(this, cs, "m", Is).call(this), Rs(this, cs, "m", Ds).call(this, t, o))
@@ -8032,7 +8038,7 @@ const moddedBlocks = {
 						}
 
 						if (Rs(this, hs, "f").checkSpooky(i)) {
-							spook();
+							ENGINE.isSpooky = true;
 						} else {
 							ENGINE.isSpooky = false;
 						}
