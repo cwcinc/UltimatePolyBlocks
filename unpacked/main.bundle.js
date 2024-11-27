@@ -20329,7 +20329,7 @@
 				qy(this, Dy, "f").push(s);
 				o.tiles.rotated(r).forEach(((i, r, a) => {
 					const o = e + i + "|" + (t + r) + "|" + (n + a);
-					if (this.hasPartAt(e + i, t + r, n + a)) {alert("Track part collision"); throw "Track part collision"};
+					// if (this.hasPartAt(e + i, t + r, n + a)) {alert("Track part collision"); throw "Track part collision"};
 					qy(this, Uy, "f").set(o, s)
 				}));
 				const l = qy(this, By, "f").get(i);

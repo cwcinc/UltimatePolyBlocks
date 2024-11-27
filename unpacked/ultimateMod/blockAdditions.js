@@ -253,10 +253,42 @@ const moddedBlocks = {
 		{name: "BlockSlopedTaller", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 312},
 		{name: "BlockSlopedTallerUpInnerCorner", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 313},
 		{name: "BlockSlopedTallerUpOuterCorner", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 314},
-		{name: "BlockSlopeFlatterDown", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 315},
-		{name: "BlockSlopeFlatterUp", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 316},
-		{name: "BlockSlopeTallerDown", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 317},
-		{name: "BlockSlopeTallerUp", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 318},
+		{name: "BlockSlopedFlatterDown", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 315},
+		{name: "BlockSlopedFlatterUp", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 316},
+		{name: "BlockSlopedTallerDown", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 317},
+		{name: "BlockSlopedTallerUp", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 318},
+
+		{name: "BlockCone", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 439},
+		{name: "BlockConeShort", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 440},
+		{name: "BlockConeTall", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 441},
+		{name: "BlockConeUpside", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 442},
+		{name: "BlockConeUpsideShort", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 443},
+		{name: "BlockConeUpsideTall", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 444},
+		{name: "BlockDecorational1", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 445},
+		{name: "BlockDecorational2", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 446},
+		{name: "BlockDecorational3", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 447},
+		{name: "BlockFullRampToSlope", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 448},
+		{name: "BlockInverseQuarter", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 449},
+		{name: "BlockSlopedCut1", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 450},
+		{name: "BlockSlopedCut2", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 451},
+		{name: "BlockSlopedCut3", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 452},
+		{name: "BlockSlopedCut4", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 453},
+		{name: "BlockSlopedFlatterCut1", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 454},
+		{name: "BlockSlopedFlatterCut2", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 455},
+		{name: "BlockSlopedFlatterCut3", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 456},
+		{name: "BlockSlopedFlatterCut4", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 457},
+		{name: "BlockSlopedFlatterFullRampToSlope", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 458},
+		{name: "BlockSlopedTallerCut1", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 459},
+		{name: "BlockSlopedTallerCut2", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 460},
+		{name: "BlockSlopedTallerCut3", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 461},
+		{name: "BlockSlopedTallerCut4", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 462},
+		{name: "BlockSlopedTallerDownInnerCornerSmooth", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 463},
+		{name: "BlockSlopedTallerFullRampToSlope", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 464},
+		{name: "BlockSlopedTallerUpInnerCornerSmooth", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 465},
+		{name: "BlockSphere", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 466},
+		{name: "BlockWithPlaneHalf", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 467},
+		{name: "BlockWithPlaneQuarter", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 468},
+		{name: "BlockWithPlaneQuarterInverse", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 469},
 
 		
 		{name: "A", category: "Text", blenderSceneName: "Text", id: 319},
@@ -385,7 +417,7 @@ const moddedBlocks = {
 		{name: "Forty48", category: "Forty", blenderSceneName: "Forty", id: 438},
 
 
-		// next id: 288
+		// next id: 470
 	]
 };
 
