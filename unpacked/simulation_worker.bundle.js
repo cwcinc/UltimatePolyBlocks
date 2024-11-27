@@ -7784,6 +7784,22 @@ const moddedBlocks = {
 			checkFinish(t) {
 				return this.checkFinishOrCheckpoint(t)
 			}
+
+
+															/* IMPORTANT - cwcinc custom colliders */
+			checkBoost(t) {			// boost
+				return this.checkCustomCollider(t, "Boost");
+			}
+
+			checkHighGravity(t) {	// high g
+				return this.checkCustomCollider(t, "HighGravity");
+			}
+
+			checkLowGravity(t) {	// low g
+				return this.checkCustomCollider(t, "LowGravity");
+			}
+										
+
 			checkCustomCollider(t, name) {
 				let n = [],
 					i = null;
@@ -7832,110 +7848,6 @@ const moddedBlocks = {
 					return !1
 				}));
 			}
-
-													/* IMPORTANT - cwcinc custom colliders */
-			checkBoost(t) {	// boost
-				let n = [],
-					i = null;
-				os(this, ns, "f").getPartTypesWithDetector($o.Boost).forEach((t => {
-					const e = os(this, ns, "f").getDetector(t);
-					if (null == e) throw "Part detector is missing";
-					const i = os(this, is, "f").get(t);
-					null != i && (n = n.concat(i.map((({
-						x: t,
-						y: n,
-						z: i,
-						rotation: r,
-						checkpointOrder: a
-					}) => ({
-						x: t,
-						y: n,
-						z: i,
-						rotation: r,
-						checkpointOrder: a,
-						detector: e
-					})))))
-				}));
-				return n.some((({
-					x: e,
-					y: n,
-					z: r,
-					rotation: a,
-					checkpointOrder: o,
-					detector: s
-				}) => {
-					if (o == i) {
-						const i = new ct(...s.center),
-							o = new ct(...s.size);
-						let l, c;
-						if (0 == a) l = new ct(i.x, i.y, i.z), c = new ct(o.x, o.y, o.z);
-						else if (1 == a) l = new ct(i.z, i.y, -i.x), c = new ct(o.z, o.y, o.x);
-						else if (2 == a) l = new ct(-i.x, i.y, -i.z), c = new ct(o.x, o.y, o.z);
-						else {
-							if (3 != a) throw "Invalid rotation";
-							l = new ct(i.z, i.y, i.x), c = new ct(o.z, o.y, o.x)
-						}
-						l.add(new ct(e * es.partWidth, n * es.partHeight, r * es.partLength));
-						const h = (new ut).setFromCenterAndSize(l, c);
-						return t.some((t => h.intersectsTriangle(t)))
-					}
-					return !1
-				}));
-			}
-
-			checkHighGravity(t) {	// high g
-				let n = [],
-					i = null;
-				os(this, ns, "f").getPartTypesWithDetector($o.HighGravity).forEach((t => {
-					const e = os(this, ns, "f").getDetector(t);
-					if (null == e) throw "Part detector is missing";
-					const i = os(this, is, "f").get(t);
-					null != i && (n = n.concat(i.map((({
-						x: t,
-						y: n,
-						z: i,
-						rotation: r,
-						checkpointOrder: a
-					}) => ({
-						x: t,
-						y: n,
-						z: i,
-						rotation: r,
-						checkpointOrder: a,
-						detector: e
-					})))))
-				}));
-				return n.some((({
-					x: e,
-					y: n,
-					z: r,
-					rotation: a,
-					checkpointOrder: o,
-					detector: s
-				}) => {
-					if (o == i) {
-						const i = new ct(...s.center),
-							o = new ct(...s.size);
-						let l, c;
-						if (0 == a) l = new ct(i.x, i.y, i.z), c = new ct(o.x, o.y, o.z);
-						else if (1 == a) l = new ct(i.z, i.y, -i.x), c = new ct(o.z, o.y, o.x);
-						else if (2 == a) l = new ct(-i.x, i.y, -i.z), c = new ct(o.x, o.y, o.z);
-						else {
-							if (3 != a) throw "Invalid rotation";
-							l = new ct(i.z, i.y, i.x), c = new ct(o.z, o.y, o.x)
-						}
-						l.add(new ct(e * es.partWidth, n * es.partHeight, r * es.partLength));
-						const h = (new ut).setFromCenterAndSize(l, c);
-						return t.some((t => h.intersectsTriangle(t)))
-					}
-					return !1
-				}));
-			}
-
-			checkLowGravity(t) {
-				return this.checkCustomCollider(t, "LowGravity");
-			}
-
 			
 			checkFinishOrCheckpoint(t, e) {
 				let n = [],

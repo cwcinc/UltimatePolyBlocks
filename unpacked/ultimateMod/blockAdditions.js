@@ -285,7 +285,7 @@ const moddedBlocks = {
 		{name: "X", category: "Text", blenderSceneName: "Text", id: 342},
 		{name: "Y", category: "Text", blenderSceneName: "Text", id: 343},
 		{name: "Z", category: "Text", blenderSceneName: "Text", id: 344},
-		{name: "0", category: "Text", blenderSceneName: "Text", id: 345},
+		/*{name: "0", category: "Text", blenderSceneName: "Text", id: 345},
 		{name: "1", category: "Text", blenderSceneName: "Text", id: 346},
 		{name: "2", category: "Text", blenderSceneName: "Text", id: 347},
 		{name: "3", category: "Text", blenderSceneName: "Text", id: 348},
@@ -294,7 +294,7 @@ const moddedBlocks = {
 		{name: "6", category: "Text", blenderSceneName: "Text", id: 351},
 		{name: "7", category: "Text", blenderSceneName: "Text", id: 352},
 		{name: "8", category: "Text", blenderSceneName: "Text", id: 353},
-		{name: "9", category: "Text", blenderSceneName: "Text", id: 354},
+		{name: "9", category: "Text", blenderSceneName: "Text", id: 354},*/
 		
 		{name: "A_Black", category: "Text", blenderSceneName: "Text", id: 355},
 		{name: "B_Black", category: "Text", blenderSceneName: "Text", id: 356},

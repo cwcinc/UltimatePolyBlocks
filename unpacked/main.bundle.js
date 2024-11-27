@@ -18616,6 +18616,7 @@
 						l.multiply((new Dn).setFromAxisAngle(new Un(-1, 0, 0), Nv(this, Qg, "f")[t] - c)), Nv(this, iv, "f")[t].position.set(s.x, s.y, s.z), Nv(this, iv, "f")[t].quaternion.set(l.x, l.y, l.z, l.w);
 						const h = Nv(this, qg, "f").wheelSuspensionLength[t],
 							d = Nv(this, qg, "f").wheelSkidInfo[t];
+							// sebas thinks this important (prob just visual skidmarks)
 						Nv(this, nv, "f").morphTargetInfluences || (Nv(this, nv, "f").morphTargetInfluences = []), Nv(this, nv, "f").morphTargetInfluences[t] = 2 * h + .06, e > 0 && (null === (i = Nv(this, dv, "f")) || void 0 === i ? void 0 : i.getSettingBoolean(Jh.SkidmarksEnabled)) && t < Nv(this, uv, "f").length && r && o > .06 && d < .5 && 0 == Nv(this, fv, "f")[t] && Nv(this, uv, "f")[t].spawn(s.x, s.y, s.z, a)
 					}
 					Nv(this, Cg, "m", Rv).call(this, Nv(this, qg, "f").brakeLightEnabled)
