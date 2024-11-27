@@ -3,8 +3,18 @@ var ENGINE = {};
 var setGravity = () => {}
 var gravityState = -9.82;
 
-var setFrictionSlip = () => {}
+var setFrictionSlipFuncs = {};
 var frictionState = 3;
+var setFrictionSlip = (friction) => {
+	if (friction == frictionState) {
+		return;
+	}
+	frictionState = friction;
+	setFrictionSlipFuncs["WheelFL"](friction);
+	setFrictionSlipFuncs["WheelFR"](friction);
+	setFrictionSlipFuncs["WheelBL"](friction);
+	setFrictionSlipFuncs["WheelBR"](friction);
+};
 
 const moddedBlocks = {
 	categories: [
@@ -8212,11 +8222,7 @@ const moddedBlocks = {
 					i.set_m_wheelsDampingCompression(200);
 					i.set_m_frictionSlip(3);
 
-					setFrictionSlip = (friction) => {
-						if (friction == frictionState) {
-							return;
-						}
-						frictionState = friction;
+					setFrictionSlipFuncs[t] = (friction) => {
 						i.set_m_frictionSlip(friction);
 					}
 
