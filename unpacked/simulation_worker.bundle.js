@@ -3,6 +3,9 @@ var ENGINE = {};
 var setGravity = () => {}
 var gravityState = -9.82;
 
+var setFrictionSlip = () => {}
+var frictionState = 3;
+
 const moddedBlocks = {
 	categories: [
 		"SlopedTurns", 
@@ -199,13 +202,13 @@ const moddedBlocks = {
 		{name: "C", category: "Text", blenderSceneName: "Text", id: 321},
 		{name: "D", category: "Text", blenderSceneName: "Text", id: 322},
 		{name: "E", category: "Text", blenderSceneName: "Text", id: 323},
-		{name: "F", category: "Text", blenderSceneName: "Text", id: 324},
+		{name: "F", category: "Text", blenderSceneName: "Text", id: 324, isHighFriction: true},
 		{name: "G", category: "Text", blenderSceneName: "Text", id: 325, isHighGravity: true},
 		{name: "H", category: "Text", blenderSceneName: "Text", id: 326},
 		{name: "I", category: "Text", blenderSceneName: "Text", id: 327},
 		{name: "J", category: "Text", blenderSceneName: "Text", id: 328},
 		{name: "K", category: "Text", blenderSceneName: "Text", id: 329},
-		{name: "L", category: "Text", blenderSceneName: "Text", id: 330},
+		{name: "L", category: "Text", blenderSceneName: "Text", id: 330, isLowFriction: true},
 		{name: "M", category: "Text", blenderSceneName: "Text", id: 331, isLowGravity: true},
 		{name: "N", category: "Text", blenderSceneName: "Text", id: 332},
 		{name: "O", category: "Text", blenderSceneName: "Text", id: 333},
@@ -220,7 +223,7 @@ const moddedBlocks = {
 		{name: "X", category: "Text", blenderSceneName: "Text", id: 342},
 		{name: "Y", category: "Text", blenderSceneName: "Text", id: 343},
 		{name: "Z", category: "Text", blenderSceneName: "Text", id: 344},
-		{name: "0", category: "Text", blenderSceneName: "Text", id: 345},
+		/*{name: "0", category: "Text", blenderSceneName: "Text", id: 345},
 		{name: "1", category: "Text", blenderSceneName: "Text", id: 346},
 		{name: "2", category: "Text", blenderSceneName: "Text", id: 347},
 		{name: "3", category: "Text", blenderSceneName: "Text", id: 348},
@@ -229,7 +232,7 @@ const moddedBlocks = {
 		{name: "6", category: "Text", blenderSceneName: "Text", id: 351},
 		{name: "7", category: "Text", blenderSceneName: "Text", id: 352},
 		{name: "8", category: "Text", blenderSceneName: "Text", id: 353},
-		{name: "9", category: "Text", blenderSceneName: "Text", id: 354},
+		{name: "9", category: "Text", blenderSceneName: "Text", id: 354},*/
 		
 		{name: "A_Black", category: "Text", blenderSceneName: "Text", id: 355},
 		{name: "B_Black", category: "Text", blenderSceneName: "Text", id: 356},
@@ -7742,7 +7745,7 @@ const moddedBlocks = {
 		const Qo = Jo;
 		var Ko;
 		! function(t) {
-			t[t.Checkpoint = 0] = "Checkpoint", t[t.Finish = 1] = "Finish", t[t.HighGravity = 2] = "HighGravity", t[t.LowGravity = 3] = "LowGravity", t[t.Boost = 4] = "Boost"
+			t[t.Checkpoint = 0] = "Checkpoint", t[t.Finish = 1] = "Finish", t[t.HighGravity = 2] = "HighGravity", t[t.LowGravity = 3] = "LowGravity", t[t.Boost = 4] = "Boost", t[t.HighFriction = 5] = "HighFriction", t[t.LowFriction = 6] = "LowFriction"
 		}(Ko || (Ko = {}));
 		const $o = Ko;
 		var ts, es, ns, is, rs, as = function(t, e, n, i, r) {
@@ -7797,6 +7800,14 @@ const moddedBlocks = {
 
 			checkLowGravity(t) {	// low g
 				return this.checkCustomCollider(t, "LowGravity");
+			}
+
+			checkHighFriction(t) {	// high f
+				return this.checkCustomCollider(t, "HighFriction");
+			}
+
+			checkLowFriction(t) {	// low f
+				return this.checkCustomCollider(t, "LowFriction");
 			}
 										
 
@@ -8117,6 +8128,14 @@ const moddedBlocks = {
 						} else {
 							setGravity(-9.82);
 						}
+
+						if (Rs(this, hs, "f").checkHighFriction(i)) {
+							setFrictionSlip(10);
+						} else if (Rs(this, hs, "f").checkLowFriction(i)) {
+							setFrictionSlip(0.01);
+						} else {
+							setFrictionSlip(3);
+						}
 					}
 				}), "f"));
 				const l = new Ammo.btTransform;
@@ -8160,6 +8179,15 @@ const moddedBlocks = {
 					i.set_m_wheelsDampingRelaxation(5);
 					i.set_m_wheelsDampingCompression(200);
 					i.set_m_frictionSlip(3);
+
+					setFrictionSlip = (friction) => {
+						if (friction == frictionState) {
+							return;
+						}
+						frictionState = friction;
+						i.set_m_frictionSlip(friction);
+					}
+
 					i.set_m_rollInfluence(.75);
 				})), Ammo.destroy(g), Ammo.destroy(_);
 				const v = new Ammo.btTransform;
