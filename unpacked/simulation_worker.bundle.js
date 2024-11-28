@@ -22,6 +22,7 @@ const moddedBlocks = {
 		"Forty",
 		"BlocksPlus", 
 		"BlockMixingRoads",
+		"BorderlessRoads",
 		"Zones", 
 		"Text",
 		"Minecraft", 
@@ -50,7 +51,8 @@ const moddedBlocks = {
 		"ultimateMod/models/blocksplus.glb",
 		"ultimateMod/models/blockmixingroads.glb",
 		"ultimateMod/models/text.glb",
-		"ultimateMod/models/forty.glb"
+		"ultimateMod/models/forty.glb",
+		"ultimateMod/models/borderlessroads.glb"
 	],
     blocks: [
 		{name: "Grass", category: "Minecraft", blenderSceneName: "Minecraft", id: 180},
@@ -239,42 +241,42 @@ const moddedBlocks = {
 		{name: "BlockWithPlaneQuarterInverse", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 469},
 
 		
-		{name: "A", category: "Text", blenderSceneName: "Text", id: 319},
-		{name: "B", category: "Text", blenderSceneName: "Text", id: 320, isBoostZone: true},
-		{name: "C", category: "Text", blenderSceneName: "Text", id: 321},
-		{name: "D", category: "Text", blenderSceneName: "Text", id: 322},
-		{name: "E", category: "Text", blenderSceneName: "Text", id: 323},
-		{name: "F", category: "Text", blenderSceneName: "Text", id: 324, isHighFriction: true},
-		{name: "G", category: "Text", blenderSceneName: "Text", id: 325, isHighGravity: true},
-		{name: "H", category: "Text", blenderSceneName: "Text", id: 326},
-		{name: "I", category: "Text", blenderSceneName: "Text", id: 327},
-		{name: "J", category: "Text", blenderSceneName: "Text", id: 328},
-		{name: "K", category: "Text", blenderSceneName: "Text", id: 329},
-		{name: "L", category: "Text", blenderSceneName: "Text", id: 330, isLowFriction: true},
-		{name: "M", category: "Text", blenderSceneName: "Text", id: 331, isLowGravity: true},
-		{name: "N", category: "Text", blenderSceneName: "Text", id: 332},
-		{name: "O", category: "Text", blenderSceneName: "Text", id: 333},
-		{name: "P", category: "Text", blenderSceneName: "Text", id: 334},
-		{name: "Q", category: "Text", blenderSceneName: "Text", id: 335},
-		{name: "R", category: "Text", blenderSceneName: "Text", id: 336},
-		{name: "S", category: "Text", blenderSceneName: "Text", id: 337},
-		{name: "T", category: "Text", blenderSceneName: "Text", id: 338},
-		{name: "U", category: "Text", blenderSceneName: "Text", id: 339},
-		{name: "V", category: "Text", blenderSceneName: "Text", id: 340},
-		{name: "W", category: "Text", blenderSceneName: "Text", id: 341},
-		{name: "X", category: "Text", blenderSceneName: "Text", id: 342},
-		{name: "Y", category: "Text", blenderSceneName: "Text", id: 343},
-		{name: "Z", category: "Text", blenderSceneName: "Text", id: 344},
-		/*{name: "0", category: "Text", blenderSceneName: "Text", id: 345},
-		{name: "1", category: "Text", blenderSceneName: "Text", id: 346},
-		{name: "2", category: "Text", blenderSceneName: "Text", id: 347},
-		{name: "3", category: "Text", blenderSceneName: "Text", id: 348},
-		{name: "4", category: "Text", blenderSceneName: "Text", id: 349},
-		{name: "5", category: "Text", blenderSceneName: "Text", id: 350},
-		{name: "6", category: "Text", blenderSceneName: "Text", id: 351},
-		{name: "7", category: "Text", blenderSceneName: "Text", id: 352},
-		{name: "8", category: "Text", blenderSceneName: "Text", id: 353},
-		{name: "9", category: "Text", blenderSceneName: "Text", id: 354},*/
+		{name: "LA", category: "Text", blenderSceneName: "Text", id: 319},
+		{name: "LB", category: "Text", blenderSceneName: "Text", id: 320, isBoostZone: true},
+		{name: "LC", category: "Text", blenderSceneName: "Text", id: 321},
+		{name: "LD", category: "Text", blenderSceneName: "Text", id: 322},
+		{name: "LE", category: "Text", blenderSceneName: "Text", id: 323, isEngineOff: true},
+		{name: "LF", category: "Text", blenderSceneName: "Text", id: 324, isHighFriction: true},
+		{name: "LG", category: "Text", blenderSceneName: "Text", id: 325, isHighGravity: true},
+		{name: "LH", category: "Text", blenderSceneName: "Text", id: 326},
+		{name: "LI", category: "Text", blenderSceneName: "Text", id: 327},
+		{name: "LJ", category: "Text", blenderSceneName: "Text", id: 328},
+		{name: "LK", category: "Text", blenderSceneName: "Text", id: 329},
+		{name: "LL", category: "Text", blenderSceneName: "Text", id: 330, isLowFriction: true},
+		{name: "LM", category: "Text", blenderSceneName: "Text", id: 331, isLowGravity: true},
+		{name: "LN", category: "Text", blenderSceneName: "Text", id: 332},
+		{name: "LO", category: "Text", blenderSceneName: "Text", id: 333},
+		{name: "LP", category: "Text", blenderSceneName: "Text", id: 334},
+		{name: "LQ", category: "Text", blenderSceneName: "Text", id: 335},
+		{name: "LR", category: "Text", blenderSceneName: "Text", id: 336},
+		{name: "LS", category: "Text", blenderSceneName: "Text", id: 337},
+		{name: "LT", category: "Text", blenderSceneName: "Text", id: 338},
+		{name: "LU", category: "Text", blenderSceneName: "Text", id: 339},
+		{name: "LV", category: "Text", blenderSceneName: "Text", id: 340},
+		{name: "LW", category: "Text", blenderSceneName: "Text", id: 341},
+		{name: "LX", category: "Text", blenderSceneName: "Text", id: 342},
+		{name: "LY", category: "Text", blenderSceneName: "Text", id: 343},
+		{name: "LZ", category: "Text", blenderSceneName: "Text", id: 344},
+		{name: "L0", category: "Text", blenderSceneName: "Text", id: 345},
+		{name: "L1", category: "Text", blenderSceneName: "Text", id: 346},
+		{name: "L2", category: "Text", blenderSceneName: "Text", id: 347},
+		{name: "L3", category: "Text", blenderSceneName: "Text", id: 348},
+		{name: "L4", category: "Text", blenderSceneName: "Text", id: 349},
+		{name: "L5", category: "Text", blenderSceneName: "Text", id: 350},
+		{name: "L6", category: "Text", blenderSceneName: "Text", id: 351},
+		{name: "L7", category: "Text", blenderSceneName: "Text", id: 352},
+		{name: "L8", category: "Text", blenderSceneName: "Text", id: 353},
+		{name: "L9", category: "Text", blenderSceneName: "Text", id: 354},
 		
 		{name: "A_Black", category: "Text", blenderSceneName: "Text", id: 355},
 		{name: "B_Black", category: "Text", blenderSceneName: "Text", id: 356},
@@ -363,6 +365,21 @@ const moddedBlocks = {
 		{name: "Forty46", category: "Forty", blenderSceneName: "Forty", id: 436},
 		{name: "Forty47", category: "Forty", blenderSceneName: "Forty", id: 437},
 		{name: "Forty48", category: "Forty", blenderSceneName: "Forty", id: 438},
+
+		
+		{name: "BorderlessIntersectionCross", category: "BorderlessRoads", blenderSceneName: "BorderlessRoads", id: 470},
+		{name: "BorderlessIntersectionT", category: "BorderlessRoads", blenderSceneName: "BorderlessRoads", id: 471},
+		{name: "BorderlessStart", category: "BorderlessRoads", blenderSceneName: "BorderlessRoads", id: 472},
+		{name: "BorderlessStraight", category: "BorderlessRoads", blenderSceneName: "BorderlessRoads", id: 473},
+		{name: "BorderlessTurnLong", category: "BorderlessRoads", blenderSceneName: "BorderlessRoads", id: 474},
+		{name: "BorderlessTurnLong2", category: "BorderlessRoads", blenderSceneName: "BorderlessRoads", id: 475},
+		{name: "BorderlessTurnLong3", category: "BorderlessRoads", blenderSceneName: "BorderlessRoads", id: 476},
+		{name: "BorderlessTurnSFork", category: "BorderlessRoads", blenderSceneName: "BorderlessRoads", id: 477},
+		{name: "BorderlessTurnSharp", category: "BorderlessRoads", blenderSceneName: "BorderlessRoads", id: 478},
+		{name: "BorderlessTurnShort", category: "BorderlessRoads", blenderSceneName: "BorderlessRoads", id: 479},
+		{name: "BorderlessTurnSLeft", category: "BorderlessRoads", blenderSceneName: "BorderlessRoads", id: 480},
+		{name: "BorderlessTurnSRight", category: "BorderlessRoads", blenderSceneName: "BorderlessRoads", id: 481},
+		{name: "TurnSFork", category: "Road", blenderSceneName: "BorderlessRoads", id: 482},
 
 
 		// next id: 470
@@ -7787,7 +7804,7 @@ const moddedBlocks = {
 		const Qo = Jo;
 		var Ko;
 		! function(t) {
-			t[t.Checkpoint = 0] = "Checkpoint", t[t.Finish = 1] = "Finish", t[t.HighGravity = 2] = "HighGravity", t[t.LowGravity = 3] = "LowGravity", t[t.Boost = 4] = "Boost", t[t.HighFriction = 5] = "HighFriction", t[t.LowFriction = 6] = "LowFriction"
+			t[t.Checkpoint = 0] = "Checkpoint", t[t.Finish = 1] = "Finish", t[t.HighGravity = 2] = "HighGravity", t[t.LowGravity = 3] = "LowGravity", t[t.Boost = 4] = "Boost", t[t.HighFriction = 5] = "HighFriction", t[t.LowFriction = 6] = "LowFriction", t[t.EngineOff = 7] = "EngineOff"
 		}(Ko || (Ko = {}));
 		const $o = Ko;
 		var ts, es, ns, is, rs, as = function(t, e, n, i, r) {
@@ -7834,6 +7851,10 @@ const moddedBlocks = {
 															/* IMPORTANT - cwcinc custom colliders */
 			checkBoost(t) {			// boost
 				return this.checkCustomCollider(t, "Boost");
+			}
+
+			checkEngineOff(t) {		// engine off
+				return this.checkCustomCollider(t, "EngineOff");
 			}
 
 			checkHighGravity(t) {	// high g
@@ -8082,7 +8103,7 @@ const moddedBlocks = {
 					down: a,
 					left: o
 				}), Rs(this, ws, "f").increment()), Rs(this, Ss, "f").increment()), i && !Rs(this, ys, "f") && Rs(this, xs, "f")) {
-				const t = ENGINE.isBoost ? 100*4000 : 4000;;
+				const t = ENGINE.isDisabled ? 0 : ENGINE.isBoost ? 100*4000 : 4000;;
 				Rs(this, us, "f").applyEngineForce(t, 2), Rs(this, us, "f").applyEngineForce(t, 3)
 			} else Rs(this, us, "f").applyEngineForce(0, 2), Rs(this, us, "f").applyEngineForce(0, 3);
 			if (a && !Rs(this, ys, "f") && Rs(this, xs, "f"))
@@ -8090,7 +8111,7 @@ const moddedBlocks = {
 					const t = 10;
 					Rs(this, us, "f").setBrake(t, 0), Rs(this, us, "f").setBrake(t, 1), Rs(this, us, "f").setBrake(t, 2), Rs(this, us, "f").setBrake(t, 3), Ns(this, Ms, !0, "f")
 				} else {
-					const t = -1e3;
+					const t = ENGINE.isDisabled ? 0 : -1e3;
 					Rs(this, us, "f").applyEngineForce(t, 2), Rs(this, us, "f").applyEngineForce(t, 3), Rs(this, us, "f").setBrake(0, 0), Rs(this, us, "f").setBrake(0, 1), Rs(this, us, "f").setBrake(0, 2), Rs(this, us, "f").setBrake(0, 3)
 				}
 			else Rs(this, us, "f").setBrake(0, 0), Rs(this, us, "f").setBrake(0, 1), Rs(this, us, "f").setBrake(0, 2), Rs(this, us, "f").setBrake(0, 3);
@@ -8133,7 +8154,7 @@ const moddedBlocks = {
 				Rs(this, ds, "f").createMountains(t, e);
 				Ns(this, hs, new ls(Rs(this, ds, "f"), n, i), "f");
 
-				ENGINE = {isBoost: false};	// cwcinc - init ENGINE
+				ENGINE = {isBoost: false, isDisabled: false};	// cwcinc - init ENGINE
 
 				Rs(this, ds, "f").addPreStepEventListener(Ns(this, As, (t => {
 					null != Rs(this, us, "f") && (Rs(this, ds, "f").activePhysicsAt(this.getPosition()), Rs(this, cs, "m", Is).call(this), Rs(this, cs, "m", Ds).call(this, t, o))
@@ -8161,6 +8182,12 @@ const moddedBlocks = {
 							ENGINE.isBoost = true;
 						} else {
 							ENGINE.isBoost = false;
+						}
+
+						if (Rs(this, hs, "f").checkEngineOff(i)) {
+							ENGINE.isDisabled = true;
+						} else {
+							ENGINE.isDisabled = false;
 						}
 
 						if (Rs(this, hs, "f").checkHighGravity(i)) {

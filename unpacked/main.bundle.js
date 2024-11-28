@@ -19930,7 +19930,7 @@
 		}
 		var wy;
 		! function(e) {	// IMPORTANT - colliders
-			e[e.Checkpoint = 0] = "Checkpoint", e[e.Finish = 1] = "Finish", e[e.HighGravity = 2] = "HighGravity", e[e.LowGravity = 3] = "LowGravity", e[e.Boost = 4] = "Boost", e[e.HighFriction = 5] = "HighFriction", e[e.LowFriction = 6] = "LowFriction"
+			e[e.Checkpoint = 0] = "Checkpoint", e[e.Finish = 1] = "Finish", e[e.HighGravity = 2] = "HighGravity", e[e.LowGravity = 3] = "LowGravity", e[e.Boost = 4] = "Boost", e[e.HighFriction = 5] = "HighFriction", e[e.LowFriction = 6] = "LowFriction", e[e.EngineOff = 7] = "EngineOff"
 		}(wy || (wy = {}));
 		const yy = wy;
 
@@ -24257,6 +24257,18 @@
 							[[0,0,0]], 
 							{
 								type: yy.Boost,
+								center: [0, 2.2, 0],
+								size: [20, 1000, 20]
+							}
+						);
+					} else if (block.hasOwnProperty("isEngineOff")) {
+						i(
+							ZP[block.category], 
+							Bw[block.name], 
+							[[block.blenderSceneName, block.name]],
+							[[0,0,0]], 
+							{
+								type: yy.EngineOff,
 								center: [0, 2.2, 0],
 								size: [20, 1000, 20]
 							}
