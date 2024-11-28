@@ -166,7 +166,7 @@ const moddedBlocks = {
 		{name: "TurnSLeftDiag", category: "SlopedTurns", blenderSceneName: "DiagonalRoads", id: 228},
 		{name: "TurnSRightDiag", category: "SlopedTurns", blenderSceneName: "DiagonalRoads", id: 229},
 
-		{name: "CandyCorn", category: "Spooky", blenderSceneName: "Spooky", id: 230},
+		/*{name: "CandyCorn", category: "Spooky", blenderSceneName: "Spooky", id: 230},
 		{name: "CandyCornCluster", category: "Spooky", blenderSceneName: "Spooky", id: 231},
 		{name: "CandyCornTriple", category: "Spooky", blenderSceneName: "Spooky", id: 232},
 		{name: "Grave1", category: "Spooky", blenderSceneName: "Spooky", id: 233},
@@ -177,12 +177,12 @@ const moddedBlocks = {
 		{name: "JackOLanternAngryBig", category: "Spooky", blenderSceneName: "Spooky", id: 238},
 		{name: "JackOLanternSmile", category: "Spooky", blenderSceneName: "Spooky", id: 239},
 		{name: "JackOLanternSmileBig", category: "Spooky", blenderSceneName: "Spooky", id: 240},
-		{name: "Lollipop", category: "Spooky", blenderSceneName: "Spooky", id: 241},
+		{name: "Lollipop", category: "Spooky", blenderSceneName: "Spooky", id: 241},*/
 		{name: "LollipopGate", category: "Spooky", blenderSceneName: "Spooky", id: 242, isBoost:true},
-		{name: "Pumpkin", category: "Spooky", blenderSceneName: "Spooky", id: 243},
+		/*{name: "Pumpkin", category: "Spooky", blenderSceneName: "Spooky", id: 243},
 		{name: "PumpkinBig", category: "Spooky", blenderSceneName: "Spooky", id: 244},
 		{name: "PumpkinTall", category: "Spooky", blenderSceneName: "Spooky", id: 245},
-		{name: "PumpkinTrio", category: "Spooky", blenderSceneName: "Spooky", id: 246},
+		{name: "PumpkinTrio", category: "Spooky", blenderSceneName: "Spooky", id: 246},*/
 		{name: "DeadTree1", category: "Spooky", blenderSceneName: "Spooky", id: 248},
 		{name: "DeadTree2", category: "Spooky", blenderSceneName: "Spooky", id: 249},
 		{name: "DeadTree3", category: "Spooky", blenderSceneName: "Spooky", id: 250},
@@ -192,12 +192,12 @@ const moddedBlocks = {
 		{name: "DeadTreeBig3", category: "Spooky", blenderSceneName: "Spooky", id: 263},
 		{name: "DeadTreeBig4", category: "Spooky", blenderSceneName: "Spooky", id: 264},
 		{name: "DeadTreeBig5", category: "Spooky", blenderSceneName: "Spooky", id: 265},
-		{name: "Eye1", category: "Spooky", blenderSceneName: "Spooky", id: 251},
+		/*{name: "Eye1", category: "Spooky", blenderSceneName: "Spooky", id: 251},
 		{name: "Eye2", category: "Spooky", blenderSceneName: "Spooky", id: 252},
 		{name: "Mushroom1", category: "Spooky", blenderSceneName: "Spooky", id: 253},
 		{name: "Mushroom2", category: "Spooky", blenderSceneName: "Spooky", id: 254},
 		{name: "MushroomRed1", category: "Spooky", blenderSceneName: "Spooky", id: 258},
-		{name: "MushroomRed2", category: "Spooky", blenderSceneName: "Spooky", id: 259},
+		{name: "MushroomRed2", category: "Spooky", blenderSceneName: "Spooky", id: 259},*/
 
 		{name: "HayBale", category: "Spooky", blenderSceneName: "HayBales", id: 255},
 		{name: "HayBaleTriple", category: "Spooky", blenderSceneName: "HayBales", id: 256},
@@ -369,7 +369,7 @@ const moddedBlocks = {
 		{name: "9_Black", category: "Text", blenderSceneName: "Text", id: 390},
 
 		
-		{name: "Forty1", category: "Forty", blenderSceneName: "Forty", id: 391},
+		/*{name: "Forty1", category: "Forty", blenderSceneName: "Forty", id: 391},
 		{name: "Forty2", category: "Forty", blenderSceneName: "Forty", id: 392},
 		{name: "Forty3", category: "Forty", blenderSceneName: "Forty", id: 393},
 		{name: "Forty4", category: "Forty", blenderSceneName: "Forty", id: 394},
@@ -416,7 +416,7 @@ const moddedBlocks = {
 		{name: "Forty45", category: "Forty", blenderSceneName: "Forty", id: 435},
 		{name: "Forty46", category: "Forty", blenderSceneName: "Forty", id: 436},
 		{name: "Forty47", category: "Forty", blenderSceneName: "Forty", id: 437},
-		{name: "Forty48", category: "Forty", blenderSceneName: "Forty", id: 438},
+		{name: "Forty48", category: "Forty", blenderSceneName: "Forty", id: 438},*/
 
 		
 		{name: "BorderlessIntersectionCross", category: "BorderlessRoads", blenderSceneName: "BorderlessRoads", id: 470},
