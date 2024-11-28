@@ -8191,7 +8191,7 @@ const moddedBlocks = {
 					u = new Ammo.btRigidBody(d);
 				Ammo.destroy(d);
 				Ammo.destroy(h);
-				u.setDamping(.1, .1);
+				u.setDamping(.1, .1);	// (speed lost by drifting, turning speed damping?)
 				u.setActivationState(4);
 				Rs(this, ds, "f").world.addRigidBody(u, 1, 2);
 				Ns(this, fs, u, "f");
