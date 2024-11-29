@@ -77,8 +77,7 @@ const moddedBlocks = {
 		"BorderlessRoads",
 		"Zones", 
 		"Text",
-		"Minecraft", 
-		"CustomSigns", 
+		"Minecraft",
 		"Statues", 
 		"RoadSigns",
 		"SpecialBlocks", 
@@ -116,9 +115,9 @@ const moddedBlocks = {
 		//{name: "OakLeaves", category: "Minecraft", blenderSceneName: "Minecraft", id: 186},
 		{name: "Water", category: "Minecraft", blenderSceneName: "Minecraft", id: 183},*/
 
-		{name: "SignHardFish", category: "CustomSigns", blenderSceneName: "CustomSigns", id: 187},
-		{name: "SignHardFishBig", category: "CustomSigns", blenderSceneName: "CustomSigns", id: 188},
-		{name: "RickrollQR", category: "CustomSigns", blenderSceneName: "CustomSigns", id: 190},
+		{name: "SignHardFish", category: "Signs", blenderSceneName: "CustomSigns", id: 187},
+		{name: "SignHardFishBig", category: "Signs", blenderSceneName: "CustomSigns", id: 188},
+		{name: "RickrollQR", category: "Signs", blenderSceneName: "CustomSigns", id: 190},
 		
 		{name: "PolyCarStatueGold", category: "Statues", blenderSceneName: "Statues", id: 195},
 		{name: "PolyCarStatueSilver", category: "Statues", blenderSceneName: "Statues", id: 194},
@@ -228,13 +227,27 @@ const moddedBlocks = {
 		//{name: "CobbleStart", category: "Spooky", blenderSceneName: "Cobblestone", id: 284}
 
 		{name: "1Boost", category: "Zones", blenderSceneName: "Zones", id: 286, isBoostZone: true},
-		{name: "2Checkpoint", category: "Zones", blenderSceneName: "Zones", id: 287, isCheckpoint: true},
-		{name: "3Finish", category: "Zones", blenderSceneName: "Zones", id: 483, isFinish: true},
+		{name: "1BoostBig", category: "Zones", blenderSceneName: "Zones", id: 529, isBoostZone: true, big: true},
+		{name: "2Checkpoint", category: "Zones", blenderSceneName: "Zones", id: 287, isCheckpointZone: true},
+		{name: "2CheckpointBig", category: "Zones", blenderSceneName: "Zones", id: 530, isCheckpointZone: true, big: true},
+		{name: "3Finish", category: "Zones", blenderSceneName: "Zones", id: 483, isFinishZone: true},
+		{name: "3FinishBig", category: "Zones", blenderSceneName: "Zones", id: 531, isFinishZone: true, big: true},
 		{name: "4LowGrav", category: "Zones", blenderSceneName: "Zones", id: 484, isLowGravity: true},
+		{name: "4LowGravBig", category: "Zones", blenderSceneName: "Zones", id: 532, isLowGravity: true, big: true},
 		{name: "5HighGrav", category: "Zones", blenderSceneName: "Zones", id: 485, isHighGravity: true},
+		{name: "5HighGravBig", category: "Zones", blenderSceneName: "Zones", id: 533, isHighGravity: true, big: true},
 		{name: "6Slip", category: "Zones", blenderSceneName: "Zones", id: 486, isLowFriction: true},
+		{name: "6SlipBig", category: "Zones", blenderSceneName: "Zones", id: 534, isLowFriction: true, big: true},
 		{name: "7Grip", category: "Zones", blenderSceneName: "Zones", id: 487, isHighFriction: true},
+		{name: "7GripBig", category: "Zones", blenderSceneName: "Zones", id: 535, isHighFriction: true, big: true},
 		{name: "8EngineOff", category: "Zones", blenderSceneName: "Zones", id: 488, isEngineOff: true},
+		{name: "8EngineOffBig", category: "Zones", blenderSceneName: "Zones", id: 536, isEngineOff: true, big: true},
+		{name: "9NoWallrideForce", category: "Zones", blenderSceneName: "Zones", id: 537, isNoDownforce: true},
+		{name: "9NoWallrideForceBig", category: "Zones", blenderSceneName: "Zones", id: 538, isNoDownforce: true, big: true},
+		{name: "10HighWallrideForce", category: "Zones", blenderSceneName: "Zones", id: 539, isHighDownforce: true},
+		{name: "10HighWallrideForceBig", category: "Zones", blenderSceneName: "Zones", id: 540, isHighDownforce: true, big: true},
+		{name: "11NegativeWallrideForce", category: "Zones", blenderSceneName: "Zones", id: 541, isNegativeDownforce: true},
+		{name: "11NegativeWallrideForceBig", category: "Zones", blenderSceneName: "Zones", id: 542, isNegativeDownforce: true, big: true},
 
 
 		{name: "B1", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 290},
@@ -479,7 +492,7 @@ const moddedBlocks = {
 		{name: "TurnSFork", category: "Road", blenderSceneName: "BorderlessRoads", id: 482},
 
 
-		// next id: 529
+		// next id: 543
 	]
 };
 

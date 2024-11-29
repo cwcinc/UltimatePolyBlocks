@@ -3,6 +3,11 @@ var ENGINE = {};
 var setGravity = () => {}
 var gravityState = -9.82;
 
+var downforceState = 0.05;
+var setDownforce = (downforce) => {
+	downforceState = downforce;
+}
+
 var setFrictionSlipFuncs = {};
 var frictionState = 3;
 var setFrictionSlip = (friction) => {
@@ -25,8 +30,7 @@ const moddedBlocks = {
 		"BorderlessRoads",
 		"Zones", 
 		"Text",
-		"Minecraft", 
-		"CustomSigns", 
+		"Minecraft",
 		"Statues", 
 		"RoadSigns",
 		"SpecialBlocks", 
@@ -64,9 +68,9 @@ const moddedBlocks = {
 		//{name: "OakLeaves", category: "Minecraft", blenderSceneName: "Minecraft", id: 186},
 		{name: "Water", category: "Minecraft", blenderSceneName: "Minecraft", id: 183},*/
 
-		{name: "SignHardFish", category: "CustomSigns", blenderSceneName: "CustomSigns", id: 187},
-		{name: "SignHardFishBig", category: "CustomSigns", blenderSceneName: "CustomSigns", id: 188},
-		{name: "RickrollQR", category: "CustomSigns", blenderSceneName: "CustomSigns", id: 190},
+		{name: "SignHardFish", category: "Signs", blenderSceneName: "CustomSigns", id: 187},
+		{name: "SignHardFishBig", category: "Signs", blenderSceneName: "CustomSigns", id: 188},
+		{name: "RickrollQR", category: "Signs", blenderSceneName: "CustomSigns", id: 190},
 		
 		{name: "PolyCarStatueGold", category: "Statues", blenderSceneName: "Statues", id: 195},
 		{name: "PolyCarStatueSilver", category: "Statues", blenderSceneName: "Statues", id: 194},
@@ -176,13 +180,27 @@ const moddedBlocks = {
 		//{name: "CobbleStart", category: "Spooky", blenderSceneName: "Cobblestone", id: 284}
 
 		{name: "1Boost", category: "Zones", blenderSceneName: "Zones", id: 286, isBoostZone: true},
-		{name: "2Checkpoint", category: "Zones", blenderSceneName: "Zones", id: 287, isCheckpoint: true},
-		{name: "3Finish", category: "Zones", blenderSceneName: "Zones", id: 483, isFinish: true},
+		{name: "1BoostBig", category: "Zones", blenderSceneName: "Zones", id: 529, isBoostZone: true, big: true},
+		{name: "2Checkpoint", category: "Zones", blenderSceneName: "Zones", id: 287, isCheckpointZone: true},
+		{name: "2CheckpointBig", category: "Zones", blenderSceneName: "Zones", id: 530, isCheckpointZone: true, big: true},
+		{name: "3Finish", category: "Zones", blenderSceneName: "Zones", id: 483, isFinishZone: true},
+		{name: "3FinishBig", category: "Zones", blenderSceneName: "Zones", id: 531, isFinishZone: true, big: true},
 		{name: "4LowGrav", category: "Zones", blenderSceneName: "Zones", id: 484, isLowGravity: true},
+		{name: "4LowGravBig", category: "Zones", blenderSceneName: "Zones", id: 532, isLowGravity: true, big: true},
 		{name: "5HighGrav", category: "Zones", blenderSceneName: "Zones", id: 485, isHighGravity: true},
+		{name: "5HighGravBig", category: "Zones", blenderSceneName: "Zones", id: 533, isHighGravity: true, big: true},
 		{name: "6Slip", category: "Zones", blenderSceneName: "Zones", id: 486, isLowFriction: true},
+		{name: "6SlipBig", category: "Zones", blenderSceneName: "Zones", id: 534, isLowFriction: true, big: true},
 		{name: "7Grip", category: "Zones", blenderSceneName: "Zones", id: 487, isHighFriction: true},
+		{name: "7GripBig", category: "Zones", blenderSceneName: "Zones", id: 535, isHighFriction: true, big: true},
 		{name: "8EngineOff", category: "Zones", blenderSceneName: "Zones", id: 488, isEngineOff: true},
+		{name: "8EngineOffBig", category: "Zones", blenderSceneName: "Zones", id: 536, isEngineOff: true, big: true},
+		{name: "9NoWallrideForce", category: "Zones", blenderSceneName: "Zones", id: 537, isNoDownforce: true},
+		{name: "9NoWallrideForceBig", category: "Zones", blenderSceneName: "Zones", id: 538, isNoDownforce: true, big: true},
+		{name: "10HighWallrideForce", category: "Zones", blenderSceneName: "Zones", id: 539, isHighDownforce: true},
+		{name: "10HighWallrideForceBig", category: "Zones", blenderSceneName: "Zones", id: 540, isHighDownforce: true, big: true},
+		{name: "11NegativeWallrideForce", category: "Zones", blenderSceneName: "Zones", id: 541, isNegativeDownforce: true},
+		{name: "11NegativeWallrideForceBig", category: "Zones", blenderSceneName: "Zones", id: 542, isNegativeDownforce: true, big: true},
 
 
 		{name: "B1", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 290},
@@ -427,7 +445,7 @@ const moddedBlocks = {
 		{name: "TurnSFork", category: "Road", blenderSceneName: "BorderlessRoads", id: 482},
 
 
-		// next id: 529
+		// next id: 543
 	]
 };
 
@@ -7849,7 +7867,7 @@ const moddedBlocks = {
 		const Qo = Jo;
 		var Ko;
 		! function(t) {
-			t[t.Checkpoint = 0] = "Checkpoint", t[t.Finish = 1] = "Finish", t[t.HighGravity = 2] = "HighGravity", t[t.LowGravity = 3] = "LowGravity", t[t.Boost = 4] = "Boost", t[t.HighFriction = 5] = "HighFriction", t[t.LowFriction = 6] = "LowFriction", t[t.EngineOff = 7] = "EngineOff"
+			t[t.Checkpoint = 0] = "Checkpoint", t[t.Finish = 1] = "Finish", t[t.HighGravity = 2] = "HighGravity", t[t.LowGravity = 3] = "LowGravity", t[t.Boost = 4] = "Boost", t[t.HighFriction = 5] = "HighFriction", t[t.LowFriction = 6] = "LowFriction", t[t.EngineOff = 7] = "EngineOff", t[t.NoDownforce = 8] = "NoDownforce", t[t.NegativeDownforce = 9] = "NegativeDownforce", t[t.HighDownforce = 10] = "HighDownforce"
 		}(Ko || (Ko = {}));
 		const $o = Ko;
 		var ts, es, ns, is, rs, as = function(t, e, n, i, r) {
@@ -7908,6 +7926,18 @@ const moddedBlocks = {
 
 			checkLowGravity(t) {	// low g
 				return this.checkCustomCollider(t, "LowGravity");
+			}
+
+			checkHighDownforce(t) {	// high downforce
+				return this.checkCustomCollider(t, "HighDownforce");
+			}
+
+			checkNegativeDownforce(t) {	// negative downforce
+				return this.checkCustomCollider(t, "NegativeDownforce");
+			}
+
+			checkNoDownforce(t) {	// no downforce
+				return this.checkCustomCollider(t, "NoDownforce");
 			}
 
 			checkHighFriction(t) {	// high f
@@ -8122,7 +8152,7 @@ const moddedBlocks = {
 		}, Is = function() {		// IMPORTANT - downforce
 			const t = Rs(this, cs, "m", Cs).call(this).dot(Rs(this, cs, "m", ks).call(this)),
 				e = Rs(this, cs, "m", Ps).call(this),
-				n = .05 * 0,		// 0.05 default
+				n = downforceState,		// 0.05 default
 				i = new Ammo.btVector3(e.x * t * n, e.y * t * n, e.z * t * n);
 			Rs(this, fs, "f").applyCentralImpulse(i), Ammo.destroy(i)
 		}, Ds = function(t, e) {
@@ -8250,6 +8280,16 @@ const moddedBlocks = {
 							setGravity(-0.1);
 						} else {
 							setGravity(-9.82);
+						}
+
+						if (Rs(this, hs, "f").checkHighDownforce(i)) {
+							setDownforce(0.5);
+						} else if (Rs(this, hs, "f").checkNegativeDownforce(i)) {
+							setDownforce(-0.5);
+						} else if (Rs(this, hs, "f").checkNoDownforce(i)) {
+							setDownforce(0);
+						} else {
+							setDownforce(0.05);
 						}
 
 						if (Rs(this, hs, "f").checkHighFriction(i)) {
