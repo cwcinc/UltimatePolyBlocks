@@ -8122,7 +8122,7 @@ const moddedBlocks = {
 		}, Is = function() {		// IMPORTANT - downforce
 			const t = Rs(this, cs, "m", Cs).call(this).dot(Rs(this, cs, "m", ks).call(this)),
 				e = Rs(this, cs, "m", Ps).call(this),
-				n = .05,		// 0.05 default
+				n = .05 * 0,		// 0.05 default
 				i = new Ammo.btVector3(e.x * t * n, e.y * t * n, e.z * t * n);
 			Rs(this, fs, "f").applyCentralImpulse(i), Ammo.destroy(i)
 		}, Ds = function(t, e) {
