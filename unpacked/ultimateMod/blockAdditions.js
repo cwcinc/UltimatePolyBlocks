@@ -227,8 +227,16 @@ const moddedBlocks = {
 		//{name: "CobbleFinish", category: "Spooky", blenderSceneName: "Cobblestone", id: 285}
 		//{name: "CobbleStart", category: "Spooky", blenderSceneName: "Cobblestone", id: 284}
 
-		{name: "CheckpointZone", category: "Zones", blenderSceneName: "Zones", id: 286, isCheckpoint: true},
-		{name: "FinishZone", category: "Zones", blenderSceneName: "Zones", id: 287, isFinish: true},
+		{name: "1Boost", category: "Zones", blenderSceneName: "Zones", id: 286, isBoostZone: true},
+		{name: "2Checkpoint", category: "Zones", blenderSceneName: "Zones", id: 287, isCheckpoint: true},
+		{name: "3Finish", category: "Zones", blenderSceneName: "Zones", id: 483, isFinish: true},
+		{name: "4LowGrav", category: "Zones", blenderSceneName: "Zones", id: 484, isLowGravity: true},
+		{name: "5HighGrav", category: "Zones", blenderSceneName: "Zones", id: 485, isHighGravity: true},
+		{name: "6Slip", category: "Zones", blenderSceneName: "Zones", id: 486, isLowFriction: true},
+		{name: "7Grip", category: "Zones", blenderSceneName: "Zones", id: 487, isHighFriction: true},
+		{name: "8EngineOff", category: "Zones", blenderSceneName: "Zones", id: 488, isEngineOff: true},
+
+
 
 		{name: "BlockFullRamp", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 290},
 		{name: "BlockFullRampCorner", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 291},
@@ -294,18 +302,18 @@ const moddedBlocks = {
 
 		
 		{name: "LA", category: "Text", blenderSceneName: "Text", id: 319},
-		{name: "LB", category: "Text", blenderSceneName: "Text", id: 320, isBoostZone: true},
+		{name: "LB", category: "Text", blenderSceneName: "Text", id: 320},
 		{name: "LC", category: "Text", blenderSceneName: "Text", id: 321},
 		{name: "LD", category: "Text", blenderSceneName: "Text", id: 322},
-		{name: "LE", category: "Text", blenderSceneName: "Text", id: 323, isEngineOff: true},
-		{name: "LF", category: "Text", blenderSceneName: "Text", id: 324, isHighFriction: true},
-		{name: "LG", category: "Text", blenderSceneName: "Text", id: 325, isHighGravity: true},
+		{name: "LE", category: "Text", blenderSceneName: "Text", id: 323},
+		{name: "LF", category: "Text", blenderSceneName: "Text", id: 324},
+		{name: "LG", category: "Text", blenderSceneName: "Text", id: 325},
 		{name: "LH", category: "Text", blenderSceneName: "Text", id: 326},
 		{name: "LI", category: "Text", blenderSceneName: "Text", id: 327},
 		{name: "LJ", category: "Text", blenderSceneName: "Text", id: 328},
 		{name: "LK", category: "Text", blenderSceneName: "Text", id: 329},
-		{name: "LL", category: "Text", blenderSceneName: "Text", id: 330, isLowFriction: true},
-		{name: "LM", category: "Text", blenderSceneName: "Text", id: 331, isLowGravity: true},
+		{name: "LL", category: "Text", blenderSceneName: "Text", id: 330},
+		{name: "LM", category: "Text", blenderSceneName: "Text", id: 331},
 		{name: "LN", category: "Text", blenderSceneName: "Text", id: 332},
 		{name: "LO", category: "Text", blenderSceneName: "Text", id: 333},
 		{name: "LP", category: "Text", blenderSceneName: "Text", id: 334},

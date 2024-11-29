@@ -55,14 +55,14 @@ const moddedBlocks = {
 		"ultimateMod/models/borderlessroads.glb"
 	],
     blocks: [
-		{name: "Grass", category: "Minecraft", blenderSceneName: "Minecraft", id: 180},
+		/*{name: "Grass", category: "Minecraft", blenderSceneName: "Minecraft", id: 180},
 		{name: "Dirt", category: "Minecraft", blenderSceneName: "Minecraft", id: 179},
 		{name: "Stone", category: "Minecraft", blenderSceneName: "Minecraft", id: 181},
 		{name: "Cobble", category: "Minecraft", blenderSceneName: "Minecraft", id: 182},
 		{name: "OakPlank", category: "Minecraft", blenderSceneName: "Minecraft", id: 184},
 		{name: "OakLog", category: "Minecraft", blenderSceneName: "Minecraft", id: 185},
 		//{name: "OakLeaves", category: "Minecraft", blenderSceneName: "Minecraft", id: 186},
-		{name: "Water", category: "Minecraft", blenderSceneName: "Minecraft", id: 183},
+		{name: "Water", category: "Minecraft", blenderSceneName: "Minecraft", id: 183},*/
 
 		{name: "SignHardFish", category: "CustomSigns", blenderSceneName: "CustomSigns", id: 187},
 		{name: "SignHardFishBig", category: "CustomSigns", blenderSceneName: "CustomSigns", id: 188},
@@ -114,7 +114,7 @@ const moddedBlocks = {
 		{name: "TurnSLeftDiag", category: "SlopedTurns", blenderSceneName: "DiagonalRoads", id: 228},
 		{name: "TurnSRightDiag", category: "SlopedTurns", blenderSceneName: "DiagonalRoads", id: 229},
 
-		{name: "CandyCorn", category: "Spooky", blenderSceneName: "Spooky", id: 230},
+		/*{name: "CandyCorn", category: "Spooky", blenderSceneName: "Spooky", id: 230},
 		{name: "CandyCornCluster", category: "Spooky", blenderSceneName: "Spooky", id: 231},
 		{name: "CandyCornTriple", category: "Spooky", blenderSceneName: "Spooky", id: 232},
 		{name: "Grave1", category: "Spooky", blenderSceneName: "Spooky", id: 233},
@@ -125,12 +125,12 @@ const moddedBlocks = {
 		{name: "JackOLanternAngryBig", category: "Spooky", blenderSceneName: "Spooky", id: 238},
 		{name: "JackOLanternSmile", category: "Spooky", blenderSceneName: "Spooky", id: 239},
 		{name: "JackOLanternSmileBig", category: "Spooky", blenderSceneName: "Spooky", id: 240},
-		{name: "Lollipop", category: "Spooky", blenderSceneName: "Spooky", id: 241},
+		{name: "Lollipop", category: "Spooky", blenderSceneName: "Spooky", id: 241},*/
 		{name: "LollipopGate", category: "Spooky", blenderSceneName: "Spooky", id: 242, isBoost:true},
-		{name: "Pumpkin", category: "Spooky", blenderSceneName: "Spooky", id: 243},
+		/*{name: "Pumpkin", category: "Spooky", blenderSceneName: "Spooky", id: 243},
 		{name: "PumpkinBig", category: "Spooky", blenderSceneName: "Spooky", id: 244},
 		{name: "PumpkinTall", category: "Spooky", blenderSceneName: "Spooky", id: 245},
-		{name: "PumpkinTrio", category: "Spooky", blenderSceneName: "Spooky", id: 246},
+		{name: "PumpkinTrio", category: "Spooky", blenderSceneName: "Spooky", id: 246},*/
 		{name: "DeadTree1", category: "Spooky", blenderSceneName: "Spooky", id: 248},
 		{name: "DeadTree2", category: "Spooky", blenderSceneName: "Spooky", id: 249},
 		{name: "DeadTree3", category: "Spooky", blenderSceneName: "Spooky", id: 250},
@@ -140,12 +140,12 @@ const moddedBlocks = {
 		{name: "DeadTreeBig3", category: "Spooky", blenderSceneName: "Spooky", id: 263},
 		{name: "DeadTreeBig4", category: "Spooky", blenderSceneName: "Spooky", id: 264},
 		{name: "DeadTreeBig5", category: "Spooky", blenderSceneName: "Spooky", id: 265},
-		{name: "Eye1", category: "Spooky", blenderSceneName: "Spooky", id: 251},
+		/*{name: "Eye1", category: "Spooky", blenderSceneName: "Spooky", id: 251},
 		{name: "Eye2", category: "Spooky", blenderSceneName: "Spooky", id: 252},
 		{name: "Mushroom1", category: "Spooky", blenderSceneName: "Spooky", id: 253},
 		{name: "Mushroom2", category: "Spooky", blenderSceneName: "Spooky", id: 254},
 		{name: "MushroomRed1", category: "Spooky", blenderSceneName: "Spooky", id: 258},
-		{name: "MushroomRed2", category: "Spooky", blenderSceneName: "Spooky", id: 259},
+		{name: "MushroomRed2", category: "Spooky", blenderSceneName: "Spooky", id: 259},*/
 
 		{name: "HayBale", category: "Spooky", blenderSceneName: "HayBales", id: 255},
 		{name: "HayBaleTriple", category: "Spooky", blenderSceneName: "HayBales", id: 256},
@@ -175,8 +175,16 @@ const moddedBlocks = {
 		//{name: "CobbleFinish", category: "Spooky", blenderSceneName: "Cobblestone", id: 285}
 		//{name: "CobbleStart", category: "Spooky", blenderSceneName: "Cobblestone", id: 284}
 
-		{name: "CheckpointZone", category: "Zones", blenderSceneName: "Zones", id: 286, isCheckpoint: true},
-		{name: "FinishZone", category: "Zones", blenderSceneName: "Zones", id: 287, isFinish: true},
+		{name: "1Boost", category: "Zones", blenderSceneName: "Zones", id: 286, isBoostZone: true},
+		{name: "2Checkpoint", category: "Zones", blenderSceneName: "Zones", id: 287, isCheckpoint: true},
+		{name: "3Finish", category: "Zones", blenderSceneName: "Zones", id: 483, isFinish: true},
+		{name: "4LowGrav", category: "Zones", blenderSceneName: "Zones", id: 484, isLowGravity: true},
+		{name: "5HighGrav", category: "Zones", blenderSceneName: "Zones", id: 485, isHighGravity: true},
+		{name: "6Slip", category: "Zones", blenderSceneName: "Zones", id: 486, isLowFriction: true},
+		{name: "7Grip", category: "Zones", blenderSceneName: "Zones", id: 487, isHighFriction: true},
+		{name: "8EngineOff", category: "Zones", blenderSceneName: "Zones", id: 488, isEngineOff: true},
+
+
 
 		{name: "BlockFullRamp", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 290},
 		{name: "BlockFullRampCorner", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 291},
@@ -242,18 +250,18 @@ const moddedBlocks = {
 
 		
 		{name: "LA", category: "Text", blenderSceneName: "Text", id: 319},
-		{name: "LB", category: "Text", blenderSceneName: "Text", id: 320, isBoostZone: true},
+		{name: "LB", category: "Text", blenderSceneName: "Text", id: 320},
 		{name: "LC", category: "Text", blenderSceneName: "Text", id: 321},
 		{name: "LD", category: "Text", blenderSceneName: "Text", id: 322},
-		{name: "LE", category: "Text", blenderSceneName: "Text", id: 323, isEngineOff: true},
-		{name: "LF", category: "Text", blenderSceneName: "Text", id: 324, isHighFriction: true},
-		{name: "LG", category: "Text", blenderSceneName: "Text", id: 325, isHighGravity: true},
+		{name: "LE", category: "Text", blenderSceneName: "Text", id: 323},
+		{name: "LF", category: "Text", blenderSceneName: "Text", id: 324},
+		{name: "LG", category: "Text", blenderSceneName: "Text", id: 325},
 		{name: "LH", category: "Text", blenderSceneName: "Text", id: 326},
 		{name: "LI", category: "Text", blenderSceneName: "Text", id: 327},
 		{name: "LJ", category: "Text", blenderSceneName: "Text", id: 328},
 		{name: "LK", category: "Text", blenderSceneName: "Text", id: 329},
-		{name: "LL", category: "Text", blenderSceneName: "Text", id: 330, isLowFriction: true},
-		{name: "LM", category: "Text", blenderSceneName: "Text", id: 331, isLowGravity: true},
+		{name: "LL", category: "Text", blenderSceneName: "Text", id: 330},
+		{name: "LM", category: "Text", blenderSceneName: "Text", id: 331},
 		{name: "LN", category: "Text", blenderSceneName: "Text", id: 332},
 		{name: "LO", category: "Text", blenderSceneName: "Text", id: 333},
 		{name: "LP", category: "Text", blenderSceneName: "Text", id: 334},
@@ -317,7 +325,7 @@ const moddedBlocks = {
 		{name: "9_Black", category: "Text", blenderSceneName: "Text", id: 390},
 
 		
-		{name: "Forty1", category: "Forty", blenderSceneName: "Forty", id: 391},
+		/*{name: "Forty1", category: "Forty", blenderSceneName: "Forty", id: 391},
 		{name: "Forty2", category: "Forty", blenderSceneName: "Forty", id: 392},
 		{name: "Forty3", category: "Forty", blenderSceneName: "Forty", id: 393},
 		{name: "Forty4", category: "Forty", blenderSceneName: "Forty", id: 394},
@@ -364,7 +372,7 @@ const moddedBlocks = {
 		{name: "Forty45", category: "Forty", blenderSceneName: "Forty", id: 435},
 		{name: "Forty46", category: "Forty", blenderSceneName: "Forty", id: 436},
 		{name: "Forty47", category: "Forty", blenderSceneName: "Forty", id: 437},
-		{name: "Forty48", category: "Forty", blenderSceneName: "Forty", id: 438},
+		{name: "Forty48", category: "Forty", blenderSceneName: "Forty", id: 438},*/
 
 		
 		{name: "BorderlessIntersectionCross", category: "BorderlessRoads", blenderSceneName: "BorderlessRoads", id: 470},
@@ -8124,8 +8132,17 @@ const moddedBlocks = {
 				u = 144 / Math.pow(Math.max(46, Math.abs(this.getSpeedKmh())), 1.55);
 			Rs(this, xs, "f") && (o && !Rs(this, ys, "f") ? Ns(this, _s, Math.min(Rs(this, _s, "f") + 10 * t, 1), "f") : r && !Rs(this, ys, "f") ? Ns(this, _s, Math.max(Rs(this, _s, "f") - 10 * t, -1), "f") : Rs(this, _s, "f") > 0 ? Ns(this, _s, Math.max(Rs(this, _s, "f") - 10 * t, 0), "f") : Rs(this, _s, "f") < 0 && Ns(this, _s, Math.min(Rs(this, _s, "f") + 10 * t, 0), "f"));
 			const f = Rs(this, _s, "f") * u;
-			let m;
-			m = d < 0 && f < 0 ? Math.min(d, f) : d > 0 && f > 0 ? Math.max(d, f) : d + f, Rs(this, us, "f").setSteeringValue(m, 0), Rs(this, us, "f").setSteeringValue(m, 1)
+			let m;		// important - steering
+			if (d < 0 && f < 0) {
+				m = Math.min(d, f)
+			} else if (d > 0 && f > 0) {
+				m = Math.max(d, f)
+			} else {
+				m = d + f
+			}
+			//m = f; // ignore d (steer correction)
+			Rs(this, us, "f").setSteeringValue(m, 0);
+			Rs(this, us, "f").setSteeringValue(m, 1);
 		};
 		const Ls = class {
 			constructor(t, e, n, i, r, a, o, s) {

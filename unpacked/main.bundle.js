@@ -24183,7 +24183,7 @@
 				for (let index = 0; index < moddedBlocks.blocks.length; index++) {
 					let block = moddedBlocks.blocks[index];
 
-					if (block.name == "CheckpointZone") {
+					if (block.name == "2Checkpoint") {
 						i(
 							ZP[block.category], 
 							Bw[block.name], 
@@ -24198,7 +24198,7 @@
 						continue;
 					}
 
-					if (block.name == "FinishZone") {
+					if (block.name == "3Finish") {
 						i(
 							ZP[block.category], 
 							Bw[block.name], 
