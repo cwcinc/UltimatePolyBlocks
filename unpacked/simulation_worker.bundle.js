@@ -37,9 +37,7 @@ const moddedBlocks = {
 		"Zones", 
 		"Text",
 		"Minecraft",
-		"Statues", 
-		"RoadSigns",
-		"SpecialBlocks", 
+		"Statues",
 		"Space", 
 		"Environment", 
 		"Spooky"
@@ -74,9 +72,9 @@ const moddedBlocks = {
 		//{name: "OakLeaves", category: "Minecraft", blenderSceneName: "Minecraft", id: 186},
 		{name: "Water", category: "Minecraft", blenderSceneName: "Minecraft", id: 183},*/
 
-		{name: "SignHardFish", category: "Signs", blenderSceneName: "CustomSigns", id: 187},
-		{name: "SignHardFishBig", category: "Signs", blenderSceneName: "CustomSigns", id: 188},
-		{name: "RickrollQR", category: "Signs", blenderSceneName: "CustomSigns", id: 190},
+		{name: "SignHardFish", category: "Sign", blenderSceneName: "CustomSigns", id: 187},
+		{name: "SignHardFishBig", category: "Sign", blenderSceneName: "CustomSigns", id: 188},
+		{name: "RickrollQR", category: "Sign", blenderSceneName: "CustomSigns", id: 190},
 		
 		{name: "PolyCarStatueGold", category: "Statues", blenderSceneName: "Statues", id: 195},
 		{name: "PolyCarStatueSilver", category: "Statues", blenderSceneName: "Statues", id: 194},
@@ -85,44 +83,44 @@ const moddedBlocks = {
 		{name: "StatueBase", category: "Statues", blenderSceneName: "Statues", id: 213},
 		{name: "PolyCar", category: "Statues", blenderSceneName: "Statues", id: 189},
 
-		{name: "StopSignPole", category: "RoadSigns", blenderSceneName: "RoadSigns", id: 192},
+		/*{name: "StopSignPole", category: "RoadSigns", blenderSceneName: "RoadSigns", id: 192},
 		{name: "StopSignWall", category: "RoadSigns", blenderSceneName: "RoadSigns", id: 193},
 		{name: "SL50", category: "RoadSigns", blenderSceneName: "RoadSigns", id: 196},
 		{name: "SL100", category: "RoadSigns", blenderSceneName: "RoadSigns", id: 197},
 		{name: "SL250", category: "RoadSigns", blenderSceneName: "RoadSigns", id: 198},
 		{name: "SL500", category: "RoadSigns", blenderSceneName: "RoadSigns", id: 199},
-		{name: "SL999", category: "RoadSigns", blenderSceneName: "RoadSigns", id: 200},
+		{name: "SL999", category: "RoadSigns", blenderSceneName: "RoadSigns", id: 200},*/
 		
-		{name: "StartLine", category: "SpecialBlocks", blenderSceneName: "SpecialBlocks", id: 201, isStart: true},
-		{name: "FinishLine", category: "SpecialBlocks", blenderSceneName: "SpecialBlocks", id: 202, isFinish: true},
-		{name: "BarlessFinish", category: "SpecialBlocks", blenderSceneName: "SpecialBlocks", id: 203, isFinish: true},
-		{name: "UpsideDownFinish", category: "SpecialBlocks", blenderSceneName: "SpecialBlocks", id: 204, isFinish: true},
-		{name: "VerticalFinish", category: "SpecialBlocks", blenderSceneName: "SpecialBlocks", id: 205, isFinish: true},
-		{name: "WallFinish", category: "SpecialBlocks", blenderSceneName: "SpecialBlocks", id: 206, isFinish: true},
-		{name: "CheckpointLine", category: "SpecialBlocks", blenderSceneName: "SpecialBlocks", id: 207, isCheckpoint: true},
-		{name: "BarlessCheckpoint", category: "SpecialBlocks", blenderSceneName: "SpecialBlocks", id: 208, isCheckpoint: true},
-		{name: "UpsideDownCheckpoint", category: "SpecialBlocks", blenderSceneName: "SpecialBlocks", id: 209, isCheckpoint: true},
-		{name: "VerticalCheckpoint", category: "SpecialBlocks", blenderSceneName: "SpecialBlocks", id: 210, isCheckpoint: true},
-		{name: "WallCheckpoint", category: "SpecialBlocks", blenderSceneName: "SpecialBlocks", id: 211, isCheckpoint: true},
+		{name: "StartLine", category: "Special", blenderSceneName: "SpecialBlocks", id: 201, isStart: true},
+		{name: "FinishLine", category: "Special", blenderSceneName: "SpecialBlocks", id: 202, isFinish: true},
+		{name: "BarlessFinish", category: "Special", blenderSceneName: "SpecialBlocks", id: 203, isFinish: true},
+		{name: "UpsideDownFinish", category: "Special", blenderSceneName: "SpecialBlocks", id: 204, isFinish: true},
+		{name: "VerticalFinish", category: "Special", blenderSceneName: "SpecialBlocks", id: 205, isFinish: true},
+		{name: "WallFinish", category: "Special", blenderSceneName: "SpecialBlocks", id: 206, isFinish: true},
+		{name: "CheckpointLine", category: "Special", blenderSceneName: "SpecialBlocks", id: 207, isCheckpoint: true},
+		{name: "BarlessCheckpoint", category: "Special", blenderSceneName: "SpecialBlocks", id: 208, isCheckpoint: true},
+		{name: "UpsideDownCheckpoint", category: "Special", blenderSceneName: "SpecialBlocks", id: 209, isCheckpoint: true},
+		{name: "VerticalCheckpoint", category: "Special", blenderSceneName: "SpecialBlocks", id: 210, isCheckpoint: true},
+		{name: "WallCheckpoint", category: "Special", blenderSceneName: "SpecialBlocks", id: 211, isCheckpoint: true},
     	
-		{name: "planet1", category: "Space", blenderSceneName: "Space", id: 214},
+		/*{name: "planet1", category: "Space", blenderSceneName: "Space", id: 214},
 		{name: "planet2", category: "Space", blenderSceneName: "Space", id: 215},
 		{name: "planet3", category: "Space", blenderSceneName: "Space", id: 216},
 		{name: "planet4", category: "Space", blenderSceneName: "Space", id: 217},
 		{name: "planet5", category: "Space", blenderSceneName: "Space", id: 218},
-		{name: "planet6", category: "Space", blenderSceneName: "Space", id: 219},
+		{name: "planet6", category: "Space", blenderSceneName: "Space", id: 219},*/
 		
 		{name: "SandyHill", category: "Environment", blenderSceneName: "Environment", id: 220},
 		{name: "SnowyMt", category: "Environment", blenderSceneName: "Environment", id: 221},
 		{name: "Volcano", category: "Environment", blenderSceneName: "Environment", id: 222},
 
-		{name: "TurnLong2Diag", category: "SlopedTurns", blenderSceneName: "DiagonalRoads", id: 223},
+		/*{name: "TurnLong2Diag", category: "SlopedTurns", blenderSceneName: "DiagonalRoads", id: 223},
 		{name: "TurnLong3Diag", category: "SlopedTurns", blenderSceneName: "DiagonalRoads", id: 224},
 		{name: "TurnLongDiag", category: "SlopedTurns", blenderSceneName: "DiagonalRoads", id: 225},
 		{name: "TurnSharpDiag", category: "SlopedTurns", blenderSceneName: "DiagonalRoads", id: 226},
 		{name: "TurnShortDiag", category: "SlopedTurns", blenderSceneName: "DiagonalRoads", id: 227},
 		{name: "TurnSLeftDiag", category: "SlopedTurns", blenderSceneName: "DiagonalRoads", id: 228},
-		{name: "TurnSRightDiag", category: "SlopedTurns", blenderSceneName: "DiagonalRoads", id: 229},
+		{name: "TurnSRightDiag", category: "SlopedTurns", blenderSceneName: "DiagonalRoads", id: 229},*/
 
 		/*{name: "CandyCorn", category: "Spooky", blenderSceneName: "Spooky", id: 230},
 		{name: "CandyCornCluster", category: "Spooky", blenderSceneName: "Spooky", id: 231},
@@ -454,6 +452,7 @@ const moddedBlocks = {
 		// next id: 543
 	]
 };
+
 
 (() => {
 	var t = {

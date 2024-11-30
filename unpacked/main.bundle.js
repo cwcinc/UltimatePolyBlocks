@@ -23997,10 +23997,6 @@ const ERRORFUNC = (message) => {
 		};
 		var KP;
 		! function(e) {  /*    IMPORTANT - block categories   */
-			for (let index = 0; index < moddedBlocks.categories.length; index++) {
-				let category = moddedBlocks.categories[index];
-				e[e[category] = (9 + index)] = category;
-			}
 			e[e.Special = 0] = "Special";
 			e[e.Road = 1] = "Road";
 			e[e.RoadTurns = 2] = "RoadTurns";
@@ -24009,7 +24005,12 @@ const ERRORFUNC = (message) => {
 			e[e.Block = 5] = "Block";
 			e[e.WallTrack = 6] = "WallTrack";
 			e[e.Pillar = 7] = "Pillar";
-			e[e.Sign = 8] = "Sign"
+			e[e.Sign = 8] = "Sign";
+			
+			for (let index = 0; index < moddedBlocks.categories.length; index++) {
+				let category = moddedBlocks.categories[index];
+				e[e[category] = (9 + index)] = category;
+			}
 		}(KP || (KP = {}));
 		const ZP = KP;
 		var JP, QP, $P, eR, tR = function(e, t, n, i) {
@@ -24211,32 +24212,6 @@ const ERRORFUNC = (message) => {
 								size: [11, 3.8, 2]
 							}
 						);
-					} else if (block.hasOwnProperty("isCheckpointZone")) {
-						i(
-							ZP[block.category], 
-							Bw[block.name], 
-							[[block.blenderSceneName, block.name]],
-							[[0,0,0]], 
-							{
-								type: yy.Checkpoint,
-								center: block.hasOwnProperty("big") ? [30, 2.2, 30] : [0, 2.2, 0],
-								size: block.hasOwnProperty("big") ? [80, 1000, 80] : [20, 1000, 20]
-							}
-						);
-						continue;
-					} else if (block.hasOwnProperty("isFinishZone")) {
-						i(
-							ZP[block.category], 
-							Bw[block.name], 
-							[[block.blenderSceneName, block.name]],
-							[[0,0,0]], 
-							{
-								type: yy.Finish,
-								center: block.hasOwnProperty("big") ? [30, 2.2, 30] : [0, 2.2, 0],
-								size: block.hasOwnProperty("big") ? [80, 1000, 80] : [20, 1000, 20]
-							}
-						);
-						continue;
 					} else if (block.hasOwnProperty("isBoost")) {
 						i(
 							ZP[block.category], 
@@ -24249,15 +24224,91 @@ const ERRORFUNC = (message) => {
 								size: [20, 4.5, 20]
 							}
 						);
+					} else if (block.hasOwnProperty("isCheckpointZone")) {
+						i(
+							ZP[block.category], 
+							Bw[block.name], 
+							[[block.blenderSceneName, block.name]],
+							block.hasOwnProperty("big") ? [
+								[0, 0, 0],
+								[1, 0, 0],
+								[2, 0, 0],
+								[3, 0, 0],
+								[0, 0, -1],
+								[1, 0, -1],
+								[2, 0, -1],
+								[3, 0, -1],
+								[0, 0, -2],
+								[1, 0, -2],
+								[2, 0, -2],
+								[3, 0, -2],
+								[0, 0, -3],
+								[1, 0, -3],
+								[2, 0, -3],
+								[3, 0, -3],
+							] : [[0,0,0]],
+							{
+								type: yy.Checkpoint,
+								center: block.hasOwnProperty("big") ? [30, 2.2, -30] : [0, 2.2, 0],
+								size: block.hasOwnProperty("big") ? [80, 1000, 80] : [20, 1000, 20]
+							}
+						);
+						continue;
+					} else if (block.hasOwnProperty("isFinishZone")) {
+						i(
+							ZP[block.category], 
+							Bw[block.name], 
+							[[block.blenderSceneName, block.name]],
+							block.hasOwnProperty("big") ? [
+								[0, 0, 0],
+								[1, 0, 0],
+								[2, 0, 0],
+								[3, 0, 0],
+								[0, 0, -1],
+								[1, 0, -1],
+								[2, 0, -1],
+								[3, 0, -1],
+								[0, 0, -2],
+								[1, 0, -2],
+								[2, 0, -2],
+								[3, 0, -2],
+								[0, 0, -3],
+								[1, 0, -3],
+								[2, 0, -3],
+								[3, 0, -3],
+							] : [[0,0,0]],
+							{
+								type: yy.Finish,
+								center: block.hasOwnProperty("big") ? [30, 2.2, -30] : [0, 2.2, 0],
+								size: block.hasOwnProperty("big") ? [80, 1000, 80] : [20, 1000, 20]
+							}
+						);
 					} else if (block.hasOwnProperty("isBoostZone")) {
 						i(
 							ZP[block.category], 
 							Bw[block.name], 
 							[[block.blenderSceneName, block.name]],
-							[[0,0,0]], 
+								block.hasOwnProperty("big") ? [
+									[0, 0, 0],
+									[1, 0, 0],
+									[2, 0, 0],
+									[3, 0, 0],
+									[0, 0, -1],
+									[1, 0, -1],
+									[2, 0, -1],
+									[3, 0, -1],
+									[0, 0, -2],
+									[1, 0, -2],
+									[2, 0, -2],
+									[3, 0, -2],
+									[0, 0, -3],
+									[1, 0, -3],
+									[2, 0, -3],
+									[3, 0, -3],
+								] : [[0,0,0]], 
 							{
 								type: yy.Boost,
-								center: block.hasOwnProperty("big") ? [30, 2.2, 30] : [0, 2.2, 0],
+								center: block.hasOwnProperty("big") ? [30, 2.2, -30] : [0, 2.2, 0],
 								size: block.hasOwnProperty("big") ? [80, 1000, 80] : [20, 1000, 20]
 							}
 						);
@@ -24266,10 +24317,27 @@ const ERRORFUNC = (message) => {
 							ZP[block.category], 
 							Bw[block.name], 
 							[[block.blenderSceneName, block.name]],
-							[[0,0,0]], 
+							block.hasOwnProperty("big") ? [
+								[0, 0, 0],
+								[1, 0, 0],
+								[2, 0, 0],
+								[3, 0, 0],
+								[0, 0, -1],
+								[1, 0, -1],
+								[2, 0, -1],
+								[3, 0, -1],
+								[0, 0, -2],
+								[1, 0, -2],
+								[2, 0, -2],
+								[3, 0, -2],
+								[0, 0, -3],
+								[1, 0, -3],
+								[2, 0, -3],
+								[3, 0, -3],
+							] : [[0,0,0]],
 							{
 								type: yy.EngineOff,
-								center: block.hasOwnProperty("big") ? [30, 2.2, 30] : [0, 2.2, 0],
+								center: block.hasOwnProperty("big") ? [30, 2.2, -30] : [0, 2.2, 0],
 								size: block.hasOwnProperty("big") ? [80, 1000, 80] : [20, 1000, 20]
 							}
 						);
@@ -24278,10 +24346,27 @@ const ERRORFUNC = (message) => {
 							ZP[block.category], 
 							Bw[block.name], 
 							[[block.blenderSceneName, block.name]],
-							[[0,0,0]], 
+							block.hasOwnProperty("big") ? [
+								[0, 0, 0],
+								[1, 0, 0],
+								[2, 0, 0],
+								[3, 0, 0],
+								[0, 0, -1],
+								[1, 0, -1],
+								[2, 0, -1],
+								[3, 0, -1],
+								[0, 0, -2],
+								[1, 0, -2],
+								[2, 0, -2],
+								[3, 0, -2],
+								[0, 0, -3],
+								[1, 0, -3],
+								[2, 0, -3],
+								[3, 0, -3],
+							] : [[0,0,0]],
 							{
 								type: yy.HighGravity,
-								center: block.hasOwnProperty("big") ? [30, 2.2, 30] : [0, 2.2, 0],
+								center: block.hasOwnProperty("big") ? [30, 2.2, -30] : [0, 2.2, 0],
 								size: block.hasOwnProperty("big") ? [80, 1000, 80] : [20, 1000, 20]
 							}
 						);
@@ -24290,10 +24375,27 @@ const ERRORFUNC = (message) => {
 							ZP[block.category], 
 							Bw[block.name], 
 							[[block.blenderSceneName, block.name]],
-							[[0,0,0]], 
+							block.hasOwnProperty("big") ? [
+								[0, 0, 0],
+								[1, 0, 0],
+								[2, 0, 0],
+								[3, 0, 0],
+								[0, 0, -1],
+								[1, 0, -1],
+								[2, 0, -1],
+								[3, 0, -1],
+								[0, 0, -2],
+								[1, 0, -2],
+								[2, 0, -2],
+								[3, 0, -2],
+								[0, 0, -3],
+								[1, 0, -3],
+								[2, 0, -3],
+								[3, 0, -3],
+							] : [[0,0,0]], 
 							{
 								type: yy.LowGravity,
-								center: block.hasOwnProperty("big") ? [30, 2.2, 30] : [0, 2.2, 0],
+								center: block.hasOwnProperty("big") ? [30, 2.2, -30] : [0, 2.2, 0],
 								size: block.hasOwnProperty("big") ? [80, 1000, 80] : [20, 1000, 20]
 							}
 						);
@@ -24302,10 +24404,27 @@ const ERRORFUNC = (message) => {
 							ZP[block.category], 
 							Bw[block.name], 
 							[[block.blenderSceneName, block.name]],
-							[[0,0,0]], 
+							block.hasOwnProperty("big") ? [
+								[0, 0, 0],
+								[1, 0, 0],
+								[2, 0, 0],
+								[3, 0, 0],
+								[0, 0, -1],
+								[1, 0, -1],
+								[2, 0, -1],
+								[3, 0, -1],
+								[0, 0, -2],
+								[1, 0, -2],
+								[2, 0, -2],
+								[3, 0, -2],
+								[0, 0, -3],
+								[1, 0, -3],
+								[2, 0, -3],
+								[3, 0, -3],
+							] : [[0,0,0]],
 							{
 								type: yy.HighFriction,
-								center: block.hasOwnProperty("big") ? [30, 2.2, 30] : [0, 2.2, 0],
+								center: block.hasOwnProperty("big") ? [30, 2.2, -30] : [0, 2.2, 0],
 								size: block.hasOwnProperty("big") ? [80, 1000, 80] : [20, 1000, 20]
 							}
 						);
@@ -24314,10 +24433,27 @@ const ERRORFUNC = (message) => {
 							ZP[block.category], 
 							Bw[block.name], 
 							[[block.blenderSceneName, block.name]],
-							[[0,0,0]], 
+							block.hasOwnProperty("big") ? [
+								[0, 0, 0],
+								[1, 0, 0],
+								[2, 0, 0],
+								[3, 0, 0],
+								[0, 0, -1],
+								[1, 0, -1],
+								[2, 0, -1],
+								[3, 0, -1],
+								[0, 0, -2],
+								[1, 0, -2],
+								[2, 0, -2],
+								[3, 0, -2],
+								[0, 0, -3],
+								[1, 0, -3],
+								[2, 0, -3],
+								[3, 0, -3],
+							] : [[0,0,0]],
 							{
 								type: yy.LowFriction,
-								center: block.hasOwnProperty("big") ? [30, 2.2, 30] : [0, 2.2, 0],
+								center: block.hasOwnProperty("big") ? [30, 2.2, -30] : [0, 2.2, 0],
 								size: block.hasOwnProperty("big") ? [80, 1000, 80] : [20, 1000, 20]
 							}
 						);
@@ -24326,10 +24462,27 @@ const ERRORFUNC = (message) => {
 							ZP[block.category], 
 							Bw[block.name], 
 							[[block.blenderSceneName, block.name]],
-							[[0,0,0]], 
+							block.hasOwnProperty("big") ? [
+								[0, 0, 0],
+								[1, 0, 0],
+								[2, 0, 0],
+								[3, 0, 0],
+								[0, 0, -1],
+								[1, 0, -1],
+								[2, 0, -1],
+								[3, 0, -1],
+								[0, 0, -2],
+								[1, 0, -2],
+								[2, 0, -2],
+								[3, 0, -2],
+								[0, 0, -3],
+								[1, 0, -3],
+								[2, 0, -3],
+								[3, 0, -3],
+							] : [[0,0,0]],
 							{
 								type: yy.NoDownforce,
-								center: block.hasOwnProperty("big") ? [30, 2.2, 30] : [0, 2.2, 0],
+								center: block.hasOwnProperty("big") ? [30, 2.2, -30] : [0, 2.2, 0],
 								size: block.hasOwnProperty("big") ? [80, 1000, 80] : [20, 1000, 20]
 							}
 						);
@@ -24338,10 +24491,27 @@ const ERRORFUNC = (message) => {
 							ZP[block.category], 
 							Bw[block.name], 
 							[[block.blenderSceneName, block.name]],
-							[[0,0,0]], 
+							block.hasOwnProperty("big") ? [
+								[0, 0, 0],
+								[1, 0, 0],
+								[2, 0, 0],
+								[3, 0, 0],
+								[0, 0, -1],
+								[1, 0, -1],
+								[2, 0, -1],
+								[3, 0, -1],
+								[0, 0, -2],
+								[1, 0, -2],
+								[2, 0, -2],
+								[3, 0, -2],
+								[0, 0, -3],
+								[1, 0, -3],
+								[2, 0, -3],
+								[3, 0, -3],
+							] : [[0,0,0]],
 							{
 								type: yy.HighDownforce,
-								center: block.hasOwnProperty("big") ? [30, 2.2, 30] : [0, 2.2, 0],
+								center: block.hasOwnProperty("big") ? [30, 2.2, -30] : [0, 2.2, 0],
 								size: block.hasOwnProperty("big") ? [80, 1000, 80] : [20, 1000, 20]
 							}
 						);
@@ -24350,10 +24520,27 @@ const ERRORFUNC = (message) => {
 							ZP[block.category], 
 							Bw[block.name], 
 							[[block.blenderSceneName, block.name]],
-							[[0,0,0]], 
+							block.hasOwnProperty("big") ? [
+								[0, 0, 0],
+								[1, 0, 0],
+								[2, 0, 0],
+								[3, 0, 0],
+								[0, 0, -1],
+								[1, 0, -1],
+								[2, 0, -1],
+								[3, 0, -1],
+								[0, 0, -2],
+								[1, 0, -2],
+								[2, 0, -2],
+								[3, 0, -2],
+								[0, 0, -3],
+								[1, 0, -3],
+								[2, 0, -3],
+								[3, 0, -3],
+							] : [[0,0,0]],
 							{
 								type: yy.NegativeDownforce,
-								center: block.hasOwnProperty("big") ? [30, 2.2, 30] : [0, 2.2, 0],
+								center: block.hasOwnProperty("big") ? [30, 2.2, -30] : [0, 2.2, 0],
 								size: block.hasOwnProperty("big") ? [80, 1000, 80] : [20, 1000, 20]
 							}
 						);
@@ -24362,10 +24549,27 @@ const ERRORFUNC = (message) => {
 							ZP[block.category], 
 							Bw[block.name], 
 							[[block.blenderSceneName, block.name]],
-							[[0,0,0]], 
+							block.hasOwnProperty("big") ? [
+								[0, 0, 0],
+								[1, 0, 0],
+								[2, 0, 0],
+								[3, 0, 0],
+								[0, 0, -1],
+								[1, 0, -1],
+								[2, 0, -1],
+								[3, 0, -1],
+								[0, 0, -2],
+								[1, 0, -2],
+								[2, 0, -2],
+								[3, 0, -2],
+								[0, 0, -3],
+								[1, 0, -3],
+								[2, 0, -3],
+								[3, 0, -3],
+							] : [[0,0,0]],
 							{
 								type: yy.AirControl,
-								center: block.hasOwnProperty("big") ? [30, 2.2, 30] : [0, 2.2, 0],
+								center: block.hasOwnProperty("big") ? [30, 2.2, -30] : [0, 2.2, 0],
 								size: block.hasOwnProperty("big") ? [80, 1000, 80] : [20, 1000, 20]
 							}
 						);
