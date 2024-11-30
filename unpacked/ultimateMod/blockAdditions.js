@@ -351,7 +351,7 @@ const moddedBlocks = {
 		{name: "B99", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 521},
 		{name: "B100", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 522},*/
 		
-		{name: "LA", category: "Text", blenderSceneName: "Text", id: 319},
+		{name: "LA", category: "Text", blenderSceneName: "Text", id: 319, isAirControl: true},
 		{name: "LB", category: "Text", blenderSceneName: "Text", id: 320},
 		{name: "LC", category: "Text", blenderSceneName: "Text", id: 321},
 		{name: "LD", category: "Text", blenderSceneName: "Text", id: 322},
@@ -495,6 +495,7 @@ const moddedBlocks = {
 		// next id: 543
 	]
 };
+
 
 const rgbDecimal = (rgb) => {
 	return (rgb.r << 16) + (rgb.g << 8) + (rgb.b);

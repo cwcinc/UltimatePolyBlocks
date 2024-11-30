@@ -11,15 +11,17 @@ var setDownforce = (downforce) => {
 var setFrictionSlipFuncs = {};
 var frictionState = 3;
 var setFrictionSlip = (friction) => {
-	if (friction == frictionState) {
+	/*if (friction == frictionState) {	// broke determinism when respawning
 		return;
-	}
+	}*/  
 	frictionState = friction;
 	setFrictionSlipFuncs["WheelFL"](friction);
 	setFrictionSlipFuncs["WheelFR"](friction);
 	setFrictionSlipFuncs["WheelBL"](friction);
 	setFrictionSlipFuncs["WheelBR"](friction);
 };
+
+var airControlEnabled = false;
 
 const moddedBlocks = {
 	categories: [
@@ -304,7 +306,7 @@ const moddedBlocks = {
 		{name: "B99", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 521},
 		{name: "B100", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 522},*/
 		
-		{name: "LA", category: "Text", blenderSceneName: "Text", id: 319},
+		{name: "LA", category: "Text", blenderSceneName: "Text", id: 319, isAirControl: true},
 		{name: "LB", category: "Text", blenderSceneName: "Text", id: 320},
 		{name: "LC", category: "Text", blenderSceneName: "Text", id: 321},
 		{name: "LD", category: "Text", blenderSceneName: "Text", id: 322},
@@ -7662,9 +7664,9 @@ const moddedBlocks = {
 				Go(this, Po, "f").setGravity(t);
 				Ammo.destroy(t);
 				setGravity = (grav) => {
-					if (grav == gravityState) {
+					/*if (grav == gravityState) {	// breaks determinism
 						return;
-					}
+					}*/
 					gravityState = grav;
 					const gVec = new Ammo.btVector3(0, grav, 0);
 					Go(this, Po, "f").setGravity(gVec);
@@ -7867,7 +7869,7 @@ const moddedBlocks = {
 		const Qo = Jo;
 		var Ko;
 		! function(t) {
-			t[t.Checkpoint = 0] = "Checkpoint", t[t.Finish = 1] = "Finish", t[t.HighGravity = 2] = "HighGravity", t[t.LowGravity = 3] = "LowGravity", t[t.Boost = 4] = "Boost", t[t.HighFriction = 5] = "HighFriction", t[t.LowFriction = 6] = "LowFriction", t[t.EngineOff = 7] = "EngineOff", t[t.NoDownforce = 8] = "NoDownforce", t[t.NegativeDownforce = 9] = "NegativeDownforce", t[t.HighDownforce = 10] = "HighDownforce"
+			t[t.Checkpoint = 0] = "Checkpoint", t[t.Finish = 1] = "Finish", t[t.HighGravity = 2] = "HighGravity", t[t.LowGravity = 3] = "LowGravity", t[t.Boost = 4] = "Boost", t[t.HighFriction = 5] = "HighFriction", t[t.LowFriction = 6] = "LowFriction", t[t.EngineOff = 7] = "EngineOff", t[t.NoDownforce = 8] = "NoDownforce", t[t.NegativeDownforce = 9] = "NegativeDownforce", t[t.HighDownforce = 10] = "HighDownforce", t[t.AirControl = 11] = "AirControl"
 		}(Ko || (Ko = {}));
 		const $o = Ko;
 		var ts, es, ns, is, rs, as = function(t, e, n, i, r) {
@@ -7946,6 +7948,10 @@ const moddedBlocks = {
 
 			checkLowFriction(t) {	// low f
 				return this.checkCustomCollider(t, "LowFriction");
+			}
+
+			checkAirControl(t) {	// low f
+				return this.checkCustomCollider(t, "AirControl");
 			}
 										
 
@@ -8113,7 +8119,7 @@ const moddedBlocks = {
 			Ammo.destroy(u), Ammo.destroy(f), a.addStaticBody(m)
 		}, ss.partWidth = 20, ss.partHeight = 5, ss.partLength = 20;
 		const ls = ss;
-		var cs, hs, ds, us, fs, ms, ps, gs, _s, vs, ys, xs, ws, Ss, bs, Ms, As, Ts, Es, Cs, Ps, ks, Is, Ds, Ns = function(t, e, n, i, r) {
+		var cs, hs, ds, us, fs, ms, ps, gs, _s, vs, ys, xs, ws, Ss, bs, Ms, As, Ts, Es, Cs, Ps, LeftDirection, ks, Is, Ds, Ns = function(t, e, n, i, r) {
 				if ("m" === i) throw new TypeError("Private method is not writable");
 				if ("a" === i && !r) throw new TypeError("Private accessor was defined without a setter");
 				if ("function" == typeof e ? t !== e || !r : !e.has(t)) throw new TypeError("Cannot write private member to an object whose class did not declare it");
@@ -8140,9 +8146,11 @@ const moddedBlocks = {
 			const r = new Ammo.btVector3(0, Rs(this, ps, "f"), 0);
 			return i.setOrigin(r), Ammo.destroy(r), n.addChildShape(i, e), Ammo.destroy(i), n
 		}, Cs = function() {
-			return new ct(0, 0, 1).applyQuaternion(this.getQuaternion())
+			return new ct(0, 0, 1).applyQuaternion(this.getQuaternion())	// get forwards car direction
 		}, Ps = function() {
-			return new ct(0, -1, 0).applyQuaternion(this.getQuaternion())
+			return new ct(0, -1, 0).applyQuaternion(this.getQuaternion())	// get downwards car direction
+		}, LeftDirection = function() {
+			return new ct(1, 0, 0).applyQuaternion(this.getQuaternion())	// get leftwards car direction (cwcinc added)
 		}, ks = function() {
 			if (null == Rs(this, fs, "f")) return new ct;
 			{
@@ -8154,7 +8162,8 @@ const moddedBlocks = {
 				e = Rs(this, cs, "m", Ps).call(this),
 				n = downforceState,		// 0.05 default
 				i = new Ammo.btVector3(e.x * t * n, e.y * t * n, e.z * t * n);
-			Rs(this, fs, "f").applyCentralImpulse(i), Ammo.destroy(i)
+			Rs(this, fs, "f").applyCentralImpulse(i);
+			Ammo.destroy(i);
 		}, Ds = function(t, e) {
 			var n;
 			Ns(this, Ms, !1, "f");
@@ -8162,36 +8171,100 @@ const moddedBlocks = {
 				r = !1,
 				a = !1,
 				o = !1;
-			if (Rs(this, xs, "f") && (Rs(this, ys, "f") || (({
-					up: i,
-					right: r,
-					down: a,
-					left: o
-				} = null !== (n = null == e ? void 0 : e.getControls(Rs(this, ds, "f").currentFrame)) && void 0 !== n ? n : {
-					up: !1,
-					right: !1,
-					down: !1,
-					left: !1
-				}), Rs(this, vs, "f").recordFrame(Rs(this, ds, "f").currentFrame, {
-					up: i,
-					right: r,
-					down: a,
-					left: o
-				}), Rs(this, ws, "f").increment()), Rs(this, Ss, "f").increment()), i && !Rs(this, ys, "f") && Rs(this, xs, "f")) {
+			if (
+				Rs(this, xs, "f") && 
+				(
+					Rs(this, ys, "f") || 
+					(({
+						up: i,
+						right: r,
+						down: a,
+						left: o
+					} = null !== (n = (null == e) ? void 0 : e.getControls(Rs(this, ds, "f").currentFrame)) && void 0 !== n ? n : {
+						up: !1,
+						right: !1,
+						down: !1,
+						left: !1
+					}), Rs(this, vs, "f").recordFrame(Rs(this, ds, "f").currentFrame, {
+						up: i,
+						right: r,
+						down: a,
+						left: o
+					}), Rs(this, ws, "f").increment()), 
+					Rs(this, Ss, "f").increment()
+				), 
+				i && 
+				!Rs(this, ys, "f") && 
+				Rs(this, xs, "f")
+			) {
 				const t = ENGINE.isDisabled ? 0 : ENGINE.isBoost ? 100*4000 : 4000;;
-				Rs(this, us, "f").applyEngineForce(t, 2), Rs(this, us, "f").applyEngineForce(t, 3)
-			} else Rs(this, us, "f").applyEngineForce(0, 2), Rs(this, us, "f").applyEngineForce(0, 3);
-			if (a && !Rs(this, ys, "f") && Rs(this, xs, "f"))
+				Rs(this, us, "f").applyEngineForce(t, 2);
+				Rs(this, us, "f").applyEngineForce(t, 3);
+
+				// air control code [tilt nose down] (cwcinc added)
+				if (airControlEnabled) {
+					const carLeftDirection = Rs(this, cs, "m", LeftDirection).call(this);	// vec3d normalized left car direction vector
+					const rotateStrength = 0.5;
+					const rotateVec = new Ammo.btVector3(carLeftDirection.x * rotateStrength, carLeftDirection.y * rotateStrength, carLeftDirection.z * rotateStrength);
+					Rs(this, fs, "f").applyTorqueImpulse(rotateVec);
+					Ammo.destroy(rotateVec);
+				}
+
+			} else {
+				Rs(this, us, "f").applyEngineForce(0, 2);
+				Rs(this, us, "f").applyEngineForce(0, 3);
+			}
+			if (a && !Rs(this, ys, "f") && Rs(this, xs, "f")) {
+
 				if (this.getSpeedKmh() > 1) {
 					const t = 10;
-					Rs(this, us, "f").setBrake(t, 0), Rs(this, us, "f").setBrake(t, 1), Rs(this, us, "f").setBrake(t, 2), Rs(this, us, "f").setBrake(t, 3), Ns(this, Ms, !0, "f")
+					Rs(this, us, "f").setBrake(t, 0);
+					Rs(this, us, "f").setBrake(t, 1);
+					Rs(this, us, "f").setBrake(t, 2);
+					Rs(this, us, "f").setBrake(t, 3);
+					Ns(this, Ms, !0, "f");
 				} else {
 					const t = ENGINE.isDisabled ? 0 : -1e3;
-					Rs(this, us, "f").applyEngineForce(t, 2), Rs(this, us, "f").applyEngineForce(t, 3), Rs(this, us, "f").setBrake(0, 0), Rs(this, us, "f").setBrake(0, 1), Rs(this, us, "f").setBrake(0, 2), Rs(this, us, "f").setBrake(0, 3)
+					Rs(this, us, "f").applyEngineForce(t, 2);
+					Rs(this, us, "f").applyEngineForce(t, 3);
+					Rs(this, us, "f").setBrake(0, 0);
+					Rs(this, us, "f").setBrake(0, 1);
+					Rs(this, us, "f").setBrake(0, 2);
+					Rs(this, us, "f").setBrake(0, 3);
 				}
-			else Rs(this, us, "f").setBrake(0, 0), Rs(this, us, "f").setBrake(0, 1), Rs(this, us, "f").setBrake(0, 2), Rs(this, us, "f").setBrake(0, 3);
+
+				// air control code [tilt nose up] (cwcinc added)
+				if (airControlEnabled) {
+					const carLeftDirection = Rs(this, cs, "m", LeftDirection).call(this);	// vec3d normalized left car direction vector
+					const rotateStrength = -1;
+					const rotateVec = new Ammo.btVector3(carLeftDirection.x * rotateStrength, carLeftDirection.y * rotateStrength, carLeftDirection.z * rotateStrength);
+					Rs(this, fs, "f").applyTorqueImpulse(rotateVec);
+					Ammo.destroy(rotateVec);
+				}
+
+			} else {
+				Rs(this, us, "f").setBrake(0, 0);
+				Rs(this, us, "f").setBrake(0, 1);
+				Rs(this, us, "f").setBrake(0, 2);
+				Rs(this, us, "f").setBrake(0, 3);
+			}
+
+			// air control code [roll] (cwcinc added)
+			if (airControlEnabled) {
+				const leftKey = o;
+				const rightKey = r;
+				if (leftKey || rightKey) {
+					const carLeftDirection = Rs(this, cs, "m", Cs).call(this);	// vec3d normalized left car direction vector
+					const rotateStrength = 0.2 * (leftKey ? -1 : 1);
+					const rotateVec = new Ammo.btVector3(carLeftDirection.x * rotateStrength, carLeftDirection.y * rotateStrength, carLeftDirection.z * rotateStrength);
+					Rs(this, fs, "f").applyTorqueImpulse(rotateVec);
+					Ammo.destroy(rotateVec);
+				}
+			}
+
 			const s = Rs(this, cs, "m", ks).call(this).applyQuaternion(this.getQuaternion().invert()),
 				l = -new V(s.x, s.z).normalize().angle() + Math.PI / 2;
+
 			let c = Math.max(0, Math.min(1, this.getSpeedKmh() / 30));
 			this.getWheelInContact(0) || this.getWheelInContact(1) || (c = 0);
 			const h = 144 / Math.pow(46, 1.55),
@@ -8298,6 +8371,12 @@ const moddedBlocks = {
 							setFrictionSlip(0.01);
 						} else {
 							setFrictionSlip(3);
+						}
+
+						if (Rs(this, hs, "f").checkAirControl(i)) {
+							airControlEnabled = true;
+						} else {
+							airControlEnabled = false;
 						}
 					}
 				}), "f"));
