@@ -1,3 +1,7 @@
+var alert = (message) => {
+	self.postMessage({ type: 'ALERT', data: message });
+}
+
 var Ammo = (() => {
     var t = "undefined" != typeof document && document.currentScript ? document.currentScript.src : void 0;
     return "undefined" != typeof __filename && (t = t || __filename),
@@ -78,7 +82,7 @@ var Ammo = (() => {
                 M = null;
 
             function x(t) {
-                throw n.onAbort && n.onAbort(t), d(t = "Aborted(" + t + ")"), f = !0, t = new WebAssembly.RuntimeError(t + ". Build with -sASSERTIONS for more info."), _(t), t
+                throw n.onAbort && n.onAbort(t), d(t = "Aborted(" + t + ")"), f = !0, t = new WebAssembly.RuntimeError(t + ". Build with -sASSERTIONS for more info."), alert(t), _(t), t
             }
 
             function F(t) {
@@ -93,6 +97,7 @@ var Ammo = (() => {
                 try {
                     if (t == O && y) return new Uint8Array(y);
                     if (p) return p(t);
+                    alert("both async and sync fetching of the wasm failed");
                     throw "both async and sync fetching of the wasm failed"
                 } catch (t) {
                     x(t)
@@ -105,7 +110,7 @@ var Ammo = (() => {
                         if ("function" == typeof fetch && !t.startsWith("file://")) return fetch(t, {
                             credentials: "same-origin"
                         }).then((function(e) {
-                            if (!e.ok) throw "failed to load wasm binary file at '" + t + "'";
+                            if (!e.ok) {alert("failed to load wasm binary file at '" + t + "'"); throw "failed to load wasm binary file at '" + t + "'"};
                             return e.arrayBuffer()
                         })).catch((function() {
                             return G(t)
@@ -129,39 +134,39 @@ var Ammo = (() => {
             }
             var H = {
                 27338: (t, e, o, _) => {
-                    if (!(t = n.getCache(n.DebugDrawer)[t]).hasOwnProperty("drawLine")) throw "a JSImplementation must implement all functions, you forgot DebugDrawer::drawLine.";
+                    if (!(t = n.getCache(n.DebugDrawer)[t]).hasOwnProperty("drawLine")) {alert("a JSImplementation must implement all functions, you forgot DebugDrawer::drawLine."); throw "a JSImplementation must implement all functions, you forgot DebugDrawer::drawLine."};
                     t.drawLine(e, o, _)
                 },
                 27558: (t, e, o, _, i, r) => {
-                    if (!(t = n.getCache(n.DebugDrawer)[t]).hasOwnProperty("drawContactPoint")) throw "a JSImplementation must implement all functions, you forgot DebugDrawer::drawContactPoint.";
+                    if (!(t = n.getCache(n.DebugDrawer)[t]).hasOwnProperty("drawContactPoint")) {alert("a JSImplementation must implement all functions, you forgot DebugDrawer::drawContactPoint."); throw "a JSImplementation must implement all functions, you forgot DebugDrawer::drawContactPoint."};
                     t.drawContactPoint(e, o, _, i, r)
                 },
                 27808: (t, e) => {
-                    if (!(t = n.getCache(n.DebugDrawer)[t]).hasOwnProperty("reportErrorWarning")) throw "a JSImplementation must implement all functions, you forgot DebugDrawer::reportErrorWarning.";
+                    if (!(t = n.getCache(n.DebugDrawer)[t]).hasOwnProperty("reportErrorWarning")) {alert("a JSImplementation must implement all functions, you forgot DebugDrawer::reportErrorWarning."); throw "a JSImplementation must implement all functions, you forgot DebugDrawer::reportErrorWarning."};
                     t.reportErrorWarning(e)
                 },
                 28052: (t, e, o) => {
-                    if (!(t = n.getCache(n.DebugDrawer)[t]).hasOwnProperty("draw3dText")) throw "a JSImplementation must implement all functions, you forgot DebugDrawer::draw3dText.";
+                    if (!(t = n.getCache(n.DebugDrawer)[t]).hasOwnProperty("draw3dText")) {alert("a JSImplementation must implement all functions, you forgot DebugDrawer::draw3dText."); throw "a JSImplementation must implement all functions, you forgot DebugDrawer::draw3dText."};
                     t.draw3dText(e, o)
                 },
                 28275: (t, e) => {
-                    if (!(t = n.getCache(n.DebugDrawer)[t]).hasOwnProperty("setDebugMode")) throw "a JSImplementation must implement all functions, you forgot DebugDrawer::setDebugMode.";
+                    if (!(t = n.getCache(n.DebugDrawer)[t]).hasOwnProperty("setDebugMode")) {alert("a JSImplementation must implement all functions, you forgot DebugDrawer::setDebugMode."); throw "a JSImplementation must implement all functions, you forgot DebugDrawer::setDebugMode."};
                     t.setDebugMode(e)
                 },
                 28501: t => {
-                    if (!(t = n.getCache(n.DebugDrawer)[t]).hasOwnProperty("getDebugMode")) throw "a JSImplementation must implement all functions, you forgot DebugDrawer::getDebugMode.";
+                    if (!(t = n.getCache(n.DebugDrawer)[t]).hasOwnProperty("getDebugMode")) {alert("a JSImplementation must implement all functions, you forgot DebugDrawer::getDebugMode."); throw "a JSImplementation must implement all functions, you forgot DebugDrawer::getDebugMode."};
                     return t.getDebugMode()
                 },
                 28732: (t, e) => {
-                    if (!(t = n.getCache(n.MotionState)[t]).hasOwnProperty("getWorldTransform")) throw "a JSImplementation must implement all functions, you forgot MotionState::getWorldTransform.";
+                    if (!(t = n.getCache(n.MotionState)[t]).hasOwnProperty("getWorldTransform")) {alert("a JSImplementation must implement all functions, you forgot MotionState::getWorldTransform."); throw "a JSImplementation must implement all functions, you forgot MotionState::getWorldTransform."};
                     t.getWorldTransform(e)
                 },
                 28973: (t, e) => {
-                    if (!(t = n.getCache(n.MotionState)[t]).hasOwnProperty("setWorldTransform")) throw "a JSImplementation must implement all functions, you forgot MotionState::setWorldTransform.";
+                    if (!(t = n.getCache(n.MotionState)[t]).hasOwnProperty("setWorldTransform")) {alert("a JSImplementation must implement all functions, you forgot MotionState::setWorldTransform."); throw "a JSImplementation must implement all functions, you forgot MotionState::setWorldTransform."};
                     t.setWorldTransform(e)
                 },
                 29214: (t, e, o, _, i, r, p, s) => {
-                    if (!(t = n.getCache(n.ConcreteContactResultCallback)[t]).hasOwnProperty("addSingleResult")) throw "a JSImplementation must implement all functions, you forgot ConcreteContactResultCallback::addSingleResult.";
+                    if (!(t = n.getCache(n.ConcreteContactResultCallback)[t]).hasOwnProperty("addSingleResult")) {alert("a JSImplementation must implement all functions, you forgot ConcreteContactResultCallback::addSingleResult."); throw "a JSImplementation must implement all functions, you forgot ConcreteContactResultCallback::addSingleResult."};
                     return t.addSingleResult(e, o, _, i, r, p, s)
                 }
             };
@@ -4793,15 +4798,16 @@ var Ammo = (() => {
                         try {
                             v.grow(1)
                         } catch (t) {
-                            if (!(t instanceof RangeError)) throw t;
-                            throw "Unable to grow wasm table. Set ALLOW_TABLE_GROWTH."
+                            if (!(t instanceof RangeError)) {alert(t); throw t};
+                            alert("Unable to grow wasm table. Set ALLOW_TABLE_GROWTH.");
+                            throw "Unable to grow wasm table. Set ALLOW_TABLE_GROWTH.";
                         }
                         n = v.length - 1
                     }
                     try {
                         o = n, v.set(o, t), U[o] = v.get(o)
                     } catch (p) {
-                        if (!(p instanceof TypeError)) throw p;
+                        if (!(p instanceof TypeError)) {alert(p); throw p};
                         if ("function" == typeof WebAssembly.Function) {
                             o = WebAssembly.Function, _ = {
                                 i: "i32",
@@ -4851,7 +4857,7 @@ var Ammo = (() => {
             XR(), ZR.prototype = Object.create(ZR.prototype), ZR.prototype.constructor = ZR, ZR.prototype.lB = ZR, ZR.mB = {}, n.WrapperObject = ZR, n.getCache = YR, n.wrapPointer = JR, n.castObject = function(t, e) {
                 return JR(t.kB, e)
             }, n.NULL = JR(0), n.destroy = function(t) {
-                if (!t.__destroy__) throw "Error: Cannot destroy object. (Did you create it yourself?)";
+                if (!t.__destroy__) {alert("Error: Cannot destroy object. (Did you create it yourself?)"); throw "Error: Cannot destroy object. (Did you create it yourself?)"};
                 t.__destroy__(), delete YR(t.lB)[t.kB]
             }, n.compare = function(t, e) {
                 return t.kB === e.kB
@@ -4939,34 +4945,42 @@ var Ammo = (() => {
             }
 
             function cD() {
+                alert("cannot construct a btCollisionShape, no constructor in IDL");
                 throw "cannot construct a btCollisionShape, no constructor in IDL"
             }
 
             function aD() {
+                alert("cannot construct a btCollisionWorld, no constructor in IDL");
                 throw "cannot construct a btCollisionWorld, no constructor in IDL"
             }
 
             function lD() {
+                alert("cannot construct a btCollisionObject, no constructor in IDL");
                 throw "cannot construct a btCollisionObject, no constructor in IDL"
             }
 
             function uD() {
+                alert("cannot construct a btConcaveShape, no constructor in IDL");
                 throw "cannot construct a btConcaveShape, no constructor in IDL"
             }
 
             function bD() {
+                alert("cannot construct a btCollisionAlgorithm, no constructor in IDL");
                 throw "cannot construct a btCollisionAlgorithm, no constructor in IDL"
             }
 
             function mD() {
+                alert("cannot construct a btTypedConstraint, no constructor in IDL");
                 throw "cannot construct a btTypedConstraint, no constructor in IDL"
             }
 
             function yD() {
+                alert("cannot construct a btDynamicsWorld, no constructor in IDL");
                 throw "cannot construct a btDynamicsWorld, no constructor in IDL"
             }
 
             function dD() {
+                alert("cannot construct a btIDebugDraw, no constructor in IDL");
                 throw "cannot construct a btIDebugDraw, no constructor in IDL"
             }
 
@@ -4975,26 +4989,32 @@ var Ammo = (() => {
             }
 
             function hD() {
+                alert("cannot construct a btQuadWord, no constructor in IDL");
                 throw "cannot construct a btQuadWord, no constructor in IDL"
             }
 
             function BD() {
+                alert("cannot construct a btMotionState, no constructor in IDL");
                 throw "cannot construct a btMotionState, no constructor in IDL"
             }
 
             function gD() {
+                alert("cannot construct a RayResultCallback, no constructor in IDL");
                 throw "cannot construct a RayResultCallback, no constructor in IDL"
             }
 
             function kD() {
+                alert("cannot construct a ContactResultCallback, no constructor in IDL");
                 throw "cannot construct a ContactResultCallback, no constructor in IDL"
             }
 
             function CD() {
+                alert("cannot construct a ConvexResultCallback, no constructor in IDL");
                 throw "cannot construct a ConvexResultCallback, no constructor in IDL"
             }
 
             function SD() {
+                alert("cannot construct a btConvexShape, no constructor in IDL");
                 throw "cannot construct a btConvexShape, no constructor in IDL"
             }
 
@@ -5011,22 +5031,27 @@ var Ammo = (() => {
             }
 
             function RD() {
+                alert("cannot construct a btStridingMeshInterface, no constructor in IDL");
                 throw "cannot construct a btStridingMeshInterface, no constructor in IDL"
             }
 
             function DD() {
+                alert("cannot construct a btTriangleMeshShape, no constructor in IDL");
                 throw "cannot construct a btTriangleMeshShape, no constructor in IDL"
             }
 
             function PD() {
+                alert("cannot construct a btPrimitiveManagerBase, no constructor in IDL");
                 throw "cannot construct a btPrimitiveManagerBase, no constructor in IDL"
             }
 
             function TD() {
+                alert("cannot construct a btGImpactShapeInterface, no constructor in IDL");
                 throw "cannot construct a btGImpactShapeInterface, no constructor in IDL"
             }
 
             function OD() {
+                alert("cannot construct a btActivatingCollisionAlgorithm, no constructor in IDL");
                 throw "cannot construct a btActivatingCollisionAlgorithm, no constructor in IDL"
             }
 
@@ -5035,6 +5060,7 @@ var Ammo = (() => {
             }
 
             function AD() {
+                alert("cannot construct a btDispatcher, no constructor in IDL");
                 throw "cannot construct a btDispatcher, no constructor in IDL"
             }
 
@@ -5047,10 +5073,12 @@ var Ammo = (() => {
             }
 
             function FD() {
+                alert("cannot construct a btVehicleRaycaster, no constructor in IDL");
                 throw "cannot construct a btVehicleRaycaster, no constructor in IDL"
             }
 
             function LD() {
+                alert("cannot construct a btActionInterface, no constructor in IDL");
                 throw "cannot construct a btActionInterface, no constructor in IDL"
             }
 
@@ -5059,10 +5087,12 @@ var Ammo = (() => {
             }
 
             function wD() {
+                alert("cannot construct a btSoftBodySolver, no constructor in IDL");
                 throw "cannot construct a btSoftBodySolver, no constructor in IDL"
             }
 
             function HD() {
+                alert("cannot construct a VoidPtr, no constructor in IDL")
                 throw "cannot construct a VoidPtr, no constructor in IDL"
             }
 
@@ -5079,6 +5109,7 @@ var Ammo = (() => {
             }
 
             function UD() {
+                alert("cannot construct a btMatrix3x3, no constructor in IDL");
                 throw "cannot construct a btMatrix3x3, no constructor in IDL"
             }
 
@@ -5095,6 +5126,7 @@ var Ammo = (() => {
             }
 
             function QD() {
+                alert("cannot construct a btCollisionObjectWrapper, no constructor in IDL");
                 throw "cannot construct a btCollisionObjectWrapper, no constructor in IDL"
             }
 
@@ -5103,10 +5135,12 @@ var Ammo = (() => {
             }
 
             function ZD() {
+                alert("cannot construct a btConstCollisionObjectArray, no constructor in IDL");
                 throw "cannot construct a btConstCollisionObjectArray, no constructor in IDL"
             }
 
             function YD() {
+                alert("cannot construct a btScalarArray, no constructor in IDL");
                 throw "cannot construct a btScalarArray, no constructor in IDL"
             }
 
@@ -5115,6 +5149,7 @@ var Ammo = (() => {
             }
 
             function $D() {
+                alert("cannot construct a btManifoldPoint, no constructor in IDL");
                 throw "cannot construct a btManifoldPoint, no constructor in IDL"
             }
 
@@ -5123,6 +5158,7 @@ var Ammo = (() => {
             }
 
             function eP() {
+                alert("cannot construct a LocalShapeInfo, no constructor in IDL");
                 throw "cannot construct a LocalShapeInfo, no constructor in IDL"
             }
 
@@ -5175,22 +5211,27 @@ var Ammo = (() => {
             }
 
             function mP() {
+                alert("cannot construct a btIntArray, no constructor in IDL");
                 throw "cannot construct a btIntArray, no constructor in IDL"
             }
 
             function yP() {
+                alert("cannot construct a btFace, no constructor in IDL");
                 throw "cannot construct a btFace, no constructor in IDL"
             }
 
             function dP() {
+                alert("cannot construct a btVector3Array, no constructor in IDL");
                 throw "cannot construct a btVector3Array, no constructor in IDL"
             }
 
             function fP() {
+                alert("cannot construct a btFaceArray, no constructor in IDL");
                 throw "cannot construct a btFaceArray, no constructor in IDL"
             }
 
             function hP() {
+                alert("cannot construct a btConvexPolyhedron, no constructor in IDL");
                 throw "cannot construct a btConvexPolyhedron, no constructor in IDL"
             }
 
@@ -5207,10 +5248,12 @@ var Ammo = (() => {
             }
 
             function CP() {
+                alert("cannot construct a btIndexedMesh, no constructor in IDL");
                 throw "cannot construct a btIndexedMesh, no constructor in IDL"
             }
 
             function SP() {
+                alert("cannot construct a btIndexedMeshArray, no constructor in IDL");
                 throw "cannot construct a btIndexedMeshArray, no constructor in IDL"
             }
 
@@ -5251,6 +5294,7 @@ var Ammo = (() => {
             }
 
             function AP() {
+                alert("cannot construct a CompoundPrimitiveManager, no constructor in IDL");
                 throw "cannot construct a CompoundPrimitiveManager, no constructor in IDL"
             }
 
@@ -5291,10 +5335,12 @@ var Ammo = (() => {
             }
 
             function NP() {
+                alert("cannot construct a btOverlappingPairCallback, no constructor in IDL");
                 throw "cannot construct a btOverlappingPairCallback, no constructor in IDL"
             }
 
             function UP() {
+                alert("cannot construct a btOverlappingPairCache, no constructor in IDL");
                 throw "cannot construct a btOverlappingPairCache, no constructor in IDL"
             }
 
@@ -5303,10 +5349,12 @@ var Ammo = (() => {
             }
 
             function qP() {
+                alert("cannot construct a btBroadphaseInterface, no constructor in IDL");
                 throw "cannot construct a btBroadphaseInterface, no constructor in IDL"
             }
 
             function KP() {
+                alert("cannot construct a btCollisionConfiguration, no constructor in IDL");
                 throw "cannot construct a btCollisionConfiguration, no constructor in IDL"
             }
 
@@ -5315,6 +5363,7 @@ var Ammo = (() => {
             }
 
             function XP() {
+                alert("cannot construct a btBroadphaseProxy, no constructor in IDL");
                 throw "cannot construct a btBroadphaseProxy, no constructor in IDL"
             }
 
@@ -5359,14 +5408,17 @@ var Ammo = (() => {
             }
 
             function rT() {
+                alert("cannot construct a btConstraintSolver, no constructor in IDL");
                 throw "cannot construct a btConstraintSolver, no constructor in IDL"
             }
 
             function pT() {
+                alert("cannot construct a btDispatcherInfo, no constructor in IDL");
                 throw "cannot construct a btDispatcherInfo, no constructor in IDL"
             }
 
             function sT() {
+                alert("cannot construct a btContactSolverInfo, no constructor in IDL");
                 throw "cannot construct a btContactSolverInfo, no constructor in IDL"
             }
 
@@ -5375,6 +5427,7 @@ var Ammo = (() => {
             }
 
             function aT() {
+                alert("cannot construct a btVehicleRaycasterResult, no constructor in IDL");
                 throw "cannot construct a btVehicleRaycasterResult, no constructor in IDL"
             }
 
@@ -5383,10 +5436,12 @@ var Ammo = (() => {
             }
 
             function uT() {
+                alert("cannot construct a RaycastInfo, no constructor in IDL");
                 throw "cannot construct a RaycastInfo, no constructor in IDL"
             }
 
             function bT() {
+                alert("cannot construct a btWheelInfoConstructionInfo, no constructor in IDL");
                 throw "cannot construct a btWheelInfoConstructionInfo, no constructor in IDL"
             }
 
@@ -5415,38 +5470,47 @@ var Ammo = (() => {
             }
 
             function gT() {
+                alert("cannot construct a Face, no constructor in IDL");
                 throw "cannot construct a Face, no constructor in IDL"
             }
 
             function kT() {
+                alert("cannot construct a tFaceArray, no constructor in IDL");
                 throw "cannot construct a tFaceArray, no constructor in IDL"
             }
 
             function CT() {
+                alert("cannot construct a Node, no constructor in IDL");
                 throw "cannot construct a Node, no constructor in IDL"
             }
 
             function ST() {
+                alert("cannot construct a tNodeArray, no constructor in IDL");
                 throw "cannot construct a tNodeArray, no constructor in IDL"
             }
 
             function jT() {
+                alert("cannot construct a Material, no constructor in IDL");
                 throw "cannot construct a Material, no constructor in IDL"
             }
 
             function vT() {
+                alert("cannot construct a tMaterialArray, no constructor in IDL");
                 throw "cannot construct a tMaterialArray, no constructor in IDL"
             }
 
             function IT() {
+                alert("cannot construct a Anchor, no constructor in IDL");
                 throw "cannot construct a Anchor, no constructor in IDL"
             }
 
             function RT() {
+                alert("cannot construct a tAnchorArray, no constructor in IDL");
                 throw "cannot construct a tAnchorArray, no constructor in IDL"
             }
 
             function DT() {
+                alert("cannot construct a Config, no constructor in IDL");
                 throw "cannot construct a Config, no constructor in IDL"
             }
 
@@ -5463,6 +5527,7 @@ var Ammo = (() => {
             }
 
             function WT() {
+                alert("cannot construct a btSoftBodyArray, no constructor in IDL");
                 throw "cannot construct a btSoftBodyArray, no constructor in IDL"
             }
 

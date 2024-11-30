@@ -26291,7 +26291,14 @@
 		};
 		const PL = class {
 			constructor(e, t) {
-				xL.add(this), _L.set(this, void 0), kL.set(this, void 0), EL.set(this, !1), SL.set(this, 0), ML.set(this, new Map), AL(this, kL, new Worker("simulation_worker.bundle.js"), "f"), null != e && null != t ? (AL(this, _L, e, "f"), t.hasLoaded() ? CL(this, xL, "m", TL).call(this, e) : t.addCompleteListener((() => {
+				xL.add(this);
+				_L.set(this, void 0);
+				kL.set(this, void 0);
+				EL.set(this, !1);
+				SL.set(this, 0);
+				ML.set(this, new Map);
+				AL(this, kL, new Worker("simulation_worker.bundle.js"), "f");
+				null != e && null != t ? (AL(this, _L, e, "f"), t.hasLoaded() ? CL(this, xL, "m", TL).call(this, e) : t.addCompleteListener((() => {
 					CL(this, xL, "m", TL).call(this, e)
 				}))) : AL(this, _L, null, "f")
 			}
@@ -26365,7 +26372,10 @@
 				}
 				const l = (AL(this, SL, (s = CL(this, SL, "f"), o = s++, s), "f"), o),
 					c = e => {
-						if (e.data.messageType == bL.UpdateResult) {
+						const { type, data } = e.data;	// cwcinc
+						if (type == "ALERT") {
+							alert(data);
+						} else if (e.data.messageType == bL.UpdateResult) {
 							e.data.carStates.forEach((e => {
 								e.id == l && a(e)
 							}))

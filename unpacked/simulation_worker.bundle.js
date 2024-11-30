@@ -21,6 +21,10 @@ var setFrictionSlip = (friction) => {
 	setFrictionSlipFuncs["WheelBR"](friction);
 };
 
+var alert = (message) => {
+	self.postMessage({ type: 'ALERT', data: message });
+}
+
 var airControlEnabled = false;
 
 const moddedBlocks = {
@@ -513,7 +517,7 @@ const moddedBlocks = {
 							};
 							return function(n) {
 								if ("string" == typeof n) return o.createHash(l).update(n, "utf8").digest("hex");
-								if (null == n) throw new Error(e);
+								if (null == n) {alert(e); throw new Error(e)};
 								return n.constructor === ArrayBuffer && (n = new Uint8Array(n)), Array.isArray(n) || ArrayBuffer.isView(n) || n.constructor === s ? o.createHash(l).update(r(n)).digest("hex") : t(n)
 							}
 						},
@@ -549,10 +553,10 @@ const moddedBlocks = {
 							for (r = 0; r < l; ++r)(o = t.charCodeAt(r)) < 128 ? s[c++] = o : o < 2048 ? (s[c++] = 192 | o >>> 6, s[c++] = 128 | 63 & o) : o < 55296 || o >= 57344 ? (s[c++] = 224 | o >>> 12, s[c++] = 128 | o >>> 6 & 63, s[c++] = 128 | 63 & o) : (o = 65536 + ((1023 & o) << 10 | 1023 & t.charCodeAt(++r)), s[c++] = 240 | o >>> 18, s[c++] = 128 | o >>> 12 & 63, s[c++] = 128 | o >>> 6 & 63, s[c++] = 128 | 63 & o);
 							t = s
 						} else {
-							if ("object" !== a) throw new Error(e);
-							if (null === t) throw new Error(e);
+							if ("object" !== a) {alert(e); throw new Error(e)};
+							if (null === t) {alert(e); throw new Error(e)};
 							if (h && t.constructor === ArrayBuffer) t = new Uint8Array(t);
-							else if (!(Array.isArray(t) || h && ArrayBuffer.isView(t))) throw new Error(e)
+							else if (!(Array.isArray(t) || h && ArrayBuffer.isView(t))) {alert(e); throw new Error(e)}
 						}
 						t.length > 64 && (t = new S(n, !0).update(t).array());
 						var d = [],
@@ -567,10 +571,10 @@ const moddedBlocks = {
 						if (!this.finalized) {
 							var n, i = typeof t;
 							if ("string" !== i) {
-								if ("object" !== i) throw new Error(e);
-								if (null === t) throw new Error(e);
+								if ("object" !== i) {alert(e); throw new Error(e)};
+								if (null === t) {alert(e); throw new Error(e)};
 								if (h && t.constructor === ArrayBuffer) t = new Uint8Array(t);
-								else if (!(Array.isArray(t) || h && ArrayBuffer.isView(t))) throw new Error(e);
+								else if (!(Array.isArray(t) || h && ArrayBuffer.isView(t))) {alert(e); throw new Error(e)};
 								n = !0
 							}
 							for (var r, a, o = 0, s = t.length, l = this.blocks; o < s;) {
@@ -832,7 +836,8 @@ const moddedBlocks = {
 						this.y = e;
 						break;
 					default:
-						throw new Error("index is out of range: " + t)
+						alert("index is out of range: " + t);
+						throw new Error("index is out of range: " + t);
 				}
 				return this
 			}
@@ -843,7 +848,8 @@ const moddedBlocks = {
 					case 1:
 						return this.y;
 					default:
-						throw new Error("index is out of range: " + t)
+						alert("index is out of range: " + t);
+						throw new Error("index is out of range: " + t);
 				}
 			}
 			clone() {
@@ -1192,7 +1198,7 @@ const moddedBlocks = {
 					return this._workingColorSpace
 				},
 				set workingColorSpace(t) {
-					if (!J.has(t)) throw new Error(`Unsupported working color space, "${t}".`);
+					if (!J.has(t)) {alert(`Unsupported working color space, "${t}".`); throw new Error(`Unsupported working color space, "${t}".`)};
 					this._workingColorSpace = t
 				},
 				convert: function(t, e, n) {
@@ -1437,7 +1443,8 @@ const moddedBlocks = {
 						this.w = e;
 						break;
 					default:
-						throw new Error("index is out of range: " + t)
+						alert("index is out of range: " + t);
+						throw new Error("index is out of range: " + t);
 				}
 				return this
 			}
@@ -1452,7 +1459,8 @@ const moddedBlocks = {
 					case 3:
 						return this.w;
 					default:
-						throw new Error("index is out of range: " + t)
+						alert("index is out of range: " + t);
+						throw new Error("index is out of range: " + t);
 				}
 			}
 			clone() {
@@ -1891,7 +1899,8 @@ const moddedBlocks = {
 						this.z = e;
 						break;
 					default:
-						throw new Error("index is out of range: " + t)
+						alert("index is out of range: " + t);
+						throw new Error("index is out of range: " + t);
 				}
 				return this
 			}
@@ -1904,7 +1913,8 @@ const moddedBlocks = {
 					case 2:
 						return this.z;
 					default:
-						throw new Error("index is out of range: " + t)
+						alert("index is out of range: " + t);
+						throw new Error("index is out of range: " + t);
 				}
 			}
 			clone() {
@@ -2796,7 +2806,7 @@ const moddedBlocks = {
 				let u, f;
 				if (o === k) u = -(a + r) / (a - r), f = -2 * a * r / (a - r);
 				else {
-					if (o !== I) throw new Error("THREE.Matrix4.makePerspective(): Invalid coordinate system: " + o);
+					if (o !== I) {alert("THREE.Matrix4.makePerspective(): Invalid coordinate system: " + o); throw new Error("THREE.Matrix4.makePerspective(): Invalid coordinate system: " + o)};
 					u = -a / (a - r), f = -a * r / (a - r)
 				}
 				return s[0] = l, s[4] = 0, s[8] = h, s[12] = 0, s[1] = 0, s[5] = c, s[9] = d, s[13] = 0, s[2] = 0, s[6] = 0, s[10] = u, s[14] = f, s[3] = 0, s[7] = 0, s[11] = -1, s[15] = 0, this
@@ -2811,7 +2821,7 @@ const moddedBlocks = {
 				let f, m;
 				if (o === k) f = (a + r) * h, m = -2 * h;
 				else {
-					if (o !== I) throw new Error("THREE.Matrix4.makeOrthographic(): Invalid coordinate system: " + o);
+					if (o !== I) {alert("THREE.Matrix4.makeOrthographic(): Invalid coordinate system: " + o); throw new Error("THREE.Matrix4.makeOrthographic(): Invalid coordinate system: " + o)};
 					f = r * h, m = -1 * h
 				}
 				return s[0] = 2 * l, s[4] = 0, s[8] = 0, s[12] = -d, s[1] = 0, s[5] = 2 * c, s[9] = 0, s[13] = -u, s[2] = 0, s[6] = 0, s[10] = m, s[14] = -f, s[3] = 0, s[7] = 0, s[11] = 0, s[15] = 1, this
@@ -3853,7 +3863,7 @@ const moddedBlocks = {
 			Re = new V;
 		class Le {
 			constructor(t, e, n = !1) {
-				if (Array.isArray(t)) throw new TypeError("THREE.BufferAttribute: array should be a Typed Array.");
+				if (Array.isArray(t)) {alert("THREE.BufferAttribute: array should be a Typed Array."); throw new TypeError("THREE.BufferAttribute: array should be a Typed Array.")};
 				this.isBufferAttribute = !0, this.name = "", this.array = t, this.itemSize = e, this.count = void 0 !== t ? t.length / e : 0, this.normalized = n, this.usage = P, this._updateRange = {
 					offset: 0,
 					count: -1
@@ -5521,7 +5531,8 @@ const moddedBlocks = {
 				return e
 			}
 			interpolate_() {
-				throw new Error("call to abstract method")
+				alert("call to abstract method");
+				throw new Error("call to abstract method");
 			}
 			intervalChanged_() {}
 		}
@@ -5609,8 +5620,8 @@ const moddedBlocks = {
 		}
 		class Bn {
 			constructor(t, e, n, i) {
-				if (void 0 === t) throw new Error("THREE.KeyframeTrack: track name is undefined");
-				if (void 0 === e || 0 === e.length) throw new Error("THREE.KeyframeTrack: no keyframes in track named " + t);
+				if (void 0 === t) {alert("THREE.KeyframeTrack: track name is undefined"); throw new Error("THREE.KeyframeTrack: track name is undefined")};
+				if (void 0 === e || 0 === e.length) {alert("THREE.KeyframeTrack: no keyframes in track named " + t); throw new Error("THREE.KeyframeTrack: no keyframes in track named " + t)};
 				this.name = t, this.times = Dn(e, this.TimeBufferType), this.values = Dn(n, this.ValueBufferType), this.setInterpolation(i || this.DefaultInterpolation)
 			}
 			static toJSON(t) {
@@ -5652,7 +5663,7 @@ const moddedBlocks = {
 				if (void 0 === e) {
 					const e = "unsupported interpolation for " + this.ValueTypeName + " keyframe track named " + this.name;
 					if (void 0 === this.createInterpolant) {
-						if (t === this.DefaultInterpolation) throw new Error(e);
+						if (t === this.DefaultInterpolation) {alert(e); throw new Error(e)};
 						this.setInterpolation(this.DefaultInterpolation)
 					}
 					return console.warn("THREE.KeyframeTrack:", e), this
@@ -5897,7 +5908,7 @@ const moddedBlocks = {
 			}
 			static parseTrackName(t) {
 				const e = $n.exec(t);
-				if (null === e) throw new Error("PropertyBinding: Cannot parse trackName: " + t);
+				if (null === e) {alert("PropertyBinding: Cannot parse trackName: " + t); throw new Error("PropertyBinding: Cannot parse trackName: " + t)};
 				const n = {
 						nodeName: e[2],
 						objectName: e[3],
@@ -5909,7 +5920,7 @@ const moddedBlocks = {
 				if (void 0 !== i && -1 !== i) {
 					const t = n.nodeName.substring(i + 1); - 1 !== ti.indexOf(t) && (n.nodeName = n.nodeName.substring(0, i), n.objectName = t)
 				}
-				if (null === n.propertyName || 0 === n.propertyName.length) throw new Error("PropertyBinding: can not parse propertyName from trackName: " + t);
+				if (null === n.propertyName || 0 === n.propertyName.length) {alert("PropertyBinding: can not parse propertyName from trackName: " + t); throw new Error("PropertyBinding: can not parse propertyName from trackName: " + t)};
 				return n
 			}
 			static findNode(t, e) {
@@ -6690,7 +6701,7 @@ const moddedBlocks = {
 				for (; e.length;) {
 					const n = e.shift();
 					if (n) {
-						if ("object" != typeof n) throw new TypeError(n + "must be non-object");
+						if ("object" != typeof n) {alert(n + "must be non-object"); throw new TypeError(n + "must be non-object")};
 						for (const e in n) Hr(n, e) && (t[e] = n[e])
 					}
 				}
@@ -6785,17 +6796,17 @@ const moddedBlocks = {
 			let e = this.options;
 			e.raw && e.windowBits > 0 ? e.windowBits = -e.windowBits : e.gzip && e.windowBits > 0 && e.windowBits < 16 && (e.windowBits += 16), this.err = 0, this.msg = "", this.ended = !1, this.chunks = [], this.strm = new Zr, this.strm.avail_out = 0;
 			let n = Fr.deflateInit2(this.strm, e.level, e.method, e.windowBits, e.memLevel, e.strategy);
-			if (n !== $r) throw new Error(Wi[n]);
+			if (n !== $r) {alert(Wi[n]); throw new Error(Wi[n])};
 			if (e.header && Fr.deflateSetHeader(this.strm, e.header), e.dictionary) {
 				let t;
-				if (t = "string" == typeof e.dictionary ? jr.string2buf(e.dictionary) : "[object ArrayBuffer]" === Yr.call(e.dictionary) ? new Uint8Array(e.dictionary) : e.dictionary, n = Fr.deflateSetDictionary(this.strm, t), n !== $r) throw new Error(Wi[n]);
+				if (t = "string" == typeof e.dictionary ? jr.string2buf(e.dictionary) : "[object ArrayBuffer]" === Yr.call(e.dictionary) ? new Uint8Array(e.dictionary) : e.dictionary, n = Fr.deflateSetDictionary(this.strm, t), n !== $r) {alert(Wi[n]); throw new Error(Wi[n])};
 				this._dict_set = !0
 			}
 		}
 
 		function aa(t, e) {
 			const n = new ra(e);
-			if (n.push(t, !0), n.err) throw n.msg || Wi[n.err];
+			if (n.push(t, !0), n.err) {alert(n.msg || Wi[n.err]); throw n.msg || Wi[n.err]};
 			return n.result
 		}
 		ra.prototype.push = function(t, e) {
@@ -7453,13 +7464,13 @@ const moddedBlocks = {
 			const e = this.options;
 			e.raw && e.windowBits >= 0 && e.windowBits < 16 && (e.windowBits = -e.windowBits, 0 === e.windowBits && (e.windowBits = -15)), !(e.windowBits >= 0 && e.windowBits < 16) || t && t.windowBits || (e.windowBits += 32), e.windowBits > 15 && e.windowBits < 48 && (15 & e.windowBits || (e.windowBits |= 15)), this.err = 0, this.msg = "", this.ended = !1, this.chunks = [], this.strm = new Zr, this.strm.avail_out = 0;
 			let n = Za.inflateInit2(this.strm, e.windowBits);
-			if (n !== Ka) throw new Error(Wi[n]);
-			if (this.header = new Ya, Za.inflateGetHeader(this.strm, this.header), e.dictionary && ("string" == typeof e.dictionary ? e.dictionary = jr.string2buf(e.dictionary) : "[object ArrayBuffer]" === Xa.call(e.dictionary) && (e.dictionary = new Uint8Array(e.dictionary)), e.raw && (n = Za.inflateSetDictionary(this.strm, e.dictionary), n !== Ka))) throw new Error(Wi[n])
+			if (n !== Ka) {alert(Wi[n]); throw new Error(Wi[n])};
+			if (this.header = new Ya, Za.inflateGetHeader(this.strm, this.header), e.dictionary && ("string" == typeof e.dictionary ? e.dictionary = jr.string2buf(e.dictionary) : "[object ArrayBuffer]" === Xa.call(e.dictionary) && (e.dictionary = new Uint8Array(e.dictionary)), e.raw && (n = Za.inflateSetDictionary(this.strm, e.dictionary), n !== Ka))) {alert(Wi[n]); throw new Error(Wi[n])}
 		}
 
 		function ao(t, e) {
 			const n = new ro(e);
-			if (n.push(t), n.err) throw n.msg || Wi[n.err];
+			if (n.push(t), n.err) {alert(n.msg || Wi[n.err]); throw n.msg || Wi[n.err]};
 			return n.result
 		}
 		ro.prototype.push = function(t, e) {
@@ -7687,7 +7698,7 @@ const moddedBlocks = {
 				})), Go(this, Do, "f").length = 0, Go(this, No, "f").clear(), null != Go(this, zo, "f") && Ammo.destroy(Go(this, zo, "f")), null != Go(this, Uo, "f") && (Ammo.destroy(Go(this, Uo, "f").shape), Ammo.destroy(Go(this, Uo, "f").triangleMesh)), Ammo.destroy(Go(this, Po, "f")), Ammo.destroy(Go(this, ko, "f")), Ammo.destroy(Go(this, Co, "f")), Ammo.destroy(Go(this, Eo, "f")), Ammo.destroy(Go(this, To, "f")), Ammo.destroy(Go(this, Ao, "f"))
 			}
 			createGroundPlane() {
-				if (null != Go(this, zo, "f")) throw "Ground is already initialized";
+				if (null != Go(this, zo, "f")) {alert("Ground is already initialized"); throw "Ground is already initialized"};
 				const t = new Ammo.btVector3(0, 1, 0),
 					e = new Ammo.btStaticPlaneShape(t, 0);
 				Ammo.destroy(t);
@@ -7702,9 +7713,9 @@ const moddedBlocks = {
 				Ammo.destroy(r), Ammo.destroy(a), Go(this, bo, "m", Ho).call(this, o), Wo(this, zo, e, "f")
 			}
 			createMountains(t, e) {
-				if (t.length % 9 != 0) throw "Number of mountain vertices is not dividable by 9";
+				if (t.length % 9 != 0) {alert("Number of mountain vertices is not dividable by 9"); throw "Number of mountain vertices is not dividable by 9"};
 				if (t.length > 0) {
-					if (null != Go(this, Uo, "f")) throw "Mountains are already initialized";
+					if (null != Go(this, Uo, "f")) {alert("Mountains are already initialized"); throw "Mountains are already initialized"};
 					const n = new Ammo.btTriangleMesh;
 					for (let e = 0; e < t.length; e += 9) {
 						const i = t[e + 0],
@@ -7825,7 +7836,7 @@ const moddedBlocks = {
 		class Jo {
 			constructor(t) {
 				if (Zo.set(this, 0), null != t) {
-					if (!Number.isSafeInteger(t)) throw "Frames is not a safe integer";
+					if (!Number.isSafeInteger(t)) {alert("Frames is not a safe integer"); throw "Frames is not a safe integer"};
 					Yo(this, Zo, t, "f")
 				}
 			}
@@ -7960,7 +7971,7 @@ const moddedBlocks = {
 					i = null;
 				os(this, ns, "f").getPartTypesWithDetector($o[name]).forEach((t => {
 					const e = os(this, ns, "f").getDetector(t);
-					if (null == e) throw "Part detector is missing";
+					if (null == e) {alert("Part detector is missing"); throw "Part detector is missing"};
 					const i = os(this, is, "f").get(t);
 					null != i && (n = n.concat(i.map((({
 						x: t,
@@ -7993,7 +8004,7 @@ const moddedBlocks = {
 						else if (1 == a) l = new ct(i.z, i.y, -i.x), c = new ct(o.z, o.y, o.x);
 						else if (2 == a) l = new ct(-i.x, i.y, -i.z), c = new ct(o.x, o.y, o.z);
 						else {
-							if (3 != a) throw "Invalid rotation";
+							if (3 != a) {alert("Invalid rotation"); throw "Invalid rotation"};
 							l = new ct(i.z, i.y, i.x), c = new ct(o.z, o.y, o.x)
 						}
 						l.add(new ct(e * es.partWidth, n * es.partHeight, r * es.partLength));
@@ -8010,7 +8021,7 @@ const moddedBlocks = {
 				if (null == e) {
 					os(this, ns, "f").getPartTypesWithDetector($o.Finish).forEach((t => {
 						const e = os(this, ns, "f").getDetector(t);
-						if (null == e) throw "Part detector is missing";
+						if (null == e) {alert("Part detector is missing"); throw "Part detector is missing"};
 						const i = os(this, is, "f").get(t);
 						null != i && (n = n.concat(i.map((({
 							x: t,
@@ -8030,7 +8041,7 @@ const moddedBlocks = {
 				} else {
 					os(this, ns, "f").getPartTypesWithDetector($o.Checkpoint).forEach((t => {
 						const e = os(this, ns, "f").getDetector(t);
-						if (null == e) throw "Part detector is missing";
+						if (null == e) {alert("Part detector is missing"); throw "Part detector is missing"};
 						const i = os(this, is, "f").get(t);
 						null != i && (n = n.concat(i.map((({
 							x: t,
@@ -8048,7 +8059,7 @@ const moddedBlocks = {
 						})))))
 					}));
 					const t = n.map((t => {
-						if (null == t.checkpointOrder) throw "Checkpoint has no checkpoint order";
+						if (null == t.checkpointOrder) {alert("Checkpoint has no checkpoint order"); throw "Checkpoint has no checkpoint order"};
 						return t.checkpointOrder
 					})).filter(((t, e, n) => n.indexOf(t) == e)).sort(((t, e) => t - e));
 					e < t.length && (i = t[e])
@@ -8069,7 +8080,7 @@ const moddedBlocks = {
 						else if (1 == a) l = new ct(i.z, i.y, -i.x), c = new ct(o.z, o.y, o.x);
 						else if (2 == a) l = new ct(-i.x, i.y, -i.z), c = new ct(o.x, o.y, o.z);
 						else {
-							if (3 != a) throw "Invalid rotation";
+							if (3 != a) {alert("Invalid rotation"); throw "Invalid rotation"};
 							l = new ct(i.z, i.y, i.x), c = new ct(o.z, o.y, o.x)
 						}
 						l.add(new ct(e * es.partWidth, n * es.partHeight, r * es.partLength));
@@ -8083,7 +8094,7 @@ const moddedBlocks = {
 				let t = [];
 				if (os(this, ns, "f").getPartTypesWithDetector($o.Checkpoint).forEach((e => {
 						const n = os(this, ns, "f").getDetector(e);
-						if (null == n) throw "Part detector is missing";
+						if (null == n) {alert("Part detector is missing"); throw "Part detector is missing"};
 						const i = os(this, is, "f").get(e);
 						null != i && (t = t.concat(i.map((({
 							x: t,
@@ -8131,7 +8142,7 @@ const moddedBlocks = {
 				return "m" === n ? i : "a" === n ? i.call(t) : i ? i.value : e.get(t)
 			};
 		hs = new WeakMap, ds = new WeakMap, us = new WeakMap, fs = new WeakMap, ms = new WeakMap, ps = new WeakMap, gs = new WeakMap, _s = new WeakMap, vs = new WeakMap, ys = new WeakMap, xs = new WeakMap, ws = new WeakMap, Ss = new WeakMap, bs = new WeakMap, Ms = new WeakMap, As = new WeakMap, Ts = new WeakMap, cs = new WeakSet, Es = function(t) {
-			if (t.length % 3 != 0) throw "Car collision shape number of vertices is not dividable by 3";
+			if (t.length % 3 != 0) {alert("Car collision shape number of vertices is not dividable by 3"); throw "Car collision shape number of vertices is not dividable by 3"};
 			const e = new Ammo.btConvexHullShape;
 			for (let n = 0; n < t.length; n += 3) {
 				const i = t[n + 0],
@@ -8409,7 +8420,7 @@ const moddedBlocks = {
 					else if ("WheelFR" == t) e = new Ammo.btVector3(-.627909, .27, 1.3478);
 					else if ("WheelBL" == t) e = new Ammo.btVector3(.720832, .27, -1.52686);
 					else {
-						if ("WheelBR" != t) throw "Unidentified wheel";
+						if ("WheelBR" != t) {alert("Unidentified wheel"); throw "Unidentified wheel"};
 						e = new Ammo.btVector3(-.720832, .27, -1.52686)
 					}
 					const n = "WheelFL" == t || "WheelFR" == t,
@@ -8557,7 +8568,7 @@ const moddedBlocks = {
 			return "m" === n ? i : "a" === n ? i.call(t) : i ? i.value : e.get(t)
 		};
 		Us = new WeakMap, zs = new WeakSet, Bs = function(t) {
-			if (t.length % 9 != 0) throw "Physics shape vertices length is not dividable by 9";
+			if (t.length % 9 != 0) {alert("Physics shape vertices length is not dividable by 9"); throw "Physics shape vertices length is not dividable by 9"};
 			const e = new Ammo.btTriangleMesh;
 			for (let n = 0; n < t.length; n += 9) {
 				const i = t[n + 0],
@@ -8608,7 +8619,7 @@ const moddedBlocks = {
 			getPhysicsShape(t) {
 				var e;
 				const n = null === (e = Os(this, Us, "f").get(t)) || void 0 === e ? void 0 : e.shape;
-				if (null == n) throw 'Track part with the id "' + t + '" has no physics model';
+				if (null == n) {alert('Track part with the id "' + t + '" has no physics model'); throw 'Track part with the id "' + t + '" has no physics model'};
 				return n
 			}
 			getPartTypesWithDetector(t) {
@@ -8619,7 +8630,7 @@ const moddedBlocks = {
 			}
 			getDetector(t) {
 				const e = Os(this, Us, "f").get(t);
-				if (null == e) throw 'Track part with the id "' + t + '" does not exist';
+				if (null == e) {alert('Track part with the id "' + t + '" does not exist'); throw 'Track part with the id "' + t + '" does not exist'};
 				return e.detector
 			}
 		};
@@ -8686,7 +8697,7 @@ const moddedBlocks = {
 		}
 
 		function $s(t, e) {
-			if (e >= 8 * t.length) throw "Out of range";
+			if (e >= 8 * t.length) {alert("Out of range"); throw "Out of range"};
 			const n = Math.floor(e / 8),
 				i = t[n],
 				r = e - 8 * n;
@@ -9052,8 +9063,8 @@ const moddedBlocks = {
 		class Tl {
 			constructor(t, e, n, i, r, a, o) {
 				if (this.checkpointOrder = null, this.x = t, this.y = e, this.z = n, this.rotation = i, this.type = r, this.matrix = a, this.checkpointOrder = o, null != r.detector && r.detector.type == $o.Checkpoint) {
-					if (null == o) throw "Checkpoint has no checkpoint order"
-				} else if (null != o) throw "Non-checkpoint has checkpoint order"
+					if (null == o) {alert("Checkpoint has no checkpoint order"); throw "Checkpoint has no checkpoint order"}
+				} else if (null != o) {alert("Non-checkpoint has checkpoint order"); throw "Non-checkpoint has checkpoint order"}
 			}
 		}
 		class El {
@@ -9085,7 +9096,7 @@ const moddedBlocks = {
 				Al(this, ml, "f").push(s);
 				o.tiles.rotated(r).forEach(((i, r, a) => {
 					const o = t + i + "|" + (e + r) + "|" + (n + a);
-					if (this.hasPartAt(t + i, e + r, n + a)) throw "Track part collision";
+					if (this.hasPartAt(t + i, e + r, n + a)) {alert("Track part collision"); throw "Track part collision"};
 					Al(this, pl, "f").set(o, s)
 				}));
 				const l = Al(this, gl, "f").get(i);
@@ -9093,27 +9104,27 @@ const moddedBlocks = {
 			}
 			deletePart(t, e, n) {
 				const i = Al(this, pl, "f").get(t + "|" + e + "|" + n);
-				if (null == i) throw "Track part missing from parts by position map";
+				if (null == i) {alert("Track part missing from parts by position map"); throw "Track part missing from parts by position map"};
 				for (let t = 0; t < Al(this, ml, "f").length; ++t) {
 					if (Al(this, ml, "f")[t] == i) {
 						Al(this, ml, "f").splice(t, 1);
 						break
 					}
-					if (t == Al(this, ml, "f").length - 1) throw "Track part missing from parts list"
+					if (t == Al(this, ml, "f").length - 1) {alert("Track part missing from parts list"); throw "Track part missing from parts list"}
 				}
 				i.type.tiles.rotated(i.rotation).forEach(((t, e, n) => {
 					const r = i.x + t + "|" + (i.y + e) + "|" + (i.z + n);
-					if (!Al(this, pl, "f").has(r)) throw "Track part section missing";
+					if (!Al(this, pl, "f").has(r)) {alert("Track part section missing"); throw "Track part section missing"};
 					Al(this, pl, "f").delete(r)
 				}));
 				const r = Al(this, gl, "f").get(i.type.id);
-				if (null == r) throw "Track part type is missing from parts by type map";
+				if (null == r) {alert("Track part type is missing from parts by type map"); throw "Track part type is missing from parts by type map"};
 				for (let t = 0; t < r.length; ++t) {
 					if (r[t] == i) {
 						r.splice(t, 1);
 						break
 					}
-					if (t == r.length - 1) throw "Track part is missing from parts by type map"
+					if (t == r.length - 1) {alert("Track part is missing from parts by type map"); throw "Track part is missing from parts by type map"}
 				}
 			}
 			getBounds() {
@@ -9130,7 +9141,7 @@ const moddedBlocks = {
 						}
 				let i = null;
 				return n.forEach((e => {
-					if (null == e.type.mesh) throw "Track part is not loaded yet";
+					if (null == e.type.mesh) {alert("Track part is not loaded yet"); throw "Track part is not loaded yet"};
 					if (null == i) {
 						e.type.mesh.matrixWorld.copy(e.matrix);
 						const n = t.intersectObject(e.type.mesh, !0);
@@ -9146,7 +9157,7 @@ const moddedBlocks = {
 					const n = [];
 					for (let e = 0; e < Al(this, ml, "f").length; ++e) Al(this, ml, "f")[e].type == t && n.push(Al(this, ml, "f")[e]);
 					if (n.length > 0) {
-						if (null == t.mesh) throw "Mesh is not loaded";
+						if (null == t.mesh) {alert("Mesh is not loaded"); throw "Mesh is not loaded"};
 						const i = new In(t.mesh.geometry, t.mesh.material, n.length);
 						i.frustumCulled = !1, i.receiveShadow = !0;
 						for (let t = 0; t < n.length; ++t) i.setMatrixAt(t, n[t].matrix);
@@ -9163,8 +9174,8 @@ const moddedBlocks = {
 					const n = Al(this, gl, "f").get(e);
 					null != n && (t = t.concat(n))
 				})), t.map((t => {
-					if (null == t.checkpointOrder) throw "Checkpoint has no checkpoint order";
-					if (null == t.type.detector) throw "Checkpoint has no detector";
+					if (null == t.checkpointOrder) {alert("Checkpoint has no checkpoint order"); throw "Checkpoint has no checkpoint order"};
+					if (null == t.type.detector) {alert("Checkpoint has no detector"); throw "Checkpoint has no detector"};
 					return {
 						x: t.x,
 						y: t.y,
@@ -9181,8 +9192,8 @@ const moddedBlocks = {
 					const n = Al(this, gl, "f").get(e);
 					null != n && (t = t.concat(n))
 				})), t.map((t => {
-					if (null == t.checkpointOrder) throw "Checkpoint has no checkpoint order";
-					if (null == t.type.detector) throw "Checkpoint has no detector";
+					if (null == t.checkpointOrder) {alert("Checkpoint has no checkpoint order"); throw "Checkpoint has no checkpoint order"};
+					if (null == t.type.detector) {alert("Checkpoint has no detector"); throw "Checkpoint has no detector"};
 					return t.checkpointOrder
 				}))
 			}
@@ -9257,14 +9268,14 @@ const moddedBlocks = {
 			const e = t.getPartTypesWithDetector($o.Checkpoint),
 				n = [];
 			return Nl(this, kl, "f").forEach(((t, i) => {
-				if (i < 0 || i > 65535) throw "Type id is out of range";
+				if (i < 0 || i > 65535) {alert("Type id is out of range"); throw "Type id is out of range"};
 				const r = t.length;
 				n.push(255 & i, i >>> 8 & 255, 255 & r, r >>> 8 & 255, r >>> 16 & 255, r >>> 24 & 255), t.forEach((t => {
 					const r = t.x + Math.pow(2, 23),
 						a = t.y,
 						o = t.z + Math.pow(2, 23);
 					if (n.push(255 & r, r >>> 8 & 255, r >>> 16 & 255, 255 & a, a >>> 8 & 255, a >>> 16 & 255, 255 & o, o >>> 8 & 255, o >>> 16 & 255, 3 & t.rotation), e.includes(i)) {
-						if (null == t.checkpointOrder) throw "Checkpoint has no checkpoint order";
+						if (null == t.checkpointOrder) {alert("Checkpoint has no checkpoint order"); throw "Checkpoint has no checkpoint order"};
 						n.push(255 & t.checkpointOrder, t.checkpointOrder >>> 8 & 255)
 					}
 				}))
@@ -9499,9 +9510,9 @@ const moddedBlocks = {
 					case Hs.Verify:
 						! function(t) {
 							const n = Rl.fromSaveString(t.data.trackData, e);
-							if (null == n) throw "Failed to load track";
+							if (null == n) {alert("Failed to load track"); throw "Failed to load track"};
 							const i = So.deserialize(t.data.carRecording);
-							if (null == i) throw "Failed to deserialize recording";
+							if (null == i) {alert("Failed to deserialize recording"); throw "Failed to deserialize recording"};
 							const r = t.data.carId,
 								a = new Ls(t.data.mountainVertices, new ct(t.data.mountainOffset.x, t.data.mountainOffset.y, t.data.mountainOffset.z), e, n, t.data.carCollisionShapeVertices, t.data.carMassOffset, new js(i), {
 									position: new ct(t.data.carPosition.x, t.data.carPosition.y, t.data.carPosition.z),
@@ -9527,13 +9538,13 @@ const moddedBlocks = {
 					case Hs.CreateCar:
 						! function(t) {
 							const i = Rl.fromSaveString(t.data.trackData, e);
-							if (null == i) throw "Failed to load track";
+							if (null == i) {alert("Failed to load track"); throw "Failed to load track"};
 							let r, a = null;
 							const o = t.data.carRecording;
 							if (null == o) r = a = new Ll;
 							else {
 								const t = So.deserialize(o);
-								if (null == t) throw "Failed to deserialize recording";
+								if (null == t) {alert("Failed to deserialize recording"); throw "Failed to deserialize recording"};
 								r = new js(t)
 							}
 							const s = t.data.carId,
@@ -9583,7 +9594,7 @@ const moddedBlocks = {
 							for (let i = 0; i < n.length; i++) {
 								const r = n[i];
 								if (r.id == e) {
-									if (null == r.controls) throw "Tried to control uncontrollable car";
+									if (null == r.controls) {alert("Tried to control uncontrollable car"); throw "Tried to control uncontrollable car"};
 									r.controls.up = t.data.up, r.controls.right = t.data.right, r.controls.down = t.data.down, r.controls.left = t.data.left;
 									break
 								}
@@ -9639,7 +9650,7 @@ const moddedBlocks = {
 					else if ("WheelFR" == e) n = new t.btVector3(-.627909, .27, 1.3478);
 					else if ("WheelBL" == e) n = new t.btVector3(.720832, .27, -1.52686);
 					else {
-						if ("WheelBR" != e) throw "Unidentified wheel";
+						if ("WheelBR" != e) {alert("Unidentified wheel"); throw "Unidentified wheel"};
 						n = new t.btVector3(-.720832, .27, -1.52686)
 					}
 					const i = "WheelFL" == e || "WheelFR" == e;
