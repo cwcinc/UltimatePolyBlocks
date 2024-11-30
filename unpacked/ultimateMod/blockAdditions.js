@@ -352,7 +352,7 @@ const moddedBlocks = {
 		{name: "B100", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 522},*/
 		
 		{name: "LA", category: "Text", blenderSceneName: "Text", id: 319, isAirControl: true},
-		{name: "LB", category: "Text", blenderSceneName: "Text", id: 320},
+		{name: "LB", category: "Text", blenderSceneName: "Text", id: 320, isAirControl: true, big: true},
 		{name: "LC", category: "Text", blenderSceneName: "Text", id: 321},
 		{name: "LD", category: "Text", blenderSceneName: "Text", id: 322},
 		{name: "LE", category: "Text", blenderSceneName: "Text", id: 323},

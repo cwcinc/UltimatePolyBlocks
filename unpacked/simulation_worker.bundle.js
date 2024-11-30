@@ -307,7 +307,7 @@ const moddedBlocks = {
 		{name: "B100", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 522},*/
 		
 		{name: "LA", category: "Text", blenderSceneName: "Text", id: 319, isAirControl: true},
-		{name: "LB", category: "Text", blenderSceneName: "Text", id: 320},
+		{name: "LB", category: "Text", blenderSceneName: "Text", id: 320, isAirControl: true, big: true},
 		{name: "LC", category: "Text", blenderSceneName: "Text", id: 321},
 		{name: "LD", category: "Text", blenderSceneName: "Text", id: 322},
 		{name: "LE", category: "Text", blenderSceneName: "Text", id: 323},
@@ -8158,7 +8158,7 @@ const moddedBlocks = {
 				return new ct(t.x(), t.y(), t.z())
 			}
 		}, Is = function() {		// IMPORTANT - downforce
-			const t = Rs(this, cs, "m", Cs).call(this).dot(Rs(this, cs, "m", ks).call(this)),
+			const t = (downforceState == 0.05) ? Rs(this, cs, "m", Cs).call(this).dot(Rs(this, cs, "m", ks).call(this)) : Math.abs(Rs(this, cs, "m", Cs).call(this).dot(Rs(this, cs, "m", ks).call(this))),
 				e = Rs(this, cs, "m", Ps).call(this),
 				n = downforceState,		// 0.05 default
 				i = new Ammo.btVector3(e.x * t * n, e.y * t * n, e.z * t * n);
@@ -8356,9 +8356,9 @@ const moddedBlocks = {
 						}
 
 						if (Rs(this, hs, "f").checkHighDownforce(i)) {
-							setDownforce(0.5);
+							setDownforce(0.2);
 						} else if (Rs(this, hs, "f").checkNegativeDownforce(i)) {
-							setDownforce(-0.5);
+							setDownforce(-0.2);
 						} else if (Rs(this, hs, "f").checkNoDownforce(i)) {
 							setDownforce(0);
 						} else {
