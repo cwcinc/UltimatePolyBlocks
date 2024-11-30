@@ -11,9 +11,9 @@ var setDownforce = (downforce) => {
 var setFrictionSlipFuncs = {};
 var frictionState = 3;
 var setFrictionSlip = (friction) => {
-	/*if (friction == frictionState) {	// broke determinism when respawning
+	if (friction == frictionState) {	// broke determinism when respawning
 		return;
-	}*/  
+	}
 	frictionState = friction;
 	setFrictionSlipFuncs["WheelFL"](friction);
 	setFrictionSlipFuncs["WheelFR"](friction);
@@ -8433,8 +8433,10 @@ const moddedBlocks = {
 					i.set_m_wheelsDampingCompression(200);
 					i.set_m_frictionSlip(3);
 
+					frictionState = 3;
+
 					setFrictionSlipFuncs[t] = (friction) => {
-						i.set_m_frictionSlip(friction);
+						i.set_m_frictionSlip(friction);		// IMPORTANT - causes game crashes sometimes
 					}
 
 					i.set_m_rollInfluence(.75);

@@ -1,3 +1,7 @@
+const ERRORFUNC = (message) => {
+	const msgBox = document.getElementById("ALERTS");
+	msgBox.innerHTML += "<br>" + message;
+}
 
 (() => {
 	var e = {
@@ -26374,7 +26378,7 @@
 					c = e => {
 						const { type, data } = e.data;	// cwcinc
 						if (type == "ALERT") {
-							alert(data);
+							ERRORFUNC(data);
 						} else if (e.data.messageType == bL.UpdateResult) {
 							e.data.carStates.forEach((e => {
 								e.id == l && a(e)
