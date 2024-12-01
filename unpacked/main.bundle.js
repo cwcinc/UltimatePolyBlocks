@@ -20886,13 +20886,26 @@ const ERRORFUNC = (message) => {
 				})), a.appendChild(e)
 			}
 		}, Sx = function() {
-			Tx(this, bx, "f").innerHTML = "", Tx(this, fx, "f").refreshCustomTracks();
+			Tx(this, bx, "f").innerHTML = "", Tx(this, fx, "f").refreshCustomTracks();	// important - tracks menu
 			const e = document.createElement("h2");
-			if (e.textContent = Tx(this, hx, "f").get("Standard tracks"), Tx(this, bx, "f").appendChild(e), Tx(this, fx, "f").forEachStandard(((e, t, n, i) => {
-					Tx(this, lx, "m", Ex).call(this, n, t, e, i)
-				})), !Tx(this, fx, "f").isCustomTracksEmpty()) {
+			e.textContent = Tx(this, hx, "f").get("Standard tracks");
+			Tx(this, bx, "f").appendChild(e);
+			Tx(this, fx, "f").forEachStandard(((e, t, n, i) => {
+				Tx(this, lx, "m", Ex).call(this, n, t, e, i)
+			}));
+
+			const moddedTrackText = document.createElement("h2");
+			moddedTrackText.textContent = "Modded tracks";
+			Tx(this, bx, "f").appendChild(moddedTrackText);
+			Tx(this, fx, "f").forEachModded(((e, t, n, i) => {
+				Tx(this, lx, "m", Ex).call(this, n, t, e, i)
+			}));
+
+			if (!Tx(this, fx, "f").isCustomTracksEmpty()) {
 				const e = document.createElement("h2");
-				e.textContent = Tx(this, hx, "f").get("Custom tracks"), Tx(this, bx, "f").appendChild(e), Tx(this, fx, "f").forEachCustom(((e, t, n, i) => {
+				e.textContent = Tx(this, hx, "f").get("Custom tracks");
+				Tx(this, bx, "f").appendChild(e);
+				Tx(this, fx, "f").forEachCustom(((e, t, n, i) => {
 					Tx(this, lx, "m", Ex).call(this, n, t, e, i, (() => {
 						this.hide(), Tx(this, gx, "f").showConfirm(Tx(this, hx, "f").get('Are you sure you want to delete "{0}"?', [t]), Tx(this, hx, "f").get("Cancel"), Tx(this, hx, "f").get("Delete"), (() => {
 							this.show()
@@ -23908,7 +23921,7 @@ const ERRORFUNC = (message) => {
 				return BP(this, PP, "f").loadRecord(e, t)
 			}
 		};
-		var zP, FP, WP, HP, VP, GP, jP, qP = function(e, t, n, i, r) {
+		var zP, FP, ModdedTracksSet, WP, HP, VP, GP, jP, qP = function(e, t, n, i, r) {
 				if ("m" === i) throw new TypeError("Private method is not writable");
 				if ("a" === i && !r) throw new TypeError("Private accessor was defined without a setter");
 				if ("function" == typeof t ? e !== t || !r : !t.has(e)) throw new TypeError("Cannot write private member to an object whose class did not declare it");
@@ -23919,7 +23932,7 @@ const ERRORFUNC = (message) => {
 				if ("function" == typeof t ? e !== t || !i : !t.has(e)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
 				return "m" === n ? i : "a" === n ? i.call(e) : i ? i.value : t.get(e)
 			};
-		FP = new WeakMap, WP = new WeakMap, HP = new WeakMap, VP = new WeakMap, zP = new WeakSet, GP = function(e, t) {
+		FP = new WeakMap, ModdedTracksSet = new WeakMap, WP = new WeakMap, HP = new WeakMap, VP = new WeakMap, zP = new WeakSet, GP = function(e, t) {
 			return t.addResource(), new Promise((n => {
 				const i = new XMLHttpRequest;
 				i.overrideMimeType("text/plain"), i.onreadystatechange = () => {
@@ -23964,9 +23977,37 @@ const ERRORFUNC = (message) => {
 		};
 		const YP = class {
 			constructor(e, t, n) {
-				zP.add(this), FP.set(this, []), WP.set(this, []), HP.set(this, void 0), VP.set(this, void 0), qP(this, HP, n, "f"), qP(this, VP, t, "f"), Promise.all([XP(this, zP, "m", GP).call(this, "tracks/track1.track", e), XP(this, zP, "m", GP).call(this, "tracks/track2.track", e), XP(this, zP, "m", GP).call(this, "tracks/track3.track", e), XP(this, zP, "m", GP).call(this, "tracks/track4.track", e), XP(this, zP, "m", GP).call(this, "tracks/track5.track", e), XP(this, zP, "m", GP).call(this, "tracks/track6.track", e), XP(this, zP, "m", GP).call(this, "tracks/track7.track", e), XP(this, zP, "m", GP).call(this, "tracks/track8.track", e), XP(this, zP, "m", GP).call(this, "tracks/track9.track", e), XP(this, zP, "m", GP).call(this, "tracks/track10.track", e), XP(this, zP, "m", GP).call(this, "tracks/track11.track", e), XP(this, zP, "m", GP).call(this, "tracks/track12.track", e), XP(this, zP, "m", GP).call(this, "tracks/track13.track", e)]).then((e => {
+				zP.add(this);
+				FP.set(this, []);
+				ModdedTracksSet.set(this, []);
+				WP.set(this, []);
+				HP.set(this, void 0);
+				VP.set(this, void 0);
+				qP(this, HP, n, "f");
+				qP(this, VP, t, "f");
+				Promise.all([
+					XP(this, zP, "m", GP).call(this, "tracks/track1.track", e),
+					XP(this, zP, "m", GP).call(this, "tracks/track2.track", e),
+					XP(this, zP, "m", GP).call(this, "tracks/track3.track", e), 
+					XP(this, zP, "m", GP).call(this, "tracks/track4.track", e), 
+					XP(this, zP, "m", GP).call(this, "tracks/track5.track", e), 
+					XP(this, zP, "m", GP).call(this, "tracks/track6.track", e), 
+					XP(this, zP, "m", GP).call(this, "tracks/track7.track", e), 
+					XP(this, zP, "m", GP).call(this, "tracks/track8.track", e), 
+					XP(this, zP, "m", GP).call(this, "tracks/track9.track", e), 
+					XP(this, zP, "m", GP).call(this, "tracks/track10.track", e), 
+					XP(this, zP, "m", GP).call(this, "tracks/track11.track", e), 
+					XP(this, zP, "m", GP).call(this, "tracks/track12.track", e), 
+					XP(this, zP, "m", GP).call(this, "tracks/track13.track", e)
+				]).then((e => {
 					qP(this, FP, e, "f")
-				}))
+				}));
+
+				Promise.all([	// important - add new modded tracks to this array
+					XP(this, zP, "m", GP).call(this, "ultimateMod/tracks/jumpstart.track", e)
+				]).then((e => {
+					qP(this, ModdedTracksSet, e, "f")
+				}));
 			}
 			refreshCustomTracks() {
 				const e = XP(this, HP, "f").getAllTrackNames();
@@ -23978,10 +24019,15 @@ const ERRORFUNC = (message) => {
 				return 0 == XP(this, WP, "f").length
 			}
 			forEach(e) {
-				this.forEachStandard(e), this.forEachCustom(e)
+				this.forEachStandard(e), this.forEachModded(e), this.forEachCustom(e)
 			}
 			forEachStandard(e) {
 				XP(this, FP, "f").forEach((t => {
+					e(t.id, t.name, t.trackData, t.thumbnail)
+				}))
+			}
+			forEachModded(e) {
+				XP(this, ModdedTracksSet, "f").forEach((t => {
 					e(t.id, t.name, t.trackData, t.thumbnail)
 				}))
 			}
