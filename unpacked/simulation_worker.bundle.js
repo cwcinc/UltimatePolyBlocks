@@ -57,6 +57,27 @@ const moddedBlocks = {
 		"ultimateMod/models/text.glb",
 		"ultimateMod/models/borderlessroads.glb"
 	],
+	blockColors: {
+		"Red": null, 
+		"DarkRed": [0, .5, -.1], 
+		"Orange": [0.05, .5, .1], 
+		"Yellow": [0.12, .5, .1], 
+		"DarkGreen": [0.36, .4, 0], 
+		"LightGreen": [0.36, .4, .2], 
+		"LightBlue": [0.48, .4, .2], 
+		"MediumBlue": [0.6, .4, .1], 
+		"Blue": null, 
+		"Purple": [0.72, .4, .1], 
+		"DarkPurple": [0.72, .4, 0], 
+		"Pink": [0.85, .4, .2], 
+		"HotPink": [0.87, .5, .1], 
+		"White": [0, 0, .3], 
+		"LightGray": [0, 0, .15],
+		"DarkGray": [0, 0, -.065], 
+		"Black": null, 
+		"Beige": [.1, .2, .1], 
+		"Brown": [.06, .4, -.06]
+	},
     blocks: [
 		/*{name: "Grass", category: "Minecraft", blenderSceneName: "Minecraft", id: 180},
 		{name: "Dirt", category: "Minecraft", blenderSceneName: "Minecraft", id: 179},
@@ -8897,6 +8918,43 @@ const moddedBlocks = {
             t[t.BlackBlockBridgeCorner = 176] = "BlackBlockBridgeCorner";
             t[t.BlackBlockBridgeIntersectionT = 177] = "BlackBlockBridgeIntersectionT";
             t[t.BlackBlockBridgeIntersectionCross = 178] = "BlackBlockBridgeIntersectionCross"
+
+			var colorId = 1000;
+			for (const [colorName, colorData] of Object.entries(moddedBlocks.blockColors)) {
+				if (["Red", "Black", "Blue"].includes(colorName)) {continue;}
+				
+				t[t[colorName + "Block"] = colorId] = colorName + "Block";
+				colorId++;
+				t[t[colorName + "HalfBlock"] = colorId] = colorName + "HalfBlock";
+				colorId++;
+				t[t[colorName + "QuarterBlock"] = colorId] = colorName + "QuarterBlock";
+				colorId++;
+				t[t[colorName + "BlockSlopedDown"] = colorId] = colorName + "BlockSlopedDown";
+				colorId++;
+				t[t[colorName + "BlockSlopedDownInnerCorner"] = colorId] = colorName + "BlockSlopedDownInnerCorner";
+				colorId++;
+				t[t[colorName + "BlockSlopedDownOuterCorner"] = colorId] = colorName + "BlockSlopedDownOuterCorner";
+				colorId++;
+				t[t[colorName + "BlockSlopedUp"] = colorId] = colorName + "BlockSlopedUp";
+				colorId++;
+				t[t[colorName + "BlockSlopedUpInnerCorner"] = colorId] = colorName + "BlockSlopedUpInnerCorner";
+				colorId++;
+				t[t[colorName + "BlockSlopedUpOuterCorner"] = colorId] = colorName + "BlockSlopedUpOuterCorner";
+				colorId++;
+				t[t[colorName + "BlockSlopeDown"] = colorId] = colorName + "BlockSlopeDown";
+				colorId++;
+				t[t[colorName + "BlockSlopeUp"] = colorId] = colorName + "BlockSlopeUp";
+				colorId++;
+				t[t[colorName + "BlockBridge"] = colorId] = colorName + "BlockBridge";
+				colorId++;
+				t[t[colorName + "BlockBridgeCorner"] = colorId] = colorName + "BlockBridgeCorner";
+				colorId++;
+				t[t[colorName + "BlockBridgeIntersectionT"] = colorId] = colorName + "BlockBridgeIntersectionT";
+				colorId++;
+				t[t[colorName + "BlockBridgeIntersectionCross"] = colorId] = colorName + "BlockBridgeIntersectionCross";
+				colorId++;
+			}
+
 		}(el || (el = {}));
 		const nl = el;
 

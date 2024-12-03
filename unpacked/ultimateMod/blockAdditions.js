@@ -98,6 +98,27 @@ const moddedBlocks = {
 		"ultimateMod/models/text.glb",
 		"ultimateMod/models/borderlessroads.glb"
 	],
+	blockColors: {
+		"Red": null, 
+		"DarkRed": [0, .5, -.1], 
+		"Orange": [0.05, .5, .1], 
+		"Yellow": [0.12, .5, .1], 
+		"DarkGreen": [0.36, .4, 0], 
+		"LightGreen": [0.36, .4, .2], 
+		"LightBlue": [0.48, .4, .2], 
+		"MediumBlue": [0.6, .4, .1], 
+		"Blue": null, 
+		"Purple": [0.72, .4, .1], 
+		"DarkPurple": [0.72, .4, 0], 
+		"Pink": [0.85, .4, .2], 
+		"HotPink": [0.87, .5, .1], 
+		"White": [0, 0, .3], 
+		"LightGray": [0, 0, .15],
+		"DarkGray": [0, 0, -.065], 
+		"Black": null, 
+		"Beige": [.1, .2, .1], 
+		"Brown": [.06, .4, -.06]
+	},
     blocks: [
 		/*{name: "Grass", category: "Minecraft", blenderSceneName: "Minecraft", id: 180},
 		{name: "Dirt", category: "Minecraft", blenderSceneName: "Minecraft", id: 179},

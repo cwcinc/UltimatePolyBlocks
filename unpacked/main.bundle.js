@@ -19533,7 +19533,6 @@ const ERRORFUNC = (message) => {
 				let block = moddedBlocks.blocks[index];
 				e[e[block.name] = block.id] = block.name;
 			}
-
 			e[e.Straight = 0] = "Straight";
 			e[e.TurnSharp = 1] = "TurnSharp";
 			e[e.SlopeUp = 2] = "SlopeUp";
@@ -19712,6 +19711,43 @@ const ERRORFUNC = (message) => {
 			e[e.BlackBlockBridgeCorner = 176] = "BlackBlockBridgeCorner";
 			e[e.BlackBlockBridgeIntersectionT = 177] = "BlackBlockBridgeIntersectionT";
 			e[e.BlackBlockBridgeIntersectionCross = 178] = "BlackBlockBridgeIntersectionCross";
+
+			var colorId = 1000;
+			for (const [colorName, colorData] of Object.entries(moddedBlocks.blockColors)) {
+				if (["Red", "Black", "Blue"].includes(colorName)) {continue;}
+				
+				e[e[colorName + "Block"] = colorId] = colorName + "Block";
+				colorId++;
+				e[e[colorName + "HalfBlock"] = colorId] = colorName + "HalfBlock";
+				colorId++;
+				e[e[colorName + "QuarterBlock"] = colorId] = colorName + "QuarterBlock";
+				colorId++;
+				e[e[colorName + "BlockSlopedDown"] = colorId] = colorName + "BlockSlopedDown";
+				colorId++;
+				e[e[colorName + "BlockSlopedDownInnerCorner"] = colorId] = colorName + "BlockSlopedDownInnerCorner";
+				colorId++;
+				e[e[colorName + "BlockSlopedDownOuterCorner"] = colorId] = colorName + "BlockSlopedDownOuterCorner";
+				colorId++;
+				e[e[colorName + "BlockSlopedUp"] = colorId] = colorName + "BlockSlopedUp";
+				colorId++;
+				e[e[colorName + "BlockSlopedUpInnerCorner"] = colorId] = colorName + "BlockSlopedUpInnerCorner";
+				colorId++;
+				e[e[colorName + "BlockSlopedUpOuterCorner"] = colorId] = colorName + "BlockSlopedUpOuterCorner";
+				colorId++;
+				e[e[colorName + "BlockSlopeDown"] = colorId] = colorName + "BlockSlopeDown";
+				colorId++;
+				e[e[colorName + "BlockSlopeUp"] = colorId] = colorName + "BlockSlopeUp";
+				colorId++;
+				e[e[colorName + "BlockBridge"] = colorId] = colorName + "BlockBridge";
+				colorId++;
+				e[e[colorName + "BlockBridgeCorner"] = colorId] = colorName + "BlockBridgeCorner";
+				colorId++;
+				e[e[colorName + "BlockBridgeIntersectionT"] = colorId] = colorName + "BlockBridgeIntersectionT";
+				colorId++;
+				e[e[colorName + "BlockBridgeIntersectionCross"] = colorId] = colorName + "BlockBridgeIntersectionCross";
+				colorId++;
+			}
+			
 		}(Uw || (Uw = {}));
 		const Bw = Uw;
 		var Ow, zw, Fw, Ww, Hw, Vw, Gw, jw = function(e, t, n, i, r) {
@@ -24151,7 +24187,7 @@ const ERRORFUNC = (message) => {
 						vertexColors: !0
 					}),
 					i = (t, i, r, ...a) => tR(this, [t, i, r, ...a], void 0, (function*(t, i, r, a = null, o = null, s = null) {
-						if (iR(this, QP, "f").addResource(), iR(this, $P, "f").has(i)) {alert("Track part types have same Id"); throw "Track part types have same Id"};
+						if (iR(this, QP, "f").addResource(), iR(this, $P, "f").has(i)) {alert("Track part types have same Id: " + i); throw "Track part types have same Id"};
 						const l = {
 							id: i,
 							mesh: null,
@@ -24211,15 +24247,15 @@ const ERRORFUNC = (message) => {
 					}
 				}
 
-				function a(e) {
+				function defaultRed(e) {
 					return r(e, 0, .5, 0)
 				}
 
-				function o(e) {
+				function defaultBlue(e) {
 					return r(e, .65, .4, 0)
 				}
 
-				function s(e) {
+				function defaultBlack(e) {				// black
 					return r(e, 0, 0, -.135)
 				}
 
@@ -24755,195 +24791,90 @@ const ERRORFUNC = (message) => {
 				i(ZP.Block, Bw.BlockBridgeIntersectionCross, [
 					["Blocks", "BlockBridgeIntersectionCross"]
 				]);
-				i(ZP.Block, Bw.RedBlock, [
-					["Blocks", "Block"]
-				], null, null, a);
-				i(ZP.Block, Bw.RedHalfBlock, [
-					["Blocks", "HalfBlock"]
-				], null, null, a);
-				i(ZP.Block, Bw.RedQuarterBlock, [
-					["Blocks", "QuarterBlock"]
-				], null, null, a);
-				i(ZP.Block, Bw.RedBlockSlopedDown, [
-					["Blocks", "BlockSlopedDown"]
-				], [
-					[0, 0, 0],
-					[0, 1, 0]
-				], null, a);
-				i(ZP.Block, Bw.RedBlockSlopedDownInnerCorner, [
-					["Blocks", "BlockSlopedDownInnerCorner"]
-				], [
-					[0, 0, 0],
-					[0, 1, 0]
-				], null, a);
-				i(ZP.Block, Bw.RedBlockSlopedDownOuterCorner, [
-					["Blocks", "BlockSlopedDownOuterCorner"]
-				], [
-					[0, 0, 0],
-					[0, 1, 0]
-				], null, a);
-				i(ZP.Block, Bw.RedBlockSlopedUp, [
-					["Blocks", "BlockSlopedUp"]
-				], [
-					[0, 0, 0],
-					[0, 1, 0]
-				], null, a);
-				i(ZP.Block, Bw.RedBlockSlopedUpInnerCorner, [
-					["Blocks", "BlockSlopedUpInnerCorner"]
-				], [
-					[0, 0, 0],
-					[0, 1, 0]
-				], null, a);
-				i(ZP.Block, Bw.RedBlockSlopedUpOuterCorner, [
-					["Blocks", "BlockSlopedUpOuterCorner"]
-				], [
-					[0, 0, 0],
-					[0, 1, 0]
-				], null, a);
-				i(ZP.Block, Bw.RedBlockSlopeDown, [
-					["Blocks", "BlockSlopeDown"]
-				], null, null, a);
-				i(ZP.Block, Bw.RedBlockSlopeUp, [
-					["Blocks", "BlockSlopeUp"]
-				], null, null, a);
-				i(ZP.Block, Bw.RedBlockBridge, [
-					["Blocks", "BlockBridge"]
-				], null, null, a);
-				i(ZP.Block, Bw.RedBlockBridgeCorner, [
-					["Blocks", "BlockBridgeCorner"]
-				], null, null, a);
-				i(ZP.Block, Bw.RedBlockBridgeIntersectionT, [
-					["Blocks", "BlockBridgeIntersectionT"]
-				], null, null, a);
-				i(ZP.Block, Bw.RedBlockBridgeIntersectionCross, [
-					["Blocks", "BlockBridgeIntersectionCross"]
-				], null, null, a);
-				i(ZP.Block, Bw.BlueBlock, [
-					["Blocks", "Block"]
-				], null, null, o);
-				i(ZP.Block, Bw.BlueHalfBlock, [
-					["Blocks", "HalfBlock"]
-				], null, null, o);
-				i(ZP.Block, Bw.BlueQuarterBlock, [
-					["Blocks", "QuarterBlock"]
-				], null, null, o);
-				i(ZP.Block, Bw.BlueBlockSlopedDown, [
-					["Blocks", "BlockSlopedDown"]
-				], [
-					[0, 0, 0],
-					[0, 1, 0]
-				], null, o);
-				i(ZP.Block, Bw.BlueBlockSlopedDownInnerCorner, [
-					["Blocks", "BlockSlopedDownInnerCorner"]
-				], [
-					[0, 0, 0],
-					[0, 1, 0]
-				], null, o);
-				i(ZP.Block, Bw.BlueBlockSlopedDownOuterCorner, [
-					["Blocks", "BlockSlopedDownOuterCorner"]
-				], [
-					[0, 0, 0],
-					[0, 1, 0]
-				], null, o);
-				i(ZP.Block, Bw.BlueBlockSlopedUp, [
-					["Blocks", "BlockSlopedUp"]
-				], [
-					[0, 0, 0],
-					[0, 1, 0]
-				], null, o);
-				i(ZP.Block, Bw.BlueBlockSlopedUpInnerCorner, [
-					["Blocks", "BlockSlopedUpInnerCorner"]
-				], [
-					[0, 0, 0],
-					[0, 1, 0]
-				], null, o);
-				i(ZP.Block, Bw.BlueBlockSlopedUpOuterCorner, [
-					["Blocks", "BlockSlopedUpOuterCorner"]
-				], [
-					[0, 0, 0],
-					[0, 1, 0]
-				], null, o);
-				i(ZP.Block, Bw.BlueBlockSlopeDown, [
-					["Blocks", "BlockSlopeDown"]
-				], null, null, o);
-				i(ZP.Block, Bw.BlueBlockSlopeUp, [
-					["Blocks", "BlockSlopeUp"]
-				], null, null, o);
-				i(ZP.Block, Bw.BlueBlockBridge, [
-					["Blocks", "BlockBridge"]
-				], null, null, o);
-				i(ZP.Block, Bw.BlueBlockBridgeCorner, [
-					["Blocks", "BlockBridgeCorner"]
-				], null, null, o);
-				i(ZP.Block, Bw.BlueBlockBridgeIntersectionT, [
-					["Blocks", "BlockBridgeIntersectionT"]
-				], null, null, o);
-				i(ZP.Block, Bw.BlueBlockBridgeIntersectionCross, [
-					["Blocks", "BlockBridgeIntersectionCross"]
-				], null, null, o);
-				i(ZP.Block, Bw.BlackBlock, [
-					["Blocks", "Block"]
-				], null, null, s);
-				i(ZP.Block, Bw.BlackHalfBlock, [
-					["Blocks", "HalfBlock"]
-				], null, null, s);
-				i(ZP.Block, Bw.BlackQuarterBlock, [
-					["Blocks", "QuarterBlock"]
-				], null, null, s);
-				i(ZP.Block, Bw.BlackBlockSlopedDown, [
-					["Blocks", "BlockSlopedDown"]
-				], [
-					[0, 0, 0],
-					[0, 1, 0]
-				], null, s);
-				i(ZP.Block, Bw.BlackBlockSlopedDownInnerCorner, [
-					["Blocks", "BlockSlopedDownInnerCorner"]
-				], [
-					[0, 0, 0],
-					[0, 1, 0]
-				], null, s);
-				i(ZP.Block, Bw.BlackBlockSlopedDownOuterCorner, [
-					["Blocks", "BlockSlopedDownOuterCorner"]
-				], [
-					[0, 0, 0],
-					[0, 1, 0]
-				], null, s);
-				i(ZP.Block, Bw.BlackBlockSlopedUp, [
-					["Blocks", "BlockSlopedUp"]
-				], [
-					[0, 0, 0],
-					[0, 1, 0]
-				], null, s);
-				i(ZP.Block, Bw.BlackBlockSlopedUpInnerCorner, [
-					["Blocks", "BlockSlopedUpInnerCorner"]
-				], [
-					[0, 0, 0],
-					[0, 1, 0]
-				], null, s);
-				i(ZP.Block, Bw.BlackBlockSlopedUpOuterCorner, [
-					["Blocks", "BlockSlopedUpOuterCorner"]
-				], [
-					[0, 0, 0],
-					[0, 1, 0]
-				], null, s);
-				i(ZP.Block, Bw.BlackBlockSlopeDown, [
-					["Blocks", "BlockSlopeDown"]
-				], null, null, s);
-				i(ZP.Block, Bw.BlackBlockSlopeUp, [
-					["Blocks", "BlockSlopeUp"]
-				], null, null, s);
-				i(ZP.Block, Bw.BlackBlockBridge, [
-					["Blocks", "BlockBridge"]
-				], null, null, s);
-				i(ZP.Block, Bw.BlackBlockBridgeCorner, [
-					["Blocks", "BlockBridgeCorner"]
-				], null, null, s);
-				i(ZP.Block, Bw.BlackBlockBridgeIntersectionT, [
-					["Blocks", "BlockBridgeIntersectionT"]
-				], null, null, s);
-				i(ZP.Block, Bw.BlackBlockBridgeIntersectionCross, [
-					["Blocks", "BlockBridgeIntersectionCross"]
-				], null, null, s);
+
+				// new block color code
+				for (const [colorName, colorData] of Object.entries(moddedBlocks.blockColors)) {
+					var colorFunction;
+					if (colorData != null) {
+						colorFunction = (e) => {return r(e, colorData[0], colorData[1], colorData[2])}
+					} else {
+						if (colorName == "Black") {
+							colorFunction = defaultBlack;
+						} else if (colorName == "Red") {
+							colorFunction = defaultRed;
+						} else {
+							colorFunction = defaultBlue;
+						}
+					};
+
+					i(ZP.Block, Bw[colorName + "Block"], [
+						["Blocks", "Block"]
+					], null, null, colorFunction);
+					i(ZP.Block, Bw[colorName + "HalfBlock"], [
+						["Blocks", "HalfBlock"]
+					], null, null, colorFunction);
+					i(ZP.Block, Bw[colorName + "QuarterBlock"], [
+						["Blocks", "QuarterBlock"]
+					], null, null, colorFunction);
+					i(ZP.Block, Bw[colorName + "BlockSlopedDown"], [
+						["Blocks", "BlockSlopedDown"]
+					], [
+						[0, 0, 0],
+						[0, 1, 0]
+					], null, colorFunction);
+					i(ZP.Block, Bw[colorName + "BlockSlopedDownInnerCorner"], [
+						["Blocks", "BlockSlopedDownInnerCorner"]
+					], [
+						[0, 0, 0],
+						[0, 1, 0]
+					], null, colorFunction);
+					i(ZP.Block, Bw[colorName + "BlockSlopedDownOuterCorner"], [
+						["Blocks", "BlockSlopedDownOuterCorner"]
+					], [
+						[0, 0, 0],
+						[0, 1, 0]
+					], null, colorFunction);
+					i(ZP.Block, Bw[colorName + "BlockSlopedUp"], [
+						["Blocks", "BlockSlopedUp"]
+					], [
+						[0, 0, 0],
+						[0, 1, 0]
+					], null, colorFunction);
+					i(ZP.Block, Bw[colorName + "BlockSlopedUpInnerCorner"], [
+						["Blocks", "BlockSlopedUpInnerCorner"]
+					], [
+						[0, 0, 0],
+						[0, 1, 0]
+					], null, colorFunction);
+					i(ZP.Block, Bw[colorName + "BlockSlopedUpOuterCorner"], [
+						["Blocks", "BlockSlopedUpOuterCorner"]
+					], [
+						[0, 0, 0],
+						[0, 1, 0]
+					], null, colorFunction);
+					i(ZP.Block, Bw[colorName + "BlockSlopeDown"], [
+						["Blocks", "BlockSlopeDown"]
+					], null, null, colorFunction);
+					i(ZP.Block, Bw[colorName + "BlockSlopeUp"], [
+						["Blocks", "BlockSlopeUp"]
+					], null, null, colorFunction);
+					i(ZP.Block, Bw[colorName + "BlockBridge"], [
+						["Blocks", "BlockBridge"]
+					], null, null, colorFunction);
+					i(ZP.Block, Bw[colorName + "BlockBridgeCorner"], [
+						["Blocks", "BlockBridgeCorner"]
+					], null, null, colorFunction);
+					i(ZP.Block, Bw[colorName + "BlockBridgeIntersectionT"], [
+						["Blocks", "BlockBridgeIntersectionT"]
+					], null, null, colorFunction);
+					i(ZP.Block, Bw[colorName + "BlockBridgeIntersectionCross"], [
+						["Blocks", "BlockBridgeIntersectionCross"]
+					], null, null, colorFunction);
+				}
+
+
+				// end color code
+
 				i(ZP.WallTrack, Bw.WallTrackTop, [
 					["WallTrack", "WallTrackTop"]
 				], [
