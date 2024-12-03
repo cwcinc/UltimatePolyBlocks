@@ -20895,7 +20895,7 @@ const ERRORFUNC = (message) => {
 			}));
 
 			const moddedTrackText = document.createElement("h2");
-			moddedTrackText.textContent = "Modded tracks";
+			moddedTrackText.textContent = "Modded campaign";
 			Tx(this, bx, "f").appendChild(moddedTrackText);
 			Tx(this, fx, "f").forEachModded(((e, t, n, i) => {
 				Tx(this, lx, "m", Ex).call(this, n, t, e, i)
@@ -24004,6 +24004,8 @@ const ERRORFUNC = (message) => {
 				}));
 
 				Promise.all([	// important - add new modded tracks to this array
+					XP(this, zP, "m", GP).call(this, "ultimateMod/tracks/F1.track", e),
+					XP(this, zP, "m", GP).call(this, "ultimateMod/tracks/F2.track", e),
 					XP(this, zP, "m", GP).call(this, "ultimateMod/tracks/jumpstart.track", e)
 				]).then((e => {
 					qP(this, ModdedTracksSet, e, "f")
