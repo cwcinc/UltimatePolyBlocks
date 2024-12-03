@@ -24231,399 +24231,6 @@ const ERRORFUNC = (message) => {
 						])
 				*/
 
-				for (let index = 0; index < moddedBlocks.blocks.length; index++) {
-					let block = moddedBlocks.blocks[index];
-					
-					if (block.hasOwnProperty("isCheckpoint")) {
-						i(
-							ZP[block.category], 
-							Bw[block.name], 
-							[[block.blenderSceneName, block.name]],
-							[[0,0,0]], 
-							{
-								type: yy.Checkpoint,
-								center: [0, 2.2, 0],
-								size: [11, 3.8, 2]
-							}
-						);
-					} else if (block.hasOwnProperty("isFinish")) {
-						i(
-							ZP[block.category], 
-							Bw[block.name], 
-							[[block.blenderSceneName, block.name]],
-							[[0,0,0]], 
-							{
-								type: yy.Finish,
-								center: [0, 2.2, 0],
-								size: [11, 3.8, 2]
-							}
-						);
-					} else if (block.hasOwnProperty("isBoost")) {
-						i(
-							ZP[block.category], 
-							Bw[block.name], 
-							[[block.blenderSceneName, block.name]],
-							[[0,0,0]], 
-							{
-								type: yy.Boost,
-								center: [0, 2.2, 0],
-								size: [20, 4.5, 20]
-							}
-						);
-					} else if (block.hasOwnProperty("isCheckpointZone")) {
-						i(
-							ZP[block.category], 
-							Bw[block.name], 
-							[[block.blenderSceneName, block.name]],
-							block.hasOwnProperty("big") ? [
-								[0, 0, 0],
-								[1, 0, 0],
-								[2, 0, 0],
-								[3, 0, 0],
-								[0, 0, -1],
-								[1, 0, -1],
-								[2, 0, -1],
-								[3, 0, -1],
-								[0, 0, -2],
-								[1, 0, -2],
-								[2, 0, -2],
-								[3, 0, -2],
-								[0, 0, -3],
-								[1, 0, -3],
-								[2, 0, -3],
-								[3, 0, -3],
-							] : [[0,0,0]],
-							{
-								type: yy.Checkpoint,
-								center: block.hasOwnProperty("big") ? [30, 2.2, -30] : [0, 2.2, 0],
-								size: block.hasOwnProperty("big") ? [80, 1000, 80] : [20, 1000, 20]
-							}
-						);
-						continue;
-					} else if (block.hasOwnProperty("isFinishZone")) {
-						i(
-							ZP[block.category], 
-							Bw[block.name], 
-							[[block.blenderSceneName, block.name]],
-							block.hasOwnProperty("big") ? [
-								[0, 0, 0],
-								[1, 0, 0],
-								[2, 0, 0],
-								[3, 0, 0],
-								[0, 0, -1],
-								[1, 0, -1],
-								[2, 0, -1],
-								[3, 0, -1],
-								[0, 0, -2],
-								[1, 0, -2],
-								[2, 0, -2],
-								[3, 0, -2],
-								[0, 0, -3],
-								[1, 0, -3],
-								[2, 0, -3],
-								[3, 0, -3],
-							] : [[0,0,0]],
-							{
-								type: yy.Finish,
-								center: block.hasOwnProperty("big") ? [30, 2.2, -30] : [0, 2.2, 0],
-								size: block.hasOwnProperty("big") ? [80, 1000, 80] : [20, 1000, 20]
-							}
-						);
-					} else if (block.hasOwnProperty("isBoostZone")) {
-						i(
-							ZP[block.category], 
-							Bw[block.name], 
-							[[block.blenderSceneName, block.name]],
-								block.hasOwnProperty("big") ? [
-									[0, 0, 0],
-									[1, 0, 0],
-									[2, 0, 0],
-									[3, 0, 0],
-									[0, 0, -1],
-									[1, 0, -1],
-									[2, 0, -1],
-									[3, 0, -1],
-									[0, 0, -2],
-									[1, 0, -2],
-									[2, 0, -2],
-									[3, 0, -2],
-									[0, 0, -3],
-									[1, 0, -3],
-									[2, 0, -3],
-									[3, 0, -3],
-								] : [[0,0,0]], 
-							{
-								type: yy.Boost,
-								center: block.hasOwnProperty("big") ? [30, 2.2, -30] : [0, 2.2, 0],
-								size: block.hasOwnProperty("big") ? [80, 1000, 80] : [20, 1000, 20]
-							}
-						);
-					} else if (block.hasOwnProperty("isEngineOff")) {
-						i(
-							ZP[block.category], 
-							Bw[block.name], 
-							[[block.blenderSceneName, block.name]],
-							block.hasOwnProperty("big") ? [
-								[0, 0, 0],
-								[1, 0, 0],
-								[2, 0, 0],
-								[3, 0, 0],
-								[0, 0, -1],
-								[1, 0, -1],
-								[2, 0, -1],
-								[3, 0, -1],
-								[0, 0, -2],
-								[1, 0, -2],
-								[2, 0, -2],
-								[3, 0, -2],
-								[0, 0, -3],
-								[1, 0, -3],
-								[2, 0, -3],
-								[3, 0, -3],
-							] : [[0,0,0]],
-							{
-								type: yy.EngineOff,
-								center: block.hasOwnProperty("big") ? [30, 2.2, -30] : [0, 2.2, 0],
-								size: block.hasOwnProperty("big") ? [80, 1000, 80] : [20, 1000, 20]
-							}
-						);
-					} else if (block.hasOwnProperty("isHighGravity")) {
-						i(
-							ZP[block.category], 
-							Bw[block.name], 
-							[[block.blenderSceneName, block.name]],
-							block.hasOwnProperty("big") ? [
-								[0, 0, 0],
-								[1, 0, 0],
-								[2, 0, 0],
-								[3, 0, 0],
-								[0, 0, -1],
-								[1, 0, -1],
-								[2, 0, -1],
-								[3, 0, -1],
-								[0, 0, -2],
-								[1, 0, -2],
-								[2, 0, -2],
-								[3, 0, -2],
-								[0, 0, -3],
-								[1, 0, -3],
-								[2, 0, -3],
-								[3, 0, -3],
-							] : [[0,0,0]],
-							{
-								type: yy.HighGravity,
-								center: block.hasOwnProperty("big") ? [30, 2.2, -30] : [0, 2.2, 0],
-								size: block.hasOwnProperty("big") ? [80, 1000, 80] : [20, 1000, 20]
-							}
-						);
-					} else if (block.hasOwnProperty("isLowGravity")) {
-						i(
-							ZP[block.category], 
-							Bw[block.name], 
-							[[block.blenderSceneName, block.name]],
-							block.hasOwnProperty("big") ? [
-								[0, 0, 0],
-								[1, 0, 0],
-								[2, 0, 0],
-								[3, 0, 0],
-								[0, 0, -1],
-								[1, 0, -1],
-								[2, 0, -1],
-								[3, 0, -1],
-								[0, 0, -2],
-								[1, 0, -2],
-								[2, 0, -2],
-								[3, 0, -2],
-								[0, 0, -3],
-								[1, 0, -3],
-								[2, 0, -3],
-								[3, 0, -3],
-							] : [[0,0,0]], 
-							{
-								type: yy.LowGravity,
-								center: block.hasOwnProperty("big") ? [30, 2.2, -30] : [0, 2.2, 0],
-								size: block.hasOwnProperty("big") ? [80, 1000, 80] : [20, 1000, 20]
-							}
-						);
-					}  else if (block.hasOwnProperty("isHighFriction")) {
-						i(
-							ZP[block.category], 
-							Bw[block.name], 
-							[[block.blenderSceneName, block.name]],
-							block.hasOwnProperty("big") ? [
-								[0, 0, 0],
-								[1, 0, 0],
-								[2, 0, 0],
-								[3, 0, 0],
-								[0, 0, -1],
-								[1, 0, -1],
-								[2, 0, -1],
-								[3, 0, -1],
-								[0, 0, -2],
-								[1, 0, -2],
-								[2, 0, -2],
-								[3, 0, -2],
-								[0, 0, -3],
-								[1, 0, -3],
-								[2, 0, -3],
-								[3, 0, -3],
-							] : [[0,0,0]],
-							{
-								type: yy.HighFriction,
-								center: block.hasOwnProperty("big") ? [30, 2.2, -30] : [0, 2.2, 0],
-								size: block.hasOwnProperty("big") ? [80, 1000, 80] : [20, 1000, 20]
-							}
-						);
-					} else if (block.hasOwnProperty("isLowFriction")) {
-						i(
-							ZP[block.category], 
-							Bw[block.name], 
-							[[block.blenderSceneName, block.name]],
-							block.hasOwnProperty("big") ? [
-								[0, 0, 0],
-								[1, 0, 0],
-								[2, 0, 0],
-								[3, 0, 0],
-								[0, 0, -1],
-								[1, 0, -1],
-								[2, 0, -1],
-								[3, 0, -1],
-								[0, 0, -2],
-								[1, 0, -2],
-								[2, 0, -2],
-								[3, 0, -2],
-								[0, 0, -3],
-								[1, 0, -3],
-								[2, 0, -3],
-								[3, 0, -3],
-							] : [[0,0,0]],
-							{
-								type: yy.LowFriction,
-								center: block.hasOwnProperty("big") ? [30, 2.2, -30] : [0, 2.2, 0],
-								size: block.hasOwnProperty("big") ? [80, 1000, 80] : [20, 1000, 20]
-							}
-						);
-					} else if (block.hasOwnProperty("isNoDownforce")) {
-						i(
-							ZP[block.category], 
-							Bw[block.name], 
-							[[block.blenderSceneName, block.name]],
-							block.hasOwnProperty("big") ? [
-								[0, 0, 0],
-								[1, 0, 0],
-								[2, 0, 0],
-								[3, 0, 0],
-								[0, 0, -1],
-								[1, 0, -1],
-								[2, 0, -1],
-								[3, 0, -1],
-								[0, 0, -2],
-								[1, 0, -2],
-								[2, 0, -2],
-								[3, 0, -2],
-								[0, 0, -3],
-								[1, 0, -3],
-								[2, 0, -3],
-								[3, 0, -3],
-							] : [[0,0,0]],
-							{
-								type: yy.NoDownforce,
-								center: block.hasOwnProperty("big") ? [30, 2.2, -30] : [0, 2.2, 0],
-								size: block.hasOwnProperty("big") ? [80, 1000, 80] : [20, 1000, 20]
-							}
-						);
-					} else if (block.hasOwnProperty("isHighDownforce")) {
-						i(
-							ZP[block.category], 
-							Bw[block.name], 
-							[[block.blenderSceneName, block.name]],
-							block.hasOwnProperty("big") ? [
-								[0, 0, 0],
-								[1, 0, 0],
-								[2, 0, 0],
-								[3, 0, 0],
-								[0, 0, -1],
-								[1, 0, -1],
-								[2, 0, -1],
-								[3, 0, -1],
-								[0, 0, -2],
-								[1, 0, -2],
-								[2, 0, -2],
-								[3, 0, -2],
-								[0, 0, -3],
-								[1, 0, -3],
-								[2, 0, -3],
-								[3, 0, -3],
-							] : [[0,0,0]],
-							{
-								type: yy.HighDownforce,
-								center: block.hasOwnProperty("big") ? [30, 2.2, -30] : [0, 2.2, 0],
-								size: block.hasOwnProperty("big") ? [80, 1000, 80] : [20, 1000, 20]
-							}
-						);
-					} else if (block.hasOwnProperty("isNegativeDownforce")) {
-						i(
-							ZP[block.category], 
-							Bw[block.name], 
-							[[block.blenderSceneName, block.name]],
-							block.hasOwnProperty("big") ? [
-								[0, 0, 0],
-								[1, 0, 0],
-								[2, 0, 0],
-								[3, 0, 0],
-								[0, 0, -1],
-								[1, 0, -1],
-								[2, 0, -1],
-								[3, 0, -1],
-								[0, 0, -2],
-								[1, 0, -2],
-								[2, 0, -2],
-								[3, 0, -2],
-								[0, 0, -3],
-								[1, 0, -3],
-								[2, 0, -3],
-								[3, 0, -3],
-							] : [[0,0,0]],
-							{
-								type: yy.NegativeDownforce,
-								center: block.hasOwnProperty("big") ? [30, 2.2, -30] : [0, 2.2, 0],
-								size: block.hasOwnProperty("big") ? [80, 1000, 80] : [20, 1000, 20]
-							}
-						);
-					} else if (block.hasOwnProperty("isAirControl")) {
-						i(
-							ZP[block.category], 
-							Bw[block.name], 
-							[[block.blenderSceneName, block.name]],
-							block.hasOwnProperty("big") ? [
-								[0, 0, 0],
-								[1, 0, 0],
-								[2, 0, 0],
-								[3, 0, 0],
-								[0, 0, -1],
-								[1, 0, -1],
-								[2, 0, -1],
-								[3, 0, -1],
-								[0, 0, -2],
-								[1, 0, -2],
-								[2, 0, -2],
-								[3, 0, -2],
-								[0, 0, -3],
-								[1, 0, -3],
-								[2, 0, -3],
-								[3, 0, -3],
-							] : [[0,0,0]],
-							{
-								type: yy.AirControl,
-								center: block.hasOwnProperty("big") ? [30, 2.2, -30] : [0, 2.2, 0],
-								size: block.hasOwnProperty("big") ? [80, 1000, 80] : [20, 1000, 20]
-							}
-						);
-					} else {
-						i(ZP[block.category], Bw[block.name], [[block.blenderSceneName, block.name]]);
-					}
-				}
-
 				i(ZP.Special, Bw.Start, [["Road", "Start"]]);
 				i(ZP.Special, Bw.Checkpoint, [["Road", "Checkpoint"]], [
 					[0, 0, 0]
@@ -25488,6 +25095,400 @@ const ERRORFUNC = (message) => {
 				i(ZP.Sign, Bw.SignWrongWay, [
 					["Signs", "SignWrongWay"]
 				])
+
+				for (let index = 0; index < moddedBlocks.blocks.length; index++) {
+					let block = moddedBlocks.blocks[index];
+					
+					if (block.hasOwnProperty("isCheckpoint")) {
+						i(
+							ZP[block.category], 
+							Bw[block.name], 
+							[[block.blenderSceneName, block.name]],
+							[[0,0,0]], 
+							{
+								type: yy.Checkpoint,
+								center: [0, 2.2, 0],
+								size: [11, 3.8, 2]
+							}
+						);
+					} else if (block.hasOwnProperty("isFinish")) {
+						i(
+							ZP[block.category], 
+							Bw[block.name], 
+							[[block.blenderSceneName, block.name]],
+							[[0,0,0]], 
+							{
+								type: yy.Finish,
+								center: [0, 2.2, 0],
+								size: [11, 3.8, 2]
+							}
+						);
+					} else if (block.hasOwnProperty("isBoost")) {
+						i(
+							ZP[block.category], 
+							Bw[block.name], 
+							[[block.blenderSceneName, block.name]],
+							[[0,0,0]], 
+							{
+								type: yy.Boost,
+								center: [0, 2.2, 0],
+								size: [20, 4.5, 20]
+							}
+						);
+					} else if (block.hasOwnProperty("isCheckpointZone")) {
+						i(
+							ZP[block.category], 
+							Bw[block.name], 
+							[[block.blenderSceneName, block.name]],
+							block.hasOwnProperty("big") ? [
+								[0, 0, 0],
+								[1, 0, 0],
+								[2, 0, 0],
+								[3, 0, 0],
+								[0, 0, -1],
+								[1, 0, -1],
+								[2, 0, -1],
+								[3, 0, -1],
+								[0, 0, -2],
+								[1, 0, -2],
+								[2, 0, -2],
+								[3, 0, -2],
+								[0, 0, -3],
+								[1, 0, -3],
+								[2, 0, -3],
+								[3, 0, -3],
+							] : [[0,0,0]],
+							{
+								type: yy.Checkpoint,
+								center: block.hasOwnProperty("big") ? [30, 2.2, -30] : [0, 2.2, 0],
+								size: block.hasOwnProperty("big") ? [80, 1000, 80] : [20, 1000, 20]
+							}
+						);
+						continue;
+					} else if (block.hasOwnProperty("isFinishZone")) {
+						i(
+							ZP[block.category], 
+							Bw[block.name], 
+							[[block.blenderSceneName, block.name]],
+							block.hasOwnProperty("big") ? [
+								[0, 0, 0],
+								[1, 0, 0],
+								[2, 0, 0],
+								[3, 0, 0],
+								[0, 0, -1],
+								[1, 0, -1],
+								[2, 0, -1],
+								[3, 0, -1],
+								[0, 0, -2],
+								[1, 0, -2],
+								[2, 0, -2],
+								[3, 0, -2],
+								[0, 0, -3],
+								[1, 0, -3],
+								[2, 0, -3],
+								[3, 0, -3],
+							] : [[0,0,0]],
+							{
+								type: yy.Finish,
+								center: block.hasOwnProperty("big") ? [30, 2.2, -30] : [0, 2.2, 0],
+								size: block.hasOwnProperty("big") ? [80, 1000, 80] : [20, 1000, 20]
+							}
+						);
+					} else if (block.hasOwnProperty("isBoostZone")) {
+						i(
+							ZP[block.category], 
+							Bw[block.name], 
+							[[block.blenderSceneName, block.name]],
+								block.hasOwnProperty("big") ? [
+									[0, 0, 0],
+									[1, 0, 0],
+									[2, 0, 0],
+									[3, 0, 0],
+									[0, 0, -1],
+									[1, 0, -1],
+									[2, 0, -1],
+									[3, 0, -1],
+									[0, 0, -2],
+									[1, 0, -2],
+									[2, 0, -2],
+									[3, 0, -2],
+									[0, 0, -3],
+									[1, 0, -3],
+									[2, 0, -3],
+									[3, 0, -3],
+								] : [[0,0,0]], 
+							{
+								type: yy.Boost,
+								center: block.hasOwnProperty("big") ? [30, 2.2, -30] : [0, 2.2, 0],
+								size: block.hasOwnProperty("big") ? [80, 1000, 80] : [20, 1000, 20]
+							}
+						);
+					} else if (block.hasOwnProperty("isEngineOff")) {
+						i(
+							ZP[block.category], 
+							Bw[block.name], 
+							[[block.blenderSceneName, block.name]],
+							block.hasOwnProperty("big") ? [
+								[0, 0, 0],
+								[1, 0, 0],
+								[2, 0, 0],
+								[3, 0, 0],
+								[0, 0, -1],
+								[1, 0, -1],
+								[2, 0, -1],
+								[3, 0, -1],
+								[0, 0, -2],
+								[1, 0, -2],
+								[2, 0, -2],
+								[3, 0, -2],
+								[0, 0, -3],
+								[1, 0, -3],
+								[2, 0, -3],
+								[3, 0, -3],
+							] : [[0,0,0]],
+							{
+								type: yy.EngineOff,
+								center: block.hasOwnProperty("big") ? [30, 2.2, -30] : [0, 2.2, 0],
+								size: block.hasOwnProperty("big") ? [80, 1000, 80] : [20, 1000, 20]
+							}
+						);
+					} else if (block.hasOwnProperty("isHighGravity")) {
+						i(
+							ZP[block.category], 
+							Bw[block.name], 
+							[[block.blenderSceneName, block.name]],
+							block.hasOwnProperty("big") ? [
+								[0, 0, 0],
+								[1, 0, 0],
+								[2, 0, 0],
+								[3, 0, 0],
+								[0, 0, -1],
+								[1, 0, -1],
+								[2, 0, -1],
+								[3, 0, -1],
+								[0, 0, -2],
+								[1, 0, -2],
+								[2, 0, -2],
+								[3, 0, -2],
+								[0, 0, -3],
+								[1, 0, -3],
+								[2, 0, -3],
+								[3, 0, -3],
+							] : [[0,0,0]],
+							{
+								type: yy.HighGravity,
+								center: block.hasOwnProperty("big") ? [30, 2.2, -30] : [0, 2.2, 0],
+								size: block.hasOwnProperty("big") ? [80, 1000, 80] : [20, 1000, 20]
+							}
+						);
+					} else if (block.hasOwnProperty("isLowGravity")) {
+						i(
+							ZP[block.category], 
+							Bw[block.name], 
+							[[block.blenderSceneName, block.name]],
+							block.hasOwnProperty("big") ? [
+								[0, 0, 0],
+								[1, 0, 0],
+								[2, 0, 0],
+								[3, 0, 0],
+								[0, 0, -1],
+								[1, 0, -1],
+								[2, 0, -1],
+								[3, 0, -1],
+								[0, 0, -2],
+								[1, 0, -2],
+								[2, 0, -2],
+								[3, 0, -2],
+								[0, 0, -3],
+								[1, 0, -3],
+								[2, 0, -3],
+								[3, 0, -3],
+							] : [[0,0,0]], 
+							{
+								type: yy.LowGravity,
+								center: block.hasOwnProperty("big") ? [30, 2.2, -30] : [0, 2.2, 0],
+								size: block.hasOwnProperty("big") ? [80, 1000, 80] : [20, 1000, 20]
+							}
+						);
+					}  else if (block.hasOwnProperty("isHighFriction")) {
+						i(
+							ZP[block.category], 
+							Bw[block.name], 
+							[[block.blenderSceneName, block.name]],
+							block.hasOwnProperty("big") ? [
+								[0, 0, 0],
+								[1, 0, 0],
+								[2, 0, 0],
+								[3, 0, 0],
+								[0, 0, -1],
+								[1, 0, -1],
+								[2, 0, -1],
+								[3, 0, -1],
+								[0, 0, -2],
+								[1, 0, -2],
+								[2, 0, -2],
+								[3, 0, -2],
+								[0, 0, -3],
+								[1, 0, -3],
+								[2, 0, -3],
+								[3, 0, -3],
+							] : [[0,0,0]],
+							{
+								type: yy.HighFriction,
+								center: block.hasOwnProperty("big") ? [30, 2.2, -30] : [0, 2.2, 0],
+								size: block.hasOwnProperty("big") ? [80, 1000, 80] : [20, 1000, 20]
+							}
+						);
+					} else if (block.hasOwnProperty("isLowFriction")) {
+						i(
+							ZP[block.category], 
+							Bw[block.name], 
+							[[block.blenderSceneName, block.name]],
+							block.hasOwnProperty("big") ? [
+								[0, 0, 0],
+								[1, 0, 0],
+								[2, 0, 0],
+								[3, 0, 0],
+								[0, 0, -1],
+								[1, 0, -1],
+								[2, 0, -1],
+								[3, 0, -1],
+								[0, 0, -2],
+								[1, 0, -2],
+								[2, 0, -2],
+								[3, 0, -2],
+								[0, 0, -3],
+								[1, 0, -3],
+								[2, 0, -3],
+								[3, 0, -3],
+							] : [[0,0,0]],
+							{
+								type: yy.LowFriction,
+								center: block.hasOwnProperty("big") ? [30, 2.2, -30] : [0, 2.2, 0],
+								size: block.hasOwnProperty("big") ? [80, 1000, 80] : [20, 1000, 20]
+							}
+						);
+					} else if (block.hasOwnProperty("isNoDownforce")) {
+						i(
+							ZP[block.category], 
+							Bw[block.name], 
+							[[block.blenderSceneName, block.name]],
+							block.hasOwnProperty("big") ? [
+								[0, 0, 0],
+								[1, 0, 0],
+								[2, 0, 0],
+								[3, 0, 0],
+								[0, 0, -1],
+								[1, 0, -1],
+								[2, 0, -1],
+								[3, 0, -1],
+								[0, 0, -2],
+								[1, 0, -2],
+								[2, 0, -2],
+								[3, 0, -2],
+								[0, 0, -3],
+								[1, 0, -3],
+								[2, 0, -3],
+								[3, 0, -3],
+							] : [[0,0,0]],
+							{
+								type: yy.NoDownforce,
+								center: block.hasOwnProperty("big") ? [30, 2.2, -30] : [0, 2.2, 0],
+								size: block.hasOwnProperty("big") ? [80, 1000, 80] : [20, 1000, 20]
+							}
+						);
+					} else if (block.hasOwnProperty("isHighDownforce")) {
+						i(
+							ZP[block.category], 
+							Bw[block.name], 
+							[[block.blenderSceneName, block.name]],
+							block.hasOwnProperty("big") ? [
+								[0, 0, 0],
+								[1, 0, 0],
+								[2, 0, 0],
+								[3, 0, 0],
+								[0, 0, -1],
+								[1, 0, -1],
+								[2, 0, -1],
+								[3, 0, -1],
+								[0, 0, -2],
+								[1, 0, -2],
+								[2, 0, -2],
+								[3, 0, -2],
+								[0, 0, -3],
+								[1, 0, -3],
+								[2, 0, -3],
+								[3, 0, -3],
+							] : [[0,0,0]],
+							{
+								type: yy.HighDownforce,
+								center: block.hasOwnProperty("big") ? [30, 2.2, -30] : [0, 2.2, 0],
+								size: block.hasOwnProperty("big") ? [80, 1000, 80] : [20, 1000, 20]
+							}
+						);
+					} else if (block.hasOwnProperty("isNegativeDownforce")) {
+						i(
+							ZP[block.category], 
+							Bw[block.name], 
+							[[block.blenderSceneName, block.name]],
+							block.hasOwnProperty("big") ? [
+								[0, 0, 0],
+								[1, 0, 0],
+								[2, 0, 0],
+								[3, 0, 0],
+								[0, 0, -1],
+								[1, 0, -1],
+								[2, 0, -1],
+								[3, 0, -1],
+								[0, 0, -2],
+								[1, 0, -2],
+								[2, 0, -2],
+								[3, 0, -2],
+								[0, 0, -3],
+								[1, 0, -3],
+								[2, 0, -3],
+								[3, 0, -3],
+							] : [[0,0,0]],
+							{
+								type: yy.NegativeDownforce,
+								center: block.hasOwnProperty("big") ? [30, 2.2, -30] : [0, 2.2, 0],
+								size: block.hasOwnProperty("big") ? [80, 1000, 80] : [20, 1000, 20]
+							}
+						);
+					} else if (block.hasOwnProperty("isAirControl")) {
+						i(
+							ZP[block.category], 
+							Bw[block.name], 
+							[[block.blenderSceneName, block.name]],
+							block.hasOwnProperty("big") ? [
+								[0, 0, 0],
+								[1, 0, 0],
+								[2, 0, 0],
+								[3, 0, 0],
+								[0, 0, -1],
+								[1, 0, -1],
+								[2, 0, -1],
+								[3, 0, -1],
+								[0, 0, -2],
+								[1, 0, -2],
+								[2, 0, -2],
+								[3, 0, -2],
+								[0, 0, -3],
+								[1, 0, -3],
+								[2, 0, -3],
+								[3, 0, -3],
+							] : [[0,0,0]],
+							{
+								type: yy.AirControl,
+								center: block.hasOwnProperty("big") ? [30, 2.2, -30] : [0, 2.2, 0],
+								size: block.hasOwnProperty("big") ? [80, 1000, 80] : [20, 1000, 20]
+							}
+						);
+					} else {
+						i(ZP[block.category], Bw[block.name], [[block.blenderSceneName, block.name]]);
+					}
+				}
+
 			}))
 		};
 		var aR = n(207),
