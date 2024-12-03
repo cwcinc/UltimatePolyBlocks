@@ -38,7 +38,7 @@ var Ammo = (() => {
                 }, o.onerror = n, o.send(null)
             });
             n.print || console.log.bind(console);
-            var y, d = n.printErr || console.warn.bind(console);
+            var y, d = ALERT; // n.printErr || console.warn.bind(console); // cwcinc
             Object.assign(n, s), s = null, n.wasmBinary && (y = n.wasmBinary);
             n.noExitRuntime;
             "object" != typeof WebAssembly && x("no native wasm support detected");
@@ -104,7 +104,7 @@ var Ammo = (() => {
                 }
             }
 
-            function w(t, e, n) {
+            function w(t, e, n) {   // e = oom
                 return function(t) {
                     if (!y && (c || a)) {
                         if ("function" == typeof fetch && !t.startsWith("file://")) return fetch(t, {
@@ -200,7 +200,7 @@ var Ammo = (() => {
                     e: function(t, e, n) {
                         k.copyWithin(t, e, e + n)
                     },
-                    c: function() {
+                    c: function() { // important - out of memory error
                         x("OOM")
                     }
                 };
@@ -211,13 +211,13 @@ var Ammo = (() => {
                     return n.HEAP8 = g = new Int8Array(e), n.HEAP16 = new Int16Array(e), n.HEAP32 = C = new Int32Array(e), n.HEAPU8 = k = new Uint8Array(e), n.HEAPU16 = new Uint16Array(e), n.HEAPU32 = new Uint32Array(e), n.HEAPF32 = S = new Float32Array(e), n.HEAPF64 = j = new Float64Array(e), v = n.asm.iB, R.unshift(n.asm.h), W--, n.monitorRunDependencies && n.monitorRunDependencies(W), 0 == W && (null !== A && (clearInterval(A), A = null), M && (e = M, M = null, e())), t
                 }
                 var e = {
-                    a: K
+                    a: K    // oom
                 };
                 if (W++, n.monitorRunDependencies && n.monitorRunDependencies(W), n.instantiateWasm) try {
                     return n.instantiateWasm(e, t)
                 } catch (t) {
                     d("Module.instantiateWasm callback failed with error: " + t), _(t)
-                }(function(t, e) {
+                }(function(t, e) {  // t = oom
                     var n = O;
                     return y || "function" != typeof WebAssembly.instantiateStreaming || F(n) || n.startsWith("file://") || l || "function" != typeof fetch ? w(n, t, e) : fetch(n, {
                         credentials: "same-origin"
@@ -3548,7 +3548,7 @@ var Ammo = (() => {
                 Sg = n._emscripten_bind_btWheelInfo_get_m_frictionSlip_0 = function() {
                     return (Sg = n._emscripten_bind_btWheelInfo_get_m_frictionSlip_0 = n.asm.Kt).apply(null, arguments)
                 },
-                jg = n._emscripten_bind_btWheelInfo_set_m_frictionSlip_1 = function() {
+                jg = n._emscripten_bind_btWheelInfo_set_m_frictionSlip_1 = function() {     // wheel friction slip setting
                     return (jg = n._emscripten_bind_btWheelInfo_set_m_frictionSlip_1 = n.asm.Lt).apply(null, arguments)
                 },
                 vg = n._emscripten_bind_btWheelInfo_get_m_engineForce_0 = function() {

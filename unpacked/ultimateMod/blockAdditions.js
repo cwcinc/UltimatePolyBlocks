@@ -84,23 +84,18 @@ const moddedBlocks = {
 		"Spooky"
 	],
 	modelPaths: [
-		"ultimateMod/models/minecraft.glb",
 		"ultimateMod/models/customSigns.glb",
 		"ultimateMod/models/statues.glb",
-		"ultimateMod/models/roadSigns.glb",
 		"ultimateMod/models/specialBlocks.glb",
-		"ultimateMod/models/space.glb",
 		"ultimateMod/models/environment.glb",
 		"ultimateMod/models/diagonalRoads.glb",
 		"ultimateMod/models/spookyTrack.glb",
-		"ultimateMod/models/cobblestone.glb",
 		"ultimateMod/models/zones.glb",
 		"ultimateMod/models/polySpiders.glb",
 		"ultimateMod/models/hayBales.glb",
 		"ultimateMod/models/blocksplus.glb",
 		"ultimateMod/models/blockmixingroads.glb",
 		"ultimateMod/models/text.glb",
-		"ultimateMod/models/forty.glb",
 		"ultimateMod/models/borderlessroads.glb"
 	],
     blocks: [

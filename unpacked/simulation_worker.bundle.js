@@ -1,5 +1,9 @@
 var ENGINE = {};
 
+var alert = (message) => {
+	self.postMessage({ type: 'ALERT', data: message });
+}
+
 var setGravity = () => {}
 var gravityState = -9.82;
 
@@ -21,10 +25,6 @@ var setFrictionSlip = (friction) => {
 	setFrictionSlipFuncs["WheelBR"](friction);
 };
 
-var alert = (message) => {
-	self.postMessage({ type: 'ALERT', data: message });
-}
-
 var airControlEnabled = false;
 
 const moddedBlocks = {
@@ -43,23 +43,18 @@ const moddedBlocks = {
 		"Spooky"
 	],
 	modelPaths: [
-		"ultimateMod/models/minecraft.glb",
 		"ultimateMod/models/customSigns.glb",
 		"ultimateMod/models/statues.glb",
-		"ultimateMod/models/roadSigns.glb",
 		"ultimateMod/models/specialBlocks.glb",
-		"ultimateMod/models/space.glb",
 		"ultimateMod/models/environment.glb",
 		"ultimateMod/models/diagonalRoads.glb",
 		"ultimateMod/models/spookyTrack.glb",
-		"ultimateMod/models/cobblestone.glb",
 		"ultimateMod/models/zones.glb",
 		"ultimateMod/models/polySpiders.glb",
 		"ultimateMod/models/hayBales.glb",
 		"ultimateMod/models/blocksplus.glb",
 		"ultimateMod/models/blockmixingroads.glb",
 		"ultimateMod/models/text.glb",
-		"ultimateMod/models/forty.glb",
 		"ultimateMod/models/borderlessroads.glb"
 	],
     blocks: [
@@ -452,6 +447,7 @@ const moddedBlocks = {
 		// next id: 543
 	]
 };
+
 
 
 (() => {
@@ -7674,9 +7670,9 @@ const moddedBlocks = {
 				Go(this, Po, "f").setGravity(t);
 				Ammo.destroy(t);
 				setGravity = (grav) => {
-					/*if (grav == gravityState) {	// breaks determinism
+					if (grav == gravityState) {	// breaks determinism
 						return;
-					}*/
+					}
 					gravityState = grav;
 					const gVec = new Ammo.btVector3(0, grav, 0);
 					Go(this, Po, "f").setGravity(gVec);
@@ -8433,6 +8429,7 @@ const moddedBlocks = {
 					i.set_m_frictionSlip(3);
 
 					frictionState = 3;
+					gravityState = -9.82;
 
 					setFrictionSlipFuncs[t] = (friction) => {
 						i.set_m_frictionSlip(friction);		// IMPORTANT - causes game crashes sometimes
