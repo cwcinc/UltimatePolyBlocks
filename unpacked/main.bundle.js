@@ -24063,6 +24063,8 @@ const ERRORFUNC = (message) => {
 				Promise.all([	// important - add new modded tracks to this array
 					XP(this, zP, "m", GP).call(this, "ultimateMod/tracks/F1.track", e),
 					XP(this, zP, "m", GP).call(this, "ultimateMod/tracks/F2.track", e),
+					XP(this, zP, "m", GP).call(this, "ultimateMod/tracks/F3.track", e),
+					XP(this, zP, "m", GP).call(this, "ultimateMod/tracks/F4.track", e),
 					XP(this, zP, "m", GP).call(this, "ultimateMod/tracks/jumpstart.track", e)
 				]).then((e => {
 					qP(this, ModdedTracksSet, e, "f")
