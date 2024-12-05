@@ -357,13 +357,36 @@ const moddedBlocks = {
 		{name: "B91", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 513},
 		{name: "B92", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 514},
 		{name: "B93", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 515},
-		/*{name: "B94", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 516},
-		{name: "B95", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 517},
-		{name: "B96", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 518},
-		{name: "B97", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 519},
-		{name: "B98", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 520},
-		{name: "B99", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 521},
-		{name: "B100", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 522},*/
+		{name: "B94", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 543},
+		{name: "B95", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 544},
+		{name: "B96", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 545},
+		{name: "B97", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 546},
+		{name: "B98", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 547},
+		{name: "B99", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 548},
+		{name: "B100", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 549},
+		{name: "B101", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 550},
+		{name: "B102", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 551},
+		{name: "B103", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 552},
+		{name: "B104", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 553},
+		{name: "B105", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 554},
+		{name: "B106", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 555},
+		{name: "B107", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 556},
+		{name: "B108", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 557},
+		{name: "B109", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 558},
+		{name: "B110", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 559},
+		{name: "B111", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 560},
+		{name: "B112", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 561},
+		{name: "B113", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 562},
+		{name: "B114", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 563},
+		{name: "B115", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 564},
+		{name: "B116", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 565},
+		{name: "B117", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 566},
+		{name: "B118", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 567},
+		{name: "B119", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 568},
+		{name: "B120", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 569},
+		{name: "B121", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 570},
+		{name: "B122", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 571},
+		{name: "B123", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 572},
 		
 		{name: "LA", category: "Text", blenderSceneName: "Text", id: 319, isAirControl: true},
 		{name: "LB", category: "Text", blenderSceneName: "Text", id: 320, isAirControl: true, big: true},
@@ -506,7 +529,7 @@ const moddedBlocks = {
 		{name: "TurnSFork", category: "Road", blenderSceneName: "BorderlessRoads", id: 482},
 
 
-		// next id: 543
+		// next id: 573
 	]
 };
 
