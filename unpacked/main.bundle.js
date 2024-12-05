@@ -20930,6 +20930,13 @@ const ERRORFUNC = (message) => {
 				Tx(this, lx, "m", Ex).call(this, n, t, e, i)
 			}));
 
+			const totwText = document.createElement("h2");
+			totwText.textContent = "TOTW";
+			Tx(this, bx, "f").appendChild(totwText);
+			Tx(this, fx, "f").forEachTotw(((e, t, n, i) => {
+				Tx(this, lx, "m", Ex).call(this, n, t, e, i)
+			}));
+
 			const moddedTrackText = document.createElement("h2");
 			moddedTrackText.textContent = "Modded campaign";
 			Tx(this, bx, "f").appendChild(moddedTrackText);
@@ -20943,11 +20950,18 @@ const ERRORFUNC = (message) => {
 				Tx(this, bx, "f").appendChild(e);
 				Tx(this, fx, "f").forEachCustom(((e, t, n, i) => {
 					Tx(this, lx, "m", Ex).call(this, n, t, e, i, (() => {
-						this.hide(), Tx(this, gx, "f").showConfirm(Tx(this, hx, "f").get('Are you sure you want to delete "{0}"?', [t]), Tx(this, hx, "f").get("Cancel"), Tx(this, hx, "f").get("Delete"), (() => {
-							this.show()
-						}), (() => {
-							Tx(this, px, "f").deleteTrack(t), this.show()
-						}))
+							this.hide();
+							Tx(this, gx, "f").showConfirm(
+								Tx(this, hx, "f").get('Are you sure you want to delete "{0}"?', [t]),
+								Tx(this, hx, "f").get("Cancel"), 
+								Tx(this, hx, "f").get("Delete"), 
+								(() => {
+									this.show()
+								}), 
+								(() => {
+									Tx(this, px, "f").deleteTrack(t);
+									this.show();
+							}))
 					}))
 				}))
 			}
@@ -23957,7 +23971,7 @@ const ERRORFUNC = (message) => {
 				return BP(this, PP, "f").loadRecord(e, t)
 			}
 		};
-		var zP, FP, ModdedTracksSet, WP, HP, VP, GP, jP, qP = function(e, t, n, i, r) {
+		var zP, FP, ModdedTracksSet, totw, WP, HP, VP, GP, jP, qP = function(e, t, n, i, r) {
 				if ("m" === i) throw new TypeError("Private method is not writable");
 				if ("a" === i && !r) throw new TypeError("Private accessor was defined without a setter");
 				if ("function" == typeof t ? e !== t || !r : !t.has(e)) throw new TypeError("Cannot write private member to an object whose class did not declare it");
@@ -23968,7 +23982,7 @@ const ERRORFUNC = (message) => {
 				if ("function" == typeof t ? e !== t || !i : !t.has(e)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
 				return "m" === n ? i : "a" === n ? i.call(e) : i ? i.value : t.get(e)
 			};
-		FP = new WeakMap, ModdedTracksSet = new WeakMap, WP = new WeakMap, HP = new WeakMap, VP = new WeakMap, zP = new WeakSet, GP = function(e, t) {
+		FP = new WeakMap, ModdedTracksSet = new WeakMap, totw = new WeakMap, WP = new WeakMap, HP = new WeakMap, VP = new WeakMap, zP = new WeakSet, GP = function(e, t) {
 			return t.addResource(), new Promise((n => {
 				const i = new XMLHttpRequest;
 				i.overrideMimeType("text/plain"), i.onreadystatechange = () => {
@@ -24016,6 +24030,7 @@ const ERRORFUNC = (message) => {
 				zP.add(this);
 				FP.set(this, []);
 				ModdedTracksSet.set(this, []);
+				totw.set(this, []);
 				WP.set(this, []);
 				HP.set(this, void 0);
 				VP.set(this, void 0);
@@ -24039,6 +24054,12 @@ const ERRORFUNC = (message) => {
 					qP(this, FP, e, "f")
 				}));
 
+				Promise.all([	// TOTW
+					XP(this, zP, "m", GP).call(this, "https://raw.githubusercontent.com/cwcinc/polytrackEvents/refs/heads/main/TOTW.txt", e)
+				]).then((e => {
+					qP(this, totw, e, "f")
+				}));
+
 				Promise.all([	// important - add new modded tracks to this array
 					XP(this, zP, "m", GP).call(this, "ultimateMod/tracks/F1.track", e),
 					XP(this, zP, "m", GP).call(this, "ultimateMod/tracks/F2.track", e),
@@ -24057,7 +24078,7 @@ const ERRORFUNC = (message) => {
 				return 0 == XP(this, WP, "f").length
 			}
 			forEach(e) {
-				this.forEachStandard(e), this.forEachModded(e), this.forEachCustom(e)
+				this.forEachStandard(e), this.forEachModded(e), this.forEachTotw(e), this.forEachCustom(e)
 			}
 			forEachStandard(e) {
 				XP(this, FP, "f").forEach((t => {
@@ -24066,6 +24087,11 @@ const ERRORFUNC = (message) => {
 			}
 			forEachModded(e) {
 				XP(this, ModdedTracksSet, "f").forEach((t => {
+					e(t.id, t.name, t.trackData, t.thumbnail)
+				}))
+			}
+			forEachTotw(e) {
+				XP(this, totw, "f").forEach((t => {
 					e(t.id, t.name, t.trackData, t.thumbnail)
 				}))
 			}
