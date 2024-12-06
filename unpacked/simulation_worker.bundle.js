@@ -8474,6 +8474,7 @@ const moddedBlocks = {
 
 					frictionState = 3;
 					gravityState = -9.82;
+					downforceState = 0.05;
 
 					setFrictionSlipFuncs[t] = (friction) => {
 						i.set_m_frictionSlip(friction);		// IMPORTANT - causes game crashes sometimes
