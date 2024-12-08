@@ -3,6 +3,8 @@ const ERRORFUNC = (message) => {
 	msgBox.innerHTML += "<br>" + message;
 }
 
+window.SHOWGHOST = true;
+
 (() => {
 	var e = {
 			811: (e, t, n) => {
@@ -20714,7 +20716,7 @@ const ERRORFUNC = (message) => {
 		};
 		var Rb;
 		! function(e) {
-			e[e.VehicleAccelerate = 0] = "VehicleAccelerate", e[e.VehicleTurnRight = 1] = "VehicleTurnRight", e[e.VehicleBrake = 2] = "VehicleBrake", e[e.VehicleTurnLeft = 3] = "VehicleTurnLeft", e[e.VehicleReset = 4] = "VehicleReset", e[e.VehicleCockpitCamera = 5] = "VehicleCockpitCamera", e[e.ToggleUI = 6] = "ToggleUI", e[e.EditorRotate = 7] = "EditorRotate", e[e.EditorHeightModifier = 8] = "EditorHeightModifier", e[e.EditorDelete = 9] = "EditorDelete", e[e.EditorMoveForwards = 10] = "EditorMoveForwards", e[e.EditorMoveRight = 11] = "EditorMoveRight", e[e.EditorMoveBackwards = 12] = "EditorMoveBackwards", e[e.EditorMoveLeft = 13] = "EditorMoveLeft", e[e.EditorRotateLeft = 14] = "EditorRotateLeft", e[e.EditorRotateRight = 15] = "EditorRotateRight", e[e.EditorMoveDown = 16] = "EditorMoveDown", e[e.EditorMoveUp = 17] = "EditorMoveUp", e[e.EditorTest = 18] = "EditorTest", e[e.EditorPick = 19] = "EditorPick", e[e.ToggleFpsCounter = 20] = "ToggleFpsCounter", e[e.ToggleSpectatorCamera = 21] = "ToggleSpectatorCamera", e[e.SpectatorMoveForwards = 22] = "SpectatorMoveForwards", e[e.SpectatorMoveRight = 23] = "SpectatorMoveRight", e[e.SpectatorMoveBackwards = 24] = "SpectatorMoveBackwards", e[e.SpectatorMoveLeft = 25] = "SpectatorMoveLeft", e[e.SpectatorSpeedModifier = 26] = "SpectatorSpeedModifier"
+			e[e.VehicleAccelerate = 0] = "VehicleAccelerate", e[e.VehicleTurnRight = 1] = "VehicleTurnRight", e[e.VehicleBrake = 2] = "VehicleBrake", e[e.VehicleTurnLeft = 3] = "VehicleTurnLeft", e[e.VehicleReset = 4] = "VehicleReset", e[e.ToggleGhost = 27] = "ToggleGhost", e[e.VehicleCockpitCamera = 5] = "VehicleCockpitCamera", e[e.ToggleUI = 6] = "ToggleUI", e[e.EditorRotate = 7] = "EditorRotate", e[e.EditorHeightModifier = 8] = "EditorHeightModifier", e[e.EditorDelete = 9] = "EditorDelete", e[e.EditorMoveForwards = 10] = "EditorMoveForwards", e[e.EditorMoveRight = 11] = "EditorMoveRight", e[e.EditorMoveBackwards = 12] = "EditorMoveBackwards", e[e.EditorMoveLeft = 13] = "EditorMoveLeft", e[e.EditorRotateLeft = 14] = "EditorRotateLeft", e[e.EditorRotateRight = 15] = "EditorRotateRight", e[e.EditorMoveDown = 16] = "EditorMoveDown", e[e.EditorMoveUp = 17] = "EditorMoveUp", e[e.EditorTest = 18] = "EditorTest", e[e.EditorPick = 19] = "EditorPick", e[e.ToggleFpsCounter = 20] = "ToggleFpsCounter", e[e.ToggleSpectatorCamera = 21] = "ToggleSpectatorCamera", e[e.SpectatorMoveForwards = 22] = "SpectatorMoveForwards", e[e.SpectatorMoveRight = 23] = "SpectatorMoveRight", e[e.SpectatorMoveBackwards = 24] = "SpectatorMoveBackwards", e[e.SpectatorMoveLeft = 25] = "SpectatorMoveLeft", e[e.SpectatorSpeedModifier = 26] = "SpectatorSpeedModifier"
 		}(Rb || (Rb = {}));
 		const Lb = Rb;
 		var Ib = n(687),
@@ -22564,7 +22566,7 @@ const ERRORFUNC = (message) => {
 					e ? (null === (t = CM(this, oM, "f")) || void 0 === t || t.setOverridePosition(!0), null === (n = CM(this, lM, "f")) || void 0 === n || n.setOverridePosition(!0), null === (i = CM(this, sM, "f")) || void 0 === i || i.setOverridePosition(!0), null === (r = CM(this, hM, "f")) || void 0 === r || r.dispose(), AM(this, hM, null, "f")) : (null === (a = CM(this, oM, "f")) || void 0 === a || a.setOverridePosition(null), null === (o = CM(this, lM, "f")) || void 0 === o || o.setOverridePosition(null), null === (s = CM(this, sM, "f")) || void 0 === s || s.setOverridePosition(null), CM(this, rM, "f") && !CM(this, xM, "f").enabled && null == CM(this, hM, "f") && (AM(this, hM, new HS(CM(this, ZS, "f"), CM(this, YS, "f"), CM(this, QS, "f"), CM(this, nM, "f")), "f"), CM(this, hM, "f").setVisible(!(null !== (c = null === (l = CM(this, fM, "f")) || void 0 === l ? void 0 : l.hasStarted()) && void 0 !== c && c)))), CM(this, dM, "f").setEnabled(e)
 				}), "f")), CM(this, VS, "m", EM).call(this, s.getCarColors()), CM(this, VS, "m", SM).call(this), window.addEventListener("keydown", AM(this, yM, (e => {
 					var t;
-					if (CM(this, xM, "f").enabled || (CM(this, QS, "f").checkKeyBinding(e, Lb.VehicleReset) ? ((null === (t = CM(this, fM, "f")) || void 0 === t ? void 0 : t.hasStarted()) && CM(this, VS, "m", kM).call(this), e.preventDefault()) : CM(this, QS, "f").checkKeyBinding(e, Lb.VehicleCockpitCamera) ? (e.repeat || null == CM(this, fM, "f") || CM(this, fM, "f").hasFinished() || (CM(this, QS, "f").getSettingBoolean(Jh.CockpitCameraToggle) ? CM(this, KS, "f").camera == CM(this, fM, "f").cameraOrbit ? CM(this, KS, "f").setCamera(CM(this, fM, "f").cameraCockpit) : CM(this, KS, "f").setCamera(CM(this, fM, "f").cameraOrbit) : CM(this, KS, "f").setCamera(CM(this, fM, "f").cameraCockpit)), e.preventDefault()) : l.checkKeyBinding(e, Lb.ToggleUI) ? (AM(this, rM, !CM(this, rM, "f"), "f"), CM(this, VS, "m", _M).call(this, CM(this, rM, "f")), e.preventDefault()) : "Escape" == e.code && (g(), e.preventDefault())), l.checkKeyBinding(e, Lb.ToggleSpectatorCamera) && null != CM(this, fM, "f")) {
+					if (CM(this, xM, "f").enabled || (CM(this, QS, "f").checkKeyBinding(e, Lb.VehicleReset) ? ((null === (t = CM(this, fM, "f")) || void 0 === t ? void 0 : t.hasStarted()) && CM(this, VS, "m", kM).call(this), e.preventDefault()) : CM(this, QS, "f").checkKeyBinding(e, Lb.ToggleGhost) ? (window.SHOWGHOST = !window.SHOWGHOST, e.preventDefault()) : CM(this, QS, "f").checkKeyBinding(e, Lb.VehicleCockpitCamera) ? (e.repeat || null == CM(this, fM, "f") || CM(this, fM, "f").hasFinished() || (CM(this, QS, "f").getSettingBoolean(Jh.CockpitCameraToggle) ? CM(this, KS, "f").camera == CM(this, fM, "f").cameraOrbit ? CM(this, KS, "f").setCamera(CM(this, fM, "f").cameraCockpit) : CM(this, KS, "f").setCamera(CM(this, fM, "f").cameraOrbit) : CM(this, KS, "f").setCamera(CM(this, fM, "f").cameraCockpit)), e.preventDefault()) : l.checkKeyBinding(e, Lb.ToggleUI) ? (AM(this, rM, !CM(this, rM, "f"), "f"), CM(this, VS, "m", _M).call(this, CM(this, rM, "f")), e.preventDefault()) : "Escape" == e.code && (g(), e.preventDefault())), l.checkKeyBinding(e, Lb.ToggleSpectatorCamera) && null != CM(this, fM, "f")) {
 						CM(this, xM, "f").camera.position.copy(CM(this, KS, "f").camera.position);
 						const t = new _i(0, 0, 0, "YXZ").setFromQuaternion(CM(this, KS, "f").camera.quaternion);
 						t.z = 0, CM(this, xM, "f").camera.quaternion.setFromEuler(t), CM(this, xM, "f").toggle(), e.preventDefault()
@@ -22593,15 +22595,16 @@ const ERRORFUNC = (message) => {
 						null === (o = CM(this, hM, "f")) || void 0 === o || o.setVisible(!CM(this, fM, "f").hasStarted());	// show/hide game toolbar html
 					}
 					if (null != CM(this, mM, "f")) {		// code branch if currently racing against ghost
-						const e = null === (s = CM(this, fM, "f")) || void 0 === s ? void 0 : s.getTotalTime().numberOfFrames;
+						const e = null === (s = CM(this, fM, "f")) || void 0 === s ? void 0 : (window.SHOWGHOST ? s.getTotalTime().numberOfFrames : 1);
 						if (null != e) {
-							for (let t = CM(this, mM, "f").getTotalTime().numberOfFrames + 1; t <= e; t++) {
+							for (let t = (window.SHOWGHOST ? CM(this, mM, "f").getTotalTime().numberOfFrames : 0) + 1; t <= e; t++) {
 								const e = null === (l = CM(this, gM, "f")) || void 0 === l ? void 0 : l.replay.getFrame(t);
 								if (null == e) {
 									CM(this, mM, "f").dispose(), AM(this, mM, null, "f");
 									break
 								}
 								CM(this, mM, "f").setCarState(e)
+                                if (!window.SHOWGHOST) {break};
 							}
 						}
 						null === (c = CM(this, mM, "f")) || void 0 === c || c.update(h)
@@ -23073,7 +23076,40 @@ const ERRORFUNC = (message) => {
 			}, {
 				title: UT(this, vT, "f").get("On"),
 				value: "true"
-			}], Jh.Antialiasing), UT(this, mT, "m", RT).call(this, UT(this, vT, "f").get("Audio")), UT(this, mT, "m", IT).call(this, UT(this, vT, "f").get("Sound effect volume"), Jh.SoundEffectVolume), UT(this, mT, "m", IT).call(this, UT(this, vT, "f").get("Music volume"), Jh.MusicVolume), UT(this, mT, "m", IT).call(this, UT(this, vT, "f").get("Checkpoint volume"), Jh.CheckpointVolume), UT(this, mT, "m", RT).call(this, UT(this, vT, "f").get("Controls")), UT(this, mT, "m", NT).call(this, UT(this, vT, "f").get("Vehicle accelerate"), Lb.VehicleAccelerate), UT(this, mT, "m", NT).call(this, UT(this, vT, "f").get("Vehicle brake"), Lb.VehicleBrake), UT(this, mT, "m", NT).call(this, UT(this, vT, "f").get("Vehicle turn left"), Lb.VehicleTurnLeft), UT(this, mT, "m", NT).call(this, UT(this, vT, "f").get("Vehicle turn right"), Lb.VehicleTurnRight), UT(this, mT, "m", NT).call(this, UT(this, vT, "f").get("Vehicle reset"), Lb.VehicleReset), UT(this, mT, "m", NT).call(this, UT(this, vT, "f").get("Vehicle cockpit camera"), Lb.VehicleCockpitCamera), UT(this, mT, "m", NT).call(this, UT(this, vT, "f").get("Hide UI"), Lb.ToggleUI), UT(this, mT, "m", NT).call(this, UT(this, vT, "f").get("Editor rotate part"), Lb.EditorRotate), UT(this, mT, "m", NT).call(this, UT(this, vT, "f").get("Editor height modifier"), Lb.EditorHeightModifier), UT(this, mT, "m", NT).call(this, UT(this, vT, "f").get("Editor delete part"), Lb.EditorDelete), UT(this, mT, "m", NT).call(this, UT(this, vT, "f").get("Editor forwards"), Lb.EditorMoveForwards), UT(this, mT, "m", NT).call(this, UT(this, vT, "f").get("Editor backwards"), Lb.EditorMoveBackwards), UT(this, mT, "m", NT).call(this, UT(this, vT, "f").get("Editor left"), Lb.EditorMoveLeft), UT(this, mT, "m", NT).call(this, UT(this, vT, "f").get("Editor right"), Lb.EditorMoveRight), UT(this, mT, "m", NT).call(this, UT(this, vT, "f").get("Editor rotate left"), Lb.EditorRotateLeft), UT(this, mT, "m", NT).call(this, UT(this, vT, "f").get("Editor rotate right"), Lb.EditorRotateRight), UT(this, mT, "m", NT).call(this, UT(this, vT, "f").get("Editor move down"), Lb.EditorMoveDown), UT(this, mT, "m", NT).call(this, UT(this, vT, "f").get("Editor move up"), Lb.EditorMoveUp), UT(this, mT, "m", NT).call(this, UT(this, vT, "f").get("Editor test"), Lb.EditorTest), UT(this, mT, "m", NT).call(this, UT(this, vT, "f").get("Editor pick"), Lb.EditorPick), UT(this, mT, "m", NT).call(this, UT(this, vT, "f").get("Toggle FPS counter"), Lb.ToggleFpsCounter), UT(this, mT, "m", NT).call(this, UT(this, vT, "f").get("Toggle spectator camera"), Lb.ToggleSpectatorCamera), UT(this, mT, "m", NT).call(this, UT(this, vT, "f").get("Spectator forwards"), Lb.SpectatorMoveForwards), UT(this, mT, "m", NT).call(this, UT(this, vT, "f").get("Spectator backwards"), Lb.SpectatorMoveBackwards), UT(this, mT, "m", NT).call(this, UT(this, vT, "f").get("Spectator left"), Lb.SpectatorMoveLeft), UT(this, mT, "m", NT).call(this, UT(this, vT, "f").get("Spectator right"), Lb.SpectatorMoveRight), UT(this, mT, "m", NT).call(this, UT(this, vT, "f").get("Spectator speed modifier"), Lb.SpectatorSpeedModifier)
+			}], Jh.Antialiasing), 
+			UT(this, mT, "m", RT).call(this, UT(this, vT, "f").get("Audio")), 
+			UT(this, mT, "m", IT).call(this, UT(this, vT, "f").get("Sound effect volume"), Jh.SoundEffectVolume), 
+			UT(this, mT, "m", IT).call(this, UT(this, vT, "f").get("Music volume"), Jh.MusicVolume), 
+			UT(this, mT, "m", IT).call(this, UT(this, vT, "f").get("Checkpoint volume"), Jh.CheckpointVolume), 
+			UT(this, mT, "m", RT).call(this, UT(this, vT, "f").get("Controls")), 
+			UT(this, mT, "m", NT).call(this, UT(this, vT, "f").get("Vehicle accelerate"), Lb.VehicleAccelerate), 
+			UT(this, mT, "m", NT).call(this, UT(this, vT, "f").get("Vehicle brake"), Lb.VehicleBrake), 
+			UT(this, mT, "m", NT).call(this, UT(this, vT, "f").get("Vehicle turn left"), Lb.VehicleTurnLeft), 
+			UT(this, mT, "m", NT).call(this, UT(this, vT, "f").get("Vehicle turn right"), Lb.VehicleTurnRight), 
+			UT(this, mT, "m", NT).call(this, UT(this, vT, "f").get("Vehicle reset"), Lb.VehicleReset), 
+			UT(this, mT, "m", NT).call(this, UT(this, vT, "f").get("Vehicle cockpit camera"), Lb.VehicleCockpitCamera), 
+			UT(this, mT, "m", NT).call(this, UT(this, vT, "f").get("Hide UI"), Lb.ToggleUI), 
+			UT(this, mT, "m", NT).call(this, "Toggle Ghost", Lb.ToggleGhost), 
+			UT(this, mT, "m", NT).call(this, UT(this, vT, "f").get("Editor rotate part"), Lb.EditorRotate), 
+			UT(this, mT, "m", NT).call(this, UT(this, vT, "f").get("Editor height modifier"), Lb.EditorHeightModifier), 
+			UT(this, mT, "m", NT).call(this, UT(this, vT, "f").get("Editor delete part"), Lb.EditorDelete), 
+			UT(this, mT, "m", NT).call(this, UT(this, vT, "f").get("Editor forwards"), Lb.EditorMoveForwards), 
+			UT(this, mT, "m", NT).call(this, UT(this, vT, "f").get("Editor backwards"), Lb.EditorMoveBackwards), 
+			UT(this, mT, "m", NT).call(this, UT(this, vT, "f").get("Editor left"), Lb.EditorMoveLeft), 
+			UT(this, mT, "m", NT).call(this, UT(this, vT, "f").get("Editor right"), Lb.EditorMoveRight), 
+			UT(this, mT, "m", NT).call(this, UT(this, vT, "f").get("Editor rotate left"), Lb.EditorRotateLeft), 
+			UT(this, mT, "m", NT).call(this, UT(this, vT, "f").get("Editor rotate right"), Lb.EditorRotateRight), 
+			UT(this, mT, "m", NT).call(this, UT(this, vT, "f").get("Editor move down"), Lb.EditorMoveDown), 
+			UT(this, mT, "m", NT).call(this, UT(this, vT, "f").get("Editor move up"), Lb.EditorMoveUp), 
+			UT(this, mT, "m", NT).call(this, UT(this, vT, "f").get("Editor test"), Lb.EditorTest), 
+			UT(this, mT, "m", NT).call(this, UT(this, vT, "f").get("Editor pick"), Lb.EditorPick), 
+			UT(this, mT, "m", NT).call(this, UT(this, vT, "f").get("Toggle FPS counter"), Lb.ToggleFpsCounter), 
+			UT(this, mT, "m", NT).call(this, UT(this, vT, "f").get("Toggle spectator camera"), Lb.ToggleSpectatorCamera), 
+			UT(this, mT, "m", NT).call(this, UT(this, vT, "f").get("Spectator forwards"), Lb.SpectatorMoveForwards), 
+			UT(this, mT, "m", NT).call(this, UT(this, vT, "f").get("Spectator backwards"), Lb.SpectatorMoveBackwards), 
+			UT(this, mT, "m", NT).call(this, UT(this, vT, "f").get("Spectator left"), Lb.SpectatorMoveLeft), 
+			UT(this, mT, "m", NT).call(this, UT(this, vT, "f").get("Spectator right"), Lb.SpectatorMoveRight), 
+			UT(this, mT, "m", NT).call(this, UT(this, vT, "f").get("Spectator speed modifier"), Lb.SpectatorSpeedModifier)
 		}, RT = function(e) {
 			const t = document.createElement("h2");
 			t.textContent = e, UT(this, kT, "f").appendChild(t)
@@ -26416,6 +26452,7 @@ const ERRORFUNC = (message) => {
 					[Lb.VehicleBrake, ["KeyS", "ArrowDown"]],
 					[Lb.VehicleTurnLeft, ["KeyA", "ArrowLeft"]],
 					[Lb.VehicleReset, ["KeyR", "Enter"]],
+					[Lb.ToggleGhost, ["KeyE", null]],
 					[Lb.VehicleCockpitCamera, ["KeyC", "KeyM"]],
 					[Lb.ToggleUI, ["KeyH", null]],
 					[Lb.EditorRotate, ["KeyR", "Space"]],
@@ -29989,7 +30026,7 @@ const ERRORFUNC = (message) => {
 				eD(this, UN, "f").push(d), e.startCar(d.id, l.time), $N(this, BN, d.id, "f"), $N(this, WN, l.time.time, "f"), $N(this, ON, new Uv(null, h, l.recording, null, !0, r, a, i, t, s), "f"), eD(this, ON, "f").setColors(l.carColors), r.setCamera(eD(this, ON, "f").cameraOrbit), $N(this, HN, new pS(s), "f"), eD(this, HN, "f").addToggleListener((e => {
 					e ? r.setCamera(eD(this, HN, "f").camera) : null != eD(this, ON, "f") && r.setCamera(eD(this, ON, "f").cameraOrbit)
 				})), eD(this, MN, "m", JN).call(this, !0), window.addEventListener("keydown", $N(this, KN, (e => {
-					if (eD(this, HN, "f").enabled || ("Escape" == e.code ? (c(), e.preventDefault()) : s.checkKeyBinding(e, Lb.VehicleReset) ? ($N(this, FN, 0, "f"), e.preventDefault()) : eD(this, IN, "f").checkKeyBinding(e, Lb.VehicleCockpitCamera) && (e.repeat || null == eD(this, ON, "f") || eD(this, ON, "f").hasFinished() || (eD(this, IN, "f").getSettingBoolean(Jh.CockpitCameraToggle) ? eD(this, PN, "f").camera == eD(this, ON, "f").cameraOrbit ? eD(this, PN, "f").setCamera(eD(this, ON, "f").cameraCockpit) : eD(this, PN, "f").setCamera(eD(this, ON, "f").cameraOrbit) : eD(this, PN, "f").setCamera(eD(this, ON, "f").cameraCockpit)), e.preventDefault())), s.checkKeyBinding(e, Lb.ToggleUI) && ($N(this, VN, !eD(this, VN, "f"), "f"), eD(this, MN, "m", JN).call(this, eD(this, VN, "f")), e.preventDefault()), s.checkKeyBinding(e, Lb.ToggleSpectatorCamera)) {
+					if (eD(this, HN, "f").enabled || ("Escape" == e.code ? (c(), e.preventDefault()) : s.checkKeyBinding(e, Lb.VehicleReset) ? ($N(this, FN, 0, "f"), e.preventDefault()) : s.checkKeyBinding(e, Ub.ToggleGhost) ? (window.SHOWGHOST = !window.SHOWGHOST, e.preventDefault()) : eD(this, IN, "f").checkKeyBinding(e, Lb.VehicleCockpitCamera) && (e.repeat || null == eD(this, ON, "f") || eD(this, ON, "f").hasFinished() || (eD(this, IN, "f").getSettingBoolean(Jh.CockpitCameraToggle) ? eD(this, PN, "f").camera == eD(this, ON, "f").cameraOrbit ? eD(this, PN, "f").setCamera(eD(this, ON, "f").cameraCockpit) : eD(this, PN, "f").setCamera(eD(this, ON, "f").cameraOrbit) : eD(this, PN, "f").setCamera(eD(this, ON, "f").cameraCockpit)), e.preventDefault())), s.checkKeyBinding(e, Lb.ToggleUI) && ($N(this, VN, !eD(this, VN, "f"), "f"), eD(this, MN, "m", JN).call(this, eD(this, VN, "f")), e.preventDefault()), s.checkKeyBinding(e, Lb.ToggleSpectatorCamera)) {
 						eD(this, HN, "f").camera.position.copy(eD(this, PN, "f").camera.position);
 						const t = new _i(0, 0, 0, "YXZ").setFromQuaternion(eD(this, PN, "f").camera.quaternion);
 						t.z = 0, eD(this, HN, "f").camera.quaternion.setFromEuler(t), eD(this, HN, "f").toggle(), e.preventDefault()
