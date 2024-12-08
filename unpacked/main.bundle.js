@@ -23089,7 +23089,6 @@ window.SHOWGHOST = true;
 			UT(this, mT, "m", NT).call(this, UT(this, vT, "f").get("Vehicle reset"), Lb.VehicleReset), 
 			UT(this, mT, "m", NT).call(this, UT(this, vT, "f").get("Vehicle cockpit camera"), Lb.VehicleCockpitCamera), 
 			UT(this, mT, "m", NT).call(this, UT(this, vT, "f").get("Hide UI"), Lb.ToggleUI), 
-			UT(this, mT, "m", NT).call(this, "Toggle Ghost", Lb.ToggleGhost), 
 			UT(this, mT, "m", NT).call(this, UT(this, vT, "f").get("Editor rotate part"), Lb.EditorRotate), 
 			UT(this, mT, "m", NT).call(this, UT(this, vT, "f").get("Editor height modifier"), Lb.EditorHeightModifier), 
 			UT(this, mT, "m", NT).call(this, UT(this, vT, "f").get("Editor delete part"), Lb.EditorDelete), 
@@ -23109,7 +23108,9 @@ window.SHOWGHOST = true;
 			UT(this, mT, "m", NT).call(this, UT(this, vT, "f").get("Spectator backwards"), Lb.SpectatorMoveBackwards), 
 			UT(this, mT, "m", NT).call(this, UT(this, vT, "f").get("Spectator left"), Lb.SpectatorMoveLeft), 
 			UT(this, mT, "m", NT).call(this, UT(this, vT, "f").get("Spectator right"), Lb.SpectatorMoveRight), 
-			UT(this, mT, "m", NT).call(this, UT(this, vT, "f").get("Spectator speed modifier"), Lb.SpectatorSpeedModifier)
+			UT(this, mT, "m", NT).call(this, UT(this, vT, "f").get("Spectator speed modifier"), Lb.SpectatorSpeedModifier),
+			UT(this, mT, "m", RT).call(this, "Mod Controls"), 
+			UT(this, mT, "m", NT).call(this, "Toggle Ghost", Lb.ToggleGhost)
 		}, RT = function(e) {
 			const t = document.createElement("h2");
 			t.textContent = e, UT(this, kT, "f").appendChild(t)
