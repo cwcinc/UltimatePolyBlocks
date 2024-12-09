@@ -19972,7 +19972,7 @@ window.SHOWGHOST = true;
 		}
 		var wy;
 		! function(e) {	// IMPORTANT - colliders
-			e[e.Checkpoint = 0] = "Checkpoint", e[e.Finish = 1] = "Finish", e[e.HighGravity = 2] = "HighGravity", e[e.LowGravity = 3] = "LowGravity", e[e.Boost = 4] = "Boost", e[e.HighFriction = 5] = "HighFriction", e[e.LowFriction = 6] = "LowFriction", e[e.EngineOff = 7] = "EngineOff", e[e.NoDownforce = 8] = "NoDownforce", e[e.NegativeDownforce = 9] = "NegativeDownforce", e[e.HighDownforce = 10] = "HighDownforce", e[e.AirControl = 11] = "AirControl"
+			e[e.Checkpoint = 0] = "Checkpoint", e[e.Finish = 1] = "Finish", e[e.HighGravity = 2] = "HighGravity", e[e.LowGravity = 3] = "LowGravity", e[e.Boost = 4] = "Boost", e[e.HighFriction = 5] = "HighFriction", e[e.LowFriction = 6] = "LowFriction", e[e.EngineOff = 7] = "EngineOff", e[e.NoDownforce = 8] = "NoDownforce", e[e.NegativeDownforce = 9] = "NegativeDownforce", e[e.HighDownforce = 10] = "HighDownforce", e[e.AirControl = 11] = "AirControl", e[e.HalfSlip = 12] = "HalfSlip"
 		}(wy || (wy = {}));
 		const yy = wy;
 
@@ -25363,6 +25363,35 @@ window.SHOWGHOST = true;
 							] : [[0,0,0]],
 							{
 								type: yy.LowFriction,
+								center: block.hasOwnProperty("big") ? [30, 2.2, -30] : [0, 2.2, 0],
+								size: block.hasOwnProperty("big") ? [80, 1000, 80] : [20, 1000, 20]
+							}
+						);
+					} else if (block.hasOwnProperty("isHalfSlip")) {
+						i(
+							ZP[block.category], 
+							Bw[block.name], 
+							[[block.blenderSceneName, block.name]],
+							block.hasOwnProperty("big") ? [
+								[0, 0, 0],
+								[1, 0, 0],
+								[2, 0, 0],
+								[3, 0, 0],
+								[0, 0, -1],
+								[1, 0, -1],
+								[2, 0, -1],
+								[3, 0, -1],
+								[0, 0, -2],
+								[1, 0, -2],
+								[2, 0, -2],
+								[3, 0, -2],
+								[0, 0, -3],
+								[1, 0, -3],
+								[2, 0, -3],
+								[3, 0, -3],
+							] : [[0,0,0]],
+							{
+								type: yy.HalfSlip,
 								center: block.hasOwnProperty("big") ? [30, 2.2, -30] : [0, 2.2, 0],
 								size: block.hasOwnProperty("big") ? [80, 1000, 80] : [20, 1000, 20]
 							}

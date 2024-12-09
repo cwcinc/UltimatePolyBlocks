@@ -72,7 +72,8 @@ const moddedBlocks = {
 	categories: [
 		"SlopedTurns", 
 		"Forty",
-		"BlocksPlus", 
+		"BlocksPlus",
+		"Rings", 
 		"BlockMixingRoads",
 		"BorderlessRoads",
 		"Zones", 
@@ -96,7 +97,8 @@ const moddedBlocks = {
 		"ultimateMod/models/blocksplus.glb",
 		"ultimateMod/models/blockmixingroads.glb",
 		"ultimateMod/models/text.glb",
-		"ultimateMod/models/borderlessroads.glb"
+		"ultimateMod/models/borderlessroads.glb",
+		"ultimateMod/models/rings.glb"
 	],
 	blockColors: {
 		"Red": null, 
@@ -170,6 +172,7 @@ const moddedBlocks = {
 		{name: "SandyHill", category: "Environment", blenderSceneName: "Environment", id: 220},
 		{name: "SnowyMt", category: "Environment", blenderSceneName: "Environment", id: 221},
 		{name: "Volcano", category: "Environment", blenderSceneName: "Environment", id: 222},
+		{name: "Space", category: "Environment", blenderSceneName: "Environment", id: 577, isSpace: true},
 
 		/*{name: "TurnLong2Diag", category: "SlopedTurns", blenderSceneName: "DiagonalRoads", id: 223},
 		{name: "TurnLong3Diag", category: "SlopedTurns", blenderSceneName: "DiagonalRoads", id: 224},
@@ -262,6 +265,10 @@ const moddedBlocks = {
 		{name: "10HighWallrideForceBig", category: "Zones", blenderSceneName: "Zones", id: 540, isHighDownforce: true, big: true},
 		{name: "11NegativeWallrideForce", category: "Zones", blenderSceneName: "Zones", id: 541, isNegativeDownforce: true},
 		{name: "11NegativeWallrideForceBig", category: "Zones", blenderSceneName: "Zones", id: 542, isNegativeDownforce: true, big: true},
+		{name: "12HalfSlip", category: "Zones", blenderSceneName: "Zones", id: 573, isHalfSlip: true},
+		{name: "12HalfSlipBig", category: "Zones", blenderSceneName: "Zones", id: 574, isHalfSlip: true, big: true},
+		{name: "13AirControl", category: "Zones", blenderSceneName: "Zones", id: 575, isAirControl: true},
+		{name: "13AirControlBig", category: "Zones", blenderSceneName: "Zones", id: 576, isAirControl: true, big: true},
 
 
 		{name: "B1", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 290},
@@ -388,8 +395,8 @@ const moddedBlocks = {
 		{name: "B122", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 571},
 		{name: "B123", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 572},
 		
-		{name: "LA", category: "Text", blenderSceneName: "Text", id: 319, isAirControl: true},
-		{name: "LB", category: "Text", blenderSceneName: "Text", id: 320, isAirControl: true, big: true},
+		{name: "LA", category: "Text", blenderSceneName: "Text", id: 319},
+		{name: "LB", category: "Text", blenderSceneName: "Text", id: 320},
 		{name: "LC", category: "Text", blenderSceneName: "Text", id: 321},
 		{name: "LD", category: "Text", blenderSceneName: "Text", id: 322},
 		{name: "LE", category: "Text", blenderSceneName: "Text", id: 323},
@@ -529,7 +536,7 @@ const moddedBlocks = {
 		{name: "TurnSFork", category: "Road", blenderSceneName: "BorderlessRoads", id: 482},
 
 
-		// next id: 573
+		// next id: 578
 	]
 };
 

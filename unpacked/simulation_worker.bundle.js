@@ -31,7 +31,8 @@ const moddedBlocks = {
 	categories: [
 		"SlopedTurns", 
 		"Forty",
-		"BlocksPlus", 
+		"BlocksPlus",
+		"Rings", 
 		"BlockMixingRoads",
 		"BorderlessRoads",
 		"Zones", 
@@ -55,7 +56,8 @@ const moddedBlocks = {
 		"ultimateMod/models/blocksplus.glb",
 		"ultimateMod/models/blockmixingroads.glb",
 		"ultimateMod/models/text.glb",
-		"ultimateMod/models/borderlessroads.glb"
+		"ultimateMod/models/borderlessroads.glb",
+		"ultimateMod/models/rings.glb"
 	],
 	blockColors: {
 		"Red": null, 
@@ -129,6 +131,7 @@ const moddedBlocks = {
 		{name: "SandyHill", category: "Environment", blenderSceneName: "Environment", id: 220},
 		{name: "SnowyMt", category: "Environment", blenderSceneName: "Environment", id: 221},
 		{name: "Volcano", category: "Environment", blenderSceneName: "Environment", id: 222},
+		{name: "Space", category: "Environment", blenderSceneName: "Environment", id: 577, isSpace: true},
 
 		/*{name: "TurnLong2Diag", category: "SlopedTurns", blenderSceneName: "DiagonalRoads", id: 223},
 		{name: "TurnLong3Diag", category: "SlopedTurns", blenderSceneName: "DiagonalRoads", id: 224},
@@ -221,6 +224,10 @@ const moddedBlocks = {
 		{name: "10HighWallrideForceBig", category: "Zones", blenderSceneName: "Zones", id: 540, isHighDownforce: true, big: true},
 		{name: "11NegativeWallrideForce", category: "Zones", blenderSceneName: "Zones", id: 541, isNegativeDownforce: true},
 		{name: "11NegativeWallrideForceBig", category: "Zones", blenderSceneName: "Zones", id: 542, isNegativeDownforce: true, big: true},
+		{name: "12HalfSlip", category: "Zones", blenderSceneName: "Zones", id: 573, isHalfSlip: true},
+		{name: "12HalfSlipBig", category: "Zones", blenderSceneName: "Zones", id: 574, isHalfSlip: true, big: true},
+		{name: "13AirControl", category: "Zones", blenderSceneName: "Zones", id: 575, isAirControl: true},
+		{name: "13AirControlBig", category: "Zones", blenderSceneName: "Zones", id: 576, isAirControl: true, big: true},
 
 
 		{name: "B1", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 290},
@@ -347,8 +354,8 @@ const moddedBlocks = {
 		{name: "B122", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 571},
 		{name: "B123", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 572},
 		
-		{name: "LA", category: "Text", blenderSceneName: "Text", id: 319, isAirControl: true},
-		{name: "LB", category: "Text", blenderSceneName: "Text", id: 320, isAirControl: true, big: true},
+		{name: "LA", category: "Text", blenderSceneName: "Text", id: 319},
+		{name: "LB", category: "Text", blenderSceneName: "Text", id: 320},
 		{name: "LC", category: "Text", blenderSceneName: "Text", id: 321},
 		{name: "LD", category: "Text", blenderSceneName: "Text", id: 322},
 		{name: "LE", category: "Text", blenderSceneName: "Text", id: 323},
@@ -488,7 +495,7 @@ const moddedBlocks = {
 		{name: "TurnSFork", category: "Road", blenderSceneName: "BorderlessRoads", id: 482},
 
 
-		// next id: 573
+		// next id: 578
 	]
 };
 
@@ -7919,7 +7926,7 @@ const moddedBlocks = {
 		const Qo = Jo;
 		var Ko;
 		! function(t) {
-			t[t.Checkpoint = 0] = "Checkpoint", t[t.Finish = 1] = "Finish", t[t.HighGravity = 2] = "HighGravity", t[t.LowGravity = 3] = "LowGravity", t[t.Boost = 4] = "Boost", t[t.HighFriction = 5] = "HighFriction", t[t.LowFriction = 6] = "LowFriction", t[t.EngineOff = 7] = "EngineOff", t[t.NoDownforce = 8] = "NoDownforce", t[t.NegativeDownforce = 9] = "NegativeDownforce", t[t.HighDownforce = 10] = "HighDownforce", t[t.AirControl = 11] = "AirControl"
+			t[t.Checkpoint = 0] = "Checkpoint", t[t.Finish = 1] = "Finish", t[t.HighGravity = 2] = "HighGravity", t[t.LowGravity = 3] = "LowGravity", t[t.Boost = 4] = "Boost", t[t.HighFriction = 5] = "HighFriction", t[t.LowFriction = 6] = "LowFriction", t[t.EngineOff = 7] = "EngineOff", t[t.NoDownforce = 8] = "NoDownforce", t[t.NegativeDownforce = 9] = "NegativeDownforce", t[t.HighDownforce = 10] = "HighDownforce", t[t.AirControl = 11] = "AirControl", t[t.HalfSlip = 12] = "HalfSlip"
 		}(Ko || (Ko = {}));
 		const $o = Ko;
 		var ts, es, ns, is, rs, as = function(t, e, n, i, r) {
@@ -7998,6 +8005,10 @@ const moddedBlocks = {
 
 			checkLowFriction(t) {	// low f
 				return this.checkCustomCollider(t, "LowFriction");
+			}
+
+			checkHalfSlip(t) {	// low f
+				return this.checkCustomCollider(t, "HalfSlip");
 			}
 
 			checkAirControl(t) {	// low f
@@ -8419,6 +8430,8 @@ const moddedBlocks = {
 							setFrictionSlip(10);
 						} else if (Rs(this, hs, "f").checkLowFriction(i)) {
 							setFrictionSlip(0.01);
+						} else if (Rs(this, hs, "f").checkHalfSlip(i)) {
+							setFrictionSlip(0.5);
 						} else {
 							setFrictionSlip(3);
 						}
