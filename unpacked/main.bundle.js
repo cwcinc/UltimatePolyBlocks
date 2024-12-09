@@ -25134,6 +25134,168 @@ window.SHOWGHOST = true;
 								size: [20, 4.5, 20]
 							}
 						);
+					} else if (block.hasOwnProperty("isHorizontalRingCheckpoint")) {
+						if (block.name == "HorizontalCheckpointWide3") {
+							i(
+								ZP[block.category], 
+								Bw[block.name], 
+								[[block.blenderSceneName, block.name]],
+								[[0,0,0], [0,0,1], [0,0,2]], 
+								{
+									type: yy.Checkpoint,
+									center: [0, 2.5, 20],
+									size: [16, 2, 56]
+								}
+							);
+						} else if (block.name == "HorizontalCheckpointWide4") {
+							i(
+								ZP[block.category], 
+								Bw[block.name], 
+								[[block.blenderSceneName, block.name]],
+								[[0,0,0], [0,0,1], [0,0,2], [0,0,3]], 
+								{
+									type: yy.Checkpoint,
+									center: [0, 2.5, 30],
+									size: [16, 2, 76]
+								}
+							);
+						} else {
+							i(
+								ZP[block.category], 
+								Bw[block.name], 
+								[[block.blenderSceneName, block.name]],
+								[[0,0,0]], 
+								{
+									type: yy.Checkpoint,
+									center: [0, 2.5, 0],
+									size: [16, 2, 16]
+								}
+							);
+						}
+					} else if (block.hasOwnProperty("isVerticalRingCheckpoint")) {
+						if (block.name == "VerticalCheckpointWide3") {
+							i(
+								ZP[block.category], 
+								Bw[block.name], 
+								[[block.blenderSceneName, block.name]],
+								[[0,0,0], [0,1,0], [0,2,0], [0,3,0],
+								[-1,0,0], [-1,1,0], [-1,2,0], [-1,3,0],
+								[-2,0,0], [-2,1,0], [-2,2,0], [-2,3,0]], 
+								{
+									type: yy.Checkpoint,
+									center: [-20, 10, 0],
+									size: [56, 16, 2]
+								}
+							);
+						} else if (block.name == "VerticalCheckpointWide4") {
+							i(
+								ZP[block.category], 
+								Bw[block.name], 
+								[[block.blenderSceneName, block.name]],
+								[[0,0,0], [0,1,0], [0,2,0], [0,3,0],
+								[-1,0,0], [-1,1,0], [-1,2,0], [-1,3,0],
+								[-2,0,0], [-2,1,0], [-2,2,0], [-2,3,0],
+								[-3,0,0], [-3,1,0], [-3,2,0], [-3,3,0]], 
+								{
+									type: yy.Checkpoint,
+									center: [-30, 10, 0],
+									size: [76, 16, 2]
+								}
+							);
+						} else {
+							i(
+								ZP[block.category], 
+								Bw[block.name], 
+								[[block.blenderSceneName, block.name]],
+								[[0,0,0], [0,1,0], [0,2,0], [0,3,0]], 
+								{
+									type: yy.Checkpoint,
+									center: [0, 10, 0],
+									size: [16, 16, 2]
+								}
+							);
+						}
+					} else if (block.hasOwnProperty("isHorizontalRingFinish")) {
+						if (block.name == "HorizontalFinishWide3") {
+							i(
+								ZP[block.category], 
+								Bw[block.name], 
+								[[block.blenderSceneName, block.name]],
+								[[0,0,0], [0,0,1], [0,0,2]], 
+								{
+									type: yy.Finish,
+									center: [0, 2.5, 20],
+									size: [16, 2, 56]
+								}
+							);
+						} else if (block.name == "HorizontalFinishWide4") {
+							i(
+								ZP[block.category], 
+								Bw[block.name], 
+								[[block.blenderSceneName, block.name]],
+								[[0,0,0], [0,0,1], [0,0,2], [0,0,3]], 
+								{
+									type: yy.Finish,
+									center: [0, 2.5, 30],
+									size: [16, 2, 76]
+								}
+							);
+						} else {
+							i(
+								ZP[block.category], 
+								Bw[block.name], 
+								[[block.blenderSceneName, block.name]],
+								[[0,0,0]], 
+								{
+									type: yy.Finish,
+									center: [0, 2.5, 0],
+									size: [16, 2, 16]
+								}
+							);
+						}
+					} else if (block.hasOwnProperty("isVerticalRingFinish")) {
+						if (block.name == "VerticalFinishWide3") {
+							i(
+								ZP[block.category], 
+								Bw[block.name], 
+								[[block.blenderSceneName, block.name]],
+								[[0,0,0], [0,1,0], [0,2,0], [0,3,0],
+								[-1,0,0], [-1,1,0], [-1,2,0], [-1,3,0],
+								[-2,0,0], [-2,1,0], [-2,2,0], [-2,3,0]], 
+								{
+									type: yy.Finish,
+									center: [-20, 10, 0],
+									size: [56, 16, 2]
+								}
+							);
+						} else if (block.name == "VerticalFinishWide4") {
+							i(
+								ZP[block.category], 
+								Bw[block.name], 
+								[[block.blenderSceneName, block.name]],
+								[[0,0,0], [0,1,0], [0,2,0], [0,3,0],
+								[-1,0,0], [-1,1,0], [-1,2,0], [-1,3,0],
+								[-2,0,0], [-2,1,0], [-2,2,0], [-2,3,0],
+								[-3,0,0], [-3,1,0], [-3,2,0], [-3,3,0]], 
+								{
+									type: yy.Finish,
+									center: [-30, 10, 0],
+									size: [76, 16, 2]
+								}
+							);
+						} else {
+							i(
+								ZP[block.category], 
+								Bw[block.name], 
+								[[block.blenderSceneName, block.name]],
+								[[0,0,0], [0,1,0], [0,2,0], [0,3,0]], 
+								{
+									type: yy.Finish,
+									center: [0, 10, 0],
+									size: [16, 16, 2]
+								}
+							);
+						}
 					} else if (block.hasOwnProperty("isCheckpointZone")) {
 						i(
 							ZP[block.category], 

@@ -535,8 +535,32 @@ const moddedBlocks = {
 		{name: "BorderlessTurnSRight", category: "BorderlessRoads", blenderSceneName: "BorderlessRoads", id: 481},
 		{name: "TurnSFork", category: "Road", blenderSceneName: "BorderlessRoads", id: 482},
 
+		{name: "HorizontalCheckpoint1x1", category: "Rings", blenderSceneName: "Rings", id: 578, isHorizontalRingCheckpoint: true},
+		{name: "HorizontalCheckpointCorner", category: "Rings", blenderSceneName: "Rings", id: 579, isHorizontalRingCheckpoint: true},
+		{name: "HorizontalCheckpointEdge", category: "Rings", blenderSceneName: "Rings", id: 580, isHorizontalRingCheckpoint: true},
+		{name: "HorizontalCheckpointWide3", category: "Rings", blenderSceneName: "Rings", id: 581, isHorizontalRingCheckpoint: true},
+		{name: "HorizontalCheckpointWide4", category: "Rings", blenderSceneName: "Rings", id: 582, isHorizontalRingCheckpoint: true},
+		{name: "HorizontalFinish1x1", category: "Rings", blenderSceneName: "Rings", id: 583, isHorizontalRingFinish: true},
+		{name: "HorizontalFinishCorner", category: "Rings", blenderSceneName: "Rings", id: 584, isHorizontalRingFinish: true},
+		{name: "HorizontalFinishEdge", category: "Rings", blenderSceneName: "Rings", id: 585, isHorizontalRingFinish: true},
+		{name: "HorizontalFinishWide3", category: "Rings", blenderSceneName: "Rings", id: 586, isHorizontalRingFinish: true},
+		{name: "HorizontalFinishWide4", category: "Rings", blenderSceneName: "Rings", id: 587, isHorizontalRingFinish: true},
 
-		// next id: 578
+		{name: "VerticalCheckpoint1x1", category: "Rings", blenderSceneName: "Rings", id: 588, isVerticalRingCheckpoint: true},
+		{name: "VerticalCheckpointCorner1", category: "Rings", blenderSceneName: "Rings", id: 589, isVerticalRingCheckpoint: true},
+		{name: "VerticalCheckpointCorner2", category: "Rings", blenderSceneName: "Rings", id: 590, isVerticalRingCheckpoint: true},
+		{name: "VerticalCheckpointEdge1", category: "Rings", blenderSceneName: "Rings", id: 591, isVerticalRingCheckpoint: true},
+		{name: "VerticalCheckpointEdge2", category: "Rings", blenderSceneName: "Rings", id: 592, isVerticalRingCheckpoint: true},
+		{name: "VerticalCheckpointWide3", category: "Rings", blenderSceneName: "Rings", id: 593, isVerticalRingCheckpoint: true},
+		{name: "VerticalCheckpointWide4", category: "Rings", blenderSceneName: "Rings", id: 594, isVerticalRingCheckpoint: true},
+		{name: "VerticalFinish1x1", category: "Rings", blenderSceneName: "Rings", id: 595, isVerticalRingFinish: true},
+		{name: "VerticalFinishCorner1", category: "Rings", blenderSceneName: "Rings", id: 596, isVerticalRingFinish: true},
+		{name: "VerticalFinishCorner2", category: "Rings", blenderSceneName: "Rings", id: 597, isVerticalRingFinish: true},
+		{name: "VerticalFinishEdge1", category: "Rings", blenderSceneName: "Rings", id: 598, isVerticalRingFinish: true},
+		{name: "VerticalFinishEdge2", category: "Rings", blenderSceneName: "Rings", id: 599, isVerticalRingFinish: true},
+		{name: "VerticalFinishWide3", category: "Rings", blenderSceneName: "Rings", id: 600, isVerticalRingFinish: true},
+		{name: "VerticalFinishWide4", category: "Rings", blenderSceneName: "Rings", id: 601, isVerticalRingFinish: true},
+		// next id: 602
 	]
 };
 
