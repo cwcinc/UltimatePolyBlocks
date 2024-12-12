@@ -70,19 +70,18 @@ var moddedEnvironment = {
 
 const moddedBlocks = {
 	categories: [
-		"SlopedTurns", 
-		"Forty",
 		"BlocksPlus",
-		"Rings", 
-		"BlockMixingRoads",
-		"BorderlessRoads",
 		"Zones", 
+		"Rings", 
+		"BorderlessRoads",
+		//"SlopedTurns", 
+		//"Forty",
 		"Text",
-		"Minecraft",
-		"Statues",
-		"Space", 
+		//"Minecraft",
+		//"Space", 
 		"Environment", 
-		"Spooky"
+		"Spooky",
+		"Statues"
 	],
 	modelPaths: [
 		"ultimateMod/models/customSigns.glb",
