@@ -19416,22 +19416,41 @@ window.SHOWGHOST = true;
 							r = Math.max(0, Math.min(1, (n.clientY - e.top) / e.height));
 						pw(this, aw, 100 * i, "f"), pw(this, rw, 100 * (1 - r), "f"), fw(this, Yv, "m", uw).call(this), t(this.color)
 					}
-				}), "f"), pw(this, lw, (e => {
+				}), "f"), 
+				pw(this, lw, (e => {
 					0 == e.button && pw(this, ew, !1, "f")
-				}), "f"), fw(this, Qv, "f").addEventListener("mousedown", (e => {
-					0 == e.button && pw(this, ew, !0, "f"), fw(this, sw, "f").call(this, e)
-				})), window.addEventListener("mouseup", fw(this, lw, "f")), window.addEventListener("mousemove", fw(this, sw, "f")), fw(this, Qv, "f").addEventListener("touchstart", fw(this, sw, "f")), fw(this, Qv, "f").addEventListener("touchmove", fw(this, sw, "f")), pw(this, cw, (e => {
+				}), "f"), 
+				fw(this, Qv, "f").addEventListener("mousedown", (e => {
+					0 == e.button && pw(this, ew, !0, "f"), 
+					fw(this, sw, "f").call(this, e)
+				})), 
+				window.addEventListener("mouseup", fw(this, lw, "f")), 
+				window.addEventListener("mousemove", fw(this, sw, "f")), 
+				fw(this, Qv, "f").addEventListener("touchstart", fw(this, sw, "f")), 
+				fw(this, Qv, "f").addEventListener("touchmove", fw(this, sw, "f")), 
+				pw(this, cw, (e => {
 					let n = null;
 					if (e instanceof MouseEvent ? fw(this, iw, "f") && (n = e) : e instanceof TouchEvent && e.targetTouches.length > 0 && (n = e.targetTouches[e.targetTouches.length - 1]), null != n) {
 						const e = fw(this, tw, "f").getBoundingClientRect(),
 							i = Math.max(0, Math.min(1, (n.clientX - e.left) / e.width));
-						pw(this, ow, 360 * i, "f"), fw(this, Yv, "m", dw).call(this), t(this.color)
+						pw(this, ow, 360 * i, "f"), 
+						fw(this, Yv, "m", dw).call(this), 
+						t(this.color)
 					}
-				}), "f"), pw(this, hw, (e => {
+				}), "f"), 
+				pw(this, hw, (e => {
 					0 == e.button && pw(this, iw, !1, "f")
-				}), "f"), fw(this, tw, "f").addEventListener("mousedown", (e => {
-					0 == e.button && pw(this, iw, !0, "f"), fw(this, cw, "f").call(this, e)
-				})), window.addEventListener("mouseup", fw(this, hw, "f")), window.addEventListener("mousemove", fw(this, cw, "f")), fw(this, tw, "f").addEventListener("touchstart", fw(this, cw, "f")), fw(this, tw, "f").addEventListener("touchmove", fw(this, cw, "f")), fw(this, Yv, "m", dw).call(this), fw(this, Yv, "m", uw).call(this)
+				}), "f"), 
+				fw(this, tw, "f").addEventListener("mousedown", (e => {
+					0 == e.button && pw(this, iw, !0, "f"), 
+					fw(this, cw, "f").call(this, e)
+				})), 
+				window.addEventListener("mouseup", fw(this, hw, "f")), 
+				window.addEventListener("mousemove", fw(this, cw, "f")), 
+				fw(this, tw, "f").addEventListener("touchstart", fw(this, cw, "f")), 
+				fw(this, tw, "f").addEventListener("touchmove", fw(this, cw, "f")), 
+				fw(this, Yv, "m", dw).call(this), 
+				fw(this, Yv, "m", uw).call(this)
 			}
 			dispose() {
 				window.removeEventListener("mouseup", fw(this, lw, "f")), window.removeEventListener("mousemove", fw(this, sw, "f")), window.removeEventListener("mouseup", fw(this, hw, "f")), window.removeEventListener("mousemove", fw(this, cw, "f"))
@@ -20716,7 +20735,39 @@ window.SHOWGHOST = true;
 		};
 		var Rb;
 		! function(e) {
-			e[e.VehicleAccelerate = 0] = "VehicleAccelerate", e[e.VehicleTurnRight = 1] = "VehicleTurnRight", e[e.VehicleBrake = 2] = "VehicleBrake", e[e.VehicleTurnLeft = 3] = "VehicleTurnLeft", e[e.VehicleReset = 4] = "VehicleReset", e[e.ToggleGhost = 27] = "ToggleGhost", e[e.VehicleCockpitCamera = 5] = "VehicleCockpitCamera", e[e.ToggleUI = 6] = "ToggleUI", e[e.EditorRotate = 7] = "EditorRotate", e[e.EditorHeightModifier = 8] = "EditorHeightModifier", e[e.EditorDelete = 9] = "EditorDelete", e[e.EditorMoveForwards = 10] = "EditorMoveForwards", e[e.EditorMoveRight = 11] = "EditorMoveRight", e[e.EditorMoveBackwards = 12] = "EditorMoveBackwards", e[e.EditorMoveLeft = 13] = "EditorMoveLeft", e[e.EditorRotateLeft = 14] = "EditorRotateLeft", e[e.EditorRotateRight = 15] = "EditorRotateRight", e[e.EditorMoveDown = 16] = "EditorMoveDown", e[e.EditorMoveUp = 17] = "EditorMoveUp", e[e.EditorTest = 18] = "EditorTest", e[e.EditorPick = 19] = "EditorPick", e[e.ToggleFpsCounter = 20] = "ToggleFpsCounter", e[e.ToggleSpectatorCamera = 21] = "ToggleSpectatorCamera", e[e.SpectatorMoveForwards = 22] = "SpectatorMoveForwards", e[e.SpectatorMoveRight = 23] = "SpectatorMoveRight", e[e.SpectatorMoveBackwards = 24] = "SpectatorMoveBackwards", e[e.SpectatorMoveLeft = 25] = "SpectatorMoveLeft", e[e.SpectatorSpeedModifier = 26] = "SpectatorSpeedModifier"
+			e[e.VehicleAccelerate = 0] = "VehicleAccelerate", 
+			e[e.VehicleTurnRight = 1] = "VehicleTurnRight", 
+			e[e.VehicleBrake = 2] = "VehicleBrake", 
+			e[e.VehicleTurnLeft = 3] = "VehicleTurnLeft", 
+			e[e.VehicleReset = 4] = "VehicleReset", 
+			e[e.VehicleCockpitCamera = 5] = "VehicleCockpitCamera", 
+			e[e.ToggleUI = 6] = "ToggleUI", 
+			e[e.EditorRotate = 7] = "EditorRotate", 
+			e[e.EditorHeightModifier = 8] = "EditorHeightModifier", 
+			e[e.EditorDelete = 9] = "EditorDelete", 
+			e[e.EditorMoveForwards = 10] = "EditorMoveForwards", 
+			e[e.EditorMoveRight = 11] = "EditorMoveRight", 
+			e[e.EditorMoveBackwards = 12] = "EditorMoveBackwards", 
+			e[e.EditorMoveLeft = 13] = "EditorMoveLeft", 
+			e[e.EditorRotateLeft = 14] = "EditorRotateLeft", 
+			e[e.EditorRotateRight = 15] = "EditorRotateRight", 
+			e[e.EditorMoveDown = 16] = "EditorMoveDown", 
+			e[e.EditorMoveUp = 17] = "EditorMoveUp", 
+			e[e.EditorTest = 18] = "EditorTest",
+			e[e.EditorPick = 19] = "EditorPick",
+			e[e.ToggleFpsCounter = 20] = "ToggleFpsCounter", 
+			e[e.ToggleSpectatorCamera = 21] = "ToggleSpectatorCamera",
+			e[e.SpectatorMoveForwards = 22] = "SpectatorMoveForwards", 
+			e[e.SpectatorMoveRight = 23] = "SpectatorMoveRight", 
+			e[e.SpectatorMoveBackwards = 24] = "SpectatorMoveBackwards", 
+			e[e.SpectatorMoveLeft = 25] = "SpectatorMoveLeft", 
+			e[e.SpectatorSpeedModifier = 26] = "SpectatorSpeedModifier",
+
+			e[e.ToggleGhost = 27] = "ToggleGhost", 
+			e[e.PlaceSpecial1 = 28] = "PlaceSpecial1",
+			e[e.PlaceSpecial2 = 29] = "PlaceSpecial2",
+			e[e.PlaceSpecial3 = 30] = "PlaceSpecial3",
+			e[e.PlaceSpecial4 = 31] = "PlaceSpecial4"
 		}(Rb || (Rb = {}));
 		const Lb = Rb;
 		var Ib = n(687),
@@ -21132,13 +21183,37 @@ window.SHOWGHOST = true;
 				}
 				u.textContent = t.get("Camera controls"), d.appendChild(u);
 				let f = "";
-				i.touchEnabled ? (f += t.get("The camera can be moved by dragging with one finger. Rotate the camera by dragging with two fingers. Zoom in and out by pinching.") + "\n\n", f += t.get("The edited height can be changed by using the height selection in the bottom left corner.")) : (f += t.get("The camera can be moved by right clicking and dragging the mouse. Rotate the camera by clicking the middle mouse button (mouse wheel) or holding the control key and right clicking and dragging the mouse. Zoom in and out by scrolling the mouse wheel.") + "\n\n", f += t.get("Alternatively, the camera can also be controlled using the following keyboard keys:") + "\n\n", f += "\t" + t.get("Move forwards:") + " " + p(Lb.EditorMoveForwards) + "\n", f += "\t" + t.get("Move backwards:") + " " + p(Lb.EditorMoveBackwards) + "\n", f += "\t" + t.get("Move left:") + " " + p(Lb.EditorMoveLeft) + "\n", f += "\t" + t.get("Move right:") + " " + p(Lb.EditorMoveRight) + "\n", f += "\t" + t.get("Rotate left:") + " " + p(Lb.EditorRotateLeft) + "\n", f += "\t" + t.get("Rotate right:") + " " + p(Lb.EditorRotateRight) + "\n\n", f += t.get("The edited height can be changed either by using the height selection in the bottom left corner, or holding the shift key and scrolling the mouse wheel. Alternatively, you can use the following keyboard keys:") + "\n\n", f += "\t" + t.get("Move up:") + " " + p(Lb.EditorMoveUp) + "\n", f += "\t" + t.get("Move down:") + " " + p(Lb.EditorMoveDown));
+				i.touchEnabled ? (
+					f += t.get("The camera can be moved by dragging with one finger. Rotate the camera by dragging with two fingers. Zoom in and out by pinching.") + "\n\n", 
+					f += t.get("The edited height can be changed by using the height selection in the bottom left corner.")
+				) : (
+					f += t.get("The camera can be moved by right clicking and dragging the mouse. Rotate the camera by clicking the middle mouse button (mouse wheel) or holding the control key and right clicking and dragging the mouse. Zoom in and out by scrolling the mouse wheel.") + "\n\n", 
+					f += t.get("Alternatively, the camera can also be controlled using the following keyboard keys:") + "\n\n", 
+					f += "\t" + t.get("Move forwards:") + " " + p(Lb.EditorMoveForwards) + "\n", 
+					f += "\t" + t.get("Move backwards:") + " " + p(Lb.EditorMoveBackwards) + "\n", 
+					f += "\t" + t.get("Move left:") + " " + p(Lb.EditorMoveLeft) + "\n", 
+					f += "\t" + t.get("Move right:") + " " + p(Lb.EditorMoveRight) + "\n", 
+					f += "\t" + t.get("Rotate left:") + " " + p(Lb.EditorRotateLeft) + "\n", 
+					f += "\t" + t.get("Rotate right:") + " " + p(Lb.EditorRotateRight) + "\n\n", 
+					f += t.get("The edited height can be changed either by using the height selection in the bottom left corner, or holding the shift key and scrolling the mouse wheel. Alternatively, you can use the following keyboard keys:") + "\n\n", 
+					f += "\t" + t.get("Move up:") + " " + p(Lb.EditorMoveUp) + "\n", 
+					f += "\t" + t.get("Move down:") + " " + p(Lb.EditorMoveDown)
+				);
 				const m = document.createElement("p");
 				m.textContent = f, d.appendChild(m);
 				const g = document.createElement("h2");
 				g.textContent = t.get("Editing"), d.appendChild(g);
 				let v = "";
-				i.touchEnabled ? (v += t.get("Track parts can be selected in the menu on the right after which they can be placed by tapping on the screen.") + "\n\n", v += t.get("The selected part can then be rotated by tapping the rotate button in the bottom left corner.") + "\n\n", v += t.get("Track parts can be deleted by using the delete tool in the right side menu.")) : (v += t.get("Track parts can be selected in the menu on the right after which they can be placed by left clicking with the mouse.") + "\n\n", v += t.get("Alternatively, the track part currently hovered by the mouse can be selected with the following keyboard shortcut:") + " " + p(Lb.EditorPick) + "\n\n", v += t.get("The selected part can then be rotated using the following keyboard shortcut:") + " " + p(Lb.EditorRotate) + "\n\n", v += t.get("Track parts can be deleted by using the delete tool in the right side menu or by holding the following key:") + " " + p(Lb.EditorDelete));
+				i.touchEnabled ? (
+					v += t.get("Track parts can be selected in the menu on the right after which they can be placed by tapping on the screen.") + "\n\n", 
+					v += t.get("The selected part can then be rotated by tapping the rotate button in the bottom left corner.") + "\n\n", 
+					v += t.get("Track parts can be deleted by using the delete tool in the right side menu.")
+				) : (
+					v += t.get("Track parts can be selected in the menu on the right after which they can be placed by left clicking with the mouse.") + "\n\n", 
+					v += t.get("Alternatively, the track part currently hovered by the mouse can be selected with the following keyboard shortcut:") + " " + p(Lb.EditorPick) + "\n\n", 
+					v += t.get("The selected part can then be rotated using the following keyboard shortcut:") + " " + p(Lb.EditorRotate) + "\n\n", 
+					v += t.get("Track parts can be deleted by using the delete tool in the right side menu or by holding the following key:") + " " + p(Lb.EditorDelete)
+				);
 				const w = document.createElement("p");
 				w.textContent = v, d.appendChild(w);
 				const y = document.createElement("h2");
@@ -21185,7 +21260,7 @@ window.SHOWGHOST = true;
 				Jx(this, Xx, "f").removeChild(Jx(this, Yx, "f")), window.removeEventListener("keydown", Jx(this, Kx, "f"))
 			}
 		};
-		var $x, e_, t_, n_, i_, r_, a_, o_, s_, l_, c_, h_, d_, u_, p_, f_, m_, g_, v_, w_, y_, b_, x_, __, k_, E_, S_, M_, T_, A_, C_, P_, R_, L_, I_, N_, D_, U_, B_, O_, z_, F_, W_, H_, V_, G_, j_, q_, X_, Y_, K_, Z_, J_, Q_, $_, ek, tk, nk, ik, rk, ak, ok, sk, lk, ck, hk, dk, uk, pk, fk, mk, gk, vk, wk, yk, bk, xk, _k, kk, Ek, Sk, Mk, Tk, Ak, Ck, Pk, Rk, Lk, Ik, Nk = function(e, t, n, i, r) {
+		var $x, e_, t_, n_, i_, r_, a_, o_, s_, l_, c_, h_, d_, u_, p_, f_, m_, g_, v_, w_, y_, b_, x_, __, k_, E_, S_, M_, T_, A_, C_, P_, R_, L_, I_, N_, D_, U_, B_, O_, z_, F_, W_, H_, V_, G_, j_, q_, X_, Y_, K_, Z_, J_, Q_, $_, ek, tk, placeSpecial1, placeSpecial2, placeSpecial3, placeSpecial4, nk, ik, rk, ak, ok, sk, lk, ck, hk, dk, uk, pk, fk, mk, gk, vk, wk, yk, bk, xk, _k, kk, Ek, Sk, Mk, Tk, Ak, Ck, Pk, Rk, Lk, Ik, Nk = function(e, t, n, i, r) {
 				if ("m" === i) throw new TypeError("Private method is not writable");
 				if ("a" === i && !r) throw new TypeError("Private accessor was defined without a setter");
 				if ("function" == typeof t ? e !== t || !r : !t.has(e)) throw new TypeError("Cannot write private member to an object whose class did not declare it");
@@ -21196,7 +21271,7 @@ window.SHOWGHOST = true;
 				if ("function" == typeof t ? e !== t || !i : !t.has(e)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
 				return "m" === n ? i : "a" === n ? i.call(e) : i ? i.value : t.get(e)
 			};
-		e_ = new WeakMap, t_ = new WeakMap, n_ = new WeakMap, i_ = new WeakMap, r_ = new WeakMap, a_ = new WeakMap, o_ = new WeakMap, s_ = new WeakMap, l_ = new WeakMap, c_ = new WeakMap, h_ = new WeakMap, d_ = new WeakMap, u_ = new WeakMap, p_ = new WeakMap, f_ = new WeakMap, m_ = new WeakMap, g_ = new WeakMap, v_ = new WeakMap, w_ = new WeakMap, y_ = new WeakMap, b_ = new WeakMap, x_ = new WeakMap, __ = new WeakMap, k_ = new WeakMap, E_ = new WeakMap, S_ = new WeakMap, M_ = new WeakMap, T_ = new WeakMap, A_ = new WeakMap, C_ = new WeakMap, P_ = new WeakMap, R_ = new WeakMap, L_ = new WeakMap, I_ = new WeakMap, N_ = new WeakMap, D_ = new WeakMap, U_ = new WeakMap, B_ = new WeakMap, O_ = new WeakMap, z_ = new WeakMap, F_ = new WeakMap, W_ = new WeakMap, H_ = new WeakMap, V_ = new WeakMap, G_ = new WeakMap, j_ = new WeakMap, q_ = new WeakMap, X_ = new WeakMap, Y_ = new WeakMap, K_ = new WeakMap, Z_ = new WeakMap, J_ = new WeakMap, Q_ = new WeakMap, $_ = new WeakMap, ek = new WeakMap, tk = new WeakMap, nk = new WeakMap, ik = new WeakMap, rk = new WeakMap, ak = new WeakMap, ok = new WeakMap, sk = new WeakMap, lk = new WeakMap, ck = new WeakMap, hk = new WeakMap, dk = new WeakMap, uk = new WeakMap, pk = new WeakMap, _k = new WeakMap, kk = new WeakMap, Ek = new WeakMap, $x = new WeakSet, fk = function(e) {
+		e_ = new WeakMap, t_ = new WeakMap, n_ = new WeakMap, i_ = new WeakMap, r_ = new WeakMap, a_ = new WeakMap, o_ = new WeakMap, s_ = new WeakMap, l_ = new WeakMap, c_ = new WeakMap, h_ = new WeakMap, d_ = new WeakMap, u_ = new WeakMap, p_ = new WeakMap, f_ = new WeakMap, m_ = new WeakMap, g_ = new WeakMap, v_ = new WeakMap, w_ = new WeakMap, y_ = new WeakMap, b_ = new WeakMap, x_ = new WeakMap, __ = new WeakMap, k_ = new WeakMap, E_ = new WeakMap, S_ = new WeakMap, M_ = new WeakMap, T_ = new WeakMap, A_ = new WeakMap, C_ = new WeakMap, P_ = new WeakMap, R_ = new WeakMap, L_ = new WeakMap, I_ = new WeakMap, N_ = new WeakMap, D_ = new WeakMap, U_ = new WeakMap, B_ = new WeakMap, O_ = new WeakMap, z_ = new WeakMap, F_ = new WeakMap, W_ = new WeakMap, H_ = new WeakMap, V_ = new WeakMap, G_ = new WeakMap, j_ = new WeakMap, q_ = new WeakMap, X_ = new WeakMap, Y_ = new WeakMap, K_ = new WeakMap, Z_ = new WeakMap, J_ = new WeakMap, Q_ = new WeakMap, $_ = new WeakMap, ek = new WeakMap, tk = new WeakMap, placeSpecial1 = new WeakMap, placeSpecial2 = new WeakMap, placeSpecial3 = new WeakMap, placeSpecial4 = new WeakMap, nk = new WeakMap, ik = new WeakMap, rk = new WeakMap, ak = new WeakMap, ok = new WeakMap, sk = new WeakMap, lk = new WeakMap, ck = new WeakMap, hk = new WeakMap, dk = new WeakMap, uk = new WeakMap, pk = new WeakMap, _k = new WeakMap, kk = new WeakMap, Ek = new WeakMap, $x = new WeakSet, fk = function(e) {
 			const t = document.getElementById("ui");
 			Nk(this, g_, document.createElement("div"), "f"), Dk(this, g_, "f").className = "hidden", t.appendChild(Dk(this, g_, "f")), Nk(this, v_, document.createElement("div"), "f"), Dk(this, v_, "f").className = "top", Dk(this, g_, "f").appendChild(Dk(this, v_, "f"));
 			const n = document.createElement("div");
@@ -21766,7 +21841,99 @@ window.SHOWGHOST = true;
 		};
 		const Uk = class {
 			constructor(e, t, n, i, r, a, o, s, l, c, h, d, u, p) {
-				$x.add(this), e_.set(this, void 0), t_.set(this, performance.now()), n_.set(this, void 0), i_.set(this, void 0), r_.set(this, void 0), a_.set(this, void 0), o_.set(this, void 0), s_.set(this, void 0), l_.set(this, void 0), c_.set(this, void 0), h_.set(this, void 0), d_.set(this, void 0), u_.set(this, void 0), p_.set(this, void 0), f_.set(this, null), m_.set(this, !1), g_.set(this, void 0), v_.set(this, void 0), w_.set(this, void 0), y_.set(this, void 0), b_.set(this, null), x_.set(this, void 0), __.set(this, void 0), k_.set(this, void 0), E_.set(this, void 0), S_.set(this, void 0), M_.set(this, null), T_.set(this, void 0), A_.set(this, null), C_.set(this, void 0), P_.set(this, void 0), R_.set(this, void 0), L_.set(this, void 0), I_.set(this, void 0), N_.set(this, void 0), D_.set(this, void 0), U_.set(this, void 0), B_.set(this, void 0), O_.set(this, void 0), z_.set(this, void 0), F_.set(this, void 0), W_.set(this, void 0), H_.set(this, !1), V_.set(this, !1), G_.set(this, !1), j_.set(this, !1), q_.set(this, !1), X_.set(this, !1), Y_.set(this, !1), K_.set(this, !0), Z_.set(this, void 0), J_.set(this, void 0), Q_.set(this, void 0), $_.set(this, void 0), ek.set(this, !1), tk.set(this, !1), nk.set(this, null), ik.set(this, null), rk.set(this, !1), ak.set(this, null), ok.set(this, 0), sk.set(this, null), lk.set(this, 1e3), ck.set(this, null), hk.set(this, []), dk.set(this, 1), uk.set(this, []), pk.set(this, null), _k.set(this, null), kk.set(this, null), Ek.set(this, null), Nk(this, n_, e, "f"), Nk(this, e_, t, "f"), Nk(this, i_, n, "f"), Nk(this, r_, i, "f"), Nk(this, a_, r, "f"), Nk(this, o_, a, "f"), Nk(this, h_, o, "f"), Nk(this, s_, s, "f"), Nk(this, l_, l, "f"), Nk(this, c_, c, "f"), Nk(this, d_, h, "f"), Nk(this, u_, d, "f"), Nk(this, p_, u, "f"), Nk(this, F_, new Kr(70, 1, .1, 1e4), "f"), Dk(this, F_, "f").position.set(40, 40, -40), n.scene.add(Dk(this, F_, "f")), Nk(this, W_, new ay(Dk(this, F_, "f"), n.canvas), "f"), Dk(this, W_, "f").mouseButtons = {
+				$x.add(this), e_.set(this, void 0),
+				t_.set(this, performance.now()),
+				n_.set(this, void 0),
+				i_.set(this, void 0),
+				r_.set(this, void 0),
+				a_.set(this, void 0),
+				o_.set(this, void 0),
+				s_.set(this, void 0),
+				l_.set(this, void 0),
+				c_.set(this, void 0),
+				h_.set(this, void 0),
+				d_.set(this, void 0),
+				u_.set(this, void 0),
+				p_.set(this, void 0),
+				f_.set(this, null),
+				m_.set(this, !1),
+				g_.set(this, void 0),
+				v_.set(this, void 0),
+				w_.set(this, void 0),
+				y_.set(this, void 0),
+				b_.set(this, null),
+				x_.set(this, void 0),
+				__.set(this, void 0),
+				k_.set(this, void 0),
+				E_.set(this, void 0),
+				S_.set(this, void 0),
+				M_.set(this, null),
+				T_.set(this, void 0),
+				A_.set(this, null),
+				C_.set(this, void 0),
+				P_.set(this, void 0),
+				R_.set(this, void 0),
+				L_.set(this, void 0),
+				I_.set(this, void 0),
+				N_.set(this, void 0),
+				D_.set(this, void 0),
+				U_.set(this, void 0),
+				B_.set(this, void 0),
+				O_.set(this, void 0),
+				z_.set(this, void 0),
+				F_.set(this, void 0),
+				W_.set(this, void 0),
+				H_.set(this, !1),
+				V_.set(this, !1),
+				G_.set(this, !1),
+				j_.set(this, !1),
+				q_.set(this, !1),
+				X_.set(this, !1),
+				Y_.set(this, !1),
+				K_.set(this, !0),
+				Z_.set(this, void 0),
+				J_.set(this, void 0),
+				Q_.set(this, void 0),
+				$_.set(this, void 0),
+				ek.set(this, !1),
+				tk.set(this, !1),
+				placeSpecial1.set(this, !1),
+				placeSpecial2.set(this, !1),
+				placeSpecial3.set(this, !1),
+				placeSpecial4.set(this, !1),
+				nk.set(this, null),
+				ik.set(this, null),
+				rk.set(this, !1),
+				ak.set(this, null),
+				ok.set(this, 0),
+				sk.set(this, null),
+				lk.set(this, 1e3),
+				ck.set(this, null),
+				hk.set(this, []),
+				dk.set(this, 1),
+				uk.set(this, []),
+				pk.set(this, null),
+				_k.set(this, null),
+				kk.set(this, null),
+				Ek.set(this, null),
+				Nk(this, n_, e, "f"),
+				Nk(this, e_, t, "f"),
+				Nk(this, i_, n, "f"),
+				Nk(this, r_, i, "f"),
+				Nk(this, a_, r, "f"),
+				Nk(this, o_, a, "f"),
+				Nk(this, h_, o, "f"),
+				Nk(this, s_, s, "f"),
+				Nk(this, l_, l, "f"),
+				Nk(this, c_, c, "f"),
+				Nk(this, d_, h, "f"),
+				Nk(this, u_, d, "f"),
+				Nk(this, p_, u, "f"), 
+				Nk(this, F_, new Kr(70, 1, .1, 1e4), "f"), 
+				Dk(this, F_, "f").position.set(40, 40, -40), 
+				n.scene.add(Dk(this, F_, "f")), 
+				Nk(this, W_, new ay(Dk(this, F_, "f"), n.canvas), "f"), 
+				Dk(this, W_, "f").mouseButtons = {
 					MIDDLE: g,
 					RIGHT: w
 				}, 
@@ -21793,8 +21960,9 @@ window.SHOWGHOST = true;
 						n = -e.clientY / window.innerHeight * 2 + 1;
 					null == Dk(this, nk, "f") ? Nk(this, nk, new ln(t, n), "f") : Dk(this, nk, "f").set(t, n)
 				}), "f")), 
-				n.canvas.addEventListener("mousedown", Nk(this, P_, (e => {
-					0 == e.button && Nk(this, tk, !0, "f"), 1 == e.button && e.preventDefault()
+				n.canvas.addEventListener("mousedown", Nk(this, P_, (e => {		// IMPORTANT - Mouse Down editor (place block)
+					0 == e.button && Nk(this, tk, !0, "f"), 
+					1 == e.button && e.preventDefault()
 				}), "f")), 
 				window.addEventListener("mouseup", Nk(this, R_, (e => {
 					0 == e.button && (Nk(this, tk, !1, "f"), Nk(this, sk, null, "f"))
@@ -21805,14 +21973,14 @@ window.SHOWGHOST = true;
 				n.canvas.addEventListener("touchstart", Nk(this, I_, (() => {
 					Dk(this, u_, "f").touchEnabled && Nk(this, ik, Date.now(), "f")
 				}), "f")), 
-				n.canvas.addEventListener("click", Nk(this, N_, (() => {
+				n.canvas.addEventListener("click", Nk(this, N_, (() => {		// IMPORTANT - Mouse Full Press editor
 					Dk(this, u_, "f").touchEnabled && null != Dk(this, ik, "f") && Date.now() - Dk(this, ik, "f") < 200 && (Nk(this, ik, null, "f"), Nk(this, rk, !0, "f"))
 				}), "f")), 
 				window.addEventListener("keydown", Nk(this, D_, (e => {
-					Dk(this, $x, "m", Ik).call(this) && (Dk(this, d_, "f").isOpen || Dk(this, S_, "f").isOpen || null != Dk(this, M_, "f") || null != Dk(this, A_, "f") || "Escape" == e.code && (Dk(this, $x, "m", mk).call(this, p), e.preventDefault()), u.checkKeyBinding(e, Lb.EditorRotate) && (Nk(this, ok, (Dk(this, ok, "f") + 1) % 4, "f"), e.preventDefault()), u.checkKeyBinding(e, Lb.EditorHeightModifier) && (Nk(this, H_, !0, "f"), Dk(this, W_, "f").enableZoom = !1, e.preventDefault()), u.checkKeyBinding(e, Lb.EditorDelete) && (Nk(this, ek, !0, "f"), e.preventDefault()), u.checkKeyBinding(e, Lb.EditorMoveForwards) && (Nk(this, V_, !0, "f"), e.preventDefault()), u.checkKeyBinding(e, Lb.EditorMoveRight) && (Nk(this, G_, !0, "f"), e.preventDefault()), u.checkKeyBinding(e, Lb.EditorMoveBackwards) && (Nk(this, j_, !0, "f"), e.preventDefault()), u.checkKeyBinding(e, Lb.EditorMoveLeft) && (Nk(this, q_, !0, "f"), e.preventDefault()), u.checkKeyBinding(e, Lb.EditorRotateLeft) && (Nk(this, X_, !0, "f"), e.preventDefault()), u.checkKeyBinding(e, Lb.EditorRotateRight) && (Nk(this, Y_, !0, "f"), e.preventDefault()), u.checkKeyBinding(e, Lb.EditorMoveDown) && (Nk(this, $x, Math.max(0, Dk(this, $x, "a", Mk) - 1), "a", Tk), e.preventDefault()), u.checkKeyBinding(e, Lb.EditorMoveUp) && (Nk(this, $x, Dk(this, $x, "a", Mk) + 1, "a", Tk), e.preventDefault()), u.checkKeyBinding(e, Lb.EditorTest) && (Dk(this, $x, "m", gk).call(this), e.preventDefault()), u.checkKeyBinding(e, Lb.EditorPick) && (Dk(this, $x, "m", vk).call(this), e.preventDefault()))
+					Dk(this, $x, "m", Ik).call(this) && (Dk(this, d_, "f").isOpen || Dk(this, S_, "f").isOpen || null != Dk(this, M_, "f") || null != Dk(this, A_, "f") || "Escape" == e.code && (Dk(this, $x, "m", mk).call(this, p), e.preventDefault()), u.checkKeyBinding(e, Lb.EditorRotate) && (Nk(this, ok, (Dk(this, ok, "f") + 1) % 4, "f"), e.preventDefault()), u.checkKeyBinding(e, Lb.EditorHeightModifier) && (Nk(this, H_, !0, "f"), Dk(this, W_, "f").enableZoom = !1, e.preventDefault()), u.checkKeyBinding(e, Lb.EditorDelete) && (Nk(this, ek, !0, "f"), e.preventDefault()), u.checkKeyBinding(e, Lb.PlaceSpecial1) && (Nk(this, placeSpecial1, !0, "f"), e.preventDefault()), u.checkKeyBinding(e, Lb.PlaceSpecial2) && (Nk(this, placeSpecial2, !0, "f"), e.preventDefault()), u.checkKeyBinding(e, Lb.PlaceSpecial3) && (Nk(this, placeSpecial3, !0, "f"), e.preventDefault()), u.checkKeyBinding(e, Lb.PlaceSpecial4) && (Nk(this, placeSpecial4, !0, "f"), e.preventDefault()), u.checkKeyBinding(e, Lb.EditorMoveForwards) && (Nk(this, V_, !0, "f"), e.preventDefault()), u.checkKeyBinding(e, Lb.EditorMoveRight) && (Nk(this, G_, !0, "f"), e.preventDefault()), u.checkKeyBinding(e, Lb.EditorMoveBackwards) && (Nk(this, j_, !0, "f"), e.preventDefault()), u.checkKeyBinding(e, Lb.EditorMoveLeft) && (Nk(this, q_, !0, "f"), e.preventDefault()), u.checkKeyBinding(e, Lb.EditorRotateLeft) && (Nk(this, X_, !0, "f"), e.preventDefault()), u.checkKeyBinding(e, Lb.EditorRotateRight) && (Nk(this, Y_, !0, "f"), e.preventDefault()), u.checkKeyBinding(e, Lb.EditorMoveDown) && (Nk(this, $x, Math.max(0, Dk(this, $x, "a", Mk) - 1), "a", Tk), e.preventDefault()), u.checkKeyBinding(e, Lb.EditorMoveUp) && (Nk(this, $x, Dk(this, $x, "a", Mk) + 1, "a", Tk), e.preventDefault()), u.checkKeyBinding(e, Lb.EditorTest) && (Dk(this, $x, "m", gk).call(this), e.preventDefault()), u.checkKeyBinding(e, Lb.EditorPick) && (Dk(this, $x, "m", vk).call(this), e.preventDefault()))
 				}), "f")), 
 				window.addEventListener("keyup", Nk(this, U_, (e => {
-					u.checkKeyBinding(e, Lb.EditorHeightModifier) && (Nk(this, H_, !1, "f"), Dk(this, W_, "f").enableZoom = !0), u.checkKeyBinding(e, Lb.EditorDelete) && Nk(this, ek, !1, "f"), u.checkKeyBinding(e, Lb.EditorMoveForwards) && Nk(this, V_, !1, "f"), u.checkKeyBinding(e, Lb.EditorMoveRight) && Nk(this, G_, !1, "f"), u.checkKeyBinding(e, Lb.EditorMoveBackwards) && Nk(this, j_, !1, "f"), u.checkKeyBinding(e, Lb.EditorMoveLeft) && Nk(this, q_, !1, "f"), u.checkKeyBinding(e, Lb.EditorRotateLeft) && Nk(this, X_, !1, "f"), u.checkKeyBinding(e, Lb.EditorRotateRight) && Nk(this, Y_, !1, "f")
+					u.checkKeyBinding(e, Lb.EditorHeightModifier) && (Nk(this, H_, !1, "f"), Dk(this, W_, "f").enableZoom = !0), u.checkKeyBinding(e, Lb.EditorDelete) && Nk(this, ek, !1, "f"), u.checkKeyBinding(e, Lb.PlaceSpecial1) && Nk(this, placeSpecial1, !1, "f"), u.checkKeyBinding(e, Lb.PlaceSpecial2) && Nk(this, placeSpecial2, !1, "f"), u.checkKeyBinding(e, Lb.PlaceSpecial3) && Nk(this, placeSpecial3, !1, "f"), u.checkKeyBinding(e, Lb.PlaceSpecial4) && Nk(this, placeSpecial4, !1, "f"), u.checkKeyBinding(e, Lb.EditorMoveForwards) && Nk(this, V_, !1, "f"), u.checkKeyBinding(e, Lb.EditorMoveRight) && Nk(this, G_, !1, "f"), u.checkKeyBinding(e, Lb.EditorMoveBackwards) && Nk(this, j_, !1, "f"), u.checkKeyBinding(e, Lb.EditorMoveLeft) && Nk(this, q_, !1, "f"), u.checkKeyBinding(e, Lb.EditorRotateLeft) && Nk(this, X_, !1, "f"), u.checkKeyBinding(e, Lb.EditorRotateRight) && Nk(this, Y_, !1, "f")
 				}), "f")), 
 				window.addEventListener("wheel", Nk(this, B_, (e => {
 					Dk(this, H_, "f") && Dk(this, m_, "f") && (e.deltaY > 0 ? Nk(this, $x, Dk(this, $x, "a", Mk) + 1, "a", Tk) : e.deltaY < 0 && Nk(this, $x, Math.max(0, Dk(this, $x, "a", Mk) - 1), "a", Tk))
@@ -21858,7 +22026,10 @@ window.SHOWGHOST = true;
 			update(e) {
 				var t;
 				if (Dk(this, m_, "f")) {
-					Dk(this, F_, "f").position.y < .5 && (Dk(this, F_, "f").position.y = .5, Dk(this, W_, "f").update()), Nk(this, ak, Dk(this, $x, "m", Ck).call(this), "f"), null != Dk(this, ak, "f") ? Dk(this, Q_, "f").position.set(Dk(this, ak, "f").x * Ky.partWidth, Dk(this, ak, "f").y * Ky.partHeight, Dk(this, ak, "f").z * Ky.partLength) : Dk(this, Q_, "f").position.set(-1e6, -1e6, -1e6), Dk(this, Q_, "f").rotation.y = Dk(this, ok, "f") * Math.PI / 2;
+					Dk(this, F_, "f").position.y < .5 && (Dk(this, F_, "f").position.y = .5, Dk(this, W_, "f").update()), 
+					Nk(this, ak, Dk(this, $x, "m", Ck).call(this), "f"), 
+					null != Dk(this, ak, "f") ? Dk(this, Q_, "f").position.set(Dk(this, ak, "f").x * Ky.partWidth, Dk(this, ak, "f").y * Ky.partHeight, Dk(this, ak, "f").z * Ky.partLength) : Dk(this, Q_, "f").position.set(-1e6, -1e6, -1e6), 
+					Dk(this, Q_, "f").rotation.y = Dk(this, ok, "f") * Math.PI / 2;
 					for (let e = 0; e < Dk(this, hk, "f").length; ++e) {
 						const t = Dk(this, hk, "f")[e];
 						e == Dk(this, dk, "f") ? t.mesh.visible = !0 : t.mesh.visible = !1
@@ -21867,25 +22038,106 @@ window.SHOWGHOST = true;
 					if (null != e) {
 						const n = Dk(this, hk, "f")[Dk(this, dk, "f")],
 							i = Dk(this, $x, "m", Pk).call(this, e, n.tiles);
-						if (null == n.id || Dk(this, ek, "f") ? i.length > 0 ? Dk(this, $_, "f").color.set(12255232) : Dk(this, $_, "f").color.set(12263970) : i.length > 0 ? Dk(this, $_, "f").color.set(12303104) : Dk(this, $_, "f").color.set(187), Dk(this, ek, "f")) Dk(this, $x, "m", Rk).call(this, i);
-						else if (Dk(this, tk, "f") || Dk(this, rk, "f")) {
+
+						const placeSpecial = Dk(this, placeSpecial1, "f") || Dk(this, placeSpecial2, "f") || Dk(this, placeSpecial3, "f") || Dk(this, placeSpecial4, "f");
+						const specialHeight = 30;	// Height of special macro built towers (cwcinc)
+
+						if (null == n.id || Dk(this, ek, "f") ? i.length > 0 ? Dk(this, $_, "f").color.set(12255232) : Dk(this, $_, "f").color.set(12263970) : i.length > 0 ? Dk(this, $_, "f").color.set(12303104) : Dk(this, $_, "f").color.set(187), Dk(this, ek, "f")) Dk(this, $x, "m", Rk).call(this, i);	// editor delete block (X)
+						else if (Dk(this, tk, "f") || Dk(this, rk, "f") || placeSpecial) {	// IMPORTANT - editor place block
 							if (null == n.id) Dk(this, $x, "m", Rk).call(this, i);
 							else if (null == Dk(this, sk, "f") || Dk(this, sk, "f").x != e.x || Dk(this, sk, "f").y != e.y || Dk(this, sk, "f").z != e.z || Dk(this, sk, "f").id != n.id || Dk(this, sk, "f").rotation != Dk(this, ok, "f")) {
-								i.forEach((({
-									x: e,
-									y: t,
-									z: n
-								}) => {
-									Dk(this, a_, "f").hasPartAt(e, t, n) && Dk(this, a_, "f").deletePart(e, t, n)
-								}));
+								
 								let r = null;
-								n.isCheckpoint && (r = Dk(this, E_, "f").checkpointOrder), Dk(this, a_, "f").setPart(e.x, e.y, e.z, n.id, Dk(this, ok, "f"), r), Dk(this, $x, "m", Ak).call(this), Nk(this, sk, {
-									x: e.x,
-									y: e.y,
-									z: e.z,
-									id: n.id,
-									rotation: Dk(this, ok, "f")
-								}, "f"), Dk(this, a_, "f").generateMeshes(), null === (t = Dk(this, ck, "f")) || void 0 === t || t.refresh(Dk(this, a_, "f")), Dk(this, E_, "f").setFromExistingCheckpoints(Dk(this, a_, "f")), Nk(this, K_, !1, "f")
+								n.isCheckpoint && (r = Dk(this, E_, "f").checkpointOrder);
+
+								if (Dk(this, placeSpecial1, "f")) {	// cwcinc
+									for (let modHeight = 0; modHeight < specialHeight; modHeight++) {
+										i.forEach((({
+											x: e,
+											y: t,
+											z: n
+										}) => {
+											Dk(this, a_, "f").hasPartAt(e, t + modHeight, n) && Dk(this, a_, "f").deletePart(e, t + modHeight, n)
+										}));
+										Dk(this, a_, "f").setPart(e.x, e.y + modHeight, e.z, n.id, Dk(this, ok, "f"), r);
+										Nk(this, sk, {
+											x: e.x,
+											y: e.y + modHeight,
+											z: e.z,
+											id: n.id,
+											rotation: Dk(this, ok, "f")
+										}, "f");
+									}
+								} else if (Dk(this, placeSpecial2, "f")) {
+									for (let modHeight = 0; modHeight < specialHeight; modHeight += 2) {
+										i.forEach((({
+											x: e,
+											y: t,
+											z: n
+										}) => {
+											Dk(this, a_, "f").hasPartAt(e, t + modHeight, n) && Dk(this, a_, "f").deletePart(e, t + modHeight, n)
+										}));
+										Dk(this, a_, "f").setPart(e.x, e.y + modHeight, e.z, n.id, Dk(this, ok, "f"), r);
+										Nk(this, sk, {
+											x: e.x,
+											y: e.y + modHeight,
+											z: e.z,
+											id: n.id,
+											rotation: Dk(this, ok, "f")
+										}, "f");
+									}
+								} else if (Dk(this, placeSpecial3, "f")) {
+									for (let modHeight = 0; modHeight < specialHeight; modHeight += 3) {
+										i.forEach((({
+											x: e,
+											y: t,
+											z: n
+										}) => {
+											Dk(this, a_, "f").hasPartAt(e, t + modHeight, n) && Dk(this, a_, "f").deletePart(e, t + modHeight, n)
+										}));
+										Dk(this, a_, "f").setPart(e.x, e.y + modHeight, e.z, n.id, Dk(this, ok, "f"), r);
+										Nk(this, sk, {
+											x: e.x,
+											y: e.y + modHeight,
+											z: e.z,
+											id: n.id,
+											rotation: Dk(this, ok, "f")
+										}, "f");
+									}
+								} else if (Dk(this, placeSpecial4, "f")) {
+									for (let modHeight = 0; modHeight < specialHeight; modHeight += 4) {
+										i.forEach((({
+											x: e,
+											y: t,
+											z: n
+										}) => {
+											Dk(this, a_, "f").hasPartAt(e, t + modHeight, n) && Dk(this, a_, "f").deletePart(e, t + modHeight, n)
+										}));
+										Dk(this, a_, "f").setPart(e.x, e.y + modHeight, e.z, n.id, Dk(this, ok, "f"), r);
+										Nk(this, sk, {
+											x: e.x,
+											y: e.y + modHeight,
+											z: e.z,
+											id: n.id,
+											rotation: Dk(this, ok, "f")
+										}, "f");
+									}
+								} else {
+									Dk(this, a_, "f").setPart(e.x, e.y, e.z, n.id, Dk(this, ok, "f"), r);
+									Nk(this, sk, {
+										x: e.x,
+										y: e.y,
+										z: e.z,
+										id: n.id,
+										rotation: Dk(this, ok, "f")
+									}, "f");
+								}
+
+								Dk(this, $x, "m", Ak).call(this), // play sound effect (place block)
+								Dk(this, a_, "f").generateMeshes(), 
+								null === (t = Dk(this, ck, "f")) || void 0 === t || t.refresh(Dk(this, a_, "f")), 
+								Dk(this, E_, "f").setFromExistingCheckpoints(Dk(this, a_, "f")), 
+								Nk(this, K_, !1, "f")
 							}
 							Nk(this, rk, !1, "f")
 						}
@@ -23109,8 +23361,13 @@ window.SHOWGHOST = true;
 			UT(this, mT, "m", NT).call(this, UT(this, vT, "f").get("Spectator left"), Lb.SpectatorMoveLeft), 
 			UT(this, mT, "m", NT).call(this, UT(this, vT, "f").get("Spectator right"), Lb.SpectatorMoveRight), 
 			UT(this, mT, "m", NT).call(this, UT(this, vT, "f").get("Spectator speed modifier"), Lb.SpectatorSpeedModifier),
+
 			UT(this, mT, "m", RT).call(this, "Mod Controls"), 
-			UT(this, mT, "m", NT).call(this, "Toggle Ghost", Lb.ToggleGhost)
+			UT(this, mT, "m", NT).call(this, "Toggle Ghost", Lb.ToggleGhost),
+			UT(this, mT, "m", NT).call(this, "Editor Special 1", Lb.PlaceSpecial1),
+			UT(this, mT, "m", NT).call(this, "Editor Special 2", Lb.PlaceSpecial2),
+			UT(this, mT, "m", NT).call(this, "Editor Special 3", Lb.PlaceSpecial3),
+			UT(this, mT, "m", NT).call(this, "Editor Special 4", Lb.PlaceSpecial4)
 		}, RT = function(e) {
 			const t = document.createElement("h2");
 			t.textContent = e, UT(this, kT, "f").appendChild(t)
@@ -26645,7 +26902,6 @@ window.SHOWGHOST = true;
 					[Lb.VehicleBrake, ["KeyS", "ArrowDown"]],
 					[Lb.VehicleTurnLeft, ["KeyA", "ArrowLeft"]],
 					[Lb.VehicleReset, ["KeyR", "Enter"]],
-					[Lb.ToggleGhost, ["KeyE", null]],
 					[Lb.VehicleCockpitCamera, ["KeyC", "KeyM"]],
 					[Lb.ToggleUI, ["KeyH", null]],
 					[Lb.EditorRotate, ["KeyR", "Space"]],
@@ -26667,7 +26923,13 @@ window.SHOWGHOST = true;
 					[Lb.SpectatorMoveRight, ["KeyD", "ArrowRight"]],
 					[Lb.SpectatorMoveBackwards, ["KeyS", "ArrowDown"]],
 					[Lb.SpectatorMoveLeft, ["KeyA", "ArrowLeft"]],
-					[Lb.SpectatorSpeedModifier, ["ShiftLeft", "ShiftRight"]]
+					[Lb.SpectatorSpeedModifier, ["ShiftLeft", "ShiftRight"]],
+					
+					[Lb.ToggleGhost, ["KeyE", null]],
+					[Lb.PlaceSpecial1, ["Digit1", null]],
+					[Lb.PlaceSpecial2, ["Digit2", null]],
+					[Lb.PlaceSpecial3, ["Digit3", null]],
+					[Lb.PlaceSpecial4, ["Digit4", null]],
 				])
 			}
 			getSettings() {
