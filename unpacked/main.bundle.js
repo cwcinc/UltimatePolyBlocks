@@ -22123,6 +22123,13 @@ window.SHOWGHOST = true;
 										}, "f");
 									}
 								} else {
+									i.forEach((({
+										x: e,
+										y: t,
+										z: n
+									}) => {
+										Dk(this, a_, "f").hasPartAt(e, t + modHeight, n) && Dk(this, a_, "f").deletePart(e, t + modHeight, n)
+									}));
 									Dk(this, a_, "f").setPart(e.x, e.y, e.z, n.id, Dk(this, ok, "f"), r);
 									Nk(this, sk, {
 										x: e.x,
