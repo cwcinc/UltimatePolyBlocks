@@ -22128,7 +22128,7 @@ window.SHOWGHOST = true;
 										y: t,
 										z: n
 									}) => {
-										Dk(this, a_, "f").hasPartAt(e, t + modHeight, n) && Dk(this, a_, "f").deletePart(e, t + modHeight, n)
+										Dk(this, a_, "f").hasPartAt(e, t, n) && Dk(this, a_, "f").deletePart(e, t, n)
 									}));
 									Dk(this, a_, "f").setPart(e.x, e.y, e.z, n.id, Dk(this, ok, "f"), r);
 									Nk(this, sk, {
