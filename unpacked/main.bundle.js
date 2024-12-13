@@ -20767,7 +20767,8 @@ window.SHOWGHOST = true;
 			e[e.PlaceSpecial1 = 28] = "PlaceSpecial1",
 			e[e.PlaceSpecial2 = 29] = "PlaceSpecial2",
 			e[e.PlaceSpecial3 = 30] = "PlaceSpecial3",
-			e[e.PlaceSpecial4 = 31] = "PlaceSpecial4"
+			e[e.PlaceSpecial4 = 31] = "PlaceSpecial4",
+			e[e.BreakSpecial1 = 32] = "BreakSpecial1"
 		}(Rb || (Rb = {}));
 		const Lb = Rb;
 		var Ib = n(687),
@@ -21260,7 +21261,7 @@ window.SHOWGHOST = true;
 				Jx(this, Xx, "f").removeChild(Jx(this, Yx, "f")), window.removeEventListener("keydown", Jx(this, Kx, "f"))
 			}
 		};
-		var $x, e_, t_, n_, i_, r_, a_, o_, s_, l_, c_, h_, d_, u_, p_, f_, m_, g_, v_, w_, y_, b_, x_, __, k_, E_, S_, M_, T_, A_, C_, P_, R_, L_, I_, N_, D_, U_, B_, O_, z_, F_, W_, H_, V_, G_, j_, q_, X_, Y_, K_, Z_, J_, Q_, $_, ek, tk, placeSpecial1, placeSpecial2, placeSpecial3, placeSpecial4, nk, ik, rk, ak, ok, sk, lk, ck, hk, dk, uk, pk, fk, mk, gk, vk, wk, yk, bk, xk, _k, kk, Ek, Sk, Mk, Tk, Ak, Ck, Pk, Rk, Lk, Ik, Nk = function(e, t, n, i, r) {
+		var $x, e_, t_, n_, i_, r_, a_, o_, s_, l_, c_, h_, d_, u_, p_, f_, m_, g_, v_, w_, y_, b_, x_, __, k_, E_, S_, M_, T_, A_, C_, P_, R_, L_, I_, N_, D_, U_, B_, O_, z_, F_, W_, H_, V_, G_, j_, q_, X_, Y_, K_, Z_, J_, Q_, $_, ek, tk, placeSpecial1, placeSpecial2, placeSpecial3, placeSpecial4, breakSpecial1, nk, ik, rk, ak, ok, sk, lk, ck, hk, dk, uk, pk, fk, mk, gk, vk, wk, yk, bk, xk, _k, kk, Ek, Sk, Mk, Tk, Ak, Ck, Pk, Rk, Lk, Ik, Nk = function(e, t, n, i, r) {
 				if ("m" === i) throw new TypeError("Private method is not writable");
 				if ("a" === i && !r) throw new TypeError("Private accessor was defined without a setter");
 				if ("function" == typeof t ? e !== t || !r : !t.has(e)) throw new TypeError("Cannot write private member to an object whose class did not declare it");
@@ -21271,7 +21272,7 @@ window.SHOWGHOST = true;
 				if ("function" == typeof t ? e !== t || !i : !t.has(e)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
 				return "m" === n ? i : "a" === n ? i.call(e) : i ? i.value : t.get(e)
 			};
-		e_ = new WeakMap, t_ = new WeakMap, n_ = new WeakMap, i_ = new WeakMap, r_ = new WeakMap, a_ = new WeakMap, o_ = new WeakMap, s_ = new WeakMap, l_ = new WeakMap, c_ = new WeakMap, h_ = new WeakMap, d_ = new WeakMap, u_ = new WeakMap, p_ = new WeakMap, f_ = new WeakMap, m_ = new WeakMap, g_ = new WeakMap, v_ = new WeakMap, w_ = new WeakMap, y_ = new WeakMap, b_ = new WeakMap, x_ = new WeakMap, __ = new WeakMap, k_ = new WeakMap, E_ = new WeakMap, S_ = new WeakMap, M_ = new WeakMap, T_ = new WeakMap, A_ = new WeakMap, C_ = new WeakMap, P_ = new WeakMap, R_ = new WeakMap, L_ = new WeakMap, I_ = new WeakMap, N_ = new WeakMap, D_ = new WeakMap, U_ = new WeakMap, B_ = new WeakMap, O_ = new WeakMap, z_ = new WeakMap, F_ = new WeakMap, W_ = new WeakMap, H_ = new WeakMap, V_ = new WeakMap, G_ = new WeakMap, j_ = new WeakMap, q_ = new WeakMap, X_ = new WeakMap, Y_ = new WeakMap, K_ = new WeakMap, Z_ = new WeakMap, J_ = new WeakMap, Q_ = new WeakMap, $_ = new WeakMap, ek = new WeakMap, tk = new WeakMap, placeSpecial1 = new WeakMap, placeSpecial2 = new WeakMap, placeSpecial3 = new WeakMap, placeSpecial4 = new WeakMap, nk = new WeakMap, ik = new WeakMap, rk = new WeakMap, ak = new WeakMap, ok = new WeakMap, sk = new WeakMap, lk = new WeakMap, ck = new WeakMap, hk = new WeakMap, dk = new WeakMap, uk = new WeakMap, pk = new WeakMap, _k = new WeakMap, kk = new WeakMap, Ek = new WeakMap, $x = new WeakSet, fk = function(e) {
+		e_ = new WeakMap, t_ = new WeakMap, n_ = new WeakMap, i_ = new WeakMap, r_ = new WeakMap, a_ = new WeakMap, o_ = new WeakMap, s_ = new WeakMap, l_ = new WeakMap, c_ = new WeakMap, h_ = new WeakMap, d_ = new WeakMap, u_ = new WeakMap, p_ = new WeakMap, f_ = new WeakMap, m_ = new WeakMap, g_ = new WeakMap, v_ = new WeakMap, w_ = new WeakMap, y_ = new WeakMap, b_ = new WeakMap, x_ = new WeakMap, __ = new WeakMap, k_ = new WeakMap, E_ = new WeakMap, S_ = new WeakMap, M_ = new WeakMap, T_ = new WeakMap, A_ = new WeakMap, C_ = new WeakMap, P_ = new WeakMap, R_ = new WeakMap, L_ = new WeakMap, I_ = new WeakMap, N_ = new WeakMap, D_ = new WeakMap, U_ = new WeakMap, B_ = new WeakMap, O_ = new WeakMap, z_ = new WeakMap, F_ = new WeakMap, W_ = new WeakMap, H_ = new WeakMap, V_ = new WeakMap, G_ = new WeakMap, j_ = new WeakMap, q_ = new WeakMap, X_ = new WeakMap, Y_ = new WeakMap, K_ = new WeakMap, Z_ = new WeakMap, J_ = new WeakMap, Q_ = new WeakMap, $_ = new WeakMap, ek = new WeakMap, tk = new WeakMap, placeSpecial1 = new WeakMap, placeSpecial2 = new WeakMap, placeSpecial3 = new WeakMap, placeSpecial4 = new WeakMap, breakSpecial1 = new WeakMap, nk = new WeakMap, ik = new WeakMap, rk = new WeakMap, ak = new WeakMap, ok = new WeakMap, sk = new WeakMap, lk = new WeakMap, ck = new WeakMap, hk = new WeakMap, dk = new WeakMap, uk = new WeakMap, pk = new WeakMap, _k = new WeakMap, kk = new WeakMap, Ek = new WeakMap, $x = new WeakSet, fk = function(e) {
 			const t = document.getElementById("ui");
 			Nk(this, g_, document.createElement("div"), "f"), Dk(this, g_, "f").className = "hidden", t.appendChild(Dk(this, g_, "f")), Nk(this, v_, document.createElement("div"), "f"), Dk(this, v_, "f").className = "top", Dk(this, g_, "f").appendChild(Dk(this, v_, "f"));
 			const n = document.createElement("div");
@@ -21809,7 +21810,8 @@ window.SHOWGHOST = true;
 					z: s
 				})
 			})), n
-		}, Rk = function(e) {
+		}, 
+		Rk = function(e) {
 			var t;
 			let n = !1;
 			e.forEach((({
@@ -21818,8 +21820,15 @@ window.SHOWGHOST = true;
 				z: i
 			}) => {
 				Dk(this, a_, "f").hasPartAt(e, t, i) && (Dk(this, a_, "f").deletePart(e, t, i), n = !0)
-			})), n && (Dk(this, $x, "m", Ak).call(this), Dk(this, a_, "f").generateMeshes(), null === (t = Dk(this, ck, "f")) || void 0 === t || t.refresh(Dk(this, a_, "f")), Dk(this, E_, "f").setFromExistingCheckpoints(Dk(this, a_, "f")), Nk(this, K_, !1, "f"))
-		}, Lk = function(e) {
+			})), 
+			n && (
+				Dk(this, $x, "m", Ak).call(this), 
+				Dk(this, a_, "f").generateMeshes(), 
+				null === (t = Dk(this, ck, "f")) || void 0 === t || t.refresh(Dk(this, a_, "f")), 
+				Dk(this, E_, "f").setFromExistingCheckpoints(Dk(this, a_, "f")), 
+				Nk(this, K_, !1, "f"))
+		}, 
+		Lk = function(e) {
 			const t = 4 * Dk(this, W_, "f").getDistance();
 			if (Dk(this, m_, "f") && Dk(this, $x, "m", Ik).call(this)) {
 				const n = new Un;
@@ -21901,6 +21910,7 @@ window.SHOWGHOST = true;
 				placeSpecial2.set(this, !1),
 				placeSpecial3.set(this, !1),
 				placeSpecial4.set(this, !1),
+				breakSpecial1.set(this, !1),
 				nk.set(this, null),
 				ik.set(this, null),
 				rk.set(this, !1),
@@ -21977,10 +21987,10 @@ window.SHOWGHOST = true;
 					Dk(this, u_, "f").touchEnabled && null != Dk(this, ik, "f") && Date.now() - Dk(this, ik, "f") < 200 && (Nk(this, ik, null, "f"), Nk(this, rk, !0, "f"))
 				}), "f")), 
 				window.addEventListener("keydown", Nk(this, D_, (e => {
-					Dk(this, $x, "m", Ik).call(this) && (Dk(this, d_, "f").isOpen || Dk(this, S_, "f").isOpen || null != Dk(this, M_, "f") || null != Dk(this, A_, "f") || "Escape" == e.code && (Dk(this, $x, "m", mk).call(this, p), e.preventDefault()), u.checkKeyBinding(e, Lb.EditorRotate) && (Nk(this, ok, (Dk(this, ok, "f") + 1) % 4, "f"), e.preventDefault()), u.checkKeyBinding(e, Lb.EditorHeightModifier) && (Nk(this, H_, !0, "f"), Dk(this, W_, "f").enableZoom = !1, e.preventDefault()), u.checkKeyBinding(e, Lb.EditorDelete) && (Nk(this, ek, !0, "f"), e.preventDefault()), u.checkKeyBinding(e, Lb.PlaceSpecial1) && (Nk(this, placeSpecial1, !0, "f"), e.preventDefault()), u.checkKeyBinding(e, Lb.PlaceSpecial2) && (Nk(this, placeSpecial2, !0, "f"), e.preventDefault()), u.checkKeyBinding(e, Lb.PlaceSpecial3) && (Nk(this, placeSpecial3, !0, "f"), e.preventDefault()), u.checkKeyBinding(e, Lb.PlaceSpecial4) && (Nk(this, placeSpecial4, !0, "f"), e.preventDefault()), u.checkKeyBinding(e, Lb.EditorMoveForwards) && (Nk(this, V_, !0, "f"), e.preventDefault()), u.checkKeyBinding(e, Lb.EditorMoveRight) && (Nk(this, G_, !0, "f"), e.preventDefault()), u.checkKeyBinding(e, Lb.EditorMoveBackwards) && (Nk(this, j_, !0, "f"), e.preventDefault()), u.checkKeyBinding(e, Lb.EditorMoveLeft) && (Nk(this, q_, !0, "f"), e.preventDefault()), u.checkKeyBinding(e, Lb.EditorRotateLeft) && (Nk(this, X_, !0, "f"), e.preventDefault()), u.checkKeyBinding(e, Lb.EditorRotateRight) && (Nk(this, Y_, !0, "f"), e.preventDefault()), u.checkKeyBinding(e, Lb.EditorMoveDown) && (Nk(this, $x, Math.max(0, Dk(this, $x, "a", Mk) - 1), "a", Tk), e.preventDefault()), u.checkKeyBinding(e, Lb.EditorMoveUp) && (Nk(this, $x, Dk(this, $x, "a", Mk) + 1, "a", Tk), e.preventDefault()), u.checkKeyBinding(e, Lb.EditorTest) && (Dk(this, $x, "m", gk).call(this), e.preventDefault()), u.checkKeyBinding(e, Lb.EditorPick) && (Dk(this, $x, "m", vk).call(this), e.preventDefault()))
+					Dk(this, $x, "m", Ik).call(this) && (Dk(this, d_, "f").isOpen || Dk(this, S_, "f").isOpen || null != Dk(this, M_, "f") || null != Dk(this, A_, "f") || "Escape" == e.code && (Dk(this, $x, "m", mk).call(this, p), e.preventDefault()), u.checkKeyBinding(e, Lb.EditorRotate) && (Nk(this, ok, (Dk(this, ok, "f") + 1) % 4, "f"), e.preventDefault()), u.checkKeyBinding(e, Lb.EditorHeightModifier) && (Nk(this, H_, !0, "f"), Dk(this, W_, "f").enableZoom = !1, e.preventDefault()), u.checkKeyBinding(e, Lb.EditorDelete) && (Nk(this, ek, !0, "f"), e.preventDefault()), u.checkKeyBinding(e, Lb.PlaceSpecial1) && (Nk(this, placeSpecial1, !0, "f"), e.preventDefault()), u.checkKeyBinding(e, Lb.PlaceSpecial2) && (Nk(this, placeSpecial2, !0, "f"), e.preventDefault()), u.checkKeyBinding(e, Lb.PlaceSpecial3) && (Nk(this, placeSpecial3, !0, "f"), e.preventDefault()), u.checkKeyBinding(e, Lb.PlaceSpecial4) && (Nk(this, placeSpecial4, !0, "f"), e.preventDefault()), u.checkKeyBinding(e, Lb.BreakSpecial1) && (Nk(this, breakSpecial1, !0, "f"), e.preventDefault()), u.checkKeyBinding(e, Lb.EditorMoveForwards) && (Nk(this, V_, !0, "f"), e.preventDefault()), u.checkKeyBinding(e, Lb.EditorMoveRight) && (Nk(this, G_, !0, "f"), e.preventDefault()), u.checkKeyBinding(e, Lb.EditorMoveBackwards) && (Nk(this, j_, !0, "f"), e.preventDefault()), u.checkKeyBinding(e, Lb.EditorMoveLeft) && (Nk(this, q_, !0, "f"), e.preventDefault()), u.checkKeyBinding(e, Lb.EditorRotateLeft) && (Nk(this, X_, !0, "f"), e.preventDefault()), u.checkKeyBinding(e, Lb.EditorRotateRight) && (Nk(this, Y_, !0, "f"), e.preventDefault()), u.checkKeyBinding(e, Lb.EditorMoveDown) && (Nk(this, $x, Math.max(0, Dk(this, $x, "a", Mk) - 1), "a", Tk), e.preventDefault()), u.checkKeyBinding(e, Lb.EditorMoveUp) && (Nk(this, $x, Dk(this, $x, "a", Mk) + 1, "a", Tk), e.preventDefault()), u.checkKeyBinding(e, Lb.EditorTest) && (Dk(this, $x, "m", gk).call(this), e.preventDefault()), u.checkKeyBinding(e, Lb.EditorPick) && (Dk(this, $x, "m", vk).call(this), e.preventDefault()))
 				}), "f")), 
 				window.addEventListener("keyup", Nk(this, U_, (e => {
-					u.checkKeyBinding(e, Lb.EditorHeightModifier) && (Nk(this, H_, !1, "f"), Dk(this, W_, "f").enableZoom = !0), u.checkKeyBinding(e, Lb.EditorDelete) && Nk(this, ek, !1, "f"), u.checkKeyBinding(e, Lb.PlaceSpecial1) && Nk(this, placeSpecial1, !1, "f"), u.checkKeyBinding(e, Lb.PlaceSpecial2) && Nk(this, placeSpecial2, !1, "f"), u.checkKeyBinding(e, Lb.PlaceSpecial3) && Nk(this, placeSpecial3, !1, "f"), u.checkKeyBinding(e, Lb.PlaceSpecial4) && Nk(this, placeSpecial4, !1, "f"), u.checkKeyBinding(e, Lb.EditorMoveForwards) && Nk(this, V_, !1, "f"), u.checkKeyBinding(e, Lb.EditorMoveRight) && Nk(this, G_, !1, "f"), u.checkKeyBinding(e, Lb.EditorMoveBackwards) && Nk(this, j_, !1, "f"), u.checkKeyBinding(e, Lb.EditorMoveLeft) && Nk(this, q_, !1, "f"), u.checkKeyBinding(e, Lb.EditorRotateLeft) && Nk(this, X_, !1, "f"), u.checkKeyBinding(e, Lb.EditorRotateRight) && Nk(this, Y_, !1, "f")
+					u.checkKeyBinding(e, Lb.EditorHeightModifier) && (Nk(this, H_, !1, "f"), Dk(this, W_, "f").enableZoom = !0), u.checkKeyBinding(e, Lb.EditorDelete) && Nk(this, ek, !1, "f"), u.checkKeyBinding(e, Lb.PlaceSpecial1) && Nk(this, placeSpecial1, !1, "f"), u.checkKeyBinding(e, Lb.PlaceSpecial2) && Nk(this, placeSpecial2, !1, "f"), u.checkKeyBinding(e, Lb.PlaceSpecial3) && Nk(this, placeSpecial3, !1, "f"), u.checkKeyBinding(e, Lb.PlaceSpecial4) && Nk(this, placeSpecial4, !1, "f"), u.checkKeyBinding(e, Lb.BreakSpecial1) && Nk(this, breakSpecial1, !1, "f"), u.checkKeyBinding(e, Lb.EditorMoveForwards) && Nk(this, V_, !1, "f"), u.checkKeyBinding(e, Lb.EditorMoveRight) && Nk(this, G_, !1, "f"), u.checkKeyBinding(e, Lb.EditorMoveBackwards) && Nk(this, j_, !1, "f"), u.checkKeyBinding(e, Lb.EditorMoveLeft) && Nk(this, q_, !1, "f"), u.checkKeyBinding(e, Lb.EditorRotateLeft) && Nk(this, X_, !1, "f"), u.checkKeyBinding(e, Lb.EditorRotateRight) && Nk(this, Y_, !1, "f")
 				}), "f")), 
 				window.addEventListener("wheel", Nk(this, B_, (e => {
 					Dk(this, H_, "f") && Dk(this, m_, "f") && (e.deltaY > 0 ? Nk(this, $x, Dk(this, $x, "a", Mk) + 1, "a", Tk) : e.deltaY < 0 && Nk(this, $x, Math.max(0, Dk(this, $x, "a", Mk) - 1), "a", Tk))
@@ -22040,10 +22050,33 @@ window.SHOWGHOST = true;
 							i = Dk(this, $x, "m", Pk).call(this, e, n.tiles);
 
 						const placeSpecial = Dk(this, placeSpecial1, "f") || Dk(this, placeSpecial2, "f") || Dk(this, placeSpecial3, "f") || Dk(this, placeSpecial4, "f");
+						const breakSpecial = Dk(this, breakSpecial1, "f");
 						const specialHeight = 30;	// Height of special macro built towers (cwcinc)
 
-						if (null == n.id || Dk(this, ek, "f") ? i.length > 0 ? Dk(this, $_, "f").color.set(12255232) : Dk(this, $_, "f").color.set(12263970) : i.length > 0 ? Dk(this, $_, "f").color.set(12303104) : Dk(this, $_, "f").color.set(187), Dk(this, ek, "f")) Dk(this, $x, "m", Rk).call(this, i);	// editor delete block (X)
-						else if (Dk(this, tk, "f") || Dk(this, rk, "f") || placeSpecial) {	// IMPORTANT - editor place block
+						if (null == n.id || Dk(this, ek, "f") || breakSpecial ? i.length > 0 ? Dk(this, $_, "f").color.set(12255232) : Dk(this, $_, "f").color.set(12263970) : i.length > 0 ? Dk(this, $_, "f").color.set(12303104) : Dk(this, $_, "f").color.set(187), Dk(this, ek, "f") || breakSpecial) {
+							if (breakSpecial) {
+								let n = !1;
+								for (let modHeight = 0; modHeight < specialHeight; modHeight++) {
+									i.forEach((({
+										x: e,
+										y: t,
+										z: i
+									}) => {
+										Dk(this, a_, "f").hasPartAt(e, t + modHeight, i) && (Dk(this, a_, "f").deletePart(e, t + modHeight, i), n = !0)
+									}));
+								}
+								if (n) {
+									Dk(this, $x, "m", Ak).call(this);
+									Dk(this, a_, "f").generateMeshes();
+									null === (t = Dk(this, ck, "f")) || void 0 === t || t.refresh(Dk(this, a_, "f"));
+									Dk(this, E_, "f").setFromExistingCheckpoints(Dk(this, a_, "f"));
+									Nk(this, K_, !1, "f");
+								}
+							}
+							else {
+								Dk(this, $x, "m", Rk).call(this, i);	// editor delete block (X)
+							}
+						} else if (Dk(this, tk, "f") || Dk(this, rk, "f") || placeSpecial) {	// IMPORTANT - editor place block
 							if (null == n.id) Dk(this, $x, "m", Rk).call(this, i);
 							else if (null == Dk(this, sk, "f") || Dk(this, sk, "f").x != e.x || Dk(this, sk, "f").y != e.y || Dk(this, sk, "f").z != e.z || Dk(this, sk, "f").id != n.id || Dk(this, sk, "f").rotation != Dk(this, ok, "f")) {
 								
@@ -23371,10 +23404,11 @@ window.SHOWGHOST = true;
 
 			UT(this, mT, "m", RT).call(this, "Mod Controls"), 
 			UT(this, mT, "m", NT).call(this, "Toggle Ghost", Lb.ToggleGhost),
-			UT(this, mT, "m", NT).call(this, "Editor Special 1", Lb.PlaceSpecial1),
-			UT(this, mT, "m", NT).call(this, "Editor Special 2", Lb.PlaceSpecial2),
-			UT(this, mT, "m", NT).call(this, "Editor Special 3", Lb.PlaceSpecial3),
-			UT(this, mT, "m", NT).call(this, "Editor Special 4", Lb.PlaceSpecial4)
+			UT(this, mT, "m", NT).call(this, "Editor Place Special 1", Lb.PlaceSpecial1),
+			UT(this, mT, "m", NT).call(this, "Editor Place Special 2", Lb.PlaceSpecial2),
+			UT(this, mT, "m", NT).call(this, "Editor Place Special 3", Lb.PlaceSpecial3),
+			UT(this, mT, "m", NT).call(this, "Editor Place Special 4", Lb.PlaceSpecial4),
+			UT(this, mT, "m", NT).call(this, "Editor Break Special 1", Lb.BreakSpecial1)
 		}, RT = function(e) {
 			const t = document.createElement("h2");
 			t.textContent = e, UT(this, kT, "f").appendChild(t)
@@ -26937,6 +26971,7 @@ window.SHOWGHOST = true;
 					[Lb.PlaceSpecial2, ["Digit2", null]],
 					[Lb.PlaceSpecial3, ["Digit3", null]],
 					[Lb.PlaceSpecial4, ["Digit4", null]],
+					[Lb.BreakSpecial1, ["Digit0", null]]
 				])
 			}
 			getSettings() {
