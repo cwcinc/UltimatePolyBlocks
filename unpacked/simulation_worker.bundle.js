@@ -32,6 +32,7 @@ const moddedBlocks = {
 		"BlocksPlus",
 		"Zones", 
 		"Rings", 
+		"Materials",
 		"BorderlessRoads",
 		//"SlopedTurns", 
 		//"Forty",
@@ -56,7 +57,8 @@ const moddedBlocks = {
 		"ultimateMod/models/blockmixingroads.glb",
 		"ultimateMod/models/text.glb",
 		"ultimateMod/models/borderlessroads.glb",
-		"ultimateMod/models/rings.glb"
+		"ultimateMod/models/rings.glb",
+		"ultimateMod/models/materials.glb"
 	],
 	blockColors: {
 		"Red": null, 
@@ -227,6 +229,22 @@ const moddedBlocks = {
 		{name: "12HalfSlipBig", category: "Zones", blenderSceneName: "Zones", id: 574, isHalfSlip: true, big: true},
 		{name: "13AirControl", category: "Zones", blenderSceneName: "Zones", id: 575, isAirControl: true},
 		{name: "13AirControlBig", category: "Zones", blenderSceneName: "Zones", id: 576, isAirControl: true, big: true},
+
+		
+		{name: "14NoFog", category: "Zones", blenderSceneName: "Zones", id: 602, isNoFog: true},
+		{name: "14NoFogBig", category: "Zones", blenderSceneName: "Zones", id: 603, isNoFog: true, big: true},
+		{name: "15Screenshake", category: "Zones", blenderSceneName: "Zones", id: 604, isScreenShake: true},
+		{name: "15ScreenshakeBig", category: "Zones", blenderSceneName: "Zones", id: 605, isScreenShake: true, big: true},
+		{name: "16Placeholder", category: "Zones", blenderSceneName: "Zones", id: 606},
+		{name: "17Placeholder", category: "Zones", blenderSceneName: "Zones", id: 607},
+		{name: "18Placeholder", category: "Zones", blenderSceneName: "Zones", id: 608},
+		{name: "19Placeholder", category: "Zones", blenderSceneName: "Zones", id: 609},
+		{name: "20Placeholder", category: "Zones", blenderSceneName: "Zones", id: 610},
+		{name: "21Placeholder", category: "Zones", blenderSceneName: "Zones", id: 611},
+		{name: "22Placeholder", category: "Zones", blenderSceneName: "Zones", id: 612},
+		{name: "23Placeholder", category: "Zones", blenderSceneName: "Zones", id: 613},
+		{name: "24Placeholder", category: "Zones", blenderSceneName: "Zones", id: 614},
+		{name: "25Placeholder", category: "Zones", blenderSceneName: "Zones", id: 615},
 
 
 		{name: "B1", category: "BlocksPlus", blenderSceneName: "BlocksPlus", id: 290},
@@ -518,10 +536,13 @@ const moddedBlocks = {
 		{name: "VerticalFinishEdge2", category: "Rings", blenderSceneName: "Rings", id: 599, isVerticalRingFinish: true},
 		{name: "VerticalFinishWide3", category: "Rings", blenderSceneName: "Rings", id: 600, isVerticalRingFinish: true},
 		{name: "VerticalFinishWide4", category: "Rings", blenderSceneName: "Rings", id: 601, isVerticalRingFinish: true},
-		// next id: 602
+
+		
+		{name: "Bricks", category: "Materials", blenderSceneName: "Materials", id: 616},
+		{name: "Dirt", category: "Materials", blenderSceneName: "Materials", id: 617},
+		// next id: 618
 	]
 };
-
 
 
 
